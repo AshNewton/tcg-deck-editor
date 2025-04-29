@@ -4,7 +4,7 @@ import Decklist from "../components/Decklist";
 import SaveLoad from "../components/SaveLoad";
 import SearchBar from "../components/Searchbar";
 
-import Box from "@mui/material/Box";
+import MuiCard from "@mui/material/Card";
 
 import { searchCard } from "../api/ygoprodeck";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
@@ -55,12 +55,7 @@ const Sidebar = () => {
   };
 
   return (
-    <Box
-      sx={{
-        border: "1px solid black",
-        padding: 2,
-      }}
-    >
+    <MuiCard>
       {/* search for cards */}
       <SearchBar
         onSearch={searchCard}
@@ -88,7 +83,7 @@ const Sidebar = () => {
         deck={extradeck}
         onDeckUpdate={handleDeckUpdate(setExtraDeck)}
       />
-    </Box>
+    </MuiCard>
   );
 };
 

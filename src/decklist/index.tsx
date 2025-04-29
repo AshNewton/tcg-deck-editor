@@ -8,15 +8,36 @@ import Grid from "@mui/material/Grid";
 
 const Decklist = () => {
   return (
-    <Grid container>
-      <Grid item xs={12}>
+    <Grid container direction="column" sx={{ height: "98vh" }}>
+      {/* Header */}
+      <Grid item>
         <Header />
       </Grid>
-      <Grid item md={4} xs={12}>
-        <Sidebar />
-      </Grid>
-      <Grid item md={8} xs={12}>
-        <Body />
+
+      {/* Main content: Sidebar + Body */}
+      <Grid item xs sx={{ overflow: "hidden", minHeight: 0 }}>
+        <Grid container sx={{ height: "100%" }}>
+          <Grid
+            item
+            md={4}
+            xs={12}
+            sx={{
+              height: "100%",
+              overflowY: "auto",
+              borderRight: "1px solid #ddd",
+            }}
+          >
+            <Sidebar />
+          </Grid>
+          <Grid
+            item
+            md={8}
+            xs={12}
+            sx={{ height: "100%", overflowY: "auto", overflowX: "hidden" }}
+          >
+            <Body />
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );

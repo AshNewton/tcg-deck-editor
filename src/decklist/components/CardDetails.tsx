@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import ClearIcon from "@mui/icons-material/Clear";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
+import MuiCard from "@mui/material/Card";
 
 import { getBannedSeverity, getCardLevelName } from "../util/yugioh";
 import { setSelectedCard } from "../../store/slices/uiSlice";
@@ -23,12 +24,7 @@ const CardDetails = () => {
 
   return (
     card && (
-      <Box
-        sx={{
-          border: "1px solid black",
-          padding: 2,
-        }}
-      >
+      <MuiCard>
         <Box
           mt={2}
           display="flex"
@@ -90,7 +86,7 @@ const CardDetails = () => {
             YGOPRODECK
           </Link>
         </Box>
-      </Box>
+      </MuiCard>
     )
   );
 };

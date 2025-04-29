@@ -6,7 +6,6 @@ import Text from "./Text";
 import Box from "@mui/material/Box";
 
 import { getDeckSize } from "../util/deckAnalytics";
-import { useAppDispatch } from "../../hooks";
 
 import { Deck } from "../../types";
 
@@ -18,8 +17,6 @@ type Props = {
 
 const Decklist = (props: Props) => {
   const { deckname, deck, onDeckUpdate } = props;
-
-  const dispatch = useAppDispatch();
 
   const removeFromDeck = (cardname: string) => {
     const updatedDeck = deck

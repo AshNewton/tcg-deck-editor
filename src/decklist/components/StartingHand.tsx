@@ -35,8 +35,13 @@ const StartingHand = () => {
     );
   };
 
+  const onClose = () => {
+    setSampleStartingHand([]);
+    setChanceToOpenCards([]);
+  };
+
   return (
-    <CollapsibleDropdown title="Starting Hand">
+    <CollapsibleDropdown title="Starting Hand" onCollapse={onClose}>
       <Button text="Get a Sample Starting Hand" onClick={generateOpeningHand} />
       {sampleStartingHand && (
         <List>

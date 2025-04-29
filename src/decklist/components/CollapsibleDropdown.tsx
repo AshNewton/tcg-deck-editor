@@ -9,26 +9,33 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
+import MuiCard from "@mui/material/Card";
 
 type Props = {
   title: string;
+  onCollapse?: () => void;
   children: React.ReactNode;
 };
 
 const CollapsibleDropdown = (props: Props) => {
-  const { title, children } = props;
+  const { title, onCollapse, children } = props;
 
   const [open, setOpen] = React.useState(false);
 
-  const toggleOpen = () => setOpen((prev) => !prev);
+  const toggleOpen = () => {
+    if (open && onCollapse) {
+      onCollapse();
+    }
+    setOpen((prev) => !prev);
+  };
 
   return (
-    <Box
+    <MuiCard
       sx={{
         width: "100%",
         bgcolor: "background.paper",
-        border: 1,
         borderRadius: 2,
+        marginTop: 2,
       }}
     >
       <List disablePadding>
@@ -45,7 +52,7 @@ const CollapsibleDropdown = (props: Props) => {
           <Box sx={{ pl: 4, py: 1 }}>{children}</Box>
         </Collapse>
       </List>
-    </Box>
+    </MuiCard>
   );
 };
 
