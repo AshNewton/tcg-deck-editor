@@ -1,7 +1,6 @@
 import Button from "../components/Button";
 import Text from "../components/Text";
 
-import Box from "@mui/material/Box";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import MuiButton from "@mui/material/Button";
@@ -22,6 +21,11 @@ const CardPreview = (props) => {
     );
   };
 
+  const handleInnerClick = (e, onClick) => {
+    e.stopPropagation();
+    onClick();
+  };
+
   return (
     <MuiButton
       variant="outlined"
@@ -36,12 +40,15 @@ const CardPreview = (props) => {
       }}
       onClick={toggleSelectedCard}
     >
-      <IconButton onClick={onDelete} aria-label="delete">
+      <IconButton
+        onClick={(e) => handleInnerClick(e, onDelete)}
+        aria-label="delete"
+      >
         <DeleteIcon />
       </IconButton>
       <Button
         text="-"
-        onClick={onRemoveCopy}
+        onClick={(e) => handleInnerClick(e, onRemoveCopy)}
         size="small"
         aria-label="remove copy"
       />
@@ -49,7 +56,7 @@ const CardPreview = (props) => {
       <Button
         text="+"
         disabled={card.copies === 3}
-        onClick={onAddCopy}
+        onClick={(e) => handleInnerClick(e, onAddCopy)}
         size="small"
         aria-label="add copy"
       />
