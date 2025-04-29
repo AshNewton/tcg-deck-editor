@@ -1,0 +1,4088 @@
+{
+  "main": [
+    {
+      "name": "Fallen of Albaz",
+      "details": {
+        "id": 68468459,
+        "name": "Fallen of Albaz",
+        "typeline": [
+          "Dragon",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "If this card is Normal or Special Summoned (except during the Damage Step): You can discard 1 card; Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters on either field as Fusion Material, including this card, but you cannot use other monsters you control as Fusion Material. You can only use this effect of \"Fallen of Albaz\" once per turn.",
+        "race": "Dragon",
+        "atk": 1800,
+        "def": 0,
+        "level": 4,
+        "attribute": "DARK",
+        "archetype": "Dogmatika",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/fallen-of-albaz-11098",
+        "card_sets": [
+          {
+            "set_name": "2021 Tin of Ancient Battles",
+            "set_code": "MP21-EN107",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN021",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN021",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 19",
+            "set_code": "OP19-EN001",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 19 (POR)",
+            "set_code": "OP19-PT001",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN034",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Rise of the Duelist",
+            "set_code": "ROTD-EN011",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN004",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.23"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 68468459,
+            "image_url": "https://images.ygoprodeck.com/images/cards/68468459.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/68468459.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/68468459.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.19",
+            "tcgplayer_price": "0.14",
+            "ebay_price": "38.99",
+            "amazon_price": "0.43",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 3
+    },
+    {
+      "name": "Aluber the Jester of Despia",
+      "details": {
+        "id": 62962630,
+        "name": "Aluber the Jester of Despia",
+        "typeline": [
+          "Fairy",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "If this card is Normal or Special Summoned: You can add 1 \"Branded\" Spell/Trap from your Deck to your hand. If a face-up Fusion Monster you control is destroyed by battle, or leaves the field because of an opponent's card effect, while this card is in your GY: You can target 1 Effect Monster your opponent controls; Special Summon this card, and if you do, negate the targeted monster's effects until the end of this turn. You can only use 1 \"Aluber the Jester of Despia\" effect per turn, and only once that turn.",
+        "race": "Fairy",
+        "atk": 1800,
+        "def": 0,
+        "level": 4,
+        "attribute": "DARK",
+        "archetype": "Despia",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/aluber-the-jester-of-despia-12157",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN123",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN016",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN016",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN016",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN016",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN016",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN016",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN016",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Dawn of Majesty",
+            "set_code": "DAMA-EN006",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Ghosts From the Past: The 2nd Haunting",
+            "set_code": "GFP2-EN097",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "12.24"
+          },
+          {
+            "set_name": "OTS Tournament Pack 20",
+            "set_code": "OP20-EN003",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN038",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 62962630,
+            "image_url": "https://images.ygoprodeck.com/images/cards/62962630.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/62962630.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/62962630.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.27",
+            "tcgplayer_price": "0.19",
+            "ebay_price": "4.44",
+            "amazon_price": "0.60",
+            "coolstuffinc_price": "5.99"
+          }
+        ]
+      },
+      "copies": 3
+    },
+    {
+      "name": "Triple Tactics Talent",
+      "details": {
+        "id": 25311006,
+        "name": "Triple Tactics Talent",
+        "type": "Spell Card",
+        "humanReadableCardType": "Normal Spell",
+        "frameType": "spell",
+        "desc": "If your opponent has activated a monster effect during your Main Phase this turn: Activate 1 of these effects;\r\n● Draw 2 cards.\r\n● Take control of 1 monster your opponent controls until the End Phase.\r\n● Look at your opponent's hand, and choose 1 card from it to shuffle into the Deck.\r\nYou can only activate 1 \"Triple Tactics Talent\" per turn.",
+        "race": "Normal",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/triple-tactics-talent-11112",
+        "card_sets": [
+          {
+            "set_name": "2021 Tin of Ancient Battles",
+            "set_code": "MP21-EN143",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN063",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN063",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Magnificent Mavens",
+            "set_code": "MAMA-EN090",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Magnificent Mavens",
+            "set_code": "MAMA-EN090",
+            "set_rarity": "Ultra Rare (Pharaoh's Rare)",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Rise of the Duelist",
+            "set_code": "ROTD-EN062",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Rise of the Duelist",
+            "set_code": "ROTD-EN062",
+            "set_rarity": "Starlight Rare",
+            "set_rarity_code": "(StR)",
+            "set_price": "0"
+          }
+        ],
+        "banlist_info": {
+          "ban_tcg": "Limited"
+        },
+        "card_images": [
+          {
+            "id": 25311006,
+            "image_url": "https://images.ygoprodeck.com/images/cards/25311006.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/25311006.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/25311006.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "2.94",
+            "tcgplayer_price": "5.45",
+            "ebay_price": "9.99",
+            "amazon_price": "59.88",
+            "coolstuffinc_price": "13.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Guiding Quem, the Virtuous",
+      "details": {
+        "id": 45883110,
+        "name": "Guiding Quem, the Virtuous",
+        "typeline": [
+          "Spellcaster",
+          "Tuner",
+          "Effect"
+        ],
+        "type": "Tuner Monster",
+        "humanReadableCardType": "Tuner Effect Monster",
+        "frameType": "effect",
+        "desc": "(This card is always treated as a \"Dogmatika\" and \"Despia\" card.)\r\nIf this card is Normal or Special Summoned: You can send 1 \"Fallen of Albaz\" or 1 card that mentions it from your Deck to the GY. If a card(s) leaves the Extra Deck (except during the Damage Step): You can target 1 \"Fallen of Albaz\", or 1 monster that mentions it, in your GY, except \"Guiding Quem, the Virtuous\"; Special Summon it. You can only use each effect of \"Guiding Quem, the Virtuous\" once per turn.",
+        "race": "Spellcaster",
+        "atk": 1500,
+        "def": 1500,
+        "level": 4,
+        "attribute": "LIGHT",
+        "archetype": "Despia",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/guiding-quem-the-virtuous-13706",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Mirrors",
+            "set_code": "MP24-EN078",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Cyberstorm Access",
+            "set_code": "CYAC-EN011",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Cyberstorm Access",
+            "set_code": "CYAC-EN011",
+            "set_rarity": "Starlight Rare",
+            "set_rarity_code": "(StR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN043",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN043",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN043",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN043",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN043",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN043",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN043",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 45883110,
+            "image_url": "https://images.ygoprodeck.com/images/cards/45883110.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/45883110.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/45883110.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.02",
+            "tcgplayer_price": "0.24",
+            "ebay_price": "0.00",
+            "amazon_price": "0.00",
+            "coolstuffinc_price": "49.99"
+          }
+        ]
+      },
+      "copies": 3
+    },
+    {
+      "name": "Bystial Saronir",
+      "details": {
+        "id": 60242223,
+        "name": "Bystial Saronir",
+        "typeline": [
+          "Dragon",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "You can target 1 LIGHT or DARK monster in either GY; banish it, and if you do, Special Summon this card from your hand. This is a Quick Effect if your opponent controls a monster. If this card is sent to the GY: You can send 1 \"Bystial\" monster or 1 \"Branded\" Spell/Trap from your Deck to the GY, except \"Bystial Saronir\". You can only use each effect of \"Bystial Saronir\" once per turn.",
+        "race": "Dragon",
+        "atk": 2500,
+        "def": 2000,
+        "level": 6,
+        "attribute": "DARK",
+        "archetype": "Bystial",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/bystial-saronir-13362",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Heroes Mega Pack",
+            "set_code": "MP23-EN158",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Darkwing Blast",
+            "set_code": "DABL-EN007",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 60242223,
+            "image_url": "https://images.ygoprodeck.com/images/cards/60242223.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/60242223.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/60242223.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "6.77",
+            "tcgplayer_price": "7.68",
+            "ebay_price": "2.84",
+            "amazon_price": "1.65",
+            "coolstuffinc_price": "2.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Called by the Grave",
+      "details": {
+        "id": 24224830,
+        "name": "Called by the Grave",
+        "type": "Spell Card",
+        "humanReadableCardType": "Quick-Play Spell",
+        "frameType": "spell",
+        "desc": "Target 1 monster in your opponent's GY; banish it, and if you do, until the end of the next turn, its effects are negated, as well as the activated effects and effects on the field of monsters with the same original name.",
+        "race": "Quick-Play",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/called-by-the-grave-9244",
+        "card_sets": [
+          {
+            "set_name": "2019 Gold Sarcophagus Tin Mega Pack",
+            "set_code": "MP19-EN043",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN057",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN057",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Duel Devastator",
+            "set_code": "DUDE-EN044",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "3.68"
+          },
+          {
+            "set_name": "Extreme Force Special Edition",
+            "set_code": "EXFO-ENSE2",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "4.74"
+          },
+          {
+            "set_name": "Flames of Destruction",
+            "set_code": "FLOD-EN065",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Maximum Gold",
+            "set_code": "MAGO-EN156",
+            "set_rarity": "Rare",
+            "set_rarity_code": "(R)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN092",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN029",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.95"
+          },
+          {
+            "set_name": "Structure Deck: Blue-Eyes White Destiny",
+            "set_code": "SDWD-EN026",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          }
+        ],
+        "banlist_info": {
+          "ban_tcg": "Limited",
+          "ban_ocg": "Semi-Limited"
+        },
+        "card_images": [
+          {
+            "id": 24224830,
+            "image_url": "https://images.ygoprodeck.com/images/cards/24224830.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/24224830.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/24224830.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.17",
+            "tcgplayer_price": "0.19",
+            "ebay_price": "2.99",
+            "amazon_price": "0.57",
+            "coolstuffinc_price": "1.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Fusion Duplication",
+      "details": {
+        "id": 43331750,
+        "name": "Fusion Duplication",
+        "type": "Trap Card",
+        "humanReadableCardType": "Normal Trap",
+        "frameType": "trap",
+        "desc": "Target 1 \"Fusion\" or \"Polymerization\" Normal or Quick-Play Spell in either player's GY; banish that Spell, then apply that Spell's effect when that card is activated. You can only activate 1 \"Fusion Duplication\" per turn.",
+        "race": "Normal",
+        "archetype": "Fusion",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/fusion-duplication-13702",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Mirrors",
+            "set_code": "MP24-EN201",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Cyberstorm Access",
+            "set_code": "CYAC-EN077",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 43331750,
+            "image_url": "https://images.ygoprodeck.com/images/cards/43331750.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/43331750.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/43331750.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.13",
+            "tcgplayer_price": "0.18",
+            "ebay_price": "0.00",
+            "amazon_price": "0.00",
+            "coolstuffinc_price": "0.25"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Branded Fusion",
+      "details": {
+        "id": 44362883,
+        "name": "Branded Fusion",
+        "type": "Spell Card",
+        "humanReadableCardType": "Normal Spell",
+        "frameType": "spell",
+        "desc": "Fusion Summon 1 Fusion Monster that mentions \"Fallen of Albaz\" as material from your Extra Deck, using 2 monsters from your hand, Deck, or field as material. You cannot Special Summon from the Extra Deck, except Fusion Monsters, the turn you activate this card. You can only activate 1 \"Branded Fusion\" per turn.",
+        "race": "Normal",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/branded-fusion-12939",
+        "card_sets": [
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN111",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN111",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 22",
+            "set_code": "OP22-EN002",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN021",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "3.13"
+          }
+        ],
+        "banlist_info": {
+          "ban_tcg": "Limited",
+          "ban_ocg": "Limited"
+        },
+        "card_images": [
+          {
+            "id": 44362883,
+            "image_url": "https://images.ygoprodeck.com/images/cards/44362883.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/44362883.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/44362883.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.11",
+            "tcgplayer_price": "0.59",
+            "ebay_price": "37.00",
+            "amazon_price": "2.05",
+            "coolstuffinc_price": "3.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Branded in Red",
+      "details": {
+        "id": 82738008,
+        "name": "Branded in Red",
+        "type": "Spell Card",
+        "humanReadableCardType": "Quick-Play Spell",
+        "frameType": "spell",
+        "desc": "Target 1 \"Despia\" monster or \"Fallen of Albaz\" in your GY; add it to your hand, then you can apply the following effect.\r\n● Fusion Summon 1 Level 8 or higher Fusion Monster from your Extra Deck, by banishing Fusion Materials mentioned on it from your hand or field, but it cannot attack directly this turn.\r\nYou can only activate 1 \"Branded in Red\" per turn.",
+        "race": "Quick-Play",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/branded-in-red-12456",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN219",
+            "set_rarity": "Rare",
+            "set_rarity_code": "(R)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Burst of Destiny",
+            "set_code": "BODE-EN057",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 22",
+            "set_code": "OP22-EN026",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 82738008,
+            "image_url": "https://images.ygoprodeck.com/images/cards/82738008.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/82738008.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/82738008.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.58",
+            "tcgplayer_price": "0.43",
+            "ebay_price": "2.99",
+            "amazon_price": "4.49",
+            "coolstuffinc_price": "2.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Tri-Brigade Mercourier",
+      "details": {
+        "id": 19096726,
+        "name": "Tri-Brigade Mercourier",
+        "typeline": [
+          "Winged Beast",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "When your opponent activates a monster effect, while you control a Fusion Monster that mentions \"Fallen of Albaz\" as material (Quick Effect): You can send this card from your hand or face-up field to the GY; negate that effect. If this card is banished: You can add from your Deck to your hand, 1 \"Fallen of Albaz\", or 1 monster that mentions it, except \"Tri-Brigade Mercourier\". You can only use each effect of \"Tri-Brigade Mercourier\" once per turn.",
+        "race": "Winged Beast",
+        "atk": 800,
+        "def": 0,
+        "level": 4,
+        "attribute": "DARK",
+        "archetype": "Tri-Brigade",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/tri-brigade-mercourier-12810",
+        "card_sets": [
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN107",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN001",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "1.49"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 19096726,
+            "image_url": "https://images.ygoprodeck.com/images/cards/19096726.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/19096726.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/19096726.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.13",
+            "tcgplayer_price": "0.17",
+            "ebay_price": "0.99",
+            "amazon_price": "0.54",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Branded Retribution",
+      "details": {
+        "id": 17751597,
+        "name": "Branded Retribution",
+        "type": "Trap Card",
+        "humanReadableCardType": "Counter Trap",
+        "frameType": "trap",
+        "desc": "When a Spell/Trap Card, or monster effect, is activated that includes an effect that Special Summons a monster(s): Return to the Extra Deck, 1 face-up Fusion Monster you control, or 2 Fusion Monsters in your GY, that mention \"Fallen of Albaz\" as material, and if you do, negate the activation, and if you do that, destroy that card. You can banish this card from your GY, then target 1 \"Branded\" Spell/Trap in your GY, except \"Branded Retribution\"; add it to your hand. You can only use 1 \"Branded Retribution\" effect per turn, and only once that turn.",
+        "race": "Counter",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/branded-retribution-12911",
+        "card_sets": [
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN113",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN032",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0.89"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 17751597,
+            "image_url": "https://images.ygoprodeck.com/images/cards/17751597.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/17751597.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/17751597.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.13",
+            "tcgplayer_price": "0.14",
+            "ebay_price": "1.25",
+            "amazon_price": "0.25",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Despian Tragedy",
+      "details": {
+        "id": 36577931,
+        "name": "Despian Tragedy",
+        "typeline": [
+          "Fairy",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "If this card is sent to the GY, or banished, by a card effect: You can add 1 \"Despia\" monster from your Deck to your hand, except \"Despian Tragedy\". You can banish this card from your GY, then target 1 \"Branded\" Spell/Trap in your GY; Set it to your field. You can only use 1 \"Despian Tragedy\" effect per turn, and only once that turn.",
+        "race": "Fairy",
+        "atk": 400,
+        "def": 400,
+        "level": 1,
+        "attribute": "DARK",
+        "archetype": "Despia",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/despian-tragedy-12161",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN122",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Dawn of Majesty",
+            "set_code": "DAMA-EN005",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.33"
+          },
+          {
+            "set_name": "Ghosts From the Past: The 2nd Haunting",
+            "set_code": "GFP2-EN096",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "2"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 36577931,
+            "image_url": "https://images.ygoprodeck.com/images/cards/36577931.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/36577931.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/36577931.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.12",
+            "tcgplayer_price": "0.17",
+            "ebay_price": "1.99",
+            "amazon_price": "0.82",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Springans Kitt",
+      "details": {
+        "id": 45484331,
+        "name": "Springans Kitt",
+        "typeline": [
+          "Beast",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "If you have a Fusion Monster that mentions \"Fallen of Albaz\" as material on your field or in your GY: You can Special Summon this card from your hand. If this card is Normal or Special Summoned: You can add to your hand, 1 of your \"Branded\" Spells/Traps that is banished or in your Deck or GY, then place 1 card from your hand on the bottom of the Deck. You can only use each effect of \"Springans Kitt\" once per turn.",
+        "race": "Beast",
+        "atk": 1700,
+        "def": 1000,
+        "level": 4,
+        "attribute": "DARK",
+        "archetype": "Springans",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/springans-kitt-12809",
+        "card_sets": [
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN108",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN002",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "1.22"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 45484331,
+            "image_url": "https://images.ygoprodeck.com/images/cards/45484331.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/45484331.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/45484331.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.17",
+            "tcgplayer_price": "0.14",
+            "ebay_price": "0.99",
+            "amazon_price": "0.39",
+            "coolstuffinc_price": "0.49"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Bystial Magnamhut",
+      "details": {
+        "id": 33854624,
+        "name": "Bystial Magnamhut",
+        "typeline": [
+          "Dragon",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "You can target 1 LIGHT or DARK monster in either GY; banish it, and if you do, Special Summon this card from your hand. This is a Quick Effect if your opponent controls a monster. If this card is Special Summoned: You can activate this effect; during the End Phase of this turn, add 1 Dragon monster from your Deck or GY to your hand, except \"Bystial Magnamhut\". You can only use each effect of \"Bystial Magnamhut\" once per turn.",
+        "race": "Dragon",
+        "atk": 2500,
+        "def": 2000,
+        "level": 6,
+        "attribute": "DARK",
+        "archetype": "Bystial",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/bystial-magnamhut-13361",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Heroes Mega Pack",
+            "set_code": "MP23-EN157",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Darkwing Blast",
+            "set_code": "DABL-EN006",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          }
+        ],
+        "banlist_info": {
+          "ban_tcg": "Limited",
+          "ban_ocg": "Limited"
+        },
+        "card_images": [
+          {
+            "id": 33854624,
+            "image_url": "https://images.ygoprodeck.com/images/cards/33854624.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/33854624.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/33854624.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "4.48",
+            "tcgplayer_price": "5.56",
+            "ebay_price": "4.99",
+            "amazon_price": "0.20",
+            "coolstuffinc_price": "7.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Branded Lost",
+      "details": {
+        "id": 18973184,
+        "name": "Branded Lost",
+        "type": "Spell Card",
+        "humanReadableCardType": "Continuous Spell",
+        "frameType": "spell",
+        "desc": "The activation of your cards and effects that include an effect that Fusion Summons a Fusion Monster cannot be negated, also your opponent cannot activate cards or effects when a monster is Fusion Summoned this way. If you Fusion Summon a Fusion Monster: You can add 1 \"Fallen of Albaz\", or 1 monster that mentions it, from your Deck to your hand. You can only use this effect of \"Branded Lost\" once per turn.",
+        "race": "Continuous",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/branded-lost-12808",
+        "card_sets": [
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN110",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 22",
+            "set_code": "OP22-EN009",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN020",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.19"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 18973184,
+            "image_url": "https://images.ygoprodeck.com/images/cards/18973184.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/18973184.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/18973184.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.09",
+            "tcgplayer_price": "0.14",
+            "ebay_price": "1.25",
+            "amazon_price": "0.25",
+            "coolstuffinc_price": "0.25"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Nadir Servant",
+      "details": {
+        "id": 1984618,
+        "name": "Nadir Servant",
+        "type": "Spell Card",
+        "humanReadableCardType": "Normal Spell",
+        "frameType": "spell",
+        "desc": "Send 1 monster from your Extra Deck to the GY, then add 1 \"Dogmatika\" monster or \"Fallen of Albaz\" from your Deck or GY to your hand, that has ATK less than or equal to that sent monster in the GY, also, for the rest of this turn after this card resolves, you cannot Special Summon monsters from the Extra Deck. You can only activate 1 \"Nadir Servant\" per turn.",
+        "race": "Normal",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/nadir-servant-11096",
+        "card_sets": [
+          {
+            "set_name": "2021 Tin of Ancient Battles",
+            "set_code": "MP21-EN135",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN062",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN062",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Rise of the Duelist",
+            "set_code": "ROTD-EN052",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 1984618,
+            "image_url": "https://images.ygoprodeck.com/images/cards/1984618.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/1984618.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/1984618.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.99",
+            "tcgplayer_price": "1.01",
+            "ebay_price": "14.95",
+            "amazon_price": "20.18",
+            "coolstuffinc_price": "5.99"
+          }
+        ]
+      },
+      "copies": 3
+    },
+    {
+      "name": "Bystial Baldrake",
+      "details": {
+        "id": 72656408,
+        "name": "Bystial Baldrake",
+        "typeline": [
+          "Dragon",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "You can target 1 LIGHT or DARK monster in either GY; banish it, and if you do, Special Summon this card from your hand. This is a Quick Effect if your opponent controls a monster. If your opponent Special Summons a Ritual, Fusion, Synchro, Xyz, and/or Link Monster(s) (except during the Damage Step): You can Tribute 1 other LIGHT or DARK monster, then target 1 of those Special Summoned monsters; banish it. You can only use each effect of \"Bystial Baldrake\" once per turn.",
+        "race": "Dragon",
+        "atk": 2500,
+        "def": 2000,
+        "level": 6,
+        "attribute": "DARK",
+        "archetype": "Bystial",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/bystial-baldrake-13519",
+        "card_sets": [
+          {
+            "set_name": "Battles of Legend: Monstrous Revenge",
+            "set_code": "BLMR-EN069",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Photon Hypernova",
+            "set_code": "PHHY-EN004",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          }
+        ],
+        "banlist_info": {
+          "ban_ocg": "Limited"
+        },
+        "card_images": [
+          {
+            "id": 72656408,
+            "image_url": "https://images.ygoprodeck.com/images/cards/72656408.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/72656408.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/72656408.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.36",
+            "tcgplayer_price": "0.55",
+            "ebay_price": "0.00",
+            "amazon_price": "0.00",
+            "coolstuffinc_price": "0.49"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "That Grass Looks Greener",
+      "details": {
+        "id": 11110587,
+        "name": "That Grass Looks Greener",
+        "type": "Spell Card",
+        "humanReadableCardType": "Normal Spell",
+        "frameType": "spell",
+        "desc": "If you have more cards in your Deck than your opponent does: Send cards from the top of your Deck to the Graveyard so you have the same number of cards in the Deck as your opponent.",
+        "race": "Normal",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/that-grass-looks-greener-961",
+        "card_sets": [
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN063",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN063",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN063",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN063",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN063",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN063",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN063",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Raging Tempest",
+            "set_code": "RATE-EN066",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          }
+        ],
+        "banlist_info": {
+          "ban_tcg": "Limited",
+          "ban_ocg": "Limited"
+        },
+        "card_images": [
+          {
+            "id": 11110587,
+            "image_url": "https://images.ygoprodeck.com/images/cards/11110587.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/11110587.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/11110587.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.17",
+            "tcgplayer_price": "0.20",
+            "ebay_price": "15.99",
+            "amazon_price": "26.99",
+            "coolstuffinc_price": "15.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Gold Sarcophagus",
+      "details": {
+        "id": 75500286,
+        "name": "Gold Sarcophagus",
+        "type": "Spell Card",
+        "humanReadableCardType": "Normal Spell",
+        "frameType": "spell",
+        "desc": "Banish 1 card from your Deck, face-up. During your second Standby Phase after this card's activation, add that card to the hand.",
+        "race": "Normal",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/gold-sarcophagus-6356",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN052",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN052",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN052",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN052",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN052",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN052",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN052",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Duelist League 18 participation cards",
+            "set_code": "DL18-EN011",
+            "set_rarity": "Rare",
+            "set_rarity_code": "(R)",
+            "set_price": "14.78"
+          },
+          {
+            "set_name": "Duelist Revolution: Special Edition",
+            "set_code": "DREV-ENSE2",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "4.28"
+          },
+          {
+            "set_name": "Gold Series 2009",
+            "set_code": "GLD2-EN040",
+            "set_rarity": "Gold Rare",
+            "set_rarity_code": "(GUR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Hidden Summoners",
+            "set_code": "HISU-EN051",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "4.96"
+          },
+          {
+            "set_name": "Legendary Collection 3: Yugi's World Mega Pack",
+            "set_code": "LCYW-EN080",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.76"
+          },
+          {
+            "set_name": "Legendary Decks II",
+            "set_code": "LDK2-ENY22",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.96"
+          },
+          {
+            "set_name": "Magnificent Mavens",
+            "set_code": "MAMA-EN110",
+            "set_rarity": "Ultra Rare (Pharaoh's Rare)",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Maximum Gold: El Dorado",
+            "set_code": "MGED-EN041",
+            "set_rarity": "Premium Gold Rare",
+            "set_rarity_code": "(PG)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Noble Knights of the Round Table Power-Up Pack",
+            "set_code": "NKRT-EN041",
+            "set_rarity": "Platinum Rare",
+            "set_rarity_code": "(PIR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Pharaoh Tour 2007 promotional cards",
+            "set_code": "PT03-EN001",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "21127.3"
+          },
+          {
+            "set_name": "Premium Gold",
+            "set_code": "PGLD-EN068",
+            "set_rarity": "Gold Rare",
+            "set_rarity_code": "(GUR)",
+            "set_price": "5.09"
+          },
+          {
+            "set_name": "Shonen Jump Championship 2007 Prize Card B",
+            "set_code": "SJCS-EN005",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "24000"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN027",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0.95"
+          },
+          {
+            "set_name": "Structure Deck: Cyberse Link",
+            "set_code": "SDCL-EN027",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Yugi's Legendary Decks",
+            "set_code": "YGLD-ENC26",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "banlist_info": {
+          "ban_tcg": "Limited",
+          "ban_ocg": "Limited"
+        },
+        "card_images": [
+          {
+            "id": 75500286,
+            "image_url": "https://images.ygoprodeck.com/images/cards/75500286.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/75500286.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/75500286.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.10",
+            "tcgplayer_price": "0.14",
+            "ebay_price": "1.89",
+            "amazon_price": "2.52",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Branded Regained",
+      "details": {
+        "id": 34090915,
+        "name": "Branded Regained",
+        "type": "Spell Card",
+        "humanReadableCardType": "Continuous Spell",
+        "frameType": "spell",
+        "desc": "If a LIGHT or DARK monster(s) is banished (except during the Damage Step): You can target 1 of those monsters; place that monster on the bottom of the Deck, and if you do, draw 1 card. You can only use this effect of \"Branded Regained\" once per turn. Once per turn, if your opponent Normal or Special Summons a monster (except during the Damage Step): You can target 1 \"Bystial\" monster in your GY; Special Summon it. You can only activate this effect of \"Branded Regained\" once per Chain.",
+        "race": "Continuous",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/branded-regained-13372",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Heroes Mega Pack",
+            "set_code": "MP23-EN196",
+            "set_rarity": "Rare",
+            "set_rarity_code": "(R)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Darkwing Blast",
+            "set_code": "DABL-EN053",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 34090915,
+            "image_url": "https://images.ygoprodeck.com/images/cards/34090915.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/34090915.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/34090915.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.32",
+            "tcgplayer_price": "0.58",
+            "ebay_price": "1.95",
+            "amazon_price": "0.00",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Branded in White",
+      "details": {
+        "id": 34995106,
+        "name": "Branded in White",
+        "type": "Spell Card",
+        "humanReadableCardType": "Normal Spell",
+        "frameType": "spell",
+        "desc": "Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand or field as material, including a Dragon monster. You can also banish monsters from your GY as material, if you use \"Fallen of Albaz\" as Fusion Material from your hand, field, or by banishing itself from your GY. During the End Phase, if this card is in the GY because it was sent there to activate the effect of \"Fallen of Albaz\" this turn: You can Set this card. You can only use each effect of \"Branded in White\" once per turn.",
+        "race": "Normal",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/branded-in-white-11859",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN093",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Lightning Overdrive",
+            "set_code": "LIOV-EN055",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN022",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.15"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 34995106,
+            "image_url": "https://images.ygoprodeck.com/images/cards/34995106.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/34995106.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/34995106.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.07",
+            "tcgplayer_price": "0.10",
+            "ebay_price": "2.90",
+            "amazon_price": "0.25",
+            "coolstuffinc_price": "0.25"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Harpie's Feather Duster",
+      "details": {
+        "id": 18144507,
+        "name": "Harpie's Feather Duster",
+        "type": "Spell Card",
+        "humanReadableCardType": "Normal Spell",
+        "frameType": "spell",
+        "desc": "Destroy all Spell and Trap Cards your opponent controls.",
+        "race": "Normal",
+        "archetype": "Harpie",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/harpie-s-feather-duster-1573",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Mirrors",
+            "set_code": "MP24-EN058",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battle Pack: Epic Dawn",
+            "set_code": "BP01-EN035",
+            "set_rarity": "Rare",
+            "set_rarity_code": "(R)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battle Pack: Epic Dawn",
+            "set_code": "BP01-EN035",
+            "set_rarity": "Starfoil Rare",
+            "set_rarity_code": "(SFR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Egyptian God Deck: Obelisk the Tormentor",
+            "set_code": "EGO1-EN022",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "6.6"
+          },
+          {
+            "set_name": "Egyptian God Deck: Slifer the Sky Dragon",
+            "set_code": "EGS1-EN022",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "7.92"
+          },
+          {
+            "set_name": "Legendary Collection 3: Yugi's World Mega Pack",
+            "set_code": "LCYW-EN149",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Legendary Collection 4: Joey's World Mega Pack",
+            "set_code": "LCJW-EN099",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Magnificent Mavens",
+            "set_code": "MAMA-EN076",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Maximum Gold",
+            "set_code": "MAGO-EN042",
+            "set_rarity": "Premium Gold Rare",
+            "set_rarity_code": "(PG)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 24",
+            "set_code": "OP24-EN003",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Beware of Traptrix",
+            "set_code": "SDBT-EN026",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Tournament Pack 8",
+            "set_code": "TP8-EN002",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Yu-Gi-Oh! World Championship Tournament 2004 promotional cards",
+            "set_code": "WC4-E003",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "144.56"
+          },
+          {
+            "set_name": "Yu-Gi-Oh! Worldwide Edition: Stairway to the Destined Duel promotional cards",
+            "set_code": "SDD-003",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "29.53"
+          }
+        ],
+        "banlist_info": {
+          "ban_tcg": "Limited",
+          "ban_ocg": "Limited",
+          "ban_goat": "Forbidden"
+        },
+        "card_images": [
+          {
+            "id": 18144507,
+            "image_url": "https://images.ygoprodeck.com/images/cards/18144507.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/18144507.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/18144507.jpg"
+          },
+          {
+            "id": 18144506,
+            "image_url": "https://images.ygoprodeck.com/images/cards/18144506.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/18144506.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/18144506.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.50",
+            "tcgplayer_price": "3.40",
+            "ebay_price": "1.90",
+            "amazon_price": "16.98",
+            "coolstuffinc_price": "1.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Book of Eclipse",
+      "details": {
+        "id": 35480699,
+        "name": "Book of Eclipse",
+        "type": "Spell Card",
+        "humanReadableCardType": "Quick-Play Spell",
+        "frameType": "spell",
+        "desc": "Change all face-up monsters on the field to face-down Defense Position. During the End Phase of this turn, change as many face-down Defense Position monsters your opponent controls as possible to face-up Defense Position, then your opponent draws cards equal to the number of monsters changed face-up by this effect.",
+        "race": "Quick-Play",
+        "archetype": "Book of",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/book-of-eclipse-3005",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN054",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN054",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN054",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN054",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN054",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN054",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN054",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Astral Pack Eight",
+            "set_code": "AP08-EN012",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battle Pack 3: Monster League",
+            "set_code": "BP03-EN159",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battle Pack 3: Monster League",
+            "set_code": "BP03-EN159",
+            "set_rarity": "Shatterfoil Rare",
+            "set_rarity_code": "(SHR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battles of Legend: Monstrous Revenge",
+            "set_code": "BLMR-EN090",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Duel Devastator",
+            "set_code": "DUDE-EN041",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "1.72"
+          },
+          {
+            "set_name": "Structure Deck: Spirit Charmers",
+            "set_code": "SDCH-EN025",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.73"
+          },
+          {
+            "set_name": "Tactical Masters",
+            "set_code": "TAMA-EN041",
+            "set_rarity": "Rare",
+            "set_rarity_code": "(R)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "The Duelist Genesis",
+            "set_code": "TDGS-EN062",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 35480699,
+            "image_url": "https://images.ygoprodeck.com/images/cards/35480699.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/35480699.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/35480699.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.18",
+            "tcgplayer_price": "0.19",
+            "ebay_price": "1.20",
+            "amazon_price": "0.25",
+            "coolstuffinc_price": "0.25"
+          }
+        ]
+      },
+      "copies": 3
+    },
+    {
+      "name": "Forbidden Droplet",
+      "details": {
+        "id": 24299458,
+        "name": "Forbidden Droplet",
+        "type": "Spell Card",
+        "humanReadableCardType": "Quick-Play Spell",
+        "frameType": "spell",
+        "desc": "Send any number of other cards from your hand and/or field to the GY; choose that many Effect Monsters your opponent controls, and until the end of this turn, their ATK is halved, also their effects are negated. In response to this card's activation, your opponent cannot activate cards, or the effects of cards, with the same original type (Monster/Spell/Trap) as the cards sent to the GY to activate this card. You can only activate 1 \"Forbidden Droplet\" per turn.",
+        "race": "Quick-Play",
+        "archetype": "Forbidden",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/forbidden-droplet-11026",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN254",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN064",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN064",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Brothers of Legend",
+            "set_code": "BROL-EN090",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Legendary Duelists: Duels From the Deep",
+            "set_code": "LED9-EN056",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 16",
+            "set_code": "OP16-EN003",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 16 (POR)",
+            "set_code": "OP16-PT003",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Rise of the Duelist",
+            "set_code": "ROTD-EN065",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 24299458,
+            "image_url": "https://images.ygoprodeck.com/images/cards/24299458.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/24299458.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/24299458.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "5.32",
+            "tcgplayer_price": "9.26",
+            "ebay_price": "4.99",
+            "amazon_price": "59.55",
+            "coolstuffinc_price": "23.99"
+          }
+        ]
+      },
+      "copies": 3
+    },
+    {
+      "name": "Dogmatika Maximus",
+      "details": {
+        "id": 95679145,
+        "name": "Dogmatika Maximus",
+        "typeline": [
+          "Spellcaster",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "You can banish 1 Fusion, Synchro, Xyz, or Link Monster from your GY; Special Summon this card from your hand. During your Main Phase: You can activate this effect; send 2 monsters with different names from your Extra Deck to the GY, also your opponent sends 2 monsters from their Extra Deck to the GY, also you cannot Special Summon from the Extra Deck for the rest of this turn. You can only use each effect of \"Dogmatika Maximus\" once per turn.",
+        "race": "Spellcaster",
+        "atk": 1500,
+        "def": 3000,
+        "level": 8,
+        "attribute": "LIGHT",
+        "archetype": "Dogmatika",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/dogmatika-maximus-11104",
+        "card_sets": [
+          {
+            "set_name": "2021 Tin of Ancient Battles",
+            "set_code": "MP21-EN105",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Rise of the Duelist",
+            "set_code": "ROTD-EN009",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 95679145,
+            "image_url": "https://images.ygoprodeck.com/images/cards/95679145.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/95679145.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/95679145.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "6.59",
+            "tcgplayer_price": "3.98",
+            "ebay_price": "1.98",
+            "amazon_price": "13.96",
+            "coolstuffinc_price": "0.49"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Kashtira Unicorn",
+      "details": {
+        "id": 68304193,
+        "name": "Kashtira Unicorn",
+        "typeline": [
+          "Psychic",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "If you control no monsters, you can Special Summon this card (from your hand). You can only use each of the following effects of \"Kashtira Unicorn\" once per turn. During your Main Phase: You can add 1 \"Kashtira\" Spell from your Deck to your hand. When this card declares an attack, or if your opponent activates a monster effect (except during the Damage Step): You can look at your opponent's Extra Deck, and if you do, banish 1 monster from it, face-down.",
+        "race": "Psychic",
+        "atk": 2500,
+        "def": 2100,
+        "level": 7,
+        "attribute": "WIND",
+        "archetype": "Kashtira",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/kashtira-unicorn-13292",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Heroes Mega Pack",
+            "set_code": "MP23-EN164",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Darkwing Blast",
+            "set_code": "DABL-EN013",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "banlist_info": {
+          "ban_ocg": "Limited"
+        },
+        "card_images": [
+          {
+            "id": 68304193,
+            "image_url": "https://images.ygoprodeck.com/images/cards/68304193.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/68304193.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/68304193.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "10.63",
+            "tcgplayer_price": "13.14",
+            "ebay_price": "7.99",
+            "amazon_price": "0.00",
+            "coolstuffinc_price": "2.99"
+          }
+        ]
+      },
+      "copies": 2
+    },
+    {
+      "name": "Branded Sword",
+      "details": {
+        "id": 81767888,
+        "name": "Branded Sword",
+        "type": "Trap Card",
+        "humanReadableCardType": "Normal Trap",
+        "frameType": "trap",
+        "desc": "Banish any number of \"Branded\" Spells/Traps from your GY; Special Summon that many \"Iceblade Tokens\" (Dragon/DARK/Level 8/ATK 2500/DEF 2000). You can banish this card from your GY, then target 1 of your banished monsters that is \"Fallen of Albaz\" or mentions it; add that monster to your hand. You can only use 1 \"Branded Sword\" effect per turn, and only once that turn.",
+        "race": "Normal",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/branded-sword-12910",
+        "card_sets": [
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN112",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN031",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "1.34"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 81767888,
+            "image_url": "https://images.ygoprodeck.com/images/cards/81767888.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/81767888.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/81767888.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.14",
+            "tcgplayer_price": "0.16",
+            "ebay_price": "1.24",
+            "amazon_price": "0.36",
+            "coolstuffinc_price": "0.25"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Brightest, Blazing, Branded King",
+      "details": {
+        "id": 19271881,
+        "name": "Brightest, Blazing, Branded King",
+        "type": "Trap Card",
+        "humanReadableCardType": "Normal Trap",
+        "frameType": "trap",
+        "desc": "Choose 1 Fusion Monster you control that mentions \"Fallen of Albaz\" as material, and negate the effects of all other face-up cards currently on the field until the end of this turn. During the End Phase, if a Fusion Monster(s) was sent to your GY this turn: You can add this card from the GY to your hand. You can only use 1 \"Brightest, Blazing, Branded King\" effect per turn, and only once that turn.",
+        "race": "Normal",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/brightest-blazing-branded-king-13697",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Mirrors",
+            "set_code": "MP24-EN350",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Cyberstorm Access",
+            "set_code": "CYAC-EN070",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 19271881,
+            "image_url": "https://images.ygoprodeck.com/images/cards/19271881.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/19271881.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/19271881.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.11",
+            "tcgplayer_price": "0.06",
+            "ebay_price": "0.99",
+            "amazon_price": "0.00",
+            "coolstuffinc_price": "0.25"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Nibiru, the Primal Being",
+      "details": {
+        "id": 27204311,
+        "name": "Nibiru, the Primal Being",
+        "typeline": [
+          "Rock",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "During the Main Phase, if your opponent Normal or Special Summoned 5 or more monsters this turn (Quick Effect): You can Tribute as many face-up monsters on the field as possible, and if you do, Special Summon this card from your hand, then Special Summon 1 \"Primal Being Token\" (Rock/LIGHT/Level 11/ATK ?/DEF ?) to your opponent's field. (This Token's ATK/DEF become the combined original ATK/DEF of the Tributed monsters.) You can only use this effect of \"Nibiru, the Primal Being\" once per turn.",
+        "race": "Rock",
+        "atk": 3000,
+        "def": 600,
+        "level": 11,
+        "attribute": "LIGHT",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/nibiru-the-primal-being-10564",
+        "card_sets": [
+          {
+            "set_name": "2019 Gold Sarcophagus Tin",
+            "set_code": "TN19-EN013",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "14.41"
+          },
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN261",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN015",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN015",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Brothers of Legend",
+            "set_code": "BROL-EN080",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Maximum Gold",
+            "set_code": "MAGO-EN019",
+            "set_rarity": "Premium Gold Rare",
+            "set_rarity_code": "(PG)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 14",
+            "set_code": "OP14-EN003",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 14 (POR)",
+            "set_code": "OP14-PT003",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0.00"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN030",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Blue-Eyes White Destiny",
+            "set_code": "SDWD-EN016",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 27204311,
+            "image_url": "https://images.ygoprodeck.com/images/cards/27204311.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/27204311.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/27204311.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.87",
+            "tcgplayer_price": "0.50",
+            "ebay_price": "2.75",
+            "amazon_price": "14.25",
+            "coolstuffinc_price": "2.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Droll & Lock Bird",
+      "details": {
+        "id": 94145021,
+        "name": "Droll & Lock Bird",
+        "typeline": [
+          "Spellcaster",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "If a card(s) is added from the Main Deck to your opponent's hand, except during the Draw Phase (Quick Effect): You can send this card from your hand to the GY; for the rest of this turn, cards cannot be added from either player's Main Deck to the hand.",
+        "race": "Spellcaster",
+        "atk": 0,
+        "def": 0,
+        "level": 1,
+        "attribute": "WIND",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/droll-lock-bird-7832",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN006",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN006",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN006",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN006",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN006",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN006",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN006",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Legendary Collection Kaiba Mega Pack",
+            "set_code": "LCKC-EN077",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "21.72"
+          },
+          {
+            "set_name": "Maximum Gold",
+            "set_code": "MAGO-EN006",
+            "set_rarity": "Premium Gold Rare",
+            "set_rarity_code": "(PG)",
+            "set_price": "15.93"
+          },
+          {
+            "set_name": "OTS Tournament Pack 1",
+            "set_code": "OP01-EN004",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "22.03"
+          },
+          {
+            "set_name": "OTS Tournament Pack 8",
+            "set_code": "OP08-EN001",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "205.17"
+          },
+          {
+            "set_name": "OTS Tournament Pack 8 (POR)",
+            "set_code": "OP08-PT001",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0.00"
+          },
+          {
+            "set_name": "Starstrike Blast",
+            "set_code": "STBL-EN082",
+            "set_rarity": "Rare",
+            "set_rarity_code": "(R)",
+            "set_price": "17.79"
+          },
+          {
+            "set_name": "Structure Deck: Order of the Spellcasters",
+            "set_code": "SR08-EN021",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "14.92"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 94145021,
+            "image_url": "https://images.ygoprodeck.com/images/cards/94145021.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/94145021.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/94145021.jpg"
+          },
+          {
+            "id": 94145022,
+            "image_url": "https://images.ygoprodeck.com/images/cards/94145022.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/94145022.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/94145022.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.60",
+            "tcgplayer_price": "0.78",
+            "ebay_price": "4.00",
+            "amazon_price": "18.48",
+            "coolstuffinc_price": "2.99"
+          }
+        ]
+      },
+      "copies": 3
+    },
+    {
+      "name": "Super Polymerization",
+      "details": {
+        "id": 48130397,
+        "name": "Super Polymerization",
+        "type": "Spell Card",
+        "humanReadableCardType": "Quick-Play Spell",
+        "frameType": "spell",
+        "desc": "Discard 1 card; Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from either field as Fusion Material. Neither player can activate cards or effects in response to this card's activation.",
+        "race": "Quick-Play",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/super-polymerization-4109",
+        "card_sets": [
+          {
+            "set_name": "Battles of Legend: Crystal Revenge",
+            "set_code": "BLCR-EN100",
+            "set_rarity": "Starlight Rare",
+            "set_rarity_code": "(StR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battles of Legend: Monstrous Revenge",
+            "set_code": "BLMR-EN089",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battles of Legend: Monstrous Revenge",
+            "set_code": "BLMR-EN089",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Cyber Dragon Revolution Structure Deck",
+            "set_code": "SDCR-EN021",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Duel Devastator",
+            "set_code": "DUDE-EN040",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "6.99"
+          },
+          {
+            "set_name": "Legendary Collection 2: The Duel Academy Years Mega Pack",
+            "set_code": "LCGX-EN101",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Maximum Gold",
+            "set_code": "MAGO-EN047",
+            "set_rarity": "Premium Gold Rare",
+            "set_rarity_code": "(PG)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 14",
+            "set_code": "OP14-EN001",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 14 (POR)",
+            "set_code": "OP14-PT001",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0.00"
+          },
+          {
+            "set_name": "OTS Tournament Pack 9",
+            "set_code": "OP09-EN009",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "OTS Tournament Pack 9 (POR)",
+            "set_code": "OP09-PT009",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0.00"
+          },
+          {
+            "set_name": "Phantom Darkness",
+            "set_code": "PTDN-EN046",
+            "set_rarity": "Rare",
+            "set_rarity_code": "(R)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN053",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN053",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN053",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN053",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN053",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN053",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Ra Yellow Mega Pack",
+            "set_code": "RYMP-EN029",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Speed Duel GX: Duelists of Shadows",
+            "set_code": "SGX3-ENA17",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Speed Duel GX: Duelists of Shadows",
+            "set_code": "SGX3-ENA17",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Shaddoll Showdown",
+            "set_code": "SDSH-EN026",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "6.27"
+          }
+        ],
+        "banlist_info": {
+          "ban_ocg": "Semi-Limited"
+        },
+        "card_images": [
+          {
+            "id": 48130397,
+            "image_url": "https://images.ygoprodeck.com/images/cards/48130397.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/48130397.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/48130397.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "1.48",
+            "tcgplayer_price": "2.12",
+            "ebay_price": "4.99",
+            "amazon_price": "7.60",
+            "coolstuffinc_price": "3.99"
+          }
+        ]
+      },
+      "copies": 2
+    },
+    {
+      "name": "Branded Opening",
+      "details": {
+        "id": 36637374,
+        "name": "Branded Opening",
+        "type": "Spell Card",
+        "humanReadableCardType": "Quick-Play Spell",
+        "frameType": "spell",
+        "desc": "Discard 1 card, then take 1 \"Despia\" monster from your Deck, and either add it to your hand or Special Summon it in Defense Position, also for the rest of this turn after this card resolves, you cannot Special Summon monsters from the Extra Deck, except Fusion Monsters. If a Fusion Monster(s) you control would be destroyed by card effect, you can banish this card from your GY instead. You can only use each effect of \"Branded Opening\" once per turn.",
+        "race": "Quick-Play",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/branded-opening-12166",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN155",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Dawn of Majesty",
+            "set_code": "DAMA-EN054",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN070",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN070",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN070",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN070",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN070",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN070",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Bonanza",
+            "set_code": "RA03-EN070",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 36637374,
+            "image_url": "https://images.ygoprodeck.com/images/cards/36637374.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/36637374.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/36637374.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.14",
+            "tcgplayer_price": "0.10",
+            "ebay_price": "6.29",
+            "amazon_price": "1.40",
+            "coolstuffinc_price": "3.99"
+          }
+        ]
+      },
+      "copies": 3
+    },
+    {
+      "name": "Blazing Cartesia, the Virtuous",
+      "details": {
+        "id": 95515789,
+        "name": "Blazing Cartesia, the Virtuous",
+        "typeline": [
+          "Spellcaster",
+          "Tuner",
+          "Effect"
+        ],
+        "type": "Tuner Monster",
+        "humanReadableCardType": "Tuner Effect Monster",
+        "frameType": "effect",
+        "desc": "If you control \"Fallen of Albaz\" or it is in your GY: You can Special Summon this card from your hand. During the Main Phase (Quick Effect): You can Fusion Summon 1 Level 8 or higher Fusion Monster from your Extra Deck, using monsters from your hand or field as material. During the End Phase, if a Fusion Monster(s) was sent to your GY this turn: You can add this card from the GY to your hand. You can only use each effect of \"Blazing Cartesia, the Virtuous\" once per turn.",
+        "race": "Spellcaster",
+        "atk": 1500,
+        "def": 1500,
+        "level": 4,
+        "attribute": "LIGHT",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/blazing-cartesia-the-virtuous-13373",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Heroes Mega Pack",
+            "set_code": "MP23-EN162",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN080",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Darkwing Blast",
+            "set_code": "DABL-EN011",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Darkwing Blast",
+            "set_code": "DABL-EN011",
+            "set_rarity": "Starlight Rare",
+            "set_rarity_code": "(StR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Quarter Century Stampede",
+            "set_code": "RA04-EN041",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 95515789,
+            "image_url": "https://images.ygoprodeck.com/images/cards/95515789.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/95515789.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/95515789.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.93",
+            "tcgplayer_price": "1.39",
+            "ebay_price": "64.95",
+            "amazon_price": "39.99",
+            "coolstuffinc_price": "9.99"
+          }
+        ]
+      },
+      "copies": 2
+    },
+    {
+      "name": "Branded in High Spirits",
+      "details": {
+        "id": 29948294,
+        "name": "Branded in High Spirits",
+        "type": "Spell Card",
+        "humanReadableCardType": "Quick-Play Spell",
+        "frameType": "spell",
+        "desc": "Reveal 1 monster in your hand and send 1 Level 8 Fusion Monster from your Extra Deck to the GY with the same Type that has 2500 ATK or DEF, then you can apply this effect.\r\n● Discard the revealed monster, and if you do, add 1 \"Fallen of Albaz\", or 1 monster that mentions it, from your Deck to your hand.\r\nDuring the End Phase, if a Fusion Monster was sent to your GY this turn: You can add this card from the GY to your hand. You can only use 1 \"Branded in High Spirits\" effect per turn, and only once that turn.",
+        "race": "Quick-Play",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/branded-in-high-spirits-12458",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN217",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Burst of Destiny",
+            "set_code": "BODE-EN055",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 29948294,
+            "image_url": "https://images.ygoprodeck.com/images/cards/29948294.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/29948294.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/29948294.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.27",
+            "tcgplayer_price": "0.73",
+            "ebay_price": "1.69",
+            "amazon_price": "3.95",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 2
+    },
+    {
+      "name": "Albion the Shrouded Dragon",
+      "details": {
+        "id": 25451383,
+        "name": "Albion the Shrouded Dragon",
+        "typeline": [
+          "Dragon",
+          "Effect"
+        ],
+        "type": "Effect Monster",
+        "humanReadableCardType": "Effect Monster",
+        "frameType": "effect",
+        "desc": "This card's name becomes \"Fallen of Albaz\" while on the field or in the GY. If this card is in your hand or GY: You can send 1 \"Fallen of Albaz\" or 1 \"Branded\" Spell/Trap from your hand or Deck to the GY; apply the following effect based on where you sent it from.\r\n● Hand: Special Summon this card.\r\n● Deck: Place this card on the bottom of the Deck, then, if you placed this card from your hand, draw 1 card.\r\nYou can only use this effect of \"Albion the Shrouded Dragon\" once per turn.",
+        "race": "Dragon",
+        "atk": 2500,
+        "def": 2000,
+        "level": 8,
+        "attribute": "DARK",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/albion-the-shrouded-dragon-12179",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN125",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Dawn of Majesty",
+            "set_code": "DAMA-EN008",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN005",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.03"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 25451383,
+            "image_url": "https://images.ygoprodeck.com/images/cards/25451383.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/25451383.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/25451383.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.11",
+            "tcgplayer_price": "0.13",
+            "ebay_price": "2.25",
+            "amazon_price": "0.25",
+            "coolstuffinc_price": "0.25"
+          }
+        ]
+      },
+      "copies": 3
+    },
+    {
+      "name": "Fusion Deployment",
+      "details": {
+        "id": 6498706,
+        "name": "Fusion Deployment",
+        "type": "Spell Card",
+        "humanReadableCardType": "Normal Spell",
+        "frameType": "spell",
+        "desc": "Reveal 1 Fusion Monster in your Extra Deck and Special Summon, from your hand or Deck, 1 of the Fusion Materials whose name is specifically listed on that card, also you cannot Special Summon monsters from the Extra Deck, except Fusion Monsters, the turn you activate this card. You can only activate 1 \"Fusion Deployment\" per turn.",
+        "race": "Normal",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/fusion-deployment-10818",
+        "card_sets": [
+          {
+            "set_name": "2021 Tin of Ancient Battles",
+            "set_code": "MP21-EN081",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN065",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN065",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN065",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN065",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN065",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN065",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN065",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Eternity Code",
+            "set_code": "ETCO-EN071",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Cyber Strike",
+            "set_code": "SDCS-EN030",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "1.45"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 6498706,
+            "image_url": "https://images.ygoprodeck.com/images/cards/6498706.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/6498706.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/6498706.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.08",
+            "tcgplayer_price": "0.24",
+            "ebay_price": "2.99",
+            "amazon_price": "1.96",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 3
+    }
+  ],
+  "extra": [
+    {
+      "name": "Mirrorjade the Iceblade Dragon",
+      "details": {
+        "id": 44146295,
+        "name": "Mirrorjade the Iceblade Dragon",
+        "typeline": [
+          "Wyrm",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "\"Fallen of Albaz\" + 1 Fusion, Synchro, Xyz, or Link Monster\r\nYou can only control 1 \"Mirrorjade the Iceblade Dragon\". Once per turn (Quick Effect): You can send 1 Fusion Monster from your Extra Deck to the GY that mentions \"Fallen of Albaz\" as material; banish 1 monster on the field, also this card cannot use this effect next turn. If this Fusion Summoned card in its owner's control leaves the field because of an opponent's card: You can destroy all monsters your opponent controls during the End Phase of this turn.",
+        "race": "Wyrm",
+        "atk": 3000,
+        "def": 2500,
+        "level": 8,
+        "attribute": "DARK",
+        "archetype": "Albaz Dragon",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/mirrorjade-the-iceblade-dragon-12914",
+        "card_sets": [
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN114",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Photon Hypernova",
+            "set_code": "PHHY-EN100",
+            "set_rarity": "Starlight Rare",
+            "set_rarity_code": "(StR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN041",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "1.99"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 44146295,
+            "image_url": "https://images.ygoprodeck.com/images/cards/44146295.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/44146295.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/44146295.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.15",
+            "tcgplayer_price": "0.26",
+            "ebay_price": "450.00",
+            "amazon_price": "0.57",
+            "coolstuffinc_price": "0.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Albion the Branded Dragon",
+      "details": {
+        "id": 87746184,
+        "name": "Albion the Branded Dragon",
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "\"Fallen of Albaz\" + 1 LIGHT monster\r\nIf this card is Fusion Summoned: You can Fusion Summon 1 Level 8 or lower Fusion Monster from your Extra Deck, except \"Albion the Branded Dragon\", by banishing Fusion Materials mentioned on it from your hand, field, and/or GY. During the End Phase, if this card is in the GY because it was sent there this turn: You can add to your hand or Set 1 \"Branded\" Spell/Trap directly from your Deck. You can only use each effect of \"Albion the Branded Dragon\" once per turn.",
+        "race": "Dragon",
+        "atk": 2500,
+        "def": 2000,
+        "level": 8,
+        "attribute": "DARK",
+        "archetype": "Branded",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/albion-the-branded-dragon-11852",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN076",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Lightning Overdrive",
+            "set_code": "LIOV-EN033",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN046",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.61"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 87746184,
+            "image_url": "https://images.ygoprodeck.com/images/cards/87746184.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/87746184.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/87746184.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.24",
+            "tcgplayer_price": "0.27",
+            "ebay_price": "1.60",
+            "amazon_price": "0.49",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 2
+    },
+    {
+      "name": "Granguignol the Dusk Dragon",
+      "details": {
+        "id": 24915933,
+        "name": "Granguignol the Dusk Dragon",
+        "typeline": [
+          "Spellcaster",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "\"Blazing Cartesia, the Virtuous\" + 1 LIGHT or DARK monster\r\nIf this card is Fusion Summoned: You can send 1 Level 6 or higher LIGHT or DARK monster from your Deck or Extra Deck to the GY. If a monster is Special Summoned by your opponent's activated monster effect (except during the Damage Step): You can banish this card from your field or GY; Special Summon 1 \"Dogmatika\" monster from your Deck or 1 \"Despia\" monster from your Extra Deck. You can only use each effect of \"Granguignol the Dusk Dragon\" once per turn.",
+        "race": "Spellcaster",
+        "atk": 2500,
+        "def": 2500,
+        "level": 8,
+        "attribute": "LIGHT",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/granguignol-the-dusk-dragon-13553",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Mirrors",
+            "set_code": "MP24-EN067",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN087",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Photon Hypernova",
+            "set_code": "PHHY-EN033",
+            "set_rarity": "Starlight Rare",
+            "set_rarity_code": "(StR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Photon Hypernova",
+            "set_code": "PHHY-EN033",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 24915933,
+            "image_url": "https://images.ygoprodeck.com/images/cards/24915933.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/24915933.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/24915933.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "4.00",
+            "tcgplayer_price": "3.31",
+            "ebay_price": "0.00",
+            "amazon_price": "0.00",
+            "coolstuffinc_price": "11.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Lubellion the Searing Dragon",
+      "details": {
+        "id": 70534340,
+        "name": "Lubellion the Searing Dragon",
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "1 DARK monster + \"Fallen of Albaz\"\r\nIf this card is Fusion Summoned: You can discard 1 card; Fusion Summon 1 Level 8 or lower Fusion Monster from your Extra Deck, except \"Lubellion the Searing Dragon\", by shuffling Fusion Materials mentioned on it into the Deck, from your monsters on the field, GY, and/or face-up banished cards. For the rest of this turn, this card cannot attack, also you cannot Special Summon from the Extra Deck, except Fusion Monsters. You can only use this effect of \"Lubellion the Searing Dragon\" once per turn.",
+        "race": "Dragon",
+        "atk": 2500,
+        "def": 3000,
+        "level": 8,
+        "attribute": "LIGHT",
+        "archetype": "Albaz Dragon",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/lubellion-the-searing-dragon-12915",
+        "card_sets": [
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN115",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battles of Legend: Terminal Revenge",
+            "set_code": "BLTR-EN115",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN042",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "1.9"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 70534340,
+            "image_url": "https://images.ygoprodeck.com/images/cards/70534340.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/70534340.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/70534340.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.13",
+            "tcgplayer_price": "0.24",
+            "ebay_price": "1.26",
+            "amazon_price": "0.55",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Rindbrumm the Striking Dragon",
+      "details": {
+        "id": 51409648,
+        "name": "Rindbrumm the Striking Dragon",
+        "typeline": [
+          "Winged Beast",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "\"Fallen of Albaz\" + 1 Beast, Beast-Warrior, or Winged Beast monster\r\nWhen a Fusion, Synchro, Xyz, or Link Monster's effect is activated (Quick Effect): You can negate that effect, then you can return 1 monster from the field to the hand. During your opponent's turn, while this card is in your GY (Quick Effect): You can target 1 \"Fallen of Albaz\" in your GY; Special Summon either that monster or this card, and banish the other. You can only use each effect of \"Rindbrumm the Striking Dragon\" once per turn.",
+        "race": "Winged Beast",
+        "atk": 2500,
+        "def": 2000,
+        "level": 8,
+        "attribute": "DARK",
+        "archetype": "Albaz Dragon",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/rindbrumm-the-striking-dragon-13557",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN025",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN025",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN025",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN025",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN025",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN025",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN025",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Photon Hypernova",
+            "set_code": "PHHY-EN034",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 51409648,
+            "image_url": "https://images.ygoprodeck.com/images/cards/51409648.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/51409648.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/51409648.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.31",
+            "tcgplayer_price": "0.11",
+            "ebay_price": "4.99",
+            "amazon_price": "0.00",
+            "coolstuffinc_price": "19.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Titaniklad the Ash Dragon",
+      "details": {
+        "id": 41373230,
+        "name": "Titaniklad the Ash Dragon",
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "\"Fallen of Albaz\" + 1 monster with 2500 or more ATK\r\nGains ATK equal to the combined original Levels of the monsters used for its Fusion Summon x 100. After this card is Fusion Summoned, for the rest of this turn, it is unaffected by the activated effects of any other monsters Special Summoned from the Extra Deck. During the End Phase, if this card is in the GY because it was sent there this turn: You can add to your hand, or Special Summon, 1 \"Fallen of Albaz\" or \"Dogmatika\" monster from your Deck. You can only use this effect of \"Titaniklad the Ash Dragon\" once per turn.",
+        "race": "Dragon",
+        "atk": 2500,
+        "def": 2500,
+        "level": 8,
+        "attribute": "DARK",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/titaniklad-the-ash-dragon-11102",
+        "card_sets": [
+          {
+            "set_name": "2021 Tin of Ancient Battles",
+            "set_code": "MP21-EN125",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Rise of the Duelist",
+            "set_code": "ROTD-EN038",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Structure Deck: Albaz Strike",
+            "set_code": "SDAZ-EN043",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0.92"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 41373230,
+            "image_url": "https://images.ygoprodeck.com/images/cards/41373230.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/41373230.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/41373230.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.14",
+            "tcgplayer_price": "0.15",
+            "ebay_price": "1.49",
+            "amazon_price": "0.27",
+            "coolstuffinc_price": "0.39"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Alba-Lenatus the Abyss Dragon",
+      "details": {
+        "id": 3410461,
+        "name": "Alba-Lenatus the Abyss Dragon",
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "1 \"Fallen of Albaz\" + 1+ Dragon monsters\r\nCannot be used as Fusion Material. Must be either Fusion Summoned, or Special Summoned by sending the above cards from any Monster Zones to the GY. This card can attack monsters a number of times each Battle Phase, up to the number of materials used for it. Once per turn, during the End Phase, if this card is in the GY because it was sent there this turn: You can add 1 \"Polymerization\" Normal Spell or \"Fusion\" Normal Spell from your Deck to your hand.",
+        "race": "Dragon",
+        "atk": 2500,
+        "def": 2500,
+        "level": 8,
+        "attribute": "DARK",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/alba-lenatus-the-abyss-dragon-13035",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Tin: Dueling Heroes Mega Pack",
+            "set_code": "MP23-EN080",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Dimension Force",
+            "set_code": "DIFO-EN035",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Dimension Force",
+            "set_code": "DIFO-EN035",
+            "set_rarity": "Starlight Rare",
+            "set_rarity_code": "(StR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 3410461,
+            "image_url": "https://images.ygoprodeck.com/images/cards/3410461.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/3410461.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/3410461.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.29",
+            "tcgplayer_price": "0.21",
+            "ebay_price": "11.95",
+            "amazon_price": "33.99",
+            "coolstuffinc_price": "1.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Garura, Wings of Resonant Life",
+      "details": {
+        "id": 11765832,
+        "name": "Garura, Wings of Resonant Life",
+        "typeline": [
+          "Winged Beast",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "2 monsters with the same Type and Attribute, but different names\r\nAny battle damage your opponent takes from battles involving this card is doubled. If this card is sent to the GY: You can draw 1 card. You can only use this effect of \"Garura, Wings of Resonant Life\" once per turn.",
+        "race": "Winged Beast",
+        "atk": 1500,
+        "def": 2400,
+        "level": 6,
+        "attribute": "DARK",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/garura-wings-of-resonant-life-13423",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN024",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN024",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN024",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN024",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN024",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN024",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN024",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Tin: Dueling Heroes Mega Pack",
+            "set_code": "MP23-EN148",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Power of the Elements",
+            "set_code": "POTE-EN082",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 11765832,
+            "image_url": "https://images.ygoprodeck.com/images/cards/11765832.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/11765832.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/11765832.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.73",
+            "tcgplayer_price": "0.37",
+            "ebay_price": "9.99",
+            "amazon_price": "8.99",
+            "coolstuffinc_price": "4.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Despian Quaeritis",
+      "details": {
+        "id": 72272462,
+        "name": "Despian Quaeritis",
+        "typeline": [
+          "Fiend",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "1 \"Despia\" monster + 1 LIGHT or DARK monster\r\nDuring the Main Phase (Quick Effect): You can change the ATK of all monsters currently on the field to 0 until the end of this turn, except Level 8 or higher Fusion Monsters. If this face-up card in its owner's control leaves the field because of an opponent's card effect: You can add to your hand, or Special Summon, 1 \"Fallen of Albaz\" or 1 \"Despia\" monster, from your Deck. You can only use each effect of \"Despian Quaeritis\" once per turn.",
+        "race": "Fiend",
+        "atk": 2500,
+        "def": 2500,
+        "level": 8,
+        "attribute": "LIGHT",
+        "archetype": "Despia",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/despian-quaeritis-12163",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN141",
+            "set_rarity": "Prismatic Secret Rare",
+            "set_rarity_code": "(PScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Dawn of Majesty",
+            "set_code": "DAMA-EN034",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 72272462,
+            "image_url": "https://images.ygoprodeck.com/images/cards/72272462.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/72272462.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/72272462.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.79",
+            "tcgplayer_price": "0.51",
+            "ebay_price": "1.48",
+            "amazon_price": "0.25",
+            "coolstuffinc_price": "1.49"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Light and Darkness Dragonlord",
+      "details": {
+        "id": 19652159,
+        "name": "Light and Darkness Dragonlord",
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "1 Level 8 LIGHT Dragon monster + 1 Level 8 DARK Dragon monster\r\nMust be Fusion Summoned. While face-up on the field, this card is also DARK-Attribute. Once per Chain, if a Spell/Trap Card, or monster effect, is activated (Quick Effect): This card loses exactly 1000 ATK/DEF, and if it does, negate the activation. If this card in its owner's possession is destroyed by an opponent's card: You can target 1 Dragon monster in your GY; Special Summon it.",
+        "race": "Dragon",
+        "atk": 3400,
+        "def": 3000,
+        "level": 10,
+        "attribute": "LIGHT",
+        "archetype": "Light and Darkness Dragon",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/light-and-darkness-dragonlord-14457",
+        "card_sets": [
+          {
+            "set_name": "The Infinite Forbidden",
+            "set_code": "INFO-EN034",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "The Infinite Forbidden",
+            "set_code": "INFO-EN034",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 19652159,
+            "image_url": "https://images.ygoprodeck.com/images/cards/19652159.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/19652159.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/19652159.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "2.88",
+            "tcgplayer_price": "4.82",
+            "ebay_price": "0.00",
+            "amazon_price": "0.00",
+            "coolstuffinc_price": "0.00"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Predaplant Dragostapelia",
+      "details": {
+        "id": 69946549,
+        "name": "Predaplant Dragostapelia",
+        "typeline": [
+          "Plant",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "1 Fusion Monster + 1 DARK monster\r\nOnce per turn (Quick Effect): You can target 1 face-up monster your opponent controls; place 1 Predator Counter on it, and if it is Level 2 or higher, it becomes Level 1 as long as it has a Predator Counter. Negate the activated effects of your opponent's monsters that have Predator Counters.",
+        "race": "Plant",
+        "atk": 2700,
+        "def": 1900,
+        "level": 8,
+        "attribute": "DARK",
+        "archetype": "Predaplant",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/predaplant-dragostapelia-5883",
+        "card_sets": [
+          {
+            "set_name": "2019 Gold Sarcophagus Tin Mega Pack",
+            "set_code": "MP19-EN228",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN027",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection",
+            "set_code": "RA01-EN027",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Duel Power",
+            "set_code": "DUPO-EN069",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "7.86"
+          },
+          {
+            "set_name": "Legendary Duelists: Immortal Destiny",
+            "set_code": "LED5-EN053",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Legendary Duelists: Season 3",
+            "set_code": "LDS3-EN075",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "1.25"
+          },
+          {
+            "set_name": "Soul Fusion",
+            "set_code": "SOFU-EN094",
+            "set_rarity": "Common",
+            "set_rarity_code": "(C)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 69946549,
+            "image_url": "https://images.ygoprodeck.com/images/cards/69946549.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/69946549.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/69946549.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.10",
+            "tcgplayer_price": "0.09",
+            "ebay_price": "3.99",
+            "amazon_price": "0.25",
+            "coolstuffinc_price": "0.79"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Borreload Furious Dragon",
+      "details": {
+        "id": 92892239,
+        "name": "Borreload Furious Dragon",
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "2 DARK Dragon monsters\r\n(Quick Effect): You can target 1 monster you control and 1 card your opponent controls; destroy them. You can banish this card from your GY, then target 1 DARK Link Monster in your GY; Special Summon it, but it cannot activate its effects this turn. You can only use each effect of \"Borreload Furious Dragon\" once per turn.",
+        "race": "Dragon",
+        "atk": 3000,
+        "def": 2500,
+        "level": 8,
+        "attribute": "DARK",
+        "archetype": "Borrel",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/borreload-furious-dragon-10321",
+        "card_sets": [
+          {
+            "set_name": "Structure Deck: Rokket Revolt",
+            "set_code": "SDRR-EN042",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "2.49"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 92892239,
+            "image_url": "https://images.ygoprodeck.com/images/cards/92892239.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/92892239.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/92892239.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "1.00",
+            "tcgplayer_price": "2.98",
+            "ebay_price": "3.45",
+            "amazon_price": "0.50",
+            "coolstuffinc_price": "0.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Masquerade the Blazing Dragon",
+      "details": {
+        "id": 6855503,
+        "name": "Masquerade the Blazing Dragon",
+        "typeline": [
+          "Fiend",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "1 \"Despia\" monster + 1 LIGHT or DARK monster\r\nWhile you control this Fusion Summoned card, your opponent must pay 600 LP to activate cards or effects. If your opponent controls a Ritual, Fusion, Synchro, Xyz, or Link Monster, while this card is in your GY (Quick Effect): You can Special Summon this card, but banish it when it leaves the field. You can only use this effect of \"Masquerade the Blazing Dragon\" once per turn.",
+        "race": "Fiend",
+        "atk": 2500,
+        "def": 2000,
+        "level": 8,
+        "attribute": "DARK",
+        "archetype": "Despia",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/masquerade-the-blazing-dragon-12467",
+        "card_sets": [
+          {
+            "set_name": "2022 Tin of the Pharaoh's Gods",
+            "set_code": "MP22-EN208",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN022",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN022",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN022",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN022",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN022",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN022",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN022",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Burst of Destiny",
+            "set_code": "BODE-EN038",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 6855503,
+            "image_url": "https://images.ygoprodeck.com/images/cards/6855503.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/6855503.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/6855503.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.12",
+            "tcgplayer_price": "0.08",
+            "ebay_price": "1.99",
+            "amazon_price": "49.99",
+            "coolstuffinc_price": "1.99"
+          }
+        ]
+      },
+      "copies": 1
+    },
+    {
+      "name": "Guardian Chimera",
+      "details": {
+        "id": 11321089,
+        "name": "Guardian Chimera",
+        "typeline": [
+          "Beast",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "3 monsters with different names\r\nMust first be Fusion Summoned using only Fusion Materials from your hand and field, with at least 1 monster from each. If this card is Fusion Summoned by a Spell Card or effect: You can draw cards equal to the number of cards used as material from the hand, and if you do, destroy cards your opponent controls equal to the number of cards used as material from the field. You can only use this effect of \"Guardian Chimera\" once per turn. While \"Polymerization\" is in your GY, your opponent cannot target this card with card effects.",
+        "race": "Beast",
+        "atk": 3300,
+        "def": 3300,
+        "level": 9,
+        "attribute": "DARK",
+        "archetype": "Guardian",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/guardian-chimera-12783",
+        "card_sets": [
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN023",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN023",
+            "set_rarity": "Platinum Secret Rare",
+            "set_rarity_code": "(PS)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN023",
+            "set_rarity": "Quarter Century Secret Rare",
+            "set_rarity_code": "",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN023",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN023",
+            "set_rarity": "Super Rare",
+            "set_rarity_code": "(SR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN023",
+            "set_rarity": "Ultimate Rare",
+            "set_rarity_code": "(UtR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "25th Anniversary Rarity Collection II",
+            "set_code": "RA02-EN023",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Battle of Chaos",
+            "set_code": "BACH-EN040",
+            "set_rarity": "Secret Rare",
+            "set_rarity_code": "(ScR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Maze of Memories",
+            "set_code": "MAZE-EN049",
+            "set_rarity": "Collector's Rare",
+            "set_rarity_code": "(CR)",
+            "set_price": "0"
+          },
+          {
+            "set_name": "Maze of Memories",
+            "set_code": "MAZE-EN049",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "0"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 11321089,
+            "image_url": "https://images.ygoprodeck.com/images/cards/11321089.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/11321089.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/11321089.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "0.77",
+            "tcgplayer_price": "0.26",
+            "ebay_price": "7.99",
+            "amazon_price": "599.99",
+            "coolstuffinc_price": "9.99"
+          }
+        ]
+      },
+      "copies": 1
+    }
+  ]
+}
