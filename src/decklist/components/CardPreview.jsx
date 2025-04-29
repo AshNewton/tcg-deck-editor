@@ -1,3 +1,5 @@
+import { useSelector, useDispatch } from "react-redux";
+
 import Button from "../components/Button";
 import Text from "../components/Text";
 
@@ -5,19 +7,20 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import MuiButton from "@mui/material/Button";
 
+import { setSelectedCard } from "../../store/slices/uiSlice";
+
 const CardPreview = (props) => {
-  const {
-    card,
-    onDelete,
-    onAddCopy,
-    onRemoveCopy,
-    selectedCard,
-    setSelectedCard,
-  } = props;
+  const { card, onDelete, onAddCopy, onRemoveCopy } = props;
+
+  const selectedCard = useSelector((state) => state.ui.selectedCard);
+
+  const dispatch = useDispatch();
 
   const toggleSelectedCard = () => {
-    setSelectedCard(
-      selectedCard?.details?.name === card.details?.name ? null : card
+    dispatch(
+      setSelectedCard(
+        selectedCard?.details?.name === card.details?.name ? null : card
+      )
     );
   };
 

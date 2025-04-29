@@ -1,8 +1,9 @@
 import * as React from "react";
 
+import Text from "../components/Text";
+
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 
 const Header = (props) => {
   return (
@@ -16,7 +17,7 @@ const Header = (props) => {
               alignItems: "flex-end",
             }}
           >
-            <Typography fontSize={48}>Decklist Editor</Typography>
+            <Text text="Decklist Editor" fontSize={48} />
           </Box>
         </Grid>
       </Grid>

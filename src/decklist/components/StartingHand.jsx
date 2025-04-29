@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useSelector } from "react-redux";
 
 import Button from "./Button";
 import CollapsibleDropdown from "./CollapsibleDropdown";
@@ -11,17 +12,17 @@ import ListItemText from "@mui/material/ListItemText";
 
 import { getStartingHand, getChanceToOpenCards } from "../util/deckAnalytics";
 
-const StartingHand = (props) => {
-  const { deck } = props;
-
+const StartingHand = () => {
   const [sampleStartingHand, setSampleStartingHand] = React.useState([]);
   const [chanceToOpenCards, setChanceToOpenCards] = React.useState([]);
+
+  const maindeck = useSelector((state) => state.ui.maindeck);
 
   return (
     <CollapsibleDropdown title="Starting Hand">
       <Button
         text="Get a Sample Starting Hand"
-        onClick={() => setSampleStartingHand(getStartingHand(deck))}
+        onClick={() => setSampleStartingHand(getStartingHand(maindeck).sort())}
       />
       {sampleStartingHand && (
         <List>
@@ -35,7 +36,13 @@ const StartingHand = (props) => {
 
       <Button
         text="Calculate Probability to Open Cards"
-        onClick={() => setChanceToOpenCards(getChanceToOpenCards(deck))}
+        onClick={() =>
+          setChanceToOpenCards(
+            getChanceToOpenCards(maindeck).sort((a, b) =>
+              a.name.localeCompare(b.name)
+            )
+          )
+        }
       />
       {chanceToOpenCards && (
         <Grid container>

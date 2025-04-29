@@ -1,20 +1,17 @@
-import * as React from "react";
+import { useSelector } from "react-redux";
 
 import CardDetails from "../components/CardDetails";
 
 import Box from "@mui/material/Box";
 import StartingHand from "../components/StartingHand";
 
-const Body = (props) => {
-  const { selectedCard, onCardDeselect, maindeck } = props;
+const Body = () => {
+  const selectedCard = useSelector((state) => state.ui.selectedCard);
 
   return (
     <Box>
-      {/* see details on selected card */}
-      {selectedCard && (
-        <CardDetails card={selectedCard} onCardDeselect={onCardDeselect} />
-      )}
-      <StartingHand deck={maindeck} />
+      {selectedCard && <CardDetails />}
+      <StartingHand />
     </Box>
   );
 };

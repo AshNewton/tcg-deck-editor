@@ -21,9 +21,12 @@ function useDebounce(value, delay) {
   return debounced;
 }
 
-function SearchBar({ onSearch, renderOption, onOptionSelect }) {
+function SearchBar(props) {
+  const { onSearch, renderOption, onOptionSelect } = props;
+
   const [searchTerm, setSearchTerm] = React.useState("");
   const [results, setResults] = React.useState([]);
+
   const debouncedSearchTerm = useDebounce(searchTerm, 700);
 
   React.useEffect(() => {

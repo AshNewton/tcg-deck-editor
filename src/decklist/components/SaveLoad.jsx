@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+
 import Button from "./Button";
 
 import Box from "@mui/material/Box";
@@ -6,6 +8,8 @@ import UploadIcon from "@mui/icons-material/Upload";
 
 const SaveLoad = (props) => {
   const { saveload, justifyContent = "flex-end" } = props;
+
+  const dispatch = useDispatch();
 
   const handleSave = async () => {
     try {
@@ -47,7 +51,7 @@ const SaveLoad = (props) => {
 
       const parsed = JSON.parse(text);
       saveload.forEach(({ name, setter }) => {
-        setter(parsed[name]);
+        dispatch(setter(parsed[name]));
       });
     } catch (err) {
       console.error("Error loading file:", err);

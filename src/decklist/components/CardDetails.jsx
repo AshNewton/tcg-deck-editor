@@ -1,3 +1,5 @@
+import { useSelector, useDispatch } from "react-redux";
+
 import Text from "./Text";
 
 import Alert from "@mui/material/Alert";
@@ -6,28 +8,15 @@ import ClearIcon from "@mui/icons-material/Clear";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
 
-const CardDetails = (props) => {
-  const { card, onCardDeselect } = props;
+import { getBannedSeverity, getCardLevelName } from "../util/yugioh";
+import { setSelectedCard } from "../../store/slices/uiSlice";
 
-  const getBannedSeverity = (banType) => {
-    switch (banType) {
-      case "Forbidden":
-        return "error";
-      case "Limited":
-        return "warning";
-      case "Semi-Limited":
-        return "warning";
-      default:
-        return "success";
-    }
-  };
+const CardDetails = () => {
+  const card = useSelector((state) => state.ui.selectedCard);
 
-  const cardLevelName =
-    card.details.type === "Link Monster"
-      ? "Link Rating"
-      : card.details.type === "XYZ Monster"
-      ? "Rank"
-      : "Level";
+  const dispatch = useDispatch();
+
+  const cardLevelName = getCardLevelName(card);
 
   return (
     <Box
@@ -59,11 +48,13 @@ const CardDetails = (props) => {
           )}
         </Box>
 
-        <IconButton onClick={onCardDeselect} aria-label="clear selected card">
+        <IconButton
+          onClick={() => dispatch(setSelectedCard(null))}
+          aria-label="clear selected card"
+        >
           <ClearIcon />
         </IconButton>
       </Box>
-
       <Box mt={2} display="flex" flexDirection="column" px={2} py={1}>
         {card.details.level && (
           <Text text={`${cardLevelName}: ${card.details.level}`} />

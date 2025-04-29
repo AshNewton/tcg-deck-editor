@@ -1,3 +1,5 @@
+import { useSelector, useDispatch } from "react-redux";
+
 import Decklist from "../components/Decklist";
 import SaveLoad from "../components/SaveLoad";
 import SearchBar from "../components/Searchbar";
@@ -5,31 +7,32 @@ import SearchBar from "../components/Searchbar";
 import Box from "@mui/material/Box";
 
 import { searchCard } from "../api/ygoprodeck";
+import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
 
-const Sidebar = (props) => {
-  const {
-    maindeck,
-    setMaindeck,
-    extradeck,
-    setExtradeck,
-    selectedCard,
-    setSelectedCard,
-  } = props;
+const Sidebar = () => {
+  const maindeck = useSelector((state) => state.ui.maindeck);
+  const extradeck = useSelector((state) => state.ui.extradeck);
+
+  const dispatch = useDispatch();
 
   const removeCopy = (cardname, deck, setDeck) => {
-    setDeck(
-      deck
-        .map((card) =>
-          card.name === cardname ? { ...card, copies: card.copies - 1 } : card
-        )
-        .filter((card) => card.copies > 0)
+    dispatch(
+      setDeck(
+        deck
+          .map((card) =>
+            card.name === cardname ? { ...card, copies: card.copies - 1 } : card
+          )
+          .filter((card) => card.copies > 0)
+      )
     );
   };
 
   const addCopy = (cardname, deck, setDeck) => {
-    setDeck(
-      deck.map((card) =>
-        card.name === cardname ? { ...card, copies: card.copies + 1 } : card
+    dispatch(
+      setDeck(
+        deck.map((card) =>
+          card.name === cardname ? { ...card, copies: card.copies + 1 } : card
+        )
       )
     );
   };
@@ -37,9 +40,9 @@ const Sidebar = (props) => {
   const addToDeck = (newCard) => {
     // if card is already in deck, add a copy
     if (maindeck.find((card) => card.name === newCard.name)) {
-      addCopy(newCard.name, maindeck, setMaindeck);
+      addCopy(newCard.name, maindeck, setMainDeck);
     } else if (extradeck.find((card) => card.name === newCard.name)) {
-      addCopy(newCard.name, extradeck, setExtradeck);
+      addCopy(newCard.name, extradeck, setExtraDeck);
     } else {
       // card not already in deck, add it to main or extra based on type
       if (
@@ -48,18 +51,22 @@ const Sidebar = (props) => {
         newCard.details.type === "Synchro Monster" ||
         newCard.details.type === "Link Monster"
       ) {
-        setExtradeck([...extradeck, { ...newCard, copies: 1 }]);
+        dispatch(setExtraDeck([...extradeck, { ...newCard, copies: 1 }]));
       } else {
-        setMaindeck([...maindeck, { ...newCard, copies: 1 }]);
+        dispatch(setMainDeck([...maindeck, { ...newCard, copies: 1 }]));
       }
     }
   };
 
   const removeFromDeck = (cardname, deck, setDeck) => {
-    setDeck(
-      deck
-        .map((card) => (card.name === cardname ? { ...card, copies: 0 } : card))
-        .filter((card) => card.copies > 0)
+    dispatch(
+      setDeck(
+        deck
+          .map((card) =>
+            card.name === cardname ? { ...card, copies: 0 } : card
+          )
+          .filter((card) => card.copies > 0)
+      )
     );
   };
 
@@ -80,8 +87,8 @@ const Sidebar = (props) => {
       {/* save/load decklists */}
       <SaveLoad
         saveload={[
-          { setter: setMaindeck, getter: maindeck, name: "main" },
-          { setter: setExtradeck, getter: extradeck, name: "extra" },
+          { setter: setMainDeck, getter: maindeck, name: "main" },
+          { setter: setExtraDeck, getter: extradeck, name: "extra" },
         ]}
       />
 
@@ -89,25 +96,21 @@ const Sidebar = (props) => {
       <Decklist
         deckname="Main Deck"
         deck={maindeck}
-        onDeckUpdate={setMaindeck}
-        onAddCopy={(cardname) => addCopy(cardname, maindeck, setMaindeck)}
-        onRemoveCopy={(cardname) => removeCopy(cardname, maindeck, setMaindeck)}
+        onDeckUpdate={setMainDeck}
+        onAddCopy={(cardname) => addCopy(cardname, maindeck, setMainDeck)}
+        onRemoveCopy={(cardname) => removeCopy(cardname, maindeck, setMainDeck)}
         onDelete={removeFromDeck}
-        selectedCard={selectedCard}
-        setSelectedCard={setSelectedCard}
       />
 
       <Decklist
         deckname="Extra Deck"
         deck={extradeck}
-        onDeckUpdate={setExtradeck}
-        onAddCopy={(cardname) => addCopy(cardname, extradeck, setExtradeck)}
+        onDeckUpdate={setExtraDeck}
+        onAddCopy={(cardname) => addCopy(cardname, extradeck, setExtraDeck)}
         onRemoveCopy={(cardname) =>
-          removeCopy(cardname, extradeck, setExtradeck)
+          removeCopy(cardname, extradeck, setExtraDeck)
         }
         onDelete={removeFromDeck}
-        selectedCard={selectedCard}
-        setSelectedCard={setSelectedCard}
       />
     </Box>
   );

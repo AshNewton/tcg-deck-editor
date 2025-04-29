@@ -6,16 +6,8 @@ import Box from "@mui/material/Box";
 import { getDeckSize } from "../util/deckAnalytics";
 
 const Decklist = (props) => {
-  const {
-    deckname,
-    deck,
-    onDeckUpdate,
-    onAddCopy,
-    onRemoveCopy,
-    onDelete,
-    selectedCard,
-    setSelectedCard,
-  } = props;
+  const { deckname, deck, onDeckUpdate, onAddCopy, onRemoveCopy, onDelete } =
+    props;
 
   return (
     <>
@@ -39,8 +31,6 @@ const Decklist = (props) => {
           onDelete={() => onDelete(card.name, deck, onDeckUpdate)}
           onAddCopy={() => onAddCopy(card.name, deck, onDeckUpdate)}
           onRemoveCopy={() => onRemoveCopy(card.name, deck, onDeckUpdate)}
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
         />
       ))}
     </>
