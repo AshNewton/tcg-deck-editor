@@ -1,0 +1,78 @@
+import React from "react";
+
+import CardPreview from "./CardPreview";
+import Text from "./Text";
+
+import Box from "@mui/material/Box";
+
+import { getDeckSize } from "../util/deckAnalytics";
+import { useAppDispatch } from "../../hooks";
+
+import { Deck } from "../../types";
+
+type Props = {
+  deckname: string;
+  deck: Deck;
+  onDeckUpdate: (deck: Deck) => void;
+};
+
+const Decklist = (props: Props) => {
+  const { deckname, deck, onDeckUpdate } = props;
+
+  const dispatch = useAppDispatch();
+
+  const removeFromDeck = (cardname: string) => {
+    const updatedDeck = deck
+      .map((card) => (card.name === cardname ? { ...card, copies: 0 } : card))
+      .filter((card) => card.copies > 0);
+
+    onDeckUpdate(updatedDeck);
+  };
+
+  const removeCopy = (cardname: string) => {
+    const updatedDeck = deck
+      .map((card) =>
+        card.name === cardname ? { ...card, copies: card.copies - 1 } : card
+      )
+      .filter((card) => card.copies > 0);
+
+    onDeckUpdate(updatedDeck);
+  };
+
+  const addCopy = (cardname: string) => {
+    const updatedDeck = deck.map((card) =>
+      card.name === cardname ? { ...card, copies: card.copies + 1 } : card
+    );
+
+    onDeckUpdate(updatedDeck);
+  };
+
+  return (
+    <>
+      <Box
+        mt={2}
+        display="flex"
+        flexDirection="row"
+        alignItems="center"
+        gap={2}
+        px={2}
+        py={1}
+      >
+        <Text text={deckname} fontSize={28} />
+        <Text text={`(Cards: ${getDeckSize(deck)})`} />
+      </Box>
+
+      {deck.map((card) => (
+        <CardPreview
+          key={card.name}
+          card={card}
+          onDelete={removeFromDeck}
+          onAddCopy={addCopy}
+          onRemoveCopy={removeCopy}
+        />
+      ))}
+    </>
+  );
+};
+
+export default Decklist;

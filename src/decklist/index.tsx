@@ -1,10 +1,12 @@
-import Body from "./body/Body.jsx";
-import Header from "./header/Header.jsx";
-import Sidebar from "./sidebar/Sidebar.jsx";
+import React from "react";
+
+import Body from "./body/Body";
+import Header from "./header/Header";
+import Sidebar from "./sidebar/Sidebar";
 
 import Grid from "@mui/material/Grid";
 
-const Decklist = (props) => {
+const Decklist = () => {
   return (
     <Grid container>
       <Grid item xs={12}>

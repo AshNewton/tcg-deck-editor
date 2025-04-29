@@ -1,11 +1,13 @@
-export const getDeckSize = (deck) => {
-  return deck.reduce((acc, item) => {
-    acc += item.copies;
+import { CardOpeningProbabilities, Deck } from "../../types";
+
+export const getDeckSize = (deck: Deck): number => {
+  return deck.reduce((acc, card) => {
+    acc += card.copies;
     return acc;
   }, 0);
 };
 
-export const getStartingHand = (deck) => {
+export const getStartingHand = (deck: Deck): Array<string> => {
   // expand the deck out by number of copies of each card
   const expanded = deck.flatMap((card) => Array(card.copies).fill(card.name));
 
@@ -19,7 +21,7 @@ export const getStartingHand = (deck) => {
   return expanded.slice(0, 5);
 };
 
-const binomial = (n, k) => {
+const binomial = (n: number, k: number): number => {
   if (k > n) return 0;
   if (k === 0 || k === n) return 1;
   let res = 1;
@@ -29,7 +31,7 @@ const binomial = (n, k) => {
   return res;
 };
 
-export const getChanceToOpenCards = (deck) => {
+export const getChanceToOpenCards = (deck: Deck): CardOpeningProbabilities => {
   const totalCopies = deck.reduce((sum, card) => sum + card.copies, 0);
 
   return deck.map((card) => {
@@ -42,7 +44,6 @@ export const getChanceToOpenCards = (deck) => {
 
     return {
       name: card.name,
-      copies: k,
       chance: (pAtLeastOne * 100).toFixed(2) + "%",
     };
   });

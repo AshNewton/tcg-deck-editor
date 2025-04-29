@@ -1,5 +1,4 @@
-import * as React from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 
 import Button from "./Button";
 import CollapsibleDropdown from "./CollapsibleDropdown";
@@ -11,19 +10,34 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
 import { getStartingHand, getChanceToOpenCards } from "../util/deckAnalytics";
+import { useAppSelector } from "../../hooks";
+
+import { CardOpeningProbabilities } from "../../types";
 
 const StartingHand = () => {
-  const [sampleStartingHand, setSampleStartingHand] = React.useState([]);
-  const [chanceToOpenCards, setChanceToOpenCards] = React.useState([]);
+  const [sampleStartingHand, setSampleStartingHand] = React.useState<
+    Array<string>
+  >([]);
+  const [chanceToOpenCards, setChanceToOpenCards] =
+    React.useState<CardOpeningProbabilities>([]);
 
-  const maindeck = useSelector((state) => state.ui.maindeck);
+  const maindeck = useAppSelector((state) => state.ui.maindeck);
+
+  const generateOpeningHand = () => {
+    setSampleStartingHand(getStartingHand(maindeck).sort());
+  };
+
+  const generateOpeningHandProbabilities = () => {
+    setChanceToOpenCards(
+      getChanceToOpenCards(maindeck).sort((a, b) =>
+        a.name.localeCompare(b.name)
+      )
+    );
+  };
 
   return (
     <CollapsibleDropdown title="Starting Hand">
-      <Button
-        text="Get a Sample Starting Hand"
-        onClick={() => setSampleStartingHand(getStartingHand(maindeck).sort())}
-      />
+      <Button text="Get a Sample Starting Hand" onClick={generateOpeningHand} />
       {sampleStartingHand && (
         <List>
           {sampleStartingHand.map((cardname, index) => (
@@ -36,13 +50,7 @@ const StartingHand = () => {
 
       <Button
         text="Calculate Probability to Open Cards"
-        onClick={() =>
-          setChanceToOpenCards(
-            getChanceToOpenCards(maindeck).sort((a, b) =>
-              a.name.localeCompare(b.name)
-            )
-          )
-        }
+        onClick={generateOpeningHandProbabilities}
       />
       {chanceToOpenCards && (
         <Grid container>

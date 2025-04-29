@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import Box from "@mui/material/Box";
 import Collapse from "@mui/material/Collapse";
@@ -10,7 +10,12 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 
-const CollapsibleDropdown = (props) => {
+type Props = {
+  title: string;
+  children: React.ReactNode;
+};
+
+const CollapsibleDropdown = (props: Props) => {
   const { title, children } = props;
 
   const [open, setOpen] = React.useState(false);

@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
 
 import Decklist from "../components/Decklist";
 import SaveLoad from "../components/SaveLoad";
@@ -8,41 +8,31 @@ import Box from "@mui/material/Box";
 
 import { searchCard } from "../api/ygoprodeck";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+
+import { Card, Deck } from "../../types";
+import { Action } from "@reduxjs/toolkit";
 
 const Sidebar = () => {
-  const maindeck = useSelector((state) => state.ui.maindeck);
-  const extradeck = useSelector((state) => state.ui.extradeck);
+  const maindeck = useAppSelector((state) => state.ui.maindeck);
+  const extradeck = useAppSelector((state) => state.ui.extradeck);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const removeCopy = (cardname, deck, setDeck) => {
-    dispatch(
-      setDeck(
-        deck
-          .map((card) =>
-            card.name === cardname ? { ...card, copies: card.copies - 1 } : card
-          )
-          .filter((card) => card.copies > 0)
-      )
-    );
-  };
-
-  const addCopy = (cardname, deck, setDeck) => {
-    dispatch(
-      setDeck(
-        deck.map((card) =>
-          card.name === cardname ? { ...card, copies: card.copies + 1 } : card
-        )
-      )
-    );
-  };
-
-  const addToDeck = (newCard) => {
+  const addToDeck = (newCard: Card) => {
     // if card is already in deck, add a copy
     if (maindeck.find((card) => card.name === newCard.name)) {
-      addCopy(newCard.name, maindeck, setMainDeck);
+      const updatedDeck = maindeck.map((card) =>
+        card.name === newCard.name ? { ...card, copies: card.copies + 1 } : card
+      );
+
+      dispatch(setMainDeck(updatedDeck));
     } else if (extradeck.find((card) => card.name === newCard.name)) {
-      addCopy(newCard.name, extradeck, setExtraDeck);
+      const updatedDeck = extradeck.map((card) =>
+        card.name === newCard.name ? { ...card, copies: card.copies + 1 } : card
+      );
+
+      dispatch(setExtraDeck(updatedDeck));
     } else {
       // card not already in deck, add it to main or extra based on type
       if (
@@ -58,16 +48,10 @@ const Sidebar = () => {
     }
   };
 
-  const removeFromDeck = (cardname, deck, setDeck) => {
-    dispatch(
-      setDeck(
-        deck
-          .map((card) =>
-            card.name === cardname ? { ...card, copies: 0 } : card
-          )
-          .filter((card) => card.copies > 0)
-      )
-    );
+  const handleDeckUpdate = (actionCreator: (deck: Deck) => Action) => {
+    return (deck: Deck) => {
+      dispatch(actionCreator(deck));
+    };
   };
 
   return (
@@ -96,21 +80,13 @@ const Sidebar = () => {
       <Decklist
         deckname="Main Deck"
         deck={maindeck}
-        onDeckUpdate={setMainDeck}
-        onAddCopy={(cardname) => addCopy(cardname, maindeck, setMainDeck)}
-        onRemoveCopy={(cardname) => removeCopy(cardname, maindeck, setMainDeck)}
-        onDelete={removeFromDeck}
+        onDeckUpdate={handleDeckUpdate(setMainDeck)}
       />
 
       <Decklist
         deckname="Extra Deck"
         deck={extradeck}
-        onDeckUpdate={setExtraDeck}
-        onAddCopy={(cardname) => addCopy(cardname, extradeck, setExtraDeck)}
-        onRemoveCopy={(cardname) =>
-          removeCopy(cardname, extradeck, setExtraDeck)
-        }
-        onDelete={removeFromDeck}
+        onDeckUpdate={handleDeckUpdate(setExtraDeck)}
       />
     </Box>
   );

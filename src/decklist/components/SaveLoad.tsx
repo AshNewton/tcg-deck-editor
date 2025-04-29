@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import React from "react";
 
 import Button from "./Button";
 
@@ -6,10 +6,17 @@ import Box from "@mui/material/Box";
 import DownloadIcon from "@mui/icons-material/Download";
 import UploadIcon from "@mui/icons-material/Upload";
 
-const SaveLoad = (props) => {
+import { useAppDispatch } from "../../hooks";
+
+type Props = {
+  saveload: Array<any>;
+  justifyContent?: string;
+};
+
+const SaveLoad = (props: Props) => {
   const { saveload, justifyContent = "flex-end" } = props;
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleSave = async () => {
     try {
@@ -24,7 +31,13 @@ const SaveLoad = (props) => {
         suggestedName: "data.json",
       };
 
+      if (!window.showSaveFilePicker) {
+        console.error("File picker is not supported in this browser.");
+        return;
+      }
+
       const handle = await window.showSaveFilePicker(opts);
+
       const writable = await handle.createWritable();
 
       // format data to save
@@ -45,6 +58,11 @@ const SaveLoad = (props) => {
 
   const handleLoad = async () => {
     try {
+      if (!window.showOpenFilePicker) {
+        console.error("File picker is not supported in this browser.");
+        return;
+      }
+
       const [fileHandle] = await window.showOpenFilePicker();
       const file = await fileHandle.getFile();
       const text = await file.text();

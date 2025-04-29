@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import Box from "@mui/material/Box";
 import ClearIcon from "@mui/icons-material/Clear";
@@ -10,22 +10,21 @@ import ListItemButton from "@mui/material/ListItemButton";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 
-function useDebounce(value, delay) {
-  const [debounced, setDebounced] = React.useState(value);
+import { useDebounce } from "../../hooks";
 
-  React.useEffect(() => {
-    const timer = setTimeout(() => setDebounced(value), delay);
-    return () => clearTimeout(timer);
-  }, [value, delay]);
+import { Card, ygoCard } from "../../types";
 
-  return debounced;
-}
+type Props = {
+  onSearch: (arg0: string) => Promise<Array<ygoCard>>;
+  renderOption?: (toRender: Card) => React.ReactNode;
+  onOptionSelect: (arg0: Card) => void;
+};
 
-function SearchBar(props) {
+const SearchBar = (props: Props) => {
   const { onSearch, renderOption, onOptionSelect } = props;
 
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [results, setResults] = React.useState([]);
+  const [searchTerm, setSearchTerm] = React.useState<string>("");
+  const [results, setResults] = React.useState<Array<Card>>([]);
 
   const debouncedSearchTerm = useDebounce(searchTerm, 700);
 
@@ -47,7 +46,7 @@ function SearchBar(props) {
     fetchResults();
   }, [debouncedSearchTerm, onSearch]);
 
-  const handleSelect = (item) => {
+  const handleSelect = (item: Card) => {
     onOptionSelect?.(item);
     setSearchTerm("");
     setResults([]);
@@ -105,6 +104,6 @@ function SearchBar(props) {
       )}
     </Box>
   );
-}
+};
 
 export default SearchBar;

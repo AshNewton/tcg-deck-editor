@@ -1,7 +1,16 @@
+import React from "react";
+
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 
-const Text = (props) => {
+type Props = {
+  text?: string | number;
+  noWrap?: boolean;
+  fontSize?: number;
+  [key: string]: any;
+};
+
+const Text = (props: Props) => {
   const {
     text = "placeholder",
     noWrap = false,
