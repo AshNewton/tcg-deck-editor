@@ -7,7 +7,14 @@ import Box from "@mui/material/Box";
 import { searchCard } from "../api/ygoprodeck";
 
 const Sidebar = (props) => {
-  const { maindeck, setMaindeck, extradeck, setExtradeck } = props;
+  const {
+    maindeck,
+    setMaindeck,
+    extradeck,
+    setExtradeck,
+    selectedCard,
+    setSelectedCard,
+  } = props;
 
   const removeCopy = (cardname, deck, setDeck) => {
     setDeck(
@@ -86,6 +93,8 @@ const Sidebar = (props) => {
         onAddCopy={(cardname) => addCopy(cardname, maindeck, setMaindeck)}
         onRemoveCopy={(cardname) => removeCopy(cardname, maindeck, setMaindeck)}
         onDelete={removeFromDeck}
+        selectedCard={selectedCard}
+        setSelectedCard={setSelectedCard}
       />
 
       <Decklist
@@ -97,6 +106,8 @@ const Sidebar = (props) => {
           removeCopy(cardname, extradeck, setExtradeck)
         }
         onDelete={removeFromDeck}
+        selectedCard={selectedCard}
+        setSelectedCard={setSelectedCard}
       />
     </Box>
   );

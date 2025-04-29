@@ -15,6 +15,8 @@ const Decklist = (props) => {
     { name: "dark magician", details: {}, copies: 2 },
   ]);
 
+  const [selectedCard, setSelectedCard] = React.useState(null);
+
   return (
     <Grid container>
       <Grid item xs={12}>
@@ -26,10 +28,15 @@ const Decklist = (props) => {
           setMaindeck={setMaindeck}
           extradeck={extradeck}
           setExtradeck={setExtradeck}
+          selectedCard={selectedCard}
+          setSelectedCard={setSelectedCard}
         />
       </Grid>
       <Grid item md={8} xs={12}>
-        <Body />
+        <Body
+          selectedCard={selectedCard}
+          onCardDeselect={() => setSelectedCard(null)}
+        />
       </Grid>
     </Grid>
   );

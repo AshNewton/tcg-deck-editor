@@ -1,46 +1,47 @@
-import Button from "../components/Button";
-import Text from "../components/Text";
+import CardPreview from "./CardPreview";
+import Text from "./Text";
 
 import Box from "@mui/material/Box";
-import DeleteIcon from "@mui/icons-material/Delete";
-import IconButton from "@mui/material/IconButton";
+
+import { deckSize } from "../util/deckAnalytics";
 
 const Decklist = (props) => {
-  const { deckname, deck, onDeckUpdate, onAddCopy, onRemoveCopy, onDelete } =
-    props;
+  const {
+    deckname,
+    deck,
+    onDeckUpdate,
+    onAddCopy,
+    onRemoveCopy,
+    onDelete,
+    selectedCard,
+    setSelectedCard,
+  } = props;
 
   return (
     <>
-      <Text text={deckname} mt={2} />
-      {deck.map((card) => (
-        <Box
-          key={card.name}
-          ml={2}
-          mt={1}
-          display="flex"
-          flexDirection="row"
-          alignItems="center"
-          gap={2}
-        >
-          <IconButton
-            onClick={() => onDelete(card.name, deck, onDeckUpdate)}
-            aria-label="delete"
-          >
-            <DeleteIcon />
-          </IconButton>
+      <Box
+        mt={2}
+        display="flex"
+        flexDirection="row"
+        alignItems="center"
+        gap={2}
+        px={2}
+        py={1}
+      >
+        <Text text={deckname} fontSize={28} />
+        <Text text={`(Cards: ${deckSize(deck)})`} />
+      </Box>
 
-          <Button
-            text="-"
-            onClick={() => onRemoveCopy(card.name, deck, onDeckUpdate)}
-          />
-          <Text text={card.copies} />
-          <Button
-            text="+"
-            disabled={card.copies === 3}
-            onClick={() => onAddCopy(card.name, deck, onDeckUpdate)}
-          />
-          <Text text={card.name} noWrap />
-        </Box>
+      {deck.map((card) => (
+        <CardPreview
+          key={card.name}
+          card={card}
+          onDelete={() => onDelete(card.name, deck, onDeckUpdate)}
+          onAddCopy={() => onAddCopy(card.name, deck, onDeckUpdate)}
+          onRemoveCopy={() => onRemoveCopy(card.name, deck, onDeckUpdate)}
+          selectedCard={selectedCard}
+          setSelectedCard={setSelectedCard}
+        />
       ))}
     </>
   );
