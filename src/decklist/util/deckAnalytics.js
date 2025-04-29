@@ -15,10 +15,8 @@ export const getStartingHand = (deck) => {
     [expanded[i], expanded[j]] = [expanded[j], expanded[i]];
   }
 
-  // get 5 random names
-  const uniqueNames = [...new Set(expanded)];
-
-  return uniqueNames.slice(0, 5);
+  // get 5 names from randomized list
+  return expanded.slice(0, 5);
 };
 
 const binomial = (n, k) => {
