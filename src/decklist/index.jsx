@@ -30,6 +30,7 @@ const Decklist = (props) => {
       </Grid>
       <Grid item md={8} xs={12}>
         <Body
+          maindeck={maindeck}
           selectedCard={selectedCard}
           onCardDeselect={() => setSelectedCard(null)}
         />

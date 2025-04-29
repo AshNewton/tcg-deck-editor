@@ -3,7 +3,7 @@ import Text from "./Text";
 
 import Box from "@mui/material/Box";
 
-import { deckSize } from "../util/deckAnalytics";
+import { getDeckSize } from "../util/deckAnalytics";
 
 const Decklist = (props) => {
   const {
@@ -29,7 +29,7 @@ const Decklist = (props) => {
         py={1}
       >
         <Text text={deckname} fontSize={28} />
-        <Text text={`(Cards: ${deckSize(deck)})`} />
+        <Text text={`(Cards: ${getDeckSize(deck)})`} />
       </Box>
 
       {deck.map((card) => (
