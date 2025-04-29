@@ -7,13 +7,9 @@ import Sidebar from "./sidebar/Sidebar.jsx";
 import Grid from "@mui/material/Grid";
 
 const Decklist = (props) => {
-  const [maindeck, setMaindeck] = React.useState([
-    { name: "dark magician", details: {}, copies: 2 },
-  ]);
+  const [maindeck, setMaindeck] = React.useState([]);
 
-  const [extradeck, setExtradeck] = React.useState([
-    { name: "dark magician", details: {}, copies: 2 },
-  ]);
+  const [extradeck, setExtradeck] = React.useState([]);
 
   const [selectedCard, setSelectedCard] = React.useState(null);
 
