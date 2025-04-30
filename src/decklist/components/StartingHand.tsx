@@ -1,8 +1,8 @@
 import React from "react";
 
-import Button from "./Button";
-import CollapsibleDropdown from "./CollapsibleDropdown";
-import Text from "./Text";
+import Button from "./mui/Button";
+import CollapsibleDropdown from "./mui/CollapsibleDropdown";
+import Text from "./mui/Text";
 
 import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";

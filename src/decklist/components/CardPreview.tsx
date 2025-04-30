@@ -1,7 +1,7 @@
 import React from "react";
 
-import Button from "./Button";
-import Text from "./Text";
+import Button from "./mui/Button";
+import Text from "./mui/Text";
 
 import Box from "@mui/material/Box";
 import DeleteIcon from "@mui/icons-material/Delete";

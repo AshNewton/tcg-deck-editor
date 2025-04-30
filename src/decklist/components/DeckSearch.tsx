@@ -1,12 +1,12 @@
 import React from "react";
 import { Form, Field } from "react-final-form";
 
-import Button from "./Button";
+import Button from "./mui/Button";
 import CheckboxGroup from "./form/CheckboxGroup";
-import CollapsibleDropdown from "./CollapsibleDropdown";
+import CollapsibleDropdown from "./mui/CollapsibleDropdown";
 import ConditionalField from "./form/ConditionalField";
 import MultiThumbSlider from "./form/MultiThumbSlider";
-import Text from "./Text";
+import Text from "./mui/Text";
 import TextField from "./form/TextField";
 
 import Grid from "@mui/material/Grid";

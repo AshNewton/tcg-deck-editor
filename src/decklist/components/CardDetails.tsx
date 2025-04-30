@@ -1,6 +1,6 @@
 import React from "react";
 
-import Text from "./Text";
+import Text from "./mui/Text";
 
 import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";

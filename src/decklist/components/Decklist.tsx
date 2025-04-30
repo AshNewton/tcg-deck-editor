@@ -1,7 +1,7 @@
 import React from "react";
 
 import CardPreview from "./CardPreview";
-import Text from "./Text";
+import Text from "./mui/Text";
 
 import Box from "@mui/material/Box";
 

@@ -1,8 +1,8 @@
 import React from "react";
 
 import Decklist from "../components/Decklist";
-import SaveLoad from "../components/SaveLoad";
-import SearchBar from "../components/Searchbar";
+import SaveLoad from "../components/mui/SaveLoad";
+import SearchBar from "../components/mui/Searchbar";
 
 import MuiCard from "@mui/material/Card";
 

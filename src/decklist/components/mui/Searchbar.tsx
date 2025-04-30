@@ -10,9 +10,9 @@ import ListItemButton from "@mui/material/ListItemButton";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 
-import { useDebounce } from "../../hooks";
+import { useDebounce } from "../../../hooks";
 
-import { Card, ygoCard } from "../../types";
+import { Card, ygoCard } from "../../../types";
 
 type Props = {
   onSearch: (arg0: string) => Promise<Array<ygoCard>>;
