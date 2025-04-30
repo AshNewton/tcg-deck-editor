@@ -71,8 +71,6 @@ const filterCard = (card: Card, values: SearchValues): boolean => {
     return false;
   }
 
-  console.log(card.name, card.details.humanReadableCardType, values.cardtypes);
-
   if (
     values.filterByCardType &&
     values.cardtypes &&
