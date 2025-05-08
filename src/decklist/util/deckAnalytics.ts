@@ -1,5 +1,7 @@
 import { CardOpeningProbabilities, Deck } from "../../types";
 
+import { YUGIOH_HAND_START_SIZE } from "./constants";
+
 export const getDeckSize = (deck: Deck): number => {
   return deck.reduce((acc, card) => {
     acc += card.copies;
@@ -7,7 +9,10 @@ export const getDeckSize = (deck: Deck): number => {
   }, 0);
 };
 
-export const getStartingHand = (deck: Deck): Array<string> => {
+export const getStartingHand = (
+  deck: Deck,
+  handSize: number = YUGIOH_HAND_START_SIZE
+): Array<string> => {
   // expand the deck out by number of copies of each card
   const expanded = deck.flatMap((card) => Array(card.copies).fill(card.name));
 
@@ -17,8 +22,8 @@ export const getStartingHand = (deck: Deck): Array<string> => {
     [expanded[i], expanded[j]] = [expanded[j], expanded[i]];
   }
 
-  // get 5 names from randomized list
-  return expanded.slice(0, 5);
+  // get names from randomized list
+  return expanded.slice(0, handSize);
 };
 
 const binomial = (n: number, k: number): number => {
@@ -31,13 +36,16 @@ const binomial = (n: number, k: number): number => {
   return res;
 };
 
-export const getChanceToOpenCards = (deck: Deck): CardOpeningProbabilities => {
+export const getChanceToOpenCards = (
+  deck: Deck,
+  handSize: number = YUGIOH_HAND_START_SIZE
+): CardOpeningProbabilities => {
   const totalCopies = deck.reduce((sum, card) => sum + card.copies, 0);
 
   return deck.map((card) => {
     const k = card.copies;
     const N = totalCopies;
-    const n = 5;
+    const n = handSize;
 
     const pZero = binomial(N - k, n) / binomial(N, n);
     const pAtLeastOne = 1 - pZero;

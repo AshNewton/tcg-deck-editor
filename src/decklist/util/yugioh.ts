@@ -1,4 +1,5 @@
 import { AlertProps } from "@mui/material";
+
 import { BanType, Card } from "../../types";
 
 export const getBannedSeverity = (banType: BanType): AlertProps["severity"] => {

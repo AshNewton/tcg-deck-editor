@@ -18,9 +18,12 @@ import { useAppSelector } from "../../hooks";
 import {
   YUGIOH_ATTRIBUTES,
   YUGIOH_CARD_TYPES,
+  YUGIOH_MAX_STAT,
+  YUGIOH_MIN_STAT,
   YUGIOH_MONSTER_LEVELS,
   YUGIOH_MONSTER_TYPES,
   YUGIOH_SPELL_TYPES,
+  YUGIOH_STAT_STEP,
   YUGIOH_TRAP_TYPES,
 } from "../util/constants";
 
@@ -261,10 +264,10 @@ const DeckSearch = () => {
                 <MultiThumbSlider
                   name="atk"
                   label="ATK Range"
-                  min={0}
-                  max={5000}
-                  step={25}
-                  defaultValue={[0, 2500]}
+                  min={YUGIOH_MIN_STAT}
+                  max={YUGIOH_MAX_STAT}
+                  step={YUGIOH_STAT_STEP}
+                  defaultValue={[YUGIOH_MIN_STAT, YUGIOH_MAX_STAT / 2]}
                   showInputs
                 />
               </ConditionalField>
@@ -279,10 +282,10 @@ const DeckSearch = () => {
                 <MultiThumbSlider
                   name="def"
                   label="DEF Range"
-                  min={0}
-                  max={5000}
-                  step={25}
-                  defaultValue={[0, 2500]}
+                  min={YUGIOH_MIN_STAT}
+                  max={YUGIOH_MAX_STAT}
+                  step={YUGIOH_STAT_STEP}
+                  defaultValue={[YUGIOH_MIN_STAT, YUGIOH_MAX_STAT / 2]}
                   showInputs
                 />
               </ConditionalField>

@@ -1,5 +1,7 @@
 import { ygoCard } from "../../types";
 
+// https://ygoprodeck.com/api-guide/
+
 const searchCardsUrl = "https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=";
 
 export const searchCard = async (name: String): Promise<Array<ygoCard>> => {

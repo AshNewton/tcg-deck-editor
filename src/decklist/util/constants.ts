@@ -1,3 +1,11 @@
+export const YUGIOH_MIN_STAT = 0;
+
+export const YUGIOH_MAX_STAT = 5000;
+
+export const YUGIOH_STAT_STEP = 25;
+
+export const YUGIOH_HAND_START_SIZE = 5;
+
 export const YUGIOH_ATTRIBUTES = [
   "DARK",
   "LIGHT",

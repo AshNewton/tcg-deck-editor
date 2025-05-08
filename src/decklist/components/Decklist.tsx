@@ -1,5 +1,3 @@
-import React from "react";
-
 import CardPreview from "./CardPreview";
 import Text from "./mui/Text";
 
