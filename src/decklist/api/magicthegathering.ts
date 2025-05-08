@@ -1,12 +1,12 @@
-import { ygoCard } from "../../types";
+import { mtgCard } from "../../types";
 
-// https://ygoprodeck.com/api-guide/
+// https://docs.magicthegathering.io/#advancedcards_get_by_name
 
-const searchCardsUrl = "https://db.ygoprodeck.com/api/v7/cardinfo.php?";
+const searchCardsUrl = "https://api.magicthegathering.io/v1/cards?";
 
-export const searchCard = async (name: String): Promise<Array<ygoCard>> => {
+export const searchCard = async (name: String): Promise<Array<mtgCard>> => {
   try {
-    const response = await fetch(searchCardsUrl + "fname=" + name);
+    const response = await fetch(searchCardsUrl + "name=" + name);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -15,7 +15,7 @@ export const searchCard = async (name: String): Promise<Array<ygoCard>> => {
 
     // format the result from searchCard into how we format the decks
     // see ygoCard in types/index.ts
-    return raw.data.map((card: ygoCard) => {
+    return raw.data.map((card: mtgCard) => {
       return { name: card.name, details: card, copies: 1 };
     });
   } catch (error: any) {

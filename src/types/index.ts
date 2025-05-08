@@ -1,8 +1,10 @@
 export type ygoCard = any;
 
+export type mtgCard = any;
+
 export interface Card {
   name: string;
-  details: ygoCard;
+  details: ygoCard | mtgCard;
   copies: number;
 }
 
