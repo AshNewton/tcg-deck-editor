@@ -1,3 +1,5 @@
+export const SUPPORTED_GAMES = ["Yugioh", "Magic the Gathering"];
+
 export const YUGIOH_MIN_STAT = 0;
 
 export const YUGIOH_MAX_STAT = 5000;
