@@ -25,7 +25,7 @@ import {
   YUGIOH_SPELL_TYPES,
   YUGIOH_STAT_STEP,
   YUGIOH_TRAP_TYPES,
-} from "../util/constants";
+} from "../util/yugioh";
 
 import { Card, Deck } from "../../types";
 

@@ -1,6 +1,6 @@
 import { CardOpeningProbabilities, Deck } from "../../types";
 
-import { YUGIOH_HAND_START_SIZE } from "./constants";
+import { YUGIOH_HAND_START_SIZE } from "./yugioh";
 
 export const getDeckSize = (deck: Deck): number => {
   return deck.reduce((acc, card) => {
