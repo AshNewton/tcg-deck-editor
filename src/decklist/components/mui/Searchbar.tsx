@@ -12,10 +12,10 @@ import TextField from "@mui/material/TextField";
 
 import { useDebounce } from "../../../hooks";
 
-import { Card, ygoCard } from "../../../types";
+import { Card } from "../../../types";
 
 type Props = {
-  onSearch: (arg0: string) => Promise<Array<ygoCard>>;
+  onSearch: (arg0: string) => Promise<Array<Card>>;
   renderOption?: (toRender: Card) => React.ReactNode;
   onOptionSelect: (arg0: Card) => void;
 };
