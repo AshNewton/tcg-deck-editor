@@ -13,6 +13,8 @@ export const MTG_STAT_STEP = 1;
 
 export const MTG_HAND_START_SIZE = 7;
 
+export const MTG_MAX_COPIES = 4;
+
 export const handleAddToDeck = (
   newCard: Card,
   maindeck: Deck,

@@ -7,10 +7,13 @@ import Box from "@mui/material/Box";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 
+import { isYugioh } from "../util/util";
 import { setSelectedCard } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Card } from "../../types";
+import { YUGIOH_MAX_COPIES } from "../util/yugioh";
+import { MTG_MAX_COPIES } from "../util/mtg";
 
 interface Props {
   card: Card;
@@ -21,6 +24,8 @@ interface Props {
 
 const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
   const selectedCard = useAppSelector((state) => state.ui.selectedCard);
+  const game = useAppSelector((state) => state.ui.game);
+
   const dispatch = useAppDispatch();
 
   const toggleSelectedCard = () => {
@@ -35,6 +40,8 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
     e.stopPropagation();
     onClick(card.name);
   };
+
+  const maxCopies = isYugioh(game) ? YUGIOH_MAX_COPIES : MTG_MAX_COPIES;
 
   return (
     <Box
@@ -85,7 +92,7 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
           handleInnerClick(e, onAddCopy)
         }
         size="small"
-        disabled={card.copies === 3}
+        disabled={card.copies === maxCopies}
         aria-label="add copy"
       />
 

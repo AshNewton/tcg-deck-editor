@@ -14,6 +14,8 @@ export const YUGIOH_STAT_STEP = 25;
 
 export const YUGIOH_HAND_START_SIZE = 5;
 
+export const YUGIOH_MAX_COPIES = 3;
+
 export const YUGIOH_ATTRIBUTES = [
   "DARK",
   "LIGHT",
