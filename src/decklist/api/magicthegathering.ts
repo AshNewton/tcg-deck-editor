@@ -15,7 +15,7 @@ export const searchCard = async (name: String): Promise<Array<mtgCard>> => {
 
     // format the result from searchCard into how we format the decks
     // see ygoCard in types/index.ts
-    return raw.data.map((card: mtgCard) => {
+    return raw.cards.map((card: mtgCard) => {
       return { name: card.name, details: card, copies: 1 };
     });
   } catch (error: any) {

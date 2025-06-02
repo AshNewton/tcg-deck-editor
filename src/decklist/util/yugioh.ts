@@ -1,6 +1,10 @@
-import { AlertProps } from "@mui/material";
+import { setExtraDeck, setMainDeck } from "../../store/slices/uiSlice";
 
-import { BanType, Card } from "../../types";
+import { AlertProps } from "@mui/material";
+import { AppDispatch } from "../../store";
+import { BanType, Card, Deck } from "../../types";
+
+export const NAME = "Yugioh";
 
 export const YUGIOH_MIN_STAT = 0;
 
@@ -118,4 +122,43 @@ export const getCardLevelName = (card: Card | null): string => {
     : card?.details?.type === "XYZ Monster"
     ? "Rank"
     : "Level";
+};
+
+export const isExtraDeckCard = (card: Card): boolean => {
+  const extraTypes = [
+    "Fusion Monster",
+    "Synchro Monster",
+    "XYZ Monster",
+    "Link Monster",
+  ];
+  return extraTypes.includes(card.details.type);
+};
+
+export const handleAddToDeck = (
+  newCard: Card,
+  maindeck: Deck,
+  _extradeck: Deck,
+  dispatch: AppDispatch
+) => {
+  // if card is already in deck, add a copy
+  if (maindeck.find((card) => card.name === newCard.name)) {
+    const updatedDeck = maindeck.map((card) =>
+      card.name === newCard.name ? { ...card, copies: card.copies + 1 } : card
+    );
+
+    dispatch(setMainDeck(updatedDeck));
+  } else if (_extradeck.find((card) => card.name === newCard.name)) {
+    const updatedDeck = _extradeck.map((card) =>
+      card.name === newCard.name ? { ...card, copies: card.copies + 1 } : card
+    );
+
+    dispatch(setExtraDeck(updatedDeck));
+  } else {
+    // card not already in deck, add it to main or extra based on type
+    if (isExtraDeckCard(newCard)) {
+      dispatch(setExtraDeck([..._extradeck, { ...newCard, copies: 1 }]));
+    } else {
+      dispatch(setMainDeck([...maindeck, { ...newCard, copies: 1 }]));
+    }
+  }
 };

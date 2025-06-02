@@ -1,51 +1,35 @@
-import React from "react";
-
 import Decklist from "../components/Decklist";
 import SaveLoad from "../components/mui/SaveLoad";
 import SearchBar from "../components/mui/Searchbar";
 
 import MuiCard from "@mui/material/Card";
 
-import { searchCard } from "../api/ygoprodeck";
+import { addToDeckHandlers, isYugioh } from "../util/util";
+import { searchCard as searchYGOCard } from "../api/ygoprodeck";
+import { searchCard as searchMTGCard } from "../api/magicthegathering";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
-import { Card, Deck } from "../../types";
 import { Action } from "@reduxjs/toolkit";
+import { Card, Deck } from "../../types";
 
 const Sidebar = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
   const extradeck = useAppSelector((state) => state.ui.extradeck);
 
+  const game = useAppSelector((state) => state.ui.game);
+
   const dispatch = useAppDispatch();
 
   const addToDeck = (newCard: Card) => {
-    // if card is already in deck, add a copy
-    if (maindeck.find((card) => card.name === newCard.name)) {
-      const updatedDeck = maindeck.map((card) =>
-        card.name === newCard.name ? { ...card, copies: card.copies + 1 } : card
-      );
+    const handler = addToDeckHandlers[game];
 
-      dispatch(setMainDeck(updatedDeck));
-    } else if (extradeck.find((card) => card.name === newCard.name)) {
-      const updatedDeck = extradeck.map((card) =>
-        card.name === newCard.name ? { ...card, copies: card.copies + 1 } : card
-      );
-
-      dispatch(setExtraDeck(updatedDeck));
-    } else {
-      // card not already in deck, add it to main or extra based on type
-      if (
-        newCard.details.type === "Fusion Monster" ||
-        newCard.details.type === "XYZ Monster" ||
-        newCard.details.type === "Synchro Monster" ||
-        newCard.details.type === "Link Monster"
-      ) {
-        dispatch(setExtraDeck([...extradeck, { ...newCard, copies: 1 }]));
-      } else {
-        dispatch(setMainDeck([...maindeck, { ...newCard, copies: 1 }]));
-      }
+    if (!handler) {
+      console.warn(`No handler defined for game: ${game}`);
+      return;
     }
+
+    handler(newCard, maindeck, extradeck, dispatch);
   };
 
   const handleDeckUpdate = (actionCreator: (deck: Deck) => Action) => {
@@ -54,11 +38,13 @@ const Sidebar = () => {
     };
   };
 
+  const yugioh = isYugioh(game);
+
   return (
     <MuiCard>
       {/* search for cards */}
       <SearchBar
-        onSearch={searchCard}
+        onSearch={yugioh ? searchYGOCard : searchMTGCard}
         renderOption={(card) => card.name}
         onOptionSelect={(card) => addToDeck(card)}
       />
@@ -73,16 +59,18 @@ const Sidebar = () => {
 
       {/* display decklist and change copies */}
       <Decklist
-        deckname="Main Deck"
+        deckname={yugioh ? "Main Deck" : "Deck"}
         deck={maindeck}
         onDeckUpdate={handleDeckUpdate(setMainDeck)}
       />
 
-      <Decklist
-        deckname="Extra Deck"
-        deck={extradeck}
-        onDeckUpdate={handleDeckUpdate(setExtraDeck)}
-      />
+      {yugioh && (
+        <Decklist
+          deckname="Extra Deck"
+          deck={extradeck}
+          onDeckUpdate={handleDeckUpdate(setExtraDeck)}
+        />
+      )}
     </MuiCard>
   );
 };
