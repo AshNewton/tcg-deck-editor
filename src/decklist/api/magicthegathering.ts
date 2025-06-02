@@ -14,10 +14,20 @@ export const searchCard = async (name: String): Promise<Array<mtgCard>> => {
     const raw = await response.json();
 
     // format the result from searchCard into how we format the decks
-    // see ygoCard in types/index.ts
-    return raw.cards.map((card: mtgCard) => {
-      return { name: card.name, details: card, copies: 1 };
-    });
+
+    //remove duplicates because we dont care about sets right now
+    const seen = new Set<string>();
+    return raw.cards
+      .filter((card: mtgCard) => {
+        if (seen.has(card.name)) {
+          return false;
+        }
+        seen.add(card.name);
+        return true;
+      })
+      .map((card: mtgCard) => {
+        return { name: card.name, details: card, copies: 1 };
+      });
   } catch (error: any) {
     throw new Error(`Error fetching data: ${error.message}`);
   }
