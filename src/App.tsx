@@ -1,4 +1,4 @@
-import React from "react";
+import { ThemeProvider, CssBaseline } from "@mui/material";
 
 import "./App.css";
 import "@fontsource/roboto/300.css";
@@ -7,12 +7,16 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import Decklist from "./decklist";
+import darkTheme from "./theme";
 
 function App() {
   return (
-    <div className="App">
-      <Decklist />
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <div className="App">
+        <Decklist />
+      </div>
+    </ThemeProvider>
   );
 }
 
