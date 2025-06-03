@@ -33,7 +33,9 @@ const SearchBar = (props: Props) => {
       if (debouncedSearchTerm && onSearch) {
         try {
           const data = await onSearch(debouncedSearchTerm);
-          setResults(data);
+          setResults(
+            data.sort((card1, card2) => card1.name.localeCompare(card2.name))
+          );
         } catch (err) {
           console.error("Error fetching search results:", err);
           setResults([]);
