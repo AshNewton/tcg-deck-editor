@@ -35,7 +35,9 @@ const CollapsibleDropdown = (props: Props) => {
         width: "100%",
         bgcolor: "background.paper",
         borderRadius: 2,
-        marginTop: 2,
+        mt: 2,
+        ml: 2,
+        mr: 2,
       }}
     >
       <List disablePadding>

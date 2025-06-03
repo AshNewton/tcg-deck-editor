@@ -8,7 +8,7 @@ const darkTheme = createTheme({
       paper: "#232323", // Used for cards/dialogs/app bars
     },
     primary: {
-      main: "#90caf9", // Light blue
+      main: "#20aab9", // darkish blue
     },
     secondary: {
       main: "#f48fb1", // Pink accent

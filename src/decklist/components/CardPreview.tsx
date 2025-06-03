@@ -56,6 +56,7 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
       sx={{
         mt: 1,
         ml: 2,
+        mr: 2,
         p: 1,
         borderRadius: 2,
         border: "1px solid",

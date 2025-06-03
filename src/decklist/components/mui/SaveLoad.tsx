@@ -83,6 +83,7 @@ const SaveLoad = (props: Props) => {
       flexDirection="row"
       alignItems="center"
       gap={2}
+      mr={2}
     >
       <Button startIcon={<UploadIcon />} text="Load" onClick={handleLoad} />
       <Button startIcon={<DownloadIcon />} text="Save" onClick={handleSave} />
