@@ -7,13 +7,15 @@ import Box from "@mui/material/Box";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 
+import { isBasicLand } from "../util/mtg";
 import { isYugioh } from "../util/util";
 import { setSelectedCard } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
-import { Card } from "../../types";
 import { YUGIOH_MAX_COPIES } from "../util/yugioh";
 import { MTG_MAX_COPIES } from "../util/mtg";
+
+import { Card } from "../../types";
 
 interface Props {
   card: Card;
@@ -92,7 +94,8 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
           handleInnerClick(e, onAddCopy)
         }
         size="small"
-        disabled={card.copies === maxCopies}
+        /* mtg basic lands can have any number of copies */
+        disabled={card.copies === maxCopies && !isBasicLand(card)}
         aria-label="add copy"
       />
 

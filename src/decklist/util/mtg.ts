@@ -15,6 +15,10 @@ export const MTG_HAND_START_SIZE = 7;
 
 export const MTG_MAX_COPIES = 4;
 
+export const isBasicLand = (card: Card) => {
+  return card.details?.type_line?.includes("Basic Land");
+};
+
 export const handleAddToDeck = (
   newCard: Card,
   maindeck: Deck,
