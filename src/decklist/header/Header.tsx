@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Game } from "../../types";
 import { Grid } from "@mui/material";
-import { SUPPORTED_GAMES } from "../util/constants";
+import { GAME_ICONS, SUPPORTED_GAMES } from "../util/constants";
 
 const Header = () => {
   const game = useAppSelector((state) => state.ui.game);
@@ -22,11 +22,16 @@ const Header = () => {
   return (
     <Grid container>
       <Grid item xs={12} sm={2}>
-        <FormControl fullWidth>
-          <Select value={game} onChange={handleChange}>
+        <FormControl>
+          <Select
+            value={game}
+            onChange={handleChange}
+            variant="standard"
+            disableUnderline
+          >
             {SUPPORTED_GAMES.map((option) => (
               <MenuItem key={option} value={option}>
-                {option}
+                <img src={GAME_ICONS[option]} alt={option} height={48} />
               </MenuItem>
             ))}
           </Select>
