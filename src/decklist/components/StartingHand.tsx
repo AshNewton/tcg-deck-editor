@@ -1,13 +1,15 @@
 import React from "react";
 
-import Button from "./mui/Button";
 import CollapsibleDropdown from "./mui/CollapsibleDropdown";
 import Text from "./mui/Text";
 
 import Grid from "@mui/material/Grid";
+import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import MuiCard from "@mui/material/Card";
+import ReplayIcon from "@mui/icons-material/Replay";
 
 import { getCardHandSize } from "../util/util";
 import { getStartingHand, getChanceToOpenCards } from "../util/deckAnalytics";
@@ -45,38 +47,56 @@ const StartingHand = () => {
     );
   };
 
-  const onClose = () => {
-    setSampleStartingHand([]);
-    setChanceToOpenCards([]);
-  };
-
   return (
-    <CollapsibleDropdown title="Starting Hand" onCollapse={onClose}>
-      <Button text="Get a Sample Starting Hand" onClick={generateOpeningHand} />
-      {sampleStartingHand && (
-        <List>
-          {sampleStartingHand.map((cardname, index) => (
-            <ListItem key={index}>
-              <ListItemText primary={cardname} />
-            </ListItem>
-          ))}
-        </List>
-      )}
+    <MuiCard
+      sx={{
+        width: "100%",
+        bgcolor: "background.paper",
+        borderRadius: 2,
+        mt: 2,
+        ml: 2,
+        mr: 2,
+      }}
+    >
+      <CollapsibleDropdown
+        title="Get a Sample Starting Hand"
+        onOpen={generateOpeningHand}
+        onCollapse={() => {
+          setSampleStartingHand([]);
+        }}
+      >
+        {sampleStartingHand && (
+          <List>
+            {sampleStartingHand.map((cardname, index) => (
+              <ListItem key={index}>
+                <ListItemText primary={cardname} />
+              </ListItem>
+            ))}
+          </List>
+        )}
+        <IconButton onClick={generateOpeningHand}>
+          <ReplayIcon />
+        </IconButton>
+      </CollapsibleDropdown>
 
-      <Button
-        text="Calculate Probability to Open Cards"
-        onClick={generateOpeningHandProbabilities}
-      />
-      {chanceToOpenCards && (
-        <Grid container>
-          {chanceToOpenCards.map((card, index) => (
-            <Grid item xs={12} sm={6} key={index}>
-              <Text text={`${card.name}: ${card.chance}`} />
-            </Grid>
-          ))}
-        </Grid>
-      )}
-    </CollapsibleDropdown>
+      <CollapsibleDropdown
+        title="Calculate Probability to Open Cards"
+        onOpen={generateOpeningHandProbabilities}
+        onCollapse={() => {
+          setChanceToOpenCards([]);
+        }}
+      >
+        {chanceToOpenCards && (
+          <Grid container>
+            {chanceToOpenCards.map((card, index) => (
+              <Grid item xs={12} sm={6} key={index}>
+                <Text text={`${card.name}: ${card.chance}`} />
+              </Grid>
+            ))}
+          </Grid>
+        )}
+      </CollapsibleDropdown>
+    </MuiCard>
   );
 };
 

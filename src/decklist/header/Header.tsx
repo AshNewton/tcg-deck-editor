@@ -1,14 +1,20 @@
-import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
+import Button from "../components/mui/Button";
 
-import { setGame } from "../../store/slices/uiSlice";
+import AppBar from "@mui/material/AppBar";
+import FormControl from "@mui/material/FormControl";
+import MenuItem from "@mui/material/MenuItem";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Toolbar from "@mui/material/Toolbar";
+
+import { isMTG } from "../util/util";
+import { setGame, setMenu } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
-import { Game } from "../../types";
-import { Grid } from "@mui/material";
 import { GAME_ICONS, SUPPORTED_GAMES } from "../util/constants";
+
+import { Game, Menu as MenuType } from "../../types";
+
+const MENU_ITEMS: Array<MenuType> = ["Starting Hand", "Deck Search", "Mana"];
 
 const Header = () => {
   const game = useAppSelector((state) => state.ui.game);
@@ -19,9 +25,11 @@ const Header = () => {
     dispatch(setGame(event.target.value as Game));
   };
 
+  const mtg = isMTG(game);
+
   return (
-    <Grid container>
-      <Grid item xs={12} sm={2}>
+    <AppBar position="static" color="default">
+      <Toolbar sx={{ gap: 2 }}>
         <FormControl>
           <Select
             value={game}
@@ -36,11 +44,20 @@ const Header = () => {
             ))}
           </Select>
         </FormControl>
-      </Grid>
-      <Grid item xs={12} sm={10}>
-        <Box display="flex" flexDirection="row"></Box>
-      </Grid>
-    </Grid>
+        {MENU_ITEMS.map(
+          (item: MenuType) =>
+            (mtg || item !== "Mana") && (
+              <Button
+                key={item}
+                color="primary"
+                variant="text"
+                onClick={() => dispatch(setMenu(item))}
+                text={item}
+              />
+            )
+        )}
+      </Toolbar>
+    </AppBar>
   );
 };
 

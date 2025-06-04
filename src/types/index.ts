@@ -47,6 +47,8 @@ export type MtgSymbol = {
 
 export type Game = "Yugioh" | "Magic the Gathering";
 
+export type Menu = "Starting Hand" | "Deck Search" | "Mana";
+
 export interface Card {
   name: string;
   details: ygoCard | mtgCard;

@@ -13,18 +13,22 @@ import MuiCard from "@mui/material/Card";
 
 type Props = {
   title: string;
+  onOpen?: () => void;
   onCollapse?: () => void;
   children: React.ReactNode;
 };
 
 const CollapsibleDropdown = (props: Props) => {
-  const { title, onCollapse, children } = props;
+  const { title, onOpen, onCollapse, children } = props;
 
   const [open, setOpen] = React.useState(false);
 
   const toggleOpen = () => {
     if (open && onCollapse) {
       onCollapse();
+    }
+    if (!open && onOpen) {
+      onOpen();
     }
     setOpen((prev) => !prev);
   };

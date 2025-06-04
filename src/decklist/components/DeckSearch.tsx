@@ -3,9 +3,9 @@ import { Form, Field } from "react-final-form";
 
 import Button from "./mui/Button";
 import CheckboxGroup from "./form/CheckboxGroup";
-import CollapsibleDropdown from "./mui/CollapsibleDropdown";
 import ConditionalField from "./form/ConditionalField";
 import MultiThumbSlider from "./form/MultiThumbSlider";
+import MuiCard from "@mui/material/Card";
 import Text from "./mui/Text";
 import TextField from "./form/TextField";
 
@@ -145,18 +145,24 @@ const DeckSearch = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
   const extradeck = useAppSelector((state) => state.ui.extradeck);
 
-  const onClose = () => {
-    setMainSearchResult(null);
-    setExtraSearchResult(null);
-  };
-
   const onSubmit = (values: SearchValues) => {
     setMainSearchResult(maindeck.filter((card) => filterCard(card, values)));
     setExtraSearchResult(extradeck.filter((card) => filterCard(card, values)));
   };
 
   return (
-    <CollapsibleDropdown title="Deck Search" onCollapse={onClose}>
+    <MuiCard
+      sx={{
+        width: "100%",
+        bgcolor: "background.paper",
+        borderRadius: 2,
+        mt: 2,
+        ml: 2,
+        mr: 2,
+        p: 2,
+      }}
+    >
+      {" "}
       <Form
         onSubmit={onSubmit}
         render={({ form, handleSubmit }) => (
@@ -336,7 +342,7 @@ const DeckSearch = () => {
           </Grid>
         </>
       )}
-    </CollapsibleDropdown>
+    </MuiCard>
   );
 };
 

@@ -1,15 +1,20 @@
 import CardDetails from "../components/CardDetails";
+import DeckSearch from "../components/DeckSearch";
 import StartingHand from "../components/StartingHand";
 
 import Box from "@mui/material/Box";
-import DeckSearch from "../components/DeckSearch";
+
+import { useAppSelector } from "../../hooks";
 
 const Body = () => {
+  const menu = useAppSelector((state) => state.ui.menu);
+
   return (
     <Box>
       <CardDetails />
-      <StartingHand />
-      <DeckSearch />
+      {menu === "Starting Hand" && <StartingHand />}
+      {menu === "Deck Search" && <DeckSearch />}
+      {menu === "Mana" && "Mana Placeholder"}
     </Box>
   );
 };
