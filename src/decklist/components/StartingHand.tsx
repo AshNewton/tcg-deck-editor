@@ -9,6 +9,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
+import { getCardHandSize } from "../util/util";
 import { getStartingHand, getChanceToOpenCards } from "../util/deckAnalytics";
 import { useAppSelector } from "../../hooks";
 
@@ -23,13 +24,22 @@ const StartingHand = () => {
 
   const maindeck = useAppSelector((state) => state.ui.maindeck);
 
+  const game = useAppSelector((state) => state.ui.game);
+
+  React.useEffect(() => {
+    setSampleStartingHand([]);
+    setChanceToOpenCards([]);
+  }, [game]);
+
+  const handSize = getCardHandSize(game);
+
   const generateOpeningHand = () => {
-    setSampleStartingHand(getStartingHand(maindeck).sort());
+    setSampleStartingHand(getStartingHand(maindeck, handSize).sort());
   };
 
   const generateOpeningHandProbabilities = () => {
     setChanceToOpenCards(
-      getChanceToOpenCards(maindeck).sort((a, b) =>
+      getChanceToOpenCards(maindeck, handSize).sort((a, b) =>
         a.name.localeCompare(b.name)
       )
     );

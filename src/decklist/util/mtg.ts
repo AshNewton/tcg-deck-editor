@@ -3,7 +3,7 @@ import { setMainDeck } from "../../store/slices/uiSlice";
 import { AppDispatch } from "../../store";
 import { Card, Deck } from "../../types";
 
-export const NAME = "Magic the Gathering";
+export const MTG_NAME = "Magic the Gathering";
 
 export const MTG_MIN_STAT = 0;
 

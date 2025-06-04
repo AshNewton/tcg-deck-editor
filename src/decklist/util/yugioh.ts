@@ -4,7 +4,7 @@ import { AlertProps } from "@mui/material";
 import { AppDispatch } from "../../store";
 import { BanType, Card, Deck } from "../../types";
 
-export const NAME = "Yugioh";
+export const YUGIOH_NAME = "Yugioh";
 
 export const YUGIOH_MIN_STAT = 0;
 
