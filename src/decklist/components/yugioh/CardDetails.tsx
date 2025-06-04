@@ -1,8 +1,10 @@
+import Image from "../mui/Image";
 import Text from "./../mui/Text";
 
 import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
 import ClearIcon from "@mui/icons-material/Clear";
+import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
 
@@ -48,45 +50,49 @@ const CardDetails = (props: Props) => {
           <ClearIcon />
         </IconButton>
       </Box>
+      <Grid container gap={1}>
+        <Grid item xs={12} sm={3}>
+          <Image src={card.details.card_images[0]?.image_url} alt={card.name} />
+        </Grid>
+        <Grid item xs={12} sm={8} mt={2} px={2} py={1}>
+          {/* level/rank/link rating */}
+          {card.details.level && (
+            <Text text={`${cardLevelName}: ${card.details.level}`} />
+          )}
 
-      <Box mt={2} display="flex" flexDirection="column" px={2} py={1}>
-        {/* level/rank/link rating */}
-        {card.details.level && (
-          <Text text={`${cardLevelName}: ${card.details.level}`} />
-        )}
+          {/* attribute */}
+          {card.details.attribute && card.details.race && (
+            <Text
+              mt={1}
+              text={`${card.details.attribute} / ${card.details.race}`}
+            />
+          )}
 
-        {/* attribute */}
-        {card.details.attribute && card.details.race && (
-          <Text
+          {/* type */}
+          <Text text={`${card.details.humanReadableCardType}`} />
+
+          {/* ATK/DEF */}
+          {card.details.atk != null && card.details.def != null && (
+            <Text
+              mt={1}
+              text={`ATK: ${card.details.atk} / DEF: ${card.details.def}`}
+            />
+          )}
+
+          {/* card text */}
+          <Text mt={1} text={`${card.details.desc}`} />
+
+          {/* link to YGOPRO */}
+          <Link
             mt={1}
-            text={`${card.details.attribute} / ${card.details.race}`}
-          />
-        )}
-
-        {/* type */}
-        <Text text={`${card.details.humanReadableCardType}`} />
-
-        {/* ATK/DEF */}
-        {card.details.atk != null && card.details.def != null && (
-          <Text
-            mt={1}
-            text={`ATK: ${card.details.atk} / DEF: ${card.details.def}`}
-          />
-        )}
-
-        {/* card text */}
-        <Text mt={1} text={`${card.details.desc}`} />
-
-        {/* link to YGOPRO */}
-        <Link
-          mt={1}
-          href={card.details.ygoprodeck_url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          YGOPRODECK
-        </Link>
-      </Box>
+            href={card.details.ygoprodeck_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            YGOPRODECK
+          </Link>
+        </Grid>
+      </Grid>
     </>
   );
 };

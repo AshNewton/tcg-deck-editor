@@ -1,5 +1,6 @@
 import React from "react";
 
+import Image from "../mui/Image";
 import Text from "./../mui/Text";
 import TextWithSymbols from "./TextWithSymbols";
 
@@ -10,8 +11,9 @@ import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
 
-import { Card, MtgSymbol } from "../../../types";
 import { getSymbolUris } from "../../api/magicthegathering";
+
+import { Card, MtgSymbol } from "../../../types";
 
 type Props = {
   card: Card;
@@ -68,68 +70,87 @@ const CardDetails = (props: Props) => {
         </IconButton>
       </Box>
 
-      <Box mt={2} display="flex" flexDirection="column" px={2} py={1}>
-        {/* mana */}
-        {!card.details.card_faces && (
-          <TextWithSymbols text={card.details.mana_cost} symbols={symbols} />
-        )}
+      <Grid container mt={2} gap={1}>
+        <Grid item xs={12} sm={3}>
+          <Image src={card.details.image_uris.normal} alt={card.name} />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={8}
+          display="flex"
+          flexDirection="column"
+          px={2}
+          py={1}
+        >
+          {/* mana */}
+          {!card.details.card_faces && (
+            <TextWithSymbols text={card.details.mana_cost} symbols={symbols} />
+          )}
 
-        {/* type */}
-        {!card.details.card_faces && (
-          <Text text={`${card.details.type_line}`} />
-        )}
+          {/* type */}
+          {!card.details.card_faces && (
+            <Text text={`${card.details.type_line}`} />
+          )}
 
-        {/* power/toughness */}
-        {!card.details.card_faces &&
-          card.details.power != null &&
-          card.details.toughness != null && (
-            <Text
-              mt={1}
-              text={`${card.details.power} / ${card.details.toughness}`}
+          {/* power/toughness */}
+          {!card.details.card_faces &&
+            card.details.power != null &&
+            card.details.toughness != null && (
+              <Text
+                mt={1}
+                text={`${card.details.power} / ${card.details.toughness}`}
+              />
+            )}
+
+          {/* card text */}
+          {!card.details.card_faces && card.details.oracle_text && (
+            <TextWithSymbols
+              text={card.details.oracle_text}
+              symbols={symbols}
             />
           )}
 
-        {/* card text */}
-        {!card.details.card_faces && card.details.oracle_text && (
-          <TextWithSymbols text={card.details.oracle_text} symbols={symbols} />
-        )}
+          {/* card text for multiple faces */}
+          {card.details.card_faces && (
+            <Grid container>
+              {card.details.card_faces.map((face: any) => {
+                return (
+                  <Grid sm={6} xs={12}>
+                    <Text mt={1} text={`${face.name}`} />
 
-        {/* card text for multiple faces */}
-        {card.details.card_faces && (
-          <Grid container>
-            {card.details.card_faces.map((face: any) => {
-              return (
-                <Grid sm={6} xs={12}>
-                  <Text mt={1} text={`${face.name}`} />
+                    {/* mana */}
+                    <TextWithSymbols text={face.mana_cost} symbols={symbols} />
 
-                  {/* mana */}
-                  <TextWithSymbols text={face.mana_cost} symbols={symbols} />
+                    {/* type */}
+                    <Text text={`${face.type_line}`} />
 
-                  {/* type */}
-                  <Text text={`${face.type_line}`} />
+                    {/* power/toughness */}
+                    {face.power != null && face.toughness != null && (
+                      <Text mt={1} text={`${face.power} / ${face.toughness}`} />
+                    )}
 
-                  {/* power/toughness */}
-                  {face.power != null && face.toughness != null && (
-                    <Text mt={1} text={`${face.power} / ${face.toughness}`} />
-                  )}
+                    <TextWithSymbols
+                      text={face.oracle_text}
+                      symbols={symbols}
+                    />
+                  </Grid>
+                );
+              })}
+            </Grid>
+          )}
 
-                  <TextWithSymbols text={face.oracle_text} symbols={symbols} />
-                </Grid>
-              );
-            })}
-          </Grid>
-        )}
-
-        {/* link to Scryfall */}
-        <Link
-          mt={1}
-          href={card.details.scryfall_uri}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Scryfall
-        </Link>
-      </Box>
+          {/* link to Scryfall */}
+          <Link
+            mt={1}
+            href={card.details.scryfall_uri}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Scryfall
+          </Link>
+        </Grid>
+      </Grid>
     </>
   );
 };
