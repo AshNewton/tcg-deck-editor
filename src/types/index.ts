@@ -39,6 +39,12 @@ export type YGOCardPrice = {
 
 export type mtgCard = any;
 
+export type MtgSymbol = {
+  symbol: string;
+  url: string;
+  alt: string;
+};
+
 export type Game = "Yugioh" | "Magic the Gathering";
 
 export interface Card {

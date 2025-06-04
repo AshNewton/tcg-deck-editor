@@ -1,12 +1,17 @@
+import React from "react";
+
 import Text from "./../mui/Text";
+import TextWithSymbols from "./TextWithSymbols";
 
 import Box from "@mui/material/Box";
+import CircularProgress from "@mui/material/CircularProgress";
 import ClearIcon from "@mui/icons-material/Clear";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
 
-import { Card } from "../../../types";
+import { Card, MtgSymbol } from "../../../types";
+import { getSymbolUris } from "../../api/magicthegathering";
 
 type Props = {
   card: Card;
@@ -15,6 +20,31 @@ type Props = {
 
 const CardDetails = (props: Props) => {
   const { card, clearSelection } = props;
+
+  const [symbols, setSymbols] = React.useState<Array<MtgSymbol>>([]);
+  const [loading, setLoading] = React.useState<boolean>(true);
+
+  const fetchData = async () => {
+    try {
+      const result = await getSymbolUris();
+      setSymbols(result);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  React.useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <CircularProgress size={72} sx={{ m: 4 }} />
+      </Box>
+    );
+  }
 
   return (
     <>
@@ -41,7 +71,7 @@ const CardDetails = (props: Props) => {
       <Box mt={2} display="flex" flexDirection="column" px={2} py={1}>
         {/* mana */}
         {!card.details.card_faces && (
-          <Text text={`${card.details.mana_cost}`} />
+          <TextWithSymbols text={card.details.mana_cost} symbols={symbols} />
         )}
 
         {/* type */}
@@ -61,11 +91,7 @@ const CardDetails = (props: Props) => {
 
         {/* card text */}
         {!card.details.card_faces && card.details.oracle_text && (
-          <Text
-            mt={1}
-            text={`${card.details.oracle_text}`}
-            sx={{ whiteSpace: "pre-line" }}
-          />
+          <TextWithSymbols text={card.details.oracle_text} symbols={symbols} />
         )}
 
         {/* card text for multiple faces */}
@@ -77,7 +103,7 @@ const CardDetails = (props: Props) => {
                   <Text mt={1} text={`${face.name}`} />
 
                   {/* mana */}
-                  <Text text={`${face.mana_cost}`} />
+                  <TextWithSymbols text={face.mana_cost} symbols={symbols} />
 
                   {/* type */}
                   <Text text={`${face.type_line}`} />
@@ -87,11 +113,7 @@ const CardDetails = (props: Props) => {
                     <Text mt={1} text={`${face.power} / ${face.toughness}`} />
                   )}
 
-                  <Text
-                    mt={1}
-                    text={`${face.oracle_text}`}
-                    sx={{ whiteSpace: "pre-line" }}
-                  />
+                  <TextWithSymbols text={face.oracle_text} symbols={symbols} />
                 </Grid>
               );
             })}
