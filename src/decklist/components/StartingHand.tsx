@@ -1,21 +1,21 @@
 import React from "react";
 
 import CollapsibleDropdown from "./mui/CollapsibleDropdown";
+import Image from "./mui/Image";
 import Text from "./mui/Text";
 
+import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import MuiCard from "@mui/material/Card";
 import ReplayIcon from "@mui/icons-material/Replay";
 
-import { getCardHandSize } from "../util/util";
+import { getCard, getCardHandSize, getCardImage } from "../util/util";
 import { getStartingHand, getChanceToOpenCards } from "../util/deckAnalytics";
-import { useAppSelector } from "../../hooks";
+import { setSelectedCard } from "../../store/slices/uiSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 
-import { CardOpeningProbabilities } from "../../types";
+import { Card, CardOpeningProbabilities } from "../../types";
 
 const StartingHand = () => {
   const [sampleStartingHand, setSampleStartingHand] = React.useState<
@@ -27,6 +27,8 @@ const StartingHand = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
 
   const game = useAppSelector((state) => state.ui.game);
+
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
     setSampleStartingHand([]);
@@ -45,6 +47,10 @@ const StartingHand = () => {
         a.name.localeCompare(b.name)
       )
     );
+  };
+
+  const toggleSelectedCard = (card?: Card) => {
+    dispatch(setSelectedCard(card || null));
   };
 
   return (
@@ -66,13 +72,17 @@ const StartingHand = () => {
         }}
       >
         {sampleStartingHand && (
-          <List>
+          <Box display="flex" flexDirection="row" flexWrap="wrap">
             {sampleStartingHand.map((cardname, index) => (
-              <ListItem key={index}>
-                <ListItemText primary={cardname} />
-              </ListItem>
+              <Image
+                key={index}
+                src={getCardImage(cardname, maindeck, game)}
+                alt={cardname}
+                maxWidth={100 / handSize + "%"}
+                onClick={() => toggleSelectedCard(getCard(cardname, maindeck))}
+              />
             ))}
-          </List>
+          </Box>
         )}
         <IconButton onClick={generateOpeningHand}>
           <ReplayIcon />
