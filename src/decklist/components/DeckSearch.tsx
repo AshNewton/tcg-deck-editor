@@ -2,6 +2,7 @@ import React from "react";
 import { Form } from "react-final-form";
 
 import Button from "./mui/Button";
+import MtgDeckSearch from "./mtg/DeckSearch";
 import YgoDeckSearch from "./yugioh/DeckSearch";
 import Text from "./mui/Text";
 
@@ -12,9 +13,14 @@ import ListItemText from "@mui/material/ListItemText";
 import MuiCard from "@mui/material/Card";
 
 import { useAppSelector } from "../../hooks";
+import { filterCard as mtgFilterCard } from "./mtg/DeckSearch";
 import { filterCard as ygoFilterCard } from "./yugioh/DeckSearch";
 
+import { MTG_NAME } from "../util/mtg";
+import { YUGIOH_NAME } from "../util/yugioh";
+
 import { Deck } from "../../types";
+import { SearchValues as MtgSearchValues } from "./mtg/DeckSearch";
 import { SearchValues as YgoSearchValues } from "./yugioh/DeckSearch";
 
 const DeckSearch = () => {
@@ -28,11 +34,27 @@ const DeckSearch = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
   const extradeck = useAppSelector((state) => state.ui.extradeck);
 
-  const onSubmit = (values: YgoSearchValues) => {
-    setMainSearchResult(maindeck.filter((card) => ygoFilterCard(card, values)));
-    setExtraSearchResult(
-      extradeck.filter((card) => ygoFilterCard(card, values))
-    );
+  const game = useAppSelector((state) => state.ui.game);
+
+  const onSubmit = (values: YgoSearchValues | MtgSearchValues) => {
+    if (game === MTG_NAME) {
+      setMainSearchResult(
+        maindeck.filter((card) =>
+          mtgFilterCard(card, values as MtgSearchValues)
+        )
+      );
+    } else if (game === YUGIOH_NAME) {
+      setMainSearchResult(
+        maindeck.filter((card) =>
+          ygoFilterCard(card, values as YgoSearchValues)
+        )
+      );
+      setExtraSearchResult(
+        extradeck.filter((card) =>
+          ygoFilterCard(card, values as YgoSearchValues)
+        )
+      );
+    }
   };
 
   return (
@@ -51,7 +73,8 @@ const DeckSearch = () => {
         onSubmit={onSubmit}
         render={({ form, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
-            <YgoDeckSearch />
+            {game === YUGIOH_NAME && <YgoDeckSearch />}
+            {game === MTG_NAME && <MtgDeckSearch />}
 
             <Button
               text="Clear"
@@ -77,7 +100,7 @@ const DeckSearch = () => {
           <Grid container mt={2}>
             {Boolean(mainSearchResult?.length) && (
               <Grid item xs={6}>
-                <Text text="Main Deck" />
+                {game === YUGIOH_NAME && <Text text="Main Deck" />}
                 <List>
                   {mainSearchResult?.map((card, index) => (
                     <ListItem key={index}>

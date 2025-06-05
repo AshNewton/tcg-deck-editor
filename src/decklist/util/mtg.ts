@@ -9,11 +9,44 @@ export const MTG_MIN_STAT = 0;
 
 export const MTG_MAX_STAT = 16;
 
+export const MTG_MIN_MANA = 0;
+
+export const MTG_MAX_MANA = 16;
+
 export const MTG_STAT_STEP = 1;
+
+export const MTG_COLORS = ["Red", "Blue", "Black", "Green", "White"];
+
+export const MTG_COLOR_CODES: Record<
+  "White" | "Blue" | "Black" | "Red" | "Green",
+  "W" | "U" | "B" | "R" | "G"
+> = {
+  White: "W",
+  Blue: "U",
+  Black: "B",
+  Red: "R",
+  Green: "G",
+};
+
+export const MTG_CARD_TYPES = [
+  "Legendary",
+  "Instant",
+  "Sorcery",
+  "Equipment",
+  "Battle",
+  "Artifact",
+  "Creature",
+  "Planeswalker",
+  "Land",
+  "Basic Land",
+  "Enchantment",
+];
 
 export const MTG_HAND_START_SIZE = 7;
 
 export const MTG_MAX_COPIES = 4;
+
+export const MTG_TYPELINE_SEPERATOR = "—";
 
 export const isBasicLand = (card: Card): boolean => {
   return card.details?.type_line?.includes("Basic Land");
