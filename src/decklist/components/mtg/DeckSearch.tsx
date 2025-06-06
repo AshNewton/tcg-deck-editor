@@ -294,7 +294,7 @@ const DeckSearch = () => {
           checkboxLabel="Filter by Toughness"
         >
           <MultiThumbSlider
-            name="toughtness"
+            name="toughness"
             label="Toughness Range"
             min={MTG_MIN_STAT}
             max={MTG_MAX_STAT}
