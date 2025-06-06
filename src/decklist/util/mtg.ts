@@ -28,6 +28,8 @@ export const MTG_COLOR_CODES: Record<
   Green: "G",
 };
 
+export const MTG_COLORLESS_CODE = "C";
+
 export const MTG_CARD_TYPES = [
   "Legendary",
   "Instant",
@@ -47,6 +49,14 @@ export const MTG_HAND_START_SIZE = 7;
 export const MTG_MAX_COPIES = 4;
 
 export const MTG_TYPELINE_SEPERATOR = "—";
+
+export const MTG_COLORS_HEX: Record<string, string> = {
+  W: "#f8f2c8",
+  U: "#93c4e0",
+  B: "#5e5e5e",
+  R: "#f29393",
+  G: "#a7d7a2",
+};
 
 export const isBasicLand = (card: Card): boolean => {
   return card.details?.type_line?.includes("Basic Land");

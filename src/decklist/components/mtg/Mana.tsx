@@ -11,6 +11,7 @@ import {
 } from "recharts";
 
 import Text from "../mui/Text";
+import MyPie from "../mui/PieChart";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -23,6 +24,7 @@ import Popover from "@mui/material/Popover";
 import { useAppSelector } from "../../../hooks";
 
 import { Card, Deck } from "../../../types";
+import { MTG_COLORLESS_CODE, MTG_COLORS_HEX } from "../../util/mtg";
 
 const getManaCostDistribution = (deck: Deck) => {
   return deck.reduce((acc, card) => {
@@ -33,6 +35,35 @@ const getManaCostDistribution = (deck: Deck) => {
 
     return acc;
   }, {} as Record<number, number>);
+};
+
+const getColorIdentityDistribution = (deck: Deck) => {
+  const dist: Record<string, number> = {
+    W: 0,
+    U: 0,
+    B: 0,
+    R: 0,
+    G: 0,
+    C: 0, // C for Colorless
+  };
+
+  deck.forEach((card: Card) => {
+    const colors = card.details.color_identity;
+    if (colors.length === 0) {
+      dist["C"] += 1;
+    } else {
+      colors.forEach((color: string) => {
+        dist[color] = (dist[color] || 0) + 1;
+      });
+    }
+  });
+
+  return Object.entries(dist)
+    .filter(([_, count]) => count > 0)
+    .map(([color, count]) => ({
+      name: color,
+      value: count,
+    }));
 };
 
 const Mana = () => {
@@ -68,6 +99,8 @@ const Mana = () => {
     })
   );
 
+  const manaColorDist = getColorIdentityDistribution(deck);
+
   return (
     <MuiCard
       sx={{
@@ -81,6 +114,7 @@ const Mana = () => {
       }}
     >
       <Grid container>
+        {/* Mana Cost Amounts*/}
         <Grid item xs={12} display="flex" flexDirection="row">
           <Box width="50%">
             <Text text="Mana Cost Distribution" variant="h6" align="center" />
@@ -143,6 +177,24 @@ const Mana = () => {
               </Box>
             </Popover>
           )}
+        </Grid>
+
+        {/* Mana Cost Colors */}
+        <Grid item xs={12} display="flex" flexDirection="row">
+          <Box width="50%" mt={4}>
+            <MyPie
+              title="Mana Color"
+              data={manaColorDist}
+              colors={MTG_COLORS_HEX}
+              filterBy={(color) => {
+                return deck.filter((card: Card) =>
+                  color === MTG_COLORLESS_CODE
+                    ? card.details.color_identity.length === 0
+                    : card.details.color_identity.includes(color)
+                );
+              }}
+            />
+          </Box>
         </Grid>
       </Grid>
     </MuiCard>
