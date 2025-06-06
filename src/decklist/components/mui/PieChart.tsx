@@ -92,7 +92,7 @@ const PieChart = (props: Props) => {
             <List dense>
               {filter?.map((card, index) => (
                 <ListItem key={index}>
-                  <ListItemText primary={card.name} />
+                  <ListItemText primary={`${card.copies} ${card.name}`} />
                 </ListItem>
               ))}
             </List>
