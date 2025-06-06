@@ -1,5 +1,6 @@
 import CardDetails from "../components/CardDetails";
 import DeckSearch from "../components/DeckSearch";
+import Mana from "../components/mtg/Mana";
 import StartingHand from "../components/StartingHand";
 
 import Box from "@mui/material/Box";
@@ -14,7 +15,7 @@ const Body = () => {
       <CardDetails />
       {menu === "Starting Hand" && <StartingHand />}
       {menu === "Deck Search" && <DeckSearch />}
-      {menu === "Mana" && "Mana Placeholder"}
+      {menu === "Mana" && <Mana />}
     </Box>
   );
 };
