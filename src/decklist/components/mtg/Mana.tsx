@@ -30,7 +30,7 @@ const getManaCostDistribution = (deck: Deck) => {
   return deck.reduce((acc, card) => {
     if (!card.details.type_line.includes("Land")) {
       const manaCost = card.details.cmc;
-      acc[manaCost] = (acc[manaCost] || 0) + 1;
+      acc[manaCost] = (acc[manaCost] || 0) + card.copies;
     }
 
     return acc;
@@ -53,7 +53,7 @@ const getColorIdentityDistribution = (deck: Deck) => {
       dist["C"] += 1;
     } else {
       colors.forEach((color: string) => {
-        dist[color] = (dist[color] || 0) + 1;
+        dist[color] = (dist[color] || 0) + card.copies;
       });
     }
   });
