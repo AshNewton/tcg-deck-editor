@@ -32,7 +32,17 @@ const CardDetails = () => {
 
   if (game === MTG_NAME) {
     return (
-      <MuiCard>
+      <MuiCard
+        sx={{
+          width: "100%",
+          bgcolor: "background.paper",
+          borderRadius: 2,
+          mt: 2,
+          ml: 2,
+          mr: 2,
+          p: 2,
+        }}
+      >
         <MtgCardDetails card={card} clearSelection={clearSelection} />
       </MuiCard>
     );
