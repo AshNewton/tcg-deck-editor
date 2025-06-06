@@ -99,7 +99,12 @@ const Mana = () => {
     })
   );
 
-  const manaColorDist = getColorIdentityDistribution(deck);
+  const manaColorDist = getColorIdentityDistribution(
+    deck.filter((card: Card) => !card.details.type_line.includes("Land"))
+  );
+  const manaColorProductionDist = getColorIdentityDistribution(
+    deck.filter((card: Card) => card.details.type_line.includes("Land"))
+  );
 
   return (
     <MuiCard
@@ -180,17 +185,37 @@ const Mana = () => {
         </Grid>
 
         {/* Mana Cost Colors */}
-        <Grid item xs={12} display="flex" flexDirection="row">
+        <Grid item xs={12} sm={6} display="flex" flexDirection="row">
           <Box width="50%" mt={4}>
             <MyPie
               title="Mana Color"
               data={manaColorDist}
               colors={MTG_COLORS_HEX}
               filterBy={(color) => {
-                return deck.filter((card: Card) =>
-                  color === MTG_COLORLESS_CODE
-                    ? card.details.color_identity.length === 0
-                    : card.details.color_identity.includes(color)
+                return deck.filter(
+                  (card: Card) =>
+                    !card.details.type_line.includes("Land") &&
+                    (color === MTG_COLORLESS_CODE
+                      ? card.details.color_identity.length === 0
+                      : card.details.color_identity.includes(color))
+                );
+              }}
+            />
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={6} display="flex" flexDirection="row">
+          <Box width="50%" mt={4}>
+            <MyPie
+              title="Mana Color Production"
+              data={manaColorProductionDist}
+              colors={MTG_COLORS_HEX}
+              filterBy={(color) => {
+                return deck.filter(
+                  (card: Card) =>
+                    card.details.type_line.includes("Land") &&
+                    (color === MTG_COLORLESS_CODE
+                      ? card.details.color_identity.length === 0
+                      : card.details.color_identity.includes(color))
                 );
               }}
             />
