@@ -42,20 +42,19 @@ const StartingHand = () => {
 
   const handSize = getCardHandSize(game);
 
+  React.useEffect(() => {
+    if (maindeck.length > 0) {
+      const sortedChances = getChanceToOpenCards(maindeck, handSize).sort(
+        (a, b) => a.name.localeCompare(b.name)
+      );
+      setChanceToOpenCards(sortedChances);
+
+      setChanceToOpenLands(getLandProbabilities(maindeck));
+    }
+  }, [maindeck, handSize]);
+
   const generateOpeningHand = () => {
     setSampleStartingHand(getStartingHand(maindeck, handSize).sort());
-  };
-
-  const generateOpeningHandProbabilities = () => {
-    setChanceToOpenCards(
-      getChanceToOpenCards(maindeck, handSize).sort((a, b) =>
-        a.name.localeCompare(b.name)
-      )
-    );
-  };
-
-  const generateOpeningHandLandProbabilities = () => {
-    setChanceToOpenLands(getLandProbabilities(maindeck));
   };
 
   const toggleSelectedCard = (card?: Card) => {
@@ -99,13 +98,7 @@ const StartingHand = () => {
         </IconButton>
       </CollapsibleDropdown>
 
-      <CollapsibleDropdown
-        title="Calculate Probability to Open Cards"
-        onOpen={generateOpeningHandProbabilities}
-        onCollapse={() => {
-          setChanceToOpenCards([]);
-        }}
-      >
+      <CollapsibleDropdown title="Calculate Probability to Open Cards">
         {chanceToOpenCards && (
           <Grid container>
             {chanceToOpenCards.map((card, index) => (
@@ -118,13 +111,7 @@ const StartingHand = () => {
       </CollapsibleDropdown>
 
       {mtg && (
-        <CollapsibleDropdown
-          title="Number of Lands"
-          onOpen={generateOpeningHandLandProbabilities}
-          onCollapse={() => {
-            setChanceToOpenLands([]);
-          }}
-        >
+        <CollapsibleDropdown title="Number of Lands">
           {chanceToOpenCards && (
             <Grid container>
               {chanceToOpenLands.map((chance: number, index: number) => (
