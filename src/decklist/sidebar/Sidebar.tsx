@@ -5,13 +5,20 @@ import SearchBar from "../components/mui/Searchbar";
 import MuiCard from "@mui/material/Card";
 
 import { addToDeckHandlers, isYugioh } from "../util/util";
-import { searchCard as searchYGOCard } from "../api/ygoprodeck";
-import { searchCard as searchMTGCard } from "../api/magicthegathering";
+import {
+  bulkSearchCard as bulkSearchYgoCard,
+  searchCard as searchYGOCard,
+} from "../api/ygoprodeck";
+import {
+  bulkSearchCard as bulkSearchMtgCard,
+  searchCard as searchMTGCard,
+} from "../api/magicthegathering";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Action } from "@reduxjs/toolkit";
 import { Card, Deck } from "../../types";
+import { isExtraDeckCard } from "../util/yugioh";
 
 const Sidebar = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
@@ -32,6 +39,26 @@ const Sidebar = () => {
     handler(newCard, maindeck, extradeck, dispatch);
   };
 
+  const bulkAddToDeck = async (bulkText: string) => {
+    const lines = bulkText.split(/\r?\n/).filter((line) => Boolean(line));
+
+    const deck = yugioh
+      ? await bulkSearchYgoCard(lines)
+      : await bulkSearchMtgCard(lines);
+
+    const handler = addToDeckHandlers[game];
+
+    if (!handler) {
+      console.warn(`No handler defined for game: ${game}`);
+      return;
+    }
+
+    const newMaindeck = deck.filter((card: Card) => !isExtraDeckCard(card));
+    const newExtradeck = deck.filter((card: Card) => isExtraDeckCard(card));
+
+    handler(null, newMaindeck, newExtradeck, dispatch);
+  };
+
   const handleDeckUpdate = (actionCreator: (deck: Deck) => Action) => {
     return (deck: Deck) => {
       dispatch(actionCreator(deck));
@@ -47,6 +74,7 @@ const Sidebar = () => {
         onSearch={yugioh ? searchYGOCard : searchMTGCard}
         renderOption={(card) => card.name}
         onOptionSelect={(card) => addToDeck(card)}
+        onBulkSearch={bulkAddToDeck}
       />
 
       {/* save/load decklists */}

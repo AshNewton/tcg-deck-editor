@@ -69,6 +69,11 @@ export const handleAddToDeck = (
   _extradeck: Deck,
   dispatch: AppDispatch
 ) => {
+  if (!Boolean(newCard)) {
+    dispatch(setMainDeck(maindeck));
+    return;
+  }
+
   // if card is already in deck, add a copy
   if (maindeck.find((card) => card.name === newCard.name)) {
     const updatedDeck = maindeck.map((card) =>

@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import ClearIcon from "@mui/icons-material/Clear";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
+import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -13,18 +14,25 @@ import TextField from "@mui/material/TextField";
 import { useDebounce } from "../../../hooks";
 
 import { Card } from "../../../types";
+import Popover from "@mui/material/Popover";
 
 type Props = {
   onSearch: (arg0: string) => Promise<Array<Card>>;
   renderOption?: (toRender: Card) => React.ReactNode;
   onOptionSelect: (arg0: Card) => void;
+  onBulkSearch?: (bulkText: string) => void;
 };
 
 const SearchBar = (props: Props) => {
-  const { onSearch, renderOption, onOptionSelect } = props;
+  const { onSearch, renderOption, onOptionSelect, onBulkSearch } = props;
 
   const [searchTerm, setSearchTerm] = React.useState<string>("");
   const [results, setResults] = React.useState<Array<Card>>([]);
+
+  const [bulkAnchorEl, setBulkAnchorEl] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [bulkText, setBulkText] = React.useState<string>("");
 
   const debouncedSearchTerm = useDebounce(searchTerm, 700);
 
@@ -59,6 +67,15 @@ const SearchBar = (props: Props) => {
     setResults([]);
   };
 
+  const handleBulkClick = (event: React.MouseEvent<HTMLElement>) => {
+    setBulkAnchorEl(event.currentTarget);
+  };
+
+  const handleBulkClose = () => {
+    setBulkAnchorEl(null);
+    setBulkText("");
+  };
+
   return (
     <Box sx={{ p: 2 }}>
       <TextField
@@ -73,12 +90,27 @@ const SearchBar = (props: Props) => {
               <SearchIcon />
             </InputAdornment>
           ),
-          endAdornment: searchTerm && (
-            <InputAdornment position="end">
-              <IconButton onClick={handleClear} size="small">
-                <ClearIcon />
-              </IconButton>
-            </InputAdornment>
+          endAdornment: (
+            <>
+              {searchTerm && (
+                <InputAdornment position="end">
+                  <IconButton onClick={handleClear} size="small">
+                    <ClearIcon />
+                  </IconButton>
+                </InputAdornment>
+              )}
+              {onBulkSearch && (
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={handleBulkClick}
+                    size="small"
+                    title="Bulk Search"
+                  >
+                    <LibraryAddIcon fontSize="small" />
+                  </IconButton>
+                </InputAdornment>
+              )}
+            </>
           ),
         }}
       />
@@ -104,6 +136,39 @@ const SearchBar = (props: Props) => {
           </List>
         </Box>
       )}
+
+      <Popover
+        open={Boolean(bulkAnchorEl)}
+        anchorEl={bulkAnchorEl}
+        onClose={handleBulkClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+      >
+        <Box sx={{ p: 2, width: 300 }}>
+          <TextField
+            multiline
+            fullWidth
+            rows={6}
+            label="Bulk Add Cards"
+            value={bulkText}
+            onChange={(e) => setBulkText(e.target.value)}
+          />
+          <Box display="flex" justifyContent="flex-end" mt={1}>
+            <IconButton
+              onClick={() => {
+                props.onBulkSearch?.(bulkText);
+                handleBulkClose();
+              }}
+              size="small"
+              color="primary"
+            >
+              <SearchIcon />
+            </IconButton>
+          </Box>
+        </Box>
+      </Popover>
     </Box>
   );
 };

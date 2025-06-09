@@ -133,7 +133,7 @@ export const isExtraDeckCard = (card: Card): boolean => {
     "XYZ Monster",
     "Link Monster",
   ];
-  return extraTypes.includes(card.details.type);
+  return extraTypes.includes(card?.details?.type);
 };
 
 export const handleAddToDeck = (
@@ -142,6 +142,12 @@ export const handleAddToDeck = (
   _extradeck: Deck,
   dispatch: AppDispatch
 ) => {
+  if (!Boolean(newCard)) {
+    dispatch(setMainDeck(maindeck));
+    dispatch(setExtraDeck(_extradeck));
+    return;
+  }
+
   // if card is already in deck, add a copy
   if (maindeck.find((card) => card.name === newCard.name)) {
     const updatedDeck = maindeck.map((card) =>
