@@ -26,8 +26,8 @@ export const getStartingHand = (
   return expanded.slice(0, handSize);
 };
 
-const binomial = (n: number, k: number): number => {
-  if (k > n) return 0;
+export const binomial = (n: number, k: number): number => {
+  if (k > n || k < 0) return 0;
   if (k === 0 || k === n) return 1;
   let res = 1;
   for (let i = 1; i <= k; i++) {

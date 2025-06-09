@@ -10,12 +10,13 @@ import IconButton from "@mui/material/IconButton";
 import MuiCard from "@mui/material/Card";
 import ReplayIcon from "@mui/icons-material/Replay";
 
-import { getCard, getCardHandSize, getCardImage } from "../util/util";
+import { getCard, getCardHandSize, getCardImage, isMTG } from "../util/util";
 import { getStartingHand, getChanceToOpenCards } from "../util/deckAnalytics";
 import { setSelectedCard } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Card, CardOpeningProbabilities } from "../../types";
+import { getLandProbabilities } from "../util/mtg";
 
 const StartingHand = () => {
   const [sampleStartingHand, setSampleStartingHand] = React.useState<
@@ -23,6 +24,9 @@ const StartingHand = () => {
   >([]);
   const [chanceToOpenCards, setChanceToOpenCards] =
     React.useState<CardOpeningProbabilities>([]);
+  const [chanceToOpenLands, setChanceToOpenLands] = React.useState<
+    Array<number>
+  >([]);
 
   const maindeck = useAppSelector((state) => state.ui.maindeck);
 
@@ -33,6 +37,7 @@ const StartingHand = () => {
   React.useEffect(() => {
     setSampleStartingHand([]);
     setChanceToOpenCards([]);
+    setChanceToOpenLands([]);
   }, [game]);
 
   const handSize = getCardHandSize(game);
@@ -49,9 +54,15 @@ const StartingHand = () => {
     );
   };
 
+  const generateOpeningHandLandProbabilities = () => {
+    setChanceToOpenLands(getLandProbabilities(maindeck));
+  };
+
   const toggleSelectedCard = (card?: Card) => {
     dispatch(setSelectedCard(card || null));
   };
+
+  const mtg = isMTG(game);
 
   return (
     <MuiCard
@@ -59,9 +70,8 @@ const StartingHand = () => {
         width: "100%",
         bgcolor: "background.paper",
         borderRadius: 2,
-        mt: 2,
-        ml: 2,
-        mr: 2,
+        m: 2,
+        p: 2,
       }}
     >
       <CollapsibleDropdown
@@ -106,6 +116,26 @@ const StartingHand = () => {
           </Grid>
         )}
       </CollapsibleDropdown>
+
+      {mtg && (
+        <CollapsibleDropdown
+          title="Number of Lands"
+          onOpen={generateOpeningHandLandProbabilities}
+          onCollapse={() => {
+            setChanceToOpenLands([]);
+          }}
+        >
+          {chanceToOpenCards && (
+            <Grid container>
+              {chanceToOpenLands.map((chance: number, index: number) => (
+                <Grid item xs={12} key={index}>
+                  <Text text={`${index} Land:   ${chance}%`} />
+                </Grid>
+              ))}
+            </Grid>
+          )}
+        </CollapsibleDropdown>
+      )}
     </MuiCard>
   );
 };

@@ -2,6 +2,7 @@ import { setMainDeck } from "../../store/slices/uiSlice";
 
 import { AppDispatch } from "../../store";
 import { Card, Deck } from "../../types";
+import { binomial } from "./deckAnalytics";
 
 export const MTG_NAME = "Magic the Gathering";
 
@@ -80,4 +81,23 @@ export const handleAddToDeck = (
 
     dispatch(setMainDeck([...maindeck, { ...newCard, copies: 1 }]));
   }
+};
+
+export const getLandProbabilities = (deck: Deck) => {
+  const totalCards = deck.reduce((sum, card) => sum + card.copies, 0);
+
+  const totalLands = deck
+    .filter((card) => card.details.type_line.includes("Land"))
+    .reduce((sum, card) => sum + card.copies, 0);
+
+  const probabilities: number[] = [];
+
+  for (let k = 0; k <= 7; k++) {
+    const p =
+      (binomial(totalLands, k) * binomial(totalCards - totalLands, 7 - k)) /
+      binomial(totalCards, 7);
+    probabilities.push(Number((p * 100).toPrecision(4)));
+  }
+
+  return probabilities;
 };
