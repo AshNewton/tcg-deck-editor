@@ -1,6 +1,7 @@
 import Decklist from "../components/Decklist";
 import SaveLoad from "../components/mui/SaveLoad";
 import SearchBar from "../components/mui/Searchbar";
+import Text from "../components/mui/Text";
 
 import MuiCard from "@mui/material/Card";
 
@@ -19,6 +20,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import { Action } from "@reduxjs/toolkit";
 import { Card, Deck } from "../../types";
 import { isExtraDeckCard } from "../util/yugioh";
+import Box from "@mui/material/Box";
 
 const Sidebar = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
@@ -85,19 +87,27 @@ const Sidebar = () => {
         ]}
       />
 
-      {/* display decklist and change copies */}
-      <Decklist
-        deckname={yugioh ? "Main Deck" : "Deck"}
-        deck={maindeck}
-        onDeckUpdate={handleDeckUpdate(setMainDeck)}
-      />
+      {maindeck.length === 0 && extradeck.length === 0 ? (
+        <Box display="flex" justifyContent="center" p={2}>
+          <Text text={"Add Some Cards!"} fontSize={18} />
+        </Box>
+      ) : (
+        <>
+          {/* display decklist and change copies */}
+          <Decklist
+            deckname={yugioh ? "Main Deck" : "Deck"}
+            deck={maindeck}
+            onDeckUpdate={handleDeckUpdate(setMainDeck)}
+          />
 
-      {yugioh && (
-        <Decklist
-          deckname="Extra Deck"
-          deck={extradeck}
-          onDeckUpdate={handleDeckUpdate(setExtraDeck)}
-        />
+          {yugioh && (
+            <Decklist
+              deckname="Extra Deck"
+              deck={extradeck}
+              onDeckUpdate={handleDeckUpdate(setExtraDeck)}
+            />
+          )}
+        </>
       )}
     </MuiCard>
   );
