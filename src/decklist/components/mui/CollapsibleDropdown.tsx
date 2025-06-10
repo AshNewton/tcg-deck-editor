@@ -35,13 +35,10 @@ const CollapsibleDropdown = (props: Props) => {
 
   return (
     <MuiCard
+      elevation={0}
       sx={{
-        width: "100%",
-        bgcolor: "background.paper",
         borderRadius: 2,
-        mt: 2,
-        ml: 2,
-        mr: 2,
+        m: 2,
       }}
     >
       <List disablePadding>
@@ -55,7 +52,7 @@ const CollapsibleDropdown = (props: Props) => {
         </ListItem>
 
         <Collapse in={open} timeout="auto" unmountOnExit>
-          <Box sx={{ pl: 4, py: 1 }}>{children}</Box>
+          <Box p={2}>{children}</Box>
         </Collapse>
       </List>
     </MuiCard>
