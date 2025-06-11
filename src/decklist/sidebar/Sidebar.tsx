@@ -5,7 +5,7 @@ import Text from "../components/mui/Text";
 
 import MuiCard from "@mui/material/Card";
 
-import { addToDeckHandlers, isYugioh } from "../util/util";
+import { addToDeckHandlers, isInvalidHandlers, isYugioh } from "../util/util";
 import {
   bulkSearchCard as bulkSearchYgoCard,
   searchCard as searchYGOCard,
@@ -21,6 +21,7 @@ import { Action } from "@reduxjs/toolkit";
 import { Card, Deck } from "../../types";
 import { isExtraDeckCard } from "../util/yugioh";
 import Box from "@mui/material/Box";
+import { Alert, List, ListItem } from "@mui/material";
 
 const Sidebar = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
@@ -69,6 +70,8 @@ const Sidebar = () => {
 
   const yugioh = isYugioh(game);
 
+  const deckErrors = isInvalidHandlers[game](maindeck, extradeck);
+
   return (
     <MuiCard>
       {/* search for cards */}
@@ -93,6 +96,19 @@ const Sidebar = () => {
         </Box>
       ) : (
         <>
+          {/* deck validity errors */}
+          {deckErrors && (
+            <List>
+              {Object.values(deckErrors).map((v: any) => {
+                return (
+                  <Alert severity="warning" sx={{ m: 2 }}>
+                    {v}
+                  </Alert>
+                );
+              })}
+            </List>
+          )}
+
           {/* display decklist and change copies */}
           <Decklist
             deckname={yugioh ? "Main Deck" : "Deck"}

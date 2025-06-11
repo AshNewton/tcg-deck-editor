@@ -136,6 +136,59 @@ export const isExtraDeckCard = (card: Card): boolean => {
   return extraTypes.includes(card?.details?.type);
 };
 
+export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
+  const errors: any = {};
+
+  const totalCards = maindeck.reduce((acc, card) => {
+    acc += card.copies;
+    return acc;
+  }, 0);
+
+  if (totalCards < 40) {
+    errors.tooSmall = "Decks must be at least 40 cards";
+  }
+
+  if (totalCards > 60) {
+    errors.tooLarge = "Decks must be at most 60 cards";
+  }
+
+  const totalExtraCards = _extradeck.reduce((acc, card) => {
+    acc += card.copies;
+    return acc;
+  }, 0);
+
+  if (totalExtraCards > 15) {
+    errors.tooLargeExtra = "Extra decks must be at most 15 cards";
+  }
+
+  [...maindeck, ..._extradeck].forEach((card: Card) => {
+    const cardLegality = card?.details?.banlist_info?.ban_tcg;
+
+    switch (cardLegality) {
+      case "Forbidden":
+        errors.forbidden = `${card.name} is forbidden`;
+        break;
+      case "Limited":
+        if (card.copies > 1) {
+          errors.limited = `${card.name} cannot have more than 1 copy in a deck`;
+        }
+        break;
+      case "Semi-Limited":
+        if (card.copies > 2) {
+          errors.semiLimited = `${card.name} cannot have more than 2 copies in a deck`;
+        }
+        break;
+      default:
+        if (card.copies > YUGIOH_MAX_COPIES) {
+          errors.semiLimited = `${card.name} cannot have more than 3 copies in a deck`;
+        }
+        break;
+    }
+  });
+
+  return errors;
+};
+
 export const handleAddToDeck = (
   newCard: Card,
   maindeck: Deck,

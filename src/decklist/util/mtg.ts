@@ -63,6 +63,29 @@ export const isBasicLand = (card: Card): boolean => {
   return card.details?.type_line?.includes("Basic Land");
 };
 
+export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
+  const errors: any = {};
+
+  const totalCards = maindeck.reduce((acc, card) => {
+    acc += card.copies;
+    return acc;
+  }, 0);
+
+  if (totalCards < 60) {
+    errors.tooSmall = "Decks must be at least 60 cards";
+  }
+
+  if (
+    maindeck.some((card: Card) => {
+      return card.copies > MTG_MAX_COPIES && !isBasicLand(card);
+    })
+  ) {
+    errors.tooManyCopies = `Decks cannot have more than 4 copies of a card`;
+  }
+
+  return errors;
+};
+
 export const handleAddToDeck = (
   newCard: Card,
   maindeck: Deck,

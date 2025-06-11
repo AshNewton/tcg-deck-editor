@@ -1,5 +1,11 @@
-import { handleAddToDeck as mtgAddToDeck } from "./mtg";
-import { handleAddToDeck as ygoAddToDeck } from "./yugioh";
+import {
+  handleAddToDeck as mtgAddToDeck,
+  isInvalid as mtgIsInvalid,
+} from "./mtg";
+import {
+  handleAddToDeck as ygoAddToDeck,
+  isInvalid as ygoIsInvalid,
+} from "./yugioh";
 
 import { MTG_HAND_START_SIZE, MTG_NAME } from "./mtg";
 import { YUGIOH_HAND_START_SIZE, YUGIOH_NAME } from "./yugioh";
@@ -17,6 +23,11 @@ export const isMTG = (game: Game): boolean => {
 export const addToDeckHandlers: Record<Game, any> = {
   "Magic the Gathering": mtgAddToDeck,
   Yugioh: ygoAddToDeck,
+};
+
+export const isInvalidHandlers: Record<Game, any> = {
+  "Magic the Gathering": mtgIsInvalid,
+  Yugioh: ygoIsInvalid,
 };
 
 export const getCardHandSize = (game: Game) => {
