@@ -1,7 +1,7 @@
 import { setMainDeck } from "../../store/slices/uiSlice";
 
 import { AppDispatch } from "../../store";
-import { Card, Deck } from "../../types";
+import { Card, Deck, mtgCard } from "../../types";
 import { binomial } from "./deckAnalytics";
 
 export const MTG_NAME = "Magic the Gathering";
@@ -60,7 +60,10 @@ export const MTG_COLORS_HEX: Record<string, string> = {
 };
 
 export const isBasicLand = (card: Card): boolean => {
-  return card.details?.type_line?.includes("Basic Land");
+  return (
+    "type_line" in card.details &&
+    (card.details as mtgCard)?.type_line?.includes("Basic Land")
+  );
 };
 
 export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
@@ -115,7 +118,11 @@ export const getLandProbabilities = (deck: Deck) => {
   const totalCards = deck.reduce((sum, card) => sum + card.copies, 0);
 
   const totalLands = deck
-    .filter((card) => card.details.type_line.includes("Land"))
+    .filter(
+      (card) =>
+        "type_line" in card &&
+        (card.details as mtgCard).type_line.includes("Land")
+    )
     .reduce((sum, card) => sum + card.copies, 0);
 
   const probabilities: number[] = [];

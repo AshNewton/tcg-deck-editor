@@ -3,6 +3,8 @@ import SaveLoad from "../components/mui/SaveLoad";
 import SearchBar from "../components/mui/Searchbar";
 import Text from "../components/mui/Text";
 
+import Alert from "@mui/material/Alert";
+import Box from "@mui/material/Box";
 import MuiCard from "@mui/material/Card";
 
 import { addToDeckHandlers, isInvalidHandlers, isYugioh } from "../util/util";
@@ -14,14 +16,12 @@ import {
   bulkSearchCard as bulkSearchMtgCard,
   searchCard as searchMTGCard,
 } from "../api/magicthegathering";
+import { isExtraDeckCard } from "../util/yugioh";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Action } from "@reduxjs/toolkit";
 import { Card, Deck } from "../../types";
-import { isExtraDeckCard } from "../util/yugioh";
-import Box from "@mui/material/Box";
-import { Alert, List, ListItem } from "@mui/material";
 
 const Sidebar = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
@@ -98,7 +98,7 @@ const Sidebar = () => {
         <>
           {/* deck validity errors */}
           {deckErrors && (
-            <List>
+            <>
               {Object.values(deckErrors).map((v: any) => {
                 return (
                   <Alert severity="warning" sx={{ m: 2 }}>
@@ -106,7 +106,7 @@ const Sidebar = () => {
                   </Alert>
                 );
               })}
-            </List>
+            </>
           )}
 
           {/* display decklist and change copies */}

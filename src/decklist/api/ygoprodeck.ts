@@ -1,10 +1,10 @@
-import { ygoCard } from "../../types";
+import { Card, ygoCard } from "../../types";
 
 // https://ygoprodeck.com/api-guide/
 
 const searchCardsUrl = "https://db.ygoprodeck.com/api/v7/cardinfo.php?";
 
-export const searchCard = async (name: String): Promise<Array<ygoCard>> => {
+export const searchCard = async (name: String): Promise<Array<Card>> => {
   try {
     const response = await fetch(searchCardsUrl + "fname=" + name);
     if (!response.ok) {
@@ -25,7 +25,7 @@ export const searchCard = async (name: String): Promise<Array<ygoCard>> => {
 
 export const bulkSearchCard = async (
   cardNames: Array<string>
-): Promise<Array<ygoCard>> => {
+): Promise<Array<Card>> => {
   try {
     const response = await fetch(
       searchCardsUrl + "name=" + cardNames.join("|")

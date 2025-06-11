@@ -1,4 +1,4 @@
-import { mtgCard, MtgSymbol } from "../../types";
+import { Card, mtgCard, MtgSymbol } from "../../types";
 
 // https://scryfall.com/docs/api/cards/search
 
@@ -6,7 +6,7 @@ const bulkCardFetch = "https://api.scryfall.com/cards/collection";
 const searchCardsUrl = "https://api.scryfall.com/cards/search?";
 const symbolsUrl = "https://api.scryfall.com/symbology";
 
-export const searchCard = async (name: String): Promise<Array<mtgCard>> => {
+export const searchCard = async (name: String): Promise<Array<Card>> => {
   try {
     const response = await fetch(searchCardsUrl + "q=" + name);
     if (!response.ok) {
@@ -44,7 +44,7 @@ export const getSymbolUris = async (): Promise<Array<MtgSymbol>> => {
 
 export const bulkSearchCard = async (
   cardNames: Array<string>
-): Promise<Array<mtgCard>> => {
+): Promise<Array<Card>> => {
   try {
     const body = cardNames.map((card: string) => {
       return { name: card };

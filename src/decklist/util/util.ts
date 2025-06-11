@@ -10,7 +10,7 @@ import {
 import { MTG_HAND_START_SIZE, MTG_NAME } from "./mtg";
 import { YUGIOH_HAND_START_SIZE, YUGIOH_NAME } from "./yugioh";
 
-import { Card, Deck, Game } from "../../types";
+import { Card, Deck, Game, mtgCard, ygoCard } from "../../types";
 
 export const isYugioh = (game: Game): boolean => {
   return game === YUGIOH_NAME;
@@ -53,8 +53,8 @@ export const getCardImage = (cardname: string, deck: Deck, game: Game) => {
   }
 
   if (game === MTG_NAME) {
-    return card.details.image_uris.normal;
+    return (card.details as mtgCard).image_uris.normal;
   } else if (game === YUGIOH_NAME) {
-    return card.details.card_images[0]?.image_url;
+    return (card.details as ygoCard).card_images[0]?.image_url;
   }
 };

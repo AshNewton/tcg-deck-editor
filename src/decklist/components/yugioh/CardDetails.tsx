@@ -10,7 +10,7 @@ import Link from "@mui/material/Link";
 
 import { getBannedSeverity, getCardLevelName } from "../../util/yugioh";
 
-import { Card } from "../../../types";
+import { Card, ygoCard } from "../../../types";
 
 type Props = {
   card: Card;
@@ -20,9 +20,11 @@ type Props = {
 const CardDetails = (props: Props) => {
   const { card, clearSelection } = props;
 
-  const cardLevelName = getCardLevelName(card);
+  const ygoCard = card?.details as ygoCard;
 
-  const banSeverity = getBannedSeverity(card?.details?.banlist_info?.ban_tcg);
+  const cardLevelName = getCardLevelName(ygoCard);
+
+  const banSeverity = getBannedSeverity(ygoCard?.banlist_info?.ban_tcg);
 
   return (
     <>
@@ -39,9 +41,9 @@ const CardDetails = (props: Props) => {
         <Box display="flex" flexDirection="row" alignItems="center" gap={2}>
           <Text text={card.name} fontSize={28} />
           {card.copies > 1 && <Text text={`x${card.copies}`} fontSize={20} />}
-          {card.details.banlist_info?.ban_tcg && (
+          {ygoCard.banlist_info?.ban_tcg && (
             <Alert variant="filled" severity={banSeverity} color={banSeverity}>
-              {card.details.banlist_info.ban_tcg}
+              {ygoCard.banlist_info.ban_tcg}
             </Alert>
           )}
         </Box>
@@ -52,40 +54,34 @@ const CardDetails = (props: Props) => {
       </Box>
       <Grid container gap={1}>
         <Grid item xs={12} sm={3}>
-          <Image src={card.details.card_images[0]?.image_url} alt={card.name} />
+          <Image src={ygoCard.card_images[0]?.image_url} alt={card.name} />
         </Grid>
         <Grid item xs={12} sm={8} mt={2} px={2} py={1}>
           {/* level/rank/link rating */}
-          {card.details.level && (
-            <Text text={`${cardLevelName}: ${card.details.level}`} />
+          {ygoCard.level && (
+            <Text text={`${cardLevelName}: ${ygoCard.level}`} />
           )}
 
           {/* attribute */}
-          {card.details.attribute && card.details.race && (
-            <Text
-              mt={1}
-              text={`${card.details.attribute} / ${card.details.race}`}
-            />
+          {ygoCard.attribute && ygoCard.race && (
+            <Text mt={1} text={`${ygoCard.attribute} / ${ygoCard.race}`} />
           )}
 
           {/* type */}
-          <Text text={`${card.details.humanReadableCardType}`} />
+          <Text text={`${ygoCard.humanReadableCardType}`} />
 
           {/* ATK/DEF */}
-          {card.details.atk != null && card.details.def != null && (
-            <Text
-              mt={1}
-              text={`ATK: ${card.details.atk} / DEF: ${card.details.def}`}
-            />
+          {ygoCard.atk != null && ygoCard.def != null && (
+            <Text mt={1} text={`ATK: ${ygoCard.atk} / DEF: ${ygoCard.def}`} />
           )}
 
           {/* card text */}
-          <Text mt={1} text={`${card.details.desc}`} />
+          <Text mt={1} text={`${ygoCard.desc}`} />
 
           {/* link to YGOPRO */}
           <Link
             mt={1}
-            href={card.details.ygoprodeck_url}
+            href={ygoCard.ygoprodeck_url}
             target="_blank"
             rel="noopener noreferrer"
           >

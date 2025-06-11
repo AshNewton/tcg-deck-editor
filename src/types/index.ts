@@ -9,9 +9,16 @@ export type ygoCard = {
   level: number;
   race: string;
   attribute: string;
+  humanReadableCardType: string;
+  ygoprodeck_url: string;
   card_sets?: YGOCardSet[];
+  banlist_info?: YGOLegality;
   card_images: YGOCardImage[];
   card_prices: YGOCardPrice[];
+};
+
+export type YGOLegality = {
+  ban_tcg: BanType;
 };
 
 export type YGOCardSet = {
@@ -37,7 +44,112 @@ export type YGOCardPrice = {
   coolstuffinc_price: string;
 };
 
-export type mtgCard = any;
+export type mtgCard = {
+  object: "card";
+  id: string;
+  oracle_id: string;
+  multiverse_ids: number[];
+  mtgo_id?: number;
+  arena_id?: number;
+  tcgplayer_id?: number;
+  cardmarket_id?: number;
+  name: string;
+  lang: string;
+  released_at: string;
+  uri: string;
+  scryfall_uri: string;
+  layout: string;
+  highres_image: boolean;
+  image_status: string;
+  image_uris: {
+    small: string;
+    normal: string;
+    large: string;
+    png: string;
+    art_crop: string;
+    border_crop: string;
+  };
+  mana_cost?: string;
+  cmc: number;
+  type_line: string;
+  oracle_text?: string;
+  power?: string;
+  toughness?: string;
+  colors: string[];
+  color_identity: string[];
+  keywords: string[];
+  legalities: Record<string, "legal" | "not_legal" | "restricted" | "banned">;
+  games: string[];
+  reserved: boolean;
+  game_changer: boolean;
+  foil: boolean;
+  nonfoil: boolean;
+  finishes: string[];
+  oversized: boolean;
+  promo: boolean;
+  reprint: boolean;
+  variation: boolean;
+  set_id: string;
+  set: string;
+  set_name: string;
+  set_type: string;
+  set_uri: string;
+  set_search_uri: string;
+  scryfall_set_uri: string;
+  rulings_uri: string;
+  prints_search_uri: string;
+  collector_number: string;
+  digital: boolean;
+  rarity: string;
+  flavor_text?: string;
+  card_back_id: string;
+  artist: string;
+  artist_ids: string[];
+  illustration_id?: string;
+  border_color: string;
+  frame: string;
+  frame_effects?: string[];
+  full_art: boolean;
+  textless: boolean;
+  booster: boolean;
+  story_spotlight: boolean;
+  edhrec_rank?: number;
+  preview?: {
+    source: string;
+    source_uri: string;
+    previewed_at: string;
+  };
+  prices: {
+    usd?: string;
+    usd_foil?: string;
+    usd_etched?: string | null;
+    eur?: string;
+    eur_foil?: string;
+    tix?: string;
+  };
+  related_uris?: Record<string, string>;
+  purchase_uris?: Record<string, string>;
+  card_faces?: Array<{
+    object: string;
+    name: string;
+    mana_cost?: string;
+    type_line: string;
+    oracle_text?: string;
+    power?: string;
+    toughness?: string;
+    artist?: string;
+    artist_id?: string;
+    illustration_id?: string;
+  }>;
+  all_parts?: Array<{
+    object: string;
+    id: string;
+    component: string;
+    name: string;
+    type_line: string;
+    uri: string;
+  }>;
+};
 
 export type MtgSymbol = {
   symbol: string;

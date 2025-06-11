@@ -18,7 +18,7 @@ import {
   MTG_STAT_STEP,
 } from "../../util/mtg";
 
-import { Card } from "../../../types";
+import { Card, mtgCard } from "../../../types";
 
 export type SearchValues = {
   filterByName: boolean;
@@ -47,6 +47,10 @@ export type SearchValues = {
 };
 
 export const filterCard = (card: Card, values: SearchValues): boolean => {
+  const mtgCard = card?.details as mtgCard | undefined;
+
+  if (!mtgCard) return false;
+
   if (
     values.filterByName &&
     values.nameIncludes &&
@@ -60,7 +64,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByColor &&
     values.colors &&
-    !cardHasAllColors(card.details.color_identity, values.colors)
+    !cardHasAllColors(mtgCard.color_identity, values.colors)
   ) {
     return false;
   }
@@ -68,9 +72,9 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByManaCost &&
     values.mana &&
-    (!card.details.cmc ||
-      card.details.cmc < values.mana[0] ||
-      values.mana[1] < card.details.cmc)
+    (!mtgCard.cmc ||
+      mtgCard.cmc < values.mana[0] ||
+      values.mana[1] < mtgCard.cmc)
   ) {
     return false;
   }
@@ -78,9 +82,9 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByPower &&
     values.power &&
-    (!card.details.power ||
-      card.details.power < values.power[0] ||
-      values.power[1] < card.details.power)
+    (!mtgCard.power ||
+      Number(mtgCard.power) < values.power[0] ||
+      values.power[1] < Number(mtgCard.power))
   ) {
     return false;
   }
@@ -88,20 +92,20 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByToughness &&
     values.toughness &&
-    (!card.details.toughness ||
-      card.details.toughness < values.toughness[0] ||
-      values.toughness[1] < card.details.toughness)
+    (!mtgCard.toughness ||
+      Number(mtgCard.toughness) < values.toughness[0] ||
+      values.toughness[1] < Number(mtgCard.toughness))
   ) {
     return false;
   }
 
-  if (!card.details.card_faces) {
+  if (!mtgCard.card_faces) {
     // cards with a single face
     if (
       values.filterByDesc &&
       values.descIncludes &&
-      !card.details.oracle_text
-        .toLocaleLowerCase()
+      !mtgCard.oracle_text
+        ?.toLocaleLowerCase()
         .includes(values.descIncludes.toLocaleLowerCase())
     ) {
       return false;
@@ -111,9 +115,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
       values.filterByCardType &&
       values.cardTypes &&
       !values.cardTypes.every((type: string) =>
-        card.details.type_line
-          .toLocaleLowerCase()
-          .includes(type.toLocaleLowerCase())
+        mtgCard.type_line.toLocaleLowerCase().includes(type.toLocaleLowerCase())
       )
     ) {
       return false;
@@ -122,7 +124,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
     if (
       values.filterByTribe &&
       values.tribeIncludes &&
-      !card.details.type_line
+      !mtgCard.type_line
         .toLocaleLowerCase()
         .includes(values.tribeIncludes.toLocaleLowerCase())
     ) {
@@ -134,7 +136,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
     if (
       values.filterByDesc &&
       values.descIncludes &&
-      !card.details.card_faces.some((face: any) =>
+      !mtgCard.card_faces.some((face: any) =>
         face.oracle_text
           .toLocaleLowerCase()
           .includes(values.descIncludes.toLocaleLowerCase())
@@ -146,7 +148,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
     if (
       values.filterByCardType &&
       values.cardTypes &&
-      !card.details.card_faces.some((face: any) =>
+      !mtgCard.card_faces.some((face: any) =>
         values.cardTypes.every((type) =>
           face.type_line.toLocaleLowerCase().includes(type.toLocaleLowerCase())
         )
@@ -158,7 +160,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
     if (
       values.filterByTribe &&
       values.tribeIncludes &&
-      !card.details.card_faces.some((face: any) =>
+      !mtgCard.card_faces.some((face: any) =>
         face.type_line
           .toLocaleLowerCase()
           .includes(values.tribeIncludes.toLocaleLowerCase())

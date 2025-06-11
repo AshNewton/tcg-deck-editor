@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 import { MtgSymbol } from "../../../types";
 
 type Props = {
-  text: string;
+  text?: string;
   symbols: Array<MtgSymbol>;
 };
 
@@ -14,7 +14,9 @@ const TextWithSymbols = ({ text, symbols }: Props) => {
     symbols.map(({ symbol, url, alt }) => [symbol, { src: url, alt }])
   );
 
-  const parseSymbols = (input: string) => {
+  const parseSymbols = (input?: string) => {
+    if (!input) return [];
+
     return [...input].reduce<Part[]>((acc, char) => {
       const last = acc[acc.length - 1];
 

@@ -19,7 +19,7 @@ import {
   YUGIOH_TRAP_TYPES,
 } from "../../util/yugioh";
 
-import { Card } from "../../../types";
+import { Card, ygoCard } from "../../../types";
 
 export type SearchValues = {
   filterByName: boolean;
@@ -48,6 +48,8 @@ export type SearchValues = {
 };
 
 export const filterCard = (card: Card, values: SearchValues): boolean => {
+  const ygoCard = card?.details as ygoCard;
+
   if (
     values.filterByName &&
     values.nameIncludes &&
@@ -61,7 +63,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByDesc &&
     values.descIncludes &&
-    !card.details.desc
+    !ygoCard.desc
       .toLocaleLowerCase()
       .includes(values.descIncludes.toLocaleLowerCase())
   ) {
@@ -72,7 +74,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
     values.filterByCardType &&
     values.cardtypes &&
     !values.cardtypes.some((cardType) =>
-      card.details.humanReadableCardType
+      ygoCard.humanReadableCardType
         .toLocaleLowerCase()
         .includes(cardType.toLocaleLowerCase())
     )
@@ -83,7 +85,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByAttribute &&
     values.attributes &&
-    !values.attributes.includes(card.details.attribute)
+    !values.attributes.includes(ygoCard.attribute)
   ) {
     return false;
   }
@@ -91,7 +93,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByMonsterType &&
     values.monsterType &&
-    !values.monsterType.includes(card.details.race)
+    !values.monsterType.includes(ygoCard.race)
   ) {
     return false;
   }
@@ -99,8 +101,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByLevel &&
     values.levels &&
-    (!card.details.level ||
-      !values.levels.includes(card.details.level.toString()))
+    (!ygoCard.level || !values.levels.includes(ygoCard.level.toString()))
   ) {
     return false;
   }
@@ -108,9 +109,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByATK &&
     values.atk &&
-    (!card.details.atk ||
-      card.details.atk < values.atk[0] ||
-      values.atk[1] < card.details.atk)
+    (!ygoCard.atk || ygoCard.atk < values.atk[0] || values.atk[1] < ygoCard.atk)
   ) {
     return false;
   }
@@ -118,9 +117,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByDEF &&
     values.def &&
-    (!card.details.def ||
-      card.details.def < values.def[0] ||
-      values.def[1] < card.details.def)
+    (!ygoCard.def || ygoCard.def < values.def[0] || values.def[1] < ygoCard.def)
   ) {
     return false;
   }

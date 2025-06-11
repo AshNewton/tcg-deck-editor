@@ -2,7 +2,7 @@ import { setExtraDeck, setMainDeck } from "../../store/slices/uiSlice";
 
 import { AlertProps } from "@mui/material";
 import { AppDispatch } from "../../store";
-import { BanType, Card, Deck } from "../../types";
+import { BanType, Card, Deck, ygoCard } from "../../types";
 
 export const YUGIOH_NAME = "Yugioh";
 
@@ -105,7 +105,9 @@ export const YUGIOH_MONSTER_ABILITIES = [
   "Toon",
 ];
 
-export const getBannedSeverity = (banType: BanType): AlertProps["severity"] => {
+export const getBannedSeverity = (
+  banType: BanType | undefined
+): AlertProps["severity"] => {
   switch (banType) {
     case "Forbidden":
       return "error";
@@ -118,10 +120,10 @@ export const getBannedSeverity = (banType: BanType): AlertProps["severity"] => {
   }
 };
 
-export const getCardLevelName = (card: Card | null): string => {
-  return card?.details?.type === "Link Monster"
+export const getCardLevelName = (card: ygoCard | null): string => {
+  return card?.type === "Link Monster"
     ? "Link Rating"
-    : card?.details?.type === "XYZ Monster"
+    : card?.type === "XYZ Monster"
     ? "Rank"
     : "Level";
 };
@@ -133,7 +135,7 @@ export const isExtraDeckCard = (card: Card): boolean => {
     "XYZ Monster",
     "Link Monster",
   ];
-  return extraTypes.includes(card?.details?.type);
+  return extraTypes.includes((card?.details as ygoCard)?.type);
 };
 
 export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
@@ -162,7 +164,7 @@ export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
   }
 
   [...maindeck, ..._extradeck].forEach((card: Card) => {
-    const cardLegality = card?.details?.banlist_info?.ban_tcg;
+    const cardLegality = (card?.details as ygoCard)?.banlist_info?.ban_tcg;
 
     switch (cardLegality) {
       case "Forbidden":

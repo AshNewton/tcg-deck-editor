@@ -23,13 +23,15 @@ import Popover from "@mui/material/Popover";
 
 import { useAppSelector } from "../../../hooks";
 
-import { Card, Deck } from "../../../types";
+import { Card, Deck, mtgCard } from "../../../types";
 import { MTG_COLORLESS_CODE, MTG_COLORS_HEX } from "../../util/mtg";
 
 const getManaCostDistribution = (deck: Deck) => {
   return deck.reduce((acc, card) => {
-    if (!card.details.type_line.includes("Land")) {
-      const manaCost = card.details.cmc;
+    const mtgCard = card?.details as mtgCard;
+
+    if (!mtgCard?.type_line.includes("Land")) {
+      const manaCost = mtgCard.cmc;
       acc[manaCost] = (acc[manaCost] || 0) + card.copies;
     }
 
@@ -48,7 +50,7 @@ const getColorIdentityDistribution = (deck: Deck) => {
   };
 
   deck.forEach((card: Card) => {
-    const colors = card.details.color_identity;
+    const colors = (card.details as mtgCard).color_identity;
     if (colors.length === 0) {
       dist["C"] += 1;
     } else {
@@ -78,7 +80,7 @@ const Mana = () => {
   const handleManaCostClick = (manaCost: Number, e: any) => {
     setManaCostFilter(
       deck
-        .filter((card) => card.details.cmc === manaCost)
+        .filter((card) => (card.details as mtgCard).cmc === manaCost)
         .sort((c1, c2) => c1.name.localeCompare(c2.name))
     );
     setAnchorPosManaCost({
@@ -100,10 +102,14 @@ const Mana = () => {
   );
 
   const manaColorDist = getColorIdentityDistribution(
-    deck.filter((card: Card) => !card.details.type_line.includes("Land"))
+    deck.filter(
+      (card: Card) => !(card.details as mtgCard).type_line.includes("Land")
+    )
   );
   const manaColorProductionDist = getColorIdentityDistribution(
-    deck.filter((card: Card) => card.details.type_line.includes("Land"))
+    deck.filter((card: Card) =>
+      (card.details as mtgCard).type_line.includes("Land")
+    )
   );
 
   return (
@@ -194,10 +200,12 @@ const Mana = () => {
               filterBy={(color) => {
                 return deck.filter(
                   (card: Card) =>
-                    !card.details.type_line.includes("Land") &&
+                    !(card.details as mtgCard).type_line.includes("Land") &&
                     (color === MTG_COLORLESS_CODE
-                      ? card.details.color_identity.length === 0
-                      : card.details.color_identity.includes(color))
+                      ? (card.details as mtgCard).color_identity.length === 0
+                      : (card.details as mtgCard).color_identity.includes(
+                          color
+                        ))
                 );
               }}
             />
@@ -212,10 +220,12 @@ const Mana = () => {
               filterBy={(color) => {
                 return deck.filter(
                   (card: Card) =>
-                    card.details.type_line.includes("Land") &&
+                    (card.details as mtgCard).type_line.includes("Land") &&
                     (color === MTG_COLORLESS_CODE
-                      ? card.details.color_identity.length === 0
-                      : card.details.color_identity.includes(color))
+                      ? (card.details as mtgCard).color_identity.length === 0
+                      : (card.details as mtgCard).color_identity.includes(
+                          color
+                        ))
                 );
               }}
             />

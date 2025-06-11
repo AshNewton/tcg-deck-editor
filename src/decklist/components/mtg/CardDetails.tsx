@@ -13,7 +13,7 @@ import Link from "@mui/material/Link";
 
 import { getSymbolUris } from "../../api/magicthegathering";
 
-import { Card, MtgSymbol } from "../../../types";
+import { Card, mtgCard, MtgSymbol } from "../../../types";
 
 type Props = {
   card: Card;
@@ -48,6 +48,10 @@ const CardDetails = (props: Props) => {
     );
   }
 
+  const mtgCard = card?.details as mtgCard | undefined;
+
+  if (!mtgCard) return <></>;
+
   return (
     <>
       <Box
@@ -72,7 +76,7 @@ const CardDetails = (props: Props) => {
 
       <Grid container mt={2} gap={1}>
         <Grid item xs={12} sm={3}>
-          <Image src={card.details.image_uris.normal} alt={card.name} />
+          <Image src={mtgCard.image_uris.normal} alt={card.name} />
         </Grid>
         <Grid
           item
@@ -84,37 +88,29 @@ const CardDetails = (props: Props) => {
           py={1}
         >
           {/* mana */}
-          {!card.details.card_faces && (
-            <TextWithSymbols text={card.details.mana_cost} symbols={symbols} />
+          {!mtgCard.card_faces && (
+            <TextWithSymbols text={mtgCard.mana_cost} symbols={symbols} />
           )}
 
           {/* type */}
-          {!card.details.card_faces && (
-            <Text text={`${card.details.type_line}`} />
-          )}
+          {!mtgCard.card_faces && <Text text={`${mtgCard.type_line}`} />}
 
           {/* power/toughness */}
-          {!card.details.card_faces &&
-            card.details.power != null &&
-            card.details.toughness != null && (
-              <Text
-                mt={1}
-                text={`${card.details.power} / ${card.details.toughness}`}
-              />
+          {!mtgCard.card_faces &&
+            mtgCard.power != null &&
+            mtgCard.toughness != null && (
+              <Text mt={1} text={`${mtgCard.power} / ${mtgCard.toughness}`} />
             )}
 
           {/* card text */}
-          {!card.details.card_faces && card.details.oracle_text && (
-            <TextWithSymbols
-              text={card.details.oracle_text}
-              symbols={symbols}
-            />
+          {!mtgCard.card_faces && mtgCard.oracle_text && (
+            <TextWithSymbols text={mtgCard.oracle_text} symbols={symbols} />
           )}
 
           {/* card text for multiple faces */}
-          {card.details.card_faces && (
+          {mtgCard.card_faces && (
             <Grid container>
-              {card.details.card_faces.map((face: any) => {
+              {mtgCard.card_faces.map((face: any) => {
                 return (
                   <Grid sm={6} xs={12}>
                     <Text mt={1} text={`${face.name}`} />
@@ -143,7 +139,7 @@ const CardDetails = (props: Props) => {
           {/* link to Scryfall */}
           <Link
             mt={1}
-            href={card.details.scryfall_uri}
+            href={mtgCard.scryfall_uri}
             target="_blank"
             rel="noopener noreferrer"
           >
