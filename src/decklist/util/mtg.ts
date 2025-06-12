@@ -66,6 +66,14 @@ export const isBasicLand = (card: Card): boolean => {
   );
 };
 
+export const isMtgCard = (card: any): card is mtgCard => {
+  return (
+    typeof card === "object" &&
+    typeof card.name === "string" &&
+    typeof card.type_line === "string"
+  );
+};
+
 export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
   const errors: any = {};
 

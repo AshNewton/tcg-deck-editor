@@ -105,6 +105,14 @@ export const YUGIOH_MONSTER_ABILITIES = [
   "Toon",
 ];
 
+export const isYgoCard = (card: any): card is ygoCard => {
+  return (
+    typeof card === "object" &&
+    typeof card.name === "string" &&
+    typeof card.type === "string"
+  );
+};
+
 export const getBannedSeverity = (
   banType: BanType | undefined
 ): AlertProps["severity"] => {

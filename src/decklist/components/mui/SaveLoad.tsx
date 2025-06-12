@@ -6,7 +6,9 @@ import Box from "@mui/material/Box";
 import DownloadIcon from "@mui/icons-material/Download";
 import UploadIcon from "@mui/icons-material/Upload";
 
-import { useAppDispatch } from "../../../hooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
+import { isMtgCard, MTG_NAME } from "../../util/mtg";
+import { isYgoCard, YUGIOH_NAME } from "../../util/yugioh";
 
 type Props = {
   saveload: Array<any>;
@@ -17,6 +19,8 @@ const SaveLoad = (props: Props) => {
   const { saveload, justifyContent = "flex-end" } = props;
 
   const dispatch = useAppDispatch();
+
+  const game = useAppSelector((state) => state.ui.game);
 
   const handleSave = async () => {
     try {
@@ -68,11 +72,31 @@ const SaveLoad = (props: Props) => {
       const text = await file.text();
 
       const parsed = JSON.parse(text);
+
       saveload.forEach(({ name, setter }) => {
+        if (game === MTG_NAME) {
+          const allValid = parsed[name].every((card: any) =>
+            isMtgCard(card.details)
+          );
+
+          if (!allValid) {
+            throw new Error(`Invalid card data for MTG deck`);
+          }
+        } else if (game === YUGIOH_NAME) {
+          const allValid = parsed[name].every((card: any) =>
+            isYgoCard(card.details)
+          );
+
+          if (!allValid) {
+            throw new Error(`Invalid card data for YGO deck`);
+          }
+        }
+
         dispatch(setter(parsed[name]));
       });
     } catch (err) {
       console.error("Error loading file:", err);
+      alert("Failed to load file: " + (err as Error).message);
     }
   };
 
