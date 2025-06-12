@@ -118,11 +118,7 @@ export const getLandProbabilities = (deck: Deck) => {
   const totalCards = deck.reduce((sum, card) => sum + card.copies, 0);
 
   const totalLands = deck
-    .filter(
-      (card) =>
-        "type_line" in card &&
-        (card.details as mtgCard).type_line.includes("Land")
-    )
+    .filter((card) => (card.details as mtgCard).type_line.includes("Land"))
     .reduce((sum, card) => sum + card.copies, 0);
 
   const probabilities: number[] = [];

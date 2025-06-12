@@ -46,6 +46,7 @@ const StartingHand = () => {
   }, [game]);
 
   const handSize = getCardHandSize(game);
+  const mtg = isMTG(game);
 
   React.useEffect(() => {
     if (maindeck.length > 0) {
@@ -54,9 +55,11 @@ const StartingHand = () => {
       );
       setChanceToOpenCards(sortedChances);
 
-      setChanceToOpenLands(getLandProbabilities(maindeck));
+      if (mtg) {
+        setChanceToOpenLands(getLandProbabilities(maindeck));
+      }
     }
-  }, [maindeck, handSize]);
+  }, [maindeck, handSize, mtg]);
 
   const generateOpeningHand = () => {
     setSampleStartingHand(getStartingHand(maindeck, handSize).sort());
@@ -74,8 +77,6 @@ const StartingHand = () => {
   const toggleSelectedCard = (card?: Card) => {
     dispatch(setSelectedCard(card || null));
   };
-
-  const mtg = isMTG(game);
 
   return (
     <MuiCard
