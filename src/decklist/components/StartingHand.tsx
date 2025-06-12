@@ -11,12 +11,17 @@ import MuiCard from "@mui/material/Card";
 import ReplayIcon from "@mui/icons-material/Replay";
 
 import { getCard, getCardHandSize, getCardImage, isMTG } from "../util/util";
-import { getStartingHand, getChanceToOpenCards } from "../util/deckAnalytics";
+import {
+  getCardDraw,
+  getStartingHand,
+  getChanceToOpenCards,
+} from "../util/deckAnalytics";
 import { setSelectedCard } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Card, CardOpeningProbabilities } from "../../types";
 import { getLandProbabilities } from "../util/mtg";
+import Button from "./mui/Button";
 
 const StartingHand = () => {
   const [sampleStartingHand, setSampleStartingHand] = React.useState<
@@ -57,6 +62,15 @@ const StartingHand = () => {
     setSampleStartingHand(getStartingHand(maindeck, handSize).sort());
   };
 
+  const drawCard = () => {
+    setSampleStartingHand(
+      [
+        ...sampleStartingHand,
+        ...getCardDraw(maindeck, sampleStartingHand),
+      ].sort()
+    );
+  };
+
   const toggleSelectedCard = (card?: Card) => {
     dispatch(setSelectedCard(card || null));
   };
@@ -80,6 +94,13 @@ const StartingHand = () => {
           setSampleStartingHand([]);
         }}
       >
+        <Box display="flex" flexDirection="row">
+          <Button onClick={drawCard} text="Draw Card" />
+          <IconButton onClick={generateOpeningHand}>
+            <ReplayIcon />
+          </IconButton>
+        </Box>
+
         {sampleStartingHand && (
           <Box display="flex" flexDirection="row" flexWrap="wrap">
             {sampleStartingHand.map((cardname, index) => (
@@ -93,9 +114,6 @@ const StartingHand = () => {
             ))}
           </Box>
         )}
-        <IconButton onClick={generateOpeningHand}>
-          <ReplayIcon />
-        </IconButton>
       </CollapsibleDropdown>
 
       <CollapsibleDropdown title="Calculate Probability to Open Cards">

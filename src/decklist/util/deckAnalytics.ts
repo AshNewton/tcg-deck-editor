@@ -1,4 +1,4 @@
-import { CardOpeningProbabilities, Deck } from "../../types";
+import { Card, CardOpeningProbabilities, Deck } from "../../types";
 
 import { YUGIOH_HAND_START_SIZE } from "./yugioh";
 
@@ -24,6 +24,41 @@ export const getStartingHand = (
 
   // get names from randomized list
   return expanded.slice(0, handSize);
+};
+
+export const getCardDraw = (
+  deck: Deck,
+  hand: Array<string>,
+  numberToDraw = 1
+): Array<string> => {
+  // count how many times each card appears in hand
+  const handCounts = new Map<string, number>();
+  for (const cardname of hand) {
+    handCounts.set(cardname, (handCounts.get(cardname) || 0) + 1);
+  }
+
+  // update the deck based on the hand counts
+  const updated = deck.map((card: Card) => {
+    const countInHand = handCounts.get(card.name) || 0;
+    return {
+      ...card,
+      copies: card.copies - countInHand,
+    };
+  });
+
+  // expand the deck out by number of copies of each card
+  const expanded = updated.flatMap((card) =>
+    Array(card.copies).fill(card.name)
+  );
+
+  // shuffle deck
+  for (let i = expanded.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [expanded[i], expanded[j]] = [expanded[j], expanded[i]];
+  }
+
+  // get names from randomized list
+  return expanded.slice(0, numberToDraw);
 };
 
 export const binomial = (n: number, k: number): number => {
