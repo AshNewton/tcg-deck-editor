@@ -7,7 +7,12 @@ import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
 import MuiCard from "@mui/material/Card";
 
-import { addToDeckHandlers, isInvalidHandlers, isYugioh } from "../util/util";
+import {
+  addToDeckHandlers,
+  isInvalidHandlers,
+  isMTG,
+  isYugioh,
+} from "../util/util";
 import {
   bulkSearchCard as bulkSearchYgoCard,
   searchCard as searchYGOCard,
@@ -16,12 +21,13 @@ import {
   bulkSearchCard as bulkSearchMtgCard,
   searchCard as searchMTGCard,
 } from "../api/magicthegathering";
-import { isExtraDeckCard } from "../util/yugioh";
+import { isExtraDeckCard, isYgoCard } from "../util/yugioh";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Action } from "@reduxjs/toolkit";
 import { Card, Deck } from "../../types";
+import { isMtgCard } from "../util/mtg";
 
 const Sidebar = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
@@ -88,6 +94,7 @@ const Sidebar = () => {
           { setter: setMainDeck, getter: maindeck, name: "main" },
           { setter: setExtraDeck, getter: extradeck, name: "extra" },
         ]}
+        validateCard={yugioh ? isYgoCard : isMtgCard}
       />
 
       {maindeck.length === 0 && extradeck.length === 0 ? (

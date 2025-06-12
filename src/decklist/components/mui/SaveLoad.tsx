@@ -1,26 +1,23 @@
-import React from "react";
-
 import Button from "./Button";
 
 import Box from "@mui/material/Box";
 import DownloadIcon from "@mui/icons-material/Download";
 import UploadIcon from "@mui/icons-material/Upload";
 
-import { useAppDispatch, useAppSelector } from "../../../hooks";
-import { isMtgCard, MTG_NAME } from "../../util/mtg";
-import { isYgoCard, YUGIOH_NAME } from "../../util/yugioh";
+import { useAppDispatch } from "../../../hooks";
+
+import { Card, mtgCard, ygoCard } from "../../../types";
 
 type Props = {
   saveload: Array<any>;
   justifyContent?: string;
+  validateCard: (card: ygoCard | mtgCard) => boolean;
 };
 
 const SaveLoad = (props: Props) => {
-  const { saveload, justifyContent = "flex-end" } = props;
+  const { saveload, validateCard, justifyContent = "flex-end" } = props;
 
   const dispatch = useAppDispatch();
-
-  const game = useAppSelector((state) => state.ui.game);
 
   const handleSave = async () => {
     try {
@@ -74,22 +71,12 @@ const SaveLoad = (props: Props) => {
       const parsed = JSON.parse(text);
 
       saveload.forEach(({ name, setter }) => {
-        if (game === MTG_NAME) {
-          const allValid = parsed[name].every((card: any) =>
-            isMtgCard(card.details)
-          );
+        const allValid = parsed[name].every((card: Card) =>
+          validateCard(card.details)
+        );
 
-          if (!allValid) {
-            throw new Error(`Invalid card data for MTG deck`);
-          }
-        } else if (game === YUGIOH_NAME) {
-          const allValid = parsed[name].every((card: any) =>
-            isYgoCard(card.details)
-          );
-
-          if (!allValid) {
-            throw new Error(`Invalid card data for YGO deck`);
-          }
+        if (!allValid) {
+          throw new Error(`Invalid card data for deck type`);
         }
 
         dispatch(setter(parsed[name]));
