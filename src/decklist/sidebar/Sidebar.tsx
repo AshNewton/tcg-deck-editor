@@ -7,7 +7,12 @@ import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
 import MuiCard from "@mui/material/Card";
 
-import { addToDeckHandlers, isInvalidHandlers, isYugioh } from "../util/util";
+import {
+  addToDeckHandlers,
+  isInvalidHandlers,
+  isMTG,
+  isYugioh,
+} from "../util/util";
 import {
   bulkSearchCard as bulkSearchYgoCard,
   searchCard as searchYGOCard,
@@ -72,7 +77,7 @@ const Sidebar = () => {
   };
 
   const yugioh = isYugioh(game);
-  const mtg = isMtgCard(game);
+  const mtg = isMTG(game);
 
   const deckErrors = isInvalidHandlers[game](maindeck, extradeck);
 

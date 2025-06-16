@@ -5,7 +5,7 @@ import {
 import {
   handleAddToDeck as pokemonAddToDeck,
   isInvalid as pokemonIsInvalid,
-} from "./mtg";
+} from "./pokemon";
 import {
   handleAddToDeck as ygoAddToDeck,
   isInvalid as ygoIsInvalid,
