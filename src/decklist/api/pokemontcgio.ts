@@ -17,12 +17,23 @@ export const searchCard = async (name: String): Promise<Array<Card>> => {
 
     // format the result from searchCard into how we format the decks
     // see pokemonCard in types/index.ts
-    return raw.data.map((card: pokemonCard) => {
+    const cards = raw.data.map((card: pokemonCard) => {
       return {
         name: card.name + " - " + card.set.name,
         details: card,
         copies: 1,
       };
+    });
+
+    // remove duplicates of name/set combination - these are just different rarities
+    const seen = new Set();
+    return cards.filter((card: Card) => {
+      const value = card.name;
+      if (seen.has(value)) {
+        return false; // Skip duplicate
+      }
+      seen.add(value);
+      return true; // Keep unique item
     });
   } catch (error: any) {
     throw new Error(`Error fetching data: ${error.message}`);
