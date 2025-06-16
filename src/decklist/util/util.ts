@@ -70,6 +70,6 @@ export const getCardImage = (cardname: string, deck: Deck, game: Game) => {
   } else if (game === YUGIOH_NAME) {
     return (card.details as ygoCard).card_images[0]?.image_url;
   } else if (game === POKEMON_NAME) {
-    return (card.details as pokemonCard).images?.small;
+    return (card.details as pokemonCard).images?.large;
   }
 };
