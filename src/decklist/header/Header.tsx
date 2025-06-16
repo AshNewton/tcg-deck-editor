@@ -1,4 +1,5 @@
 import Button from "../components/mui/Button";
+import Image from "../components/mui/Image";
 
 import AppBar from "@mui/material/AppBar";
 import FormControl from "@mui/material/FormControl";
@@ -39,7 +40,13 @@ const Header = () => {
           >
             {SUPPORTED_GAMES.map((option) => (
               <MenuItem key={option} value={option}>
-                <img src={GAME_ICONS[option]} alt={option} height={48} />
+                <Image
+                  src={GAME_ICONS[option]}
+                  alt={option}
+                  height={48}
+                  m={0}
+                  margin="auto"
+                />
               </MenuItem>
             ))}
           </Select>

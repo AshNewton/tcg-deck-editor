@@ -7,12 +7,7 @@ import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
 import MuiCard from "@mui/material/Card";
 
-import {
-  addToDeckHandlers,
-  isInvalidHandlers,
-  isMTG,
-  isYugioh,
-} from "../util/util";
+import { addToDeckHandlers, isInvalidHandlers, isYugioh } from "../util/util";
 import {
   bulkSearchCard as bulkSearchYgoCard,
   searchCard as searchYGOCard,
@@ -21,7 +16,9 @@ import {
   bulkSearchCard as bulkSearchMtgCard,
   searchCard as searchMTGCard,
 } from "../api/magicthegathering";
+
 import { isExtraDeckCard, isYgoCard } from "../util/yugioh";
+import { searchCard as searchPokemonCard } from "../api/pokemontcgio";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
@@ -75,6 +72,7 @@ const Sidebar = () => {
   };
 
   const yugioh = isYugioh(game);
+  const mtg = isMtgCard(game);
 
   const deckErrors = isInvalidHandlers[game](maindeck, extradeck);
 
@@ -82,10 +80,12 @@ const Sidebar = () => {
     <MuiCard>
       {/* search for cards */}
       <SearchBar
-        onSearch={yugioh ? searchYGOCard : searchMTGCard}
+        onSearch={
+          yugioh ? searchYGOCard : mtg ? searchMTGCard : searchPokemonCard
+        }
         renderOption={(card) => card.name}
         onOptionSelect={(card) => addToDeck(card)}
-        onBulkSearch={bulkAddToDeck}
+        onBulkSearch={yugioh || mtg ? bulkAddToDeck : undefined}
       />
 
       {/* save/load decklists */}

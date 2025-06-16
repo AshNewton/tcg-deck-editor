@@ -157,13 +157,15 @@ export type MtgSymbol = {
   alt: string;
 };
 
-export type Game = "Yugioh" | "Magic the Gathering";
+export type pokemonCard = any;
+
+export type Game = "Yugioh" | "Magic the Gathering" | "Pokemon TCG";
 
 export type Menu = "Starting Hand" | "Deck Search" | "Mana";
 
 export interface Card {
   name: string;
-  details: ygoCard | mtgCard;
+  details: ygoCard | mtgCard | pokemonCard;
   copies: number;
 }
 
