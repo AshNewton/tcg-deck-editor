@@ -1,0 +1,2379 @@
+{
+  "main": [
+    {
+      "name": "Iron Hands ex - Paradox Rift",
+      "details": {
+        "id": "sv4-70",
+        "name": "Iron Hands ex",
+        "supertype": "Pokémon",
+        "subtypes": [
+          "Basic",
+          "ex",
+          "Future"
+        ],
+        "hp": "230",
+        "types": [
+          "Lightning"
+        ],
+        "rules": [
+          "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        ],
+        "attacks": [
+          {
+            "name": "Arm Press",
+            "cost": [
+              "Lightning",
+              "Lightning",
+              "Colorless"
+            ],
+            "convertedEnergyCost": 3,
+            "damage": "160",
+            "text": ""
+          },
+          {
+            "name": "Amp You Very Much",
+            "cost": [
+              "Lightning",
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
+            "convertedEnergyCost": 4,
+            "damage": "120",
+            "text": "If your opponent's Pokémon is Knocked Out by damage from this attack, take 1 more Prize card."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fighting",
+            "value": "×2"
+          }
+        ],
+        "retreatCost": [
+          "Colorless",
+          "Colorless",
+          "Colorless",
+          "Colorless"
+        ],
+        "convertedRetreatCost": 4,
+        "set": {
+          "id": "sv4",
+          "name": "Paradox Rift",
+          "series": "Scarlet & Violet",
+          "printedTotal": 182,
+          "total": 266,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/11/03",
+          "updatedAt": "2023/11/03 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv4/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv4/logo.png"
+          }
+        },
+        "number": "70",
+        "artist": "PLANETA Mochizuki",
+        "rarity": "Double Rare",
+        "nationalPokedexNumbers": [
+          992
+        ],
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv4/70.png",
+          "large": "https://images.pokemontcg.io/sv4/70_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv4-70",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "holofoil": {
+              "low": 0.79,
+              "mid": 2.73,
+              "high": 39.93,
+              "market": 2.71,
+              "directLow": 2.99
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv4-70",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 1.7,
+            "lowPrice": 0.65,
+            "trendPrice": 1.48,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0,
+            "reverseHoloLow": 0,
+            "reverseHoloTrend": 0,
+            "lowPriceExPlus": 0.65,
+            "avg1": 1.37,
+            "avg7": 1.56,
+            "avg30": 1.62,
+            "reverseHoloAvg1": 0,
+            "reverseHoloAvg7": 0,
+            "reverseHoloAvg30": 0
+          }
+        }
+      },
+      "copies": 2
+    },
+    {
+      "name": "Basic Lightning Energy - Scarlet & Violet",
+      "details": {
+        "id": "sv1-257",
+        "name": "Basic Lightning Energy",
+        "supertype": "Energy",
+        "subtypes": [
+          "Basic"
+        ],
+        "set": {
+          "id": "sv1",
+          "name": "Scarlet & Violet",
+          "series": "Scarlet & Violet",
+          "printedTotal": 198,
+          "total": 258,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/03/31",
+          "updatedAt": "2023/03/31 15:45:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv1/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv1/logo.png"
+          }
+        },
+        "number": "257",
+        "rarity": "Hyper Rare",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "images": {
+          "small": "https://images.pokemontcg.io/sv1/257.png",
+          "large": "https://images.pokemontcg.io/sv1/257_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv1-257",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "holofoil": {
+              "low": 2.9,
+              "mid": 5,
+              "high": 50,
+              "market": 4.34,
+              "directLow": 6.21
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv1-257",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 4.43,
+            "lowPrice": 1.5,
+            "trendPrice": 4.42,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0,
+            "reverseHoloLow": 0,
+            "reverseHoloTrend": 0,
+            "lowPriceExPlus": 2,
+            "avg1": 3.93,
+            "avg7": 4.45,
+            "avg30": 4.42,
+            "reverseHoloAvg1": 0,
+            "reverseHoloAvg7": 0,
+            "reverseHoloAvg30": 0
+          }
+        }
+      },
+      "copies": 12
+    },
+    {
+      "name": "Iron Crown ex - Prismatic Evolutions",
+      "details": {
+        "id": "sv8pt5-158",
+        "name": "Iron Crown ex",
+        "supertype": "Pokémon",
+        "subtypes": [
+          "Basic",
+          "ex",
+          "Future"
+        ],
+        "hp": "220",
+        "types": [
+          "Psychic"
+        ],
+        "rules": [
+          "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        ],
+        "abilities": [
+          {
+            "name": "Cobalt Command",
+            "text": "Attacks used by your Future Pokémon, except any Iron Crown ex, do 20 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+            "type": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Twin Shotels",
+            "cost": [
+              "Psychic",
+              "Colorless",
+              "Colorless"
+            ],
+            "convertedEnergyCost": 3,
+            "damage": "",
+            "text": "This attack does 50 damage to 2 of your opponent's Pokémon. This attack's damage isn't affected by Weakness or Resistance, or by any effects on those Pokémon."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Darkness",
+            "value": "×2"
+          }
+        ],
+        "resistances": [
+          {
+            "type": "Fighting",
+            "value": "-30"
+          }
+        ],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ],
+        "convertedRetreatCost": 2,
+        "set": {
+          "id": "sv8pt5",
+          "name": "Prismatic Evolutions",
+          "series": "Scarlet & Violet",
+          "printedTotal": 131,
+          "total": 180,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "PRE",
+          "releaseDate": "2025/01/17",
+          "updatedAt": "025/01/16 22:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv8pt5/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv8pt5/logo.png"
+          }
+        },
+        "number": "158",
+        "rarity": "Special Illustration Rare",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "H",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv8pt5/158.png",
+          "large": "https://images.pokemontcg.io/sv8pt5/158_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-158",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "holofoil": {
+              "low": 53,
+              "mid": 69.75,
+              "high": 275,
+              "market": 60.41,
+              "directLow": null
+            }
+          }
+        }
+      },
+      "copies": 4
+    },
+    {
+      "name": "Iron Thorns ex - Prismatic Evolutions",
+      "details": {
+        "id": "sv8pt5-32",
+        "name": "Iron Thorns ex",
+        "supertype": "Pokémon",
+        "subtypes": [
+          "Basic",
+          "ex",
+          "Future"
+        ],
+        "hp": "230",
+        "types": [
+          "Lightning"
+        ],
+        "rules": [
+          "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        ],
+        "abilities": [
+          {
+            "name": "Initialization",
+            "text": "As long as this Pokémon is in the Active Spot, Pokémon with a Rule Box in play (both yours and your opponent's) have no Abilities, except for Future Pokémon. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)",
+            "type": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Volt Cyclone",
+            "cost": [
+              "Lightning",
+              "Colorless",
+              "Colorless"
+            ],
+            "convertedEnergyCost": 3,
+            "damage": "140",
+            "text": "Move an Energy from this Pokémon to 1 of your Benched Pokémon."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fighting",
+            "value": "×2"
+          }
+        ],
+        "retreatCost": [
+          "Colorless",
+          "Colorless",
+          "Colorless",
+          "Colorless"
+        ],
+        "convertedRetreatCost": 4,
+        "set": {
+          "id": "sv8pt5",
+          "name": "Prismatic Evolutions",
+          "series": "Scarlet & Violet",
+          "printedTotal": 131,
+          "total": 180,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "PRE",
+          "releaseDate": "2025/01/17",
+          "updatedAt": "025/01/16 22:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv8pt5/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv8pt5/logo.png"
+          }
+        },
+        "number": "32",
+        "rarity": "Double Rare",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "H",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv8pt5/32.png",
+          "large": "https://images.pokemontcg.io/sv8pt5/32_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-32",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "holofoil": {
+              "low": 0.15,
+              "mid": 0.85,
+              "high": 8.95,
+              "market": 0.55,
+              "directLow": null
+            }
+          }
+        }
+      },
+      "copies": 2
+    },
+    {
+      "name": "Miraidon - Temporal Forces",
+      "details": {
+        "id": "sv5-121",
+        "name": "Miraidon",
+        "supertype": "Pokémon",
+        "subtypes": [
+          "Basic",
+          "Future"
+        ],
+        "hp": "110",
+        "types": [
+          "Dragon"
+        ],
+        "attacks": [
+          {
+            "name": "Peak Acceleration",
+            "cost": [
+              "Colorless"
+            ],
+            "convertedEnergyCost": 1,
+            "damage": "40",
+            "text": "Search your deck for up to 2 Basic Energy cards and attach them to your Future Pokémon in any way you like. Then, shuffle your deck."
+          },
+          {
+            "name": "Sparking Strike",
+            "cost": [
+              "Lightning",
+              "Lightning",
+              "Psychic"
+            ],
+            "convertedEnergyCost": 3,
+            "damage": "160",
+            "text": ""
+          }
+        ],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ],
+        "convertedRetreatCost": 2,
+        "set": {
+          "id": "sv5",
+          "name": "Temporal Forces",
+          "series": "Scarlet & Violet",
+          "printedTotal": 162,
+          "total": 218,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "TEF",
+          "releaseDate": "2024/03/22",
+          "updatedAt": "2024/03/22 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv5/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv5/logo.png"
+          }
+        },
+        "number": "121",
+        "artist": "GOSSAN",
+        "rarity": "Rare",
+        "flavorText": "This seems to be the Iron Serpent mentioned in an old book. The Iron Serpent is said to have turned the land to ash with its lightning.",
+        "nationalPokedexNumbers": [
+          1008
+        ],
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "H",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv5/121.png",
+          "large": "https://images.pokemontcg.io/sv5/121_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv5-121",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "holofoil": {
+              "low": 0.01,
+              "mid": 0.15,
+              "high": 30.12,
+              "market": 0.11,
+              "directLow": 0.09
+            },
+            "reverseHolofoil": {
+              "low": 0.05,
+              "mid": 0.25,
+              "high": 30.46,
+              "market": 0.23,
+              "directLow": 0.23
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv5-121",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 2.57,
+            "lowPrice": 1,
+            "trendPrice": 2.61,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0,
+            "reverseHoloLow": 0,
+            "reverseHoloTrend": 0,
+            "lowPriceExPlus": 1,
+            "avg1": 3.9,
+            "avg7": 2.51,
+            "avg30": 2.97,
+            "reverseHoloAvg1": 0,
+            "reverseHoloAvg7": 0,
+            "reverseHoloAvg30": 0
+          }
+        }
+      },
+      "copies": 2
+    },
+    {
+      "name": "Iron Jugulis - Paradox Rift",
+      "details": {
+        "id": "sv4-158",
+        "name": "Iron Jugulis",
+        "supertype": "Pokémon",
+        "subtypes": [
+          "Basic",
+          "Future"
+        ],
+        "hp": "130",
+        "types": [
+          "Colorless"
+        ],
+        "attacks": [
+          {
+            "name": "Homing Headbutt",
+            "cost": [
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
+            "convertedEnergyCost": 3,
+            "damage": "",
+            "text": "This attack does 50 damage to 3 of your opponent's Pokémon that have any damage counters on them. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+          },
+          {
+            "name": "Baryon Beam",
+            "cost": [
+              "Colorless",
+              "Colorless",
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
+            "convertedEnergyCost": 5,
+            "damage": "150",
+            "text": "If this Pokémon has a Future Booster Energy Capsule attached, this attack can be used for ColorlessColorlessColorless."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Lightning",
+            "value": "×2"
+          }
+        ],
+        "resistances": [
+          {
+            "type": "Fighting",
+            "value": "-30"
+          }
+        ],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ],
+        "convertedRetreatCost": 2,
+        "set": {
+          "id": "sv4",
+          "name": "Paradox Rift",
+          "series": "Scarlet & Violet",
+          "printedTotal": 182,
+          "total": 266,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/11/03",
+          "updatedAt": "2023/11/03 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv4/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv4/logo.png"
+          }
+        },
+        "number": "158",
+        "artist": "Souichirou Gunjima",
+        "rarity": "Rare",
+        "flavorText": "It's possible that Iron Jugulis, an object described in an old book, may actually be this Pokémon.",
+        "nationalPokedexNumbers": [
+          993
+        ],
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv4/158.png",
+          "large": "https://images.pokemontcg.io/sv4/158_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv4-158",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 0.03,
+              "mid": 0.2,
+              "high": 4.95,
+              "market": 0.16,
+              "directLow": null
+            },
+            "holofoil": {
+              "low": 0.01,
+              "mid": 0.15,
+              "high": 4.95,
+              "market": 0.13,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv4-158",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.08,
+            "lowPrice": 0.02,
+            "trendPrice": 0.12,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.24,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.19,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.1,
+            "avg7": 0.11,
+            "avg30": 0.09,
+            "reverseHoloAvg1": 0.15,
+            "reverseHoloAvg7": 0.28,
+            "reverseHoloAvg30": 0.25
+          }
+        }
+      },
+      "copies": 1
+    },
+    {
+      "name": "Bloodmoon Ursaluna ex - Prismatic Evolutions",
+      "details": {
+        "id": "sv8pt5-168",
+        "name": "Bloodmoon Ursaluna ex",
+        "supertype": "Pokémon",
+        "subtypes": [
+          "Basic",
+          "ex"
+        ],
+        "hp": "260",
+        "types": [
+          "Colorless"
+        ],
+        "rules": [
+          "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        ],
+        "abilities": [
+          {
+            "name": "Seasoned Skill",
+            "text": "Blood Moon used by this Pokémon costs Colorless less for each Prize card your opponent has taken.",
+            "type": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Blood Moon",
+            "cost": [
+              "Colorless",
+              "Colorless",
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
+            "convertedEnergyCost": 5,
+            "damage": "240",
+            "text": "During your next turn, this Pokémon can't attack."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fighting",
+            "value": "×2"
+          }
+        ],
+        "retreatCost": [
+          "Colorless",
+          "Colorless",
+          "Colorless"
+        ],
+        "convertedRetreatCost": 3,
+        "set": {
+          "id": "sv8pt5",
+          "name": "Prismatic Evolutions",
+          "series": "Scarlet & Violet",
+          "printedTotal": 131,
+          "total": 180,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "PRE",
+          "releaseDate": "2025/01/17",
+          "updatedAt": "025/01/16 22:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv8pt5/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv8pt5/logo.png"
+          }
+        },
+        "number": "168",
+        "rarity": "Special Illustration Rare",
+        "nationalPokedexNumbers": [
+          901
+        ],
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "H",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv8pt5/168.png",
+          "large": "https://images.pokemontcg.io/sv8pt5/168_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-168",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "holofoil": {
+              "low": 98.45,
+              "mid": 119.99,
+              "high": 224.95,
+              "market": 104.71,
+              "directLow": null
+            }
+          }
+        }
+      },
+      "copies": 1
+    },
+    {
+      "name": "Basic Psychic Energy - Scarlet & Violet Energies",
+      "details": {
+        "id": "sve-5",
+        "name": "Basic Psychic Energy",
+        "supertype": "Energy",
+        "subtypes": [
+          "Basic"
+        ],
+        "set": {
+          "id": "sve",
+          "name": "Scarlet & Violet Energies",
+          "series": "Scarlet & Violet",
+          "printedTotal": 16,
+          "total": 16,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/03/31",
+          "updatedAt": "2023/07/20 15:45:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sve/symbol.png",
+            "logo": "https://images.pokemontcg.io/sve/logo.png"
+          }
+        },
+        "number": "5",
+        "rarity": "Common",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "images": {
+          "small": "https://images.pokemontcg.io/sve/5.png",
+          "large": "https://images.pokemontcg.io/sve/5_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sve-5",
+          "updatedAt": "2023/07/20"
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sve-5",
+          "updatedAt": "2023/07/20"
+        }
+      },
+      "copies": 2
+    },
+    {
+      "name": "Iono - Paldea Evolved",
+      "details": {
+        "id": "sv2-185",
+        "name": "Iono",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Supporter"
+        ],
+        "rules": [
+          "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, each player draws a card for each of their remaining Prize cards.",
+          "You may play only 1 Supporter card during your turn."
+        ],
+        "set": {
+          "id": "sv2",
+          "name": "Paldea Evolved",
+          "series": "Scarlet & Violet",
+          "printedTotal": 193,
+          "total": 279,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/06/09",
+          "updatedAt": "2023/06/09 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv2/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv2/logo.png"
+          }
+        },
+        "number": "185",
+        "artist": "Sanosuke Sakuma",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv2/185.png",
+          "large": "https://images.pokemontcg.io/sv2/185_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv2-185",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "normal": {
+              "low": 0.01,
+              "mid": 0.37,
+              "high": 29,
+              "market": 0.34,
+              "directLow": null
+            },
+            "reverseHolofoil": {
+              "low": 0.12,
+              "mid": 0.93,
+              "high": 9.99,
+              "market": 0.56,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv2-185",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.19,
+            "lowPrice": 0.02,
+            "trendPrice": 0.19,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.37,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.38,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.18,
+            "avg7": 0.17,
+            "avg30": 0.19,
+            "reverseHoloAvg1": 0.55,
+            "reverseHoloAvg7": 0.36,
+            "reverseHoloAvg30": 0.38
+          }
+        }
+      },
+      "copies": 2
+    },
+    {
+      "name": "Switch - Sword & Shield",
+      "details": {
+        "id": "swsh1-183",
+        "name": "Switch",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Item"
+        ],
+        "rules": [
+          "Switch your Active Pokémon with 1 of your Benched Pokémon.",
+          "You may play any number of Item cards during your turn."
+        ],
+        "set": {
+          "id": "swsh1",
+          "name": "Sword & Shield",
+          "series": "Sword & Shield",
+          "printedTotal": 202,
+          "total": 216,
+          "legalities": {
+            "unlimited": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "SSH",
+          "releaseDate": "2020/02/07",
+          "updatedAt": "2020/08/14 09:35:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/swsh1/symbol.png",
+            "logo": "https://images.pokemontcg.io/swsh1/logo.png"
+          }
+        },
+        "number": "183",
+        "artist": "Studio Bora Inc.",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "D",
+        "images": {
+          "small": "https://images.pokemontcg.io/swsh1/183.png",
+          "large": "https://images.pokemontcg.io/swsh1/183_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/swsh1-183",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "normal": {
+              "low": 0.01,
+              "mid": 0.15,
+              "high": 30.11,
+              "market": 0.07,
+              "directLow": 0.05
+            },
+            "reverseHolofoil": {
+              "low": 0.11,
+              "mid": 0.26,
+              "high": 5,
+              "market": 0.2,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/swsh1-183",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.08,
+            "lowPrice": 0.02,
+            "trendPrice": 0.07,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.26,
+            "reverseHoloLow": 0.03,
+            "reverseHoloTrend": 0.2,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.04,
+            "avg7": 0.07,
+            "avg30": 0.08,
+            "reverseHoloAvg1": 0.24,
+            "reverseHoloAvg7": 0.32,
+            "reverseHoloAvg30": 0.32
+          }
+        }
+      },
+      "copies": 2
+    },
+    {
+      "name": "Super Rod - Paldea Evolved",
+      "details": {
+        "id": "sv2-188",
+        "name": "Super Rod",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Item"
+        ],
+        "rules": [
+          "Shuffle up to 3 in any combination of Pokémon and Basic Energy cards from your discard pile into your deck.",
+          "You may play any number of Item cards during your turn."
+        ],
+        "set": {
+          "id": "sv2",
+          "name": "Paldea Evolved",
+          "series": "Scarlet & Violet",
+          "printedTotal": 193,
+          "total": 279,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/06/09",
+          "updatedAt": "2023/06/09 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv2/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv2/logo.png"
+          }
+        },
+        "number": "188",
+        "artist": "Toyste Beach",
+        "rarity": "Common",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv2/188.png",
+          "large": "https://images.pokemontcg.io/sv2/188_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv2-188",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "normal": {
+              "low": 0.01,
+              "mid": 0.34,
+              "high": 5,
+              "market": 0.26,
+              "directLow": null
+            },
+            "reverseHolofoil": {
+              "low": 0.01,
+              "mid": 0.79,
+              "high": 80,
+              "market": 0.68,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv2-188",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.23,
+            "lowPrice": 0.02,
+            "trendPrice": 0.25,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.38,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.36,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.19,
+            "avg7": 0.23,
+            "avg30": 0.23,
+            "reverseHoloAvg1": 0.12,
+            "reverseHoloAvg7": 0.39,
+            "reverseHoloAvg30": 0.36
+          }
+        }
+      },
+      "copies": 1
+    },
+    {
+      "name": "Professor's Research (Professor Magnolia) - Sword & Shield",
+      "details": {
+        "id": "swsh1-178",
+        "name": "Professor's Research (Professor Magnolia)",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Supporter"
+        ],
+        "rules": [
+          "Discard your hand and draw 7 cards.",
+          "You may play only 1 Supporter card during your turn."
+        ],
+        "set": {
+          "id": "swsh1",
+          "name": "Sword & Shield",
+          "series": "Sword & Shield",
+          "printedTotal": 202,
+          "total": 216,
+          "legalities": {
+            "unlimited": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "SSH",
+          "releaseDate": "2020/02/07",
+          "updatedAt": "2020/08/14 09:35:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/swsh1/symbol.png",
+            "logo": "https://images.pokemontcg.io/swsh1/logo.png"
+          }
+        },
+        "number": "178",
+        "artist": "Yusuke Ohmura",
+        "rarity": "Rare Holo",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "D",
+        "images": {
+          "small": "https://images.pokemontcg.io/swsh1/178.png",
+          "large": "https://images.pokemontcg.io/swsh1/178_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/swsh1-178",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 0.2,
+              "mid": 0.34,
+              "high": 30.29,
+              "market": 0.31,
+              "directLow": null
+            },
+            "holofoil": {
+              "low": 0.09,
+              "mid": 0.25,
+              "high": 4.95,
+              "market": 0.15,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/swsh1-178",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 28.33,
+            "lowPrice": 7,
+            "trendPrice": 19.74,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0,
+            "reverseHoloLow": 0,
+            "reverseHoloTrend": 17.43,
+            "lowPriceExPlus": 7.17,
+            "avg1": 14.92,
+            "avg7": 17.94,
+            "avg30": 8.25,
+            "reverseHoloAvg1": 24.95,
+            "reverseHoloAvg7": 17.11,
+            "reverseHoloAvg30": 16.68
+          }
+        }
+      },
+      "copies": 2
+    },
+    {
+      "name": "Prime Catcher - Prismatic Evolutions",
+      "details": {
+        "id": "sv8pt5-119",
+        "name": "Prime Catcher",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Item",
+          "ACE SPEC"
+        ],
+        "rules": [
+          "You can't have more than 1 ACE SPEC card in your deck.",
+          "Switch in 1 of your opponent's Benched Pokémon to the Active Spot. If you do, switch your Active Pokémon with 1 of your Benched Pokémon.",
+          "You may play any number of Item cards during your turn."
+        ],
+        "set": {
+          "id": "sv8pt5",
+          "name": "Prismatic Evolutions",
+          "series": "Scarlet & Violet",
+          "printedTotal": 131,
+          "total": 180,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "PRE",
+          "releaseDate": "2025/01/17",
+          "updatedAt": "025/01/16 22:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv8pt5/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv8pt5/logo.png"
+          }
+        },
+        "number": "119",
+        "rarity": "ACE SPEC Rare",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "H",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv8pt5/119.png",
+          "large": "https://images.pokemontcg.io/sv8pt5/119_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-119",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "holofoil": {
+              "low": 0.09,
+              "mid": 1.9,
+              "high": 1337,
+              "market": 1.26,
+              "directLow": null
+            }
+          }
+        }
+      },
+      "copies": 1
+    },
+    {
+      "name": "Pokégear 3.0 - Sword & Shield",
+      "details": {
+        "id": "swsh1-174",
+        "name": "Pokégear 3.0",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Item"
+        ],
+        "rules": [
+          "Look at the top 7 cards of your deck. You may reveal a Supporter card you find there and put it into your hand. Shuffle the other cards back into your deck.",
+          "You may play any number of Item cards during your turn."
+        ],
+        "set": {
+          "id": "swsh1",
+          "name": "Sword & Shield",
+          "series": "Sword & Shield",
+          "printedTotal": 202,
+          "total": 216,
+          "legalities": {
+            "unlimited": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "SSH",
+          "releaseDate": "2020/02/07",
+          "updatedAt": "2020/08/14 09:35:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/swsh1/symbol.png",
+            "logo": "https://images.pokemontcg.io/swsh1/logo.png"
+          }
+        },
+        "number": "174",
+        "artist": "Ryo Ueda",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "D",
+        "images": {
+          "small": "https://images.pokemontcg.io/swsh1/174.png",
+          "large": "https://images.pokemontcg.io/swsh1/174_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/swsh1-174",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "normal": {
+              "low": 0.24,
+              "mid": 1.33,
+              "high": 7.95,
+              "market": 1.36,
+              "directLow": null
+            },
+            "reverseHolofoil": {
+              "low": 0.88,
+              "mid": 1.5,
+              "high": 7.95,
+              "market": 1.26,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/swsh1-174",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 2,
+            "lowPrice": 0.1,
+            "trendPrice": 1.5,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 1.93,
+            "reverseHoloLow": 0.15,
+            "reverseHoloTrend": 2.59,
+            "lowPriceExPlus": 0.15,
+            "avg1": 1.5,
+            "avg7": 1.64,
+            "avg30": 1.97,
+            "reverseHoloAvg1": 3.55,
+            "reverseHoloAvg7": 1.57,
+            "reverseHoloAvg30": 1.79
+          }
+        }
+      },
+      "copies": 1
+    },
+    {
+      "name": "Superior Energy Retrieval - Paldea Evolved",
+      "details": {
+        "id": "sv2-189",
+        "name": "Superior Energy Retrieval",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Item"
+        ],
+        "rules": [
+          "You can use this card only if you discard 2 other cards from your hand.Put up to 4 Basic Energy cards from your discard pile into your hand. (You can't choose a card you discarded with the effect of this card.)",
+          "You may play any number of Item cards during your turn."
+        ],
+        "set": {
+          "id": "sv2",
+          "name": "Paldea Evolved",
+          "series": "Scarlet & Violet",
+          "printedTotal": 193,
+          "total": 279,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/06/09",
+          "updatedAt": "2023/06/09 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv2/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv2/logo.png"
+          }
+        },
+        "number": "189",
+        "artist": "Studio Bora Inc.",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv2/189.png",
+          "large": "https://images.pokemontcg.io/sv2/189_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv2-189",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 0.15,
+              "mid": 0.72,
+              "high": 4.95,
+              "market": 0.62,
+              "directLow": 2.24
+            },
+            "normal": {
+              "low": 0.01,
+              "mid": 0.5,
+              "high": 3.99,
+              "market": 0.4,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv2-189",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.46,
+            "lowPrice": 0.02,
+            "trendPrice": 0.49,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.52,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.42,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.4,
+            "avg7": 0.45,
+            "avg30": 0.47,
+            "reverseHoloAvg1": 0.18,
+            "reverseHoloAvg7": 0.47,
+            "reverseHoloAvg30": 0.54
+          }
+        }
+      },
+      "copies": 1
+    },
+    {
+      "name": "Town Store - Obsidian Flames",
+      "details": {
+        "id": "sv3-196",
+        "name": "Town Store",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Stadium"
+        ],
+        "rules": [
+          "Once during each player's turn, that player may search their deck for a Pokémon Tool card, reveal it, and put it into their hand. Then, that player shuffles their deck.",
+          "You may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
+        ],
+        "set": {
+          "id": "sv3",
+          "name": "Obsidian Flames",
+          "series": "Scarlet & Violet",
+          "printedTotal": 197,
+          "total": 230,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/08/11",
+          "updatedAt": "2023/08/11 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv3/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv3/logo.png"
+          }
+        },
+        "number": "196",
+        "artist": "Oswaldo KATO",
+        "rarity": "Common",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv3/196.png",
+          "large": "https://images.pokemontcg.io/sv3/196_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv3-196",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "normal": {
+              "low": 0.01,
+              "mid": 0.2,
+              "high": 4.48,
+              "market": 0.14,
+              "directLow": null
+            },
+            "reverseHolofoil": {
+              "low": 0.01,
+              "mid": 0.25,
+              "high": 4.95,
+              "market": 0.19,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv3-196",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.19,
+            "lowPrice": 0.02,
+            "trendPrice": 0.15,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.19,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.14,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.14,
+            "avg7": 0.13,
+            "avg30": 0.19,
+            "reverseHoloAvg1": 0.1,
+            "reverseHoloAvg7": 0.17,
+            "reverseHoloAvg30": 0.19
+          }
+        }
+      },
+      "copies": 2
+    },
+    {
+      "name": "Electric Generator - Scarlet & Violet",
+      "details": {
+        "id": "sv1-170",
+        "name": "Electric Generator",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Item"
+        ],
+        "rules": [
+          "Look at the top 5 cards of your deck and attach up to 2 Basic Lightning Energy cards you find there to your Benched Lightning Pokémon in any way you like. Shuffle the other cards back into your deck.",
+          "You may play any number of Item cards during your turn."
+        ],
+        "set": {
+          "id": "sv1",
+          "name": "Scarlet & Violet",
+          "series": "Scarlet & Violet",
+          "printedTotal": 198,
+          "total": 258,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/03/31",
+          "updatedAt": "2023/03/31 15:45:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv1/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv1/logo.png"
+          }
+        },
+        "number": "170",
+        "artist": "Toyste Beach",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv1/170.png",
+          "large": "https://images.pokemontcg.io/sv1/170_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv1-170",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 0.02,
+              "mid": 0.25,
+              "high": 30.21,
+              "market": 0.13,
+              "directLow": null
+            },
+            "normal": {
+              "low": 0.01,
+              "mid": 0.12,
+              "high": 30.11,
+              "market": 0.06,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv1-170",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.08,
+            "lowPrice": 0.02,
+            "trendPrice": 0.04,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.2,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.19,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.02,
+            "avg7": 0.07,
+            "avg30": 0.07,
+            "reverseHoloAvg1": 0.12,
+            "reverseHoloAvg7": 0.21,
+            "reverseHoloAvg30": 0.22
+          }
+        }
+      },
+      "copies": 4
+    },
+    {
+      "name": "Rescue Board - Temporal Forces",
+      "details": {
+        "id": "sv5-159",
+        "name": "Rescue Board",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Pokémon Tool"
+        ],
+        "rules": [
+          "The Retreat Cost of the Pokémon this card is attached to is Colorless less. If that Pokémon's remaining HP is 30 or less, it has no Retreat Cost.",
+          "You may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+        ],
+        "set": {
+          "id": "sv5",
+          "name": "Temporal Forces",
+          "series": "Scarlet & Violet",
+          "printedTotal": 162,
+          "total": 218,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "TEF",
+          "releaseDate": "2024/03/22",
+          "updatedAt": "2024/03/22 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv5/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv5/logo.png"
+          }
+        },
+        "number": "159",
+        "artist": "Toyste Beach",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "H",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv5/159.png",
+          "large": "https://images.pokemontcg.io/sv5/159_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv5-159",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 0.1,
+              "mid": 0.45,
+              "high": 30.29,
+              "market": 0.53,
+              "directLow": 0.35
+            },
+            "normal": {
+              "low": 0.01,
+              "mid": 0.18,
+              "high": 30.12,
+              "market": 0.13,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv5-159",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.11,
+            "lowPrice": 0.02,
+            "trendPrice": 0.12,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.25,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.24,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.09,
+            "avg7": 0.11,
+            "avg30": 0.11,
+            "reverseHoloAvg1": 0.3,
+            "reverseHoloAvg7": 0.26,
+            "reverseHoloAvg30": 0.26
+          }
+        }
+      },
+      "copies": 1
+    },
+    {
+      "name": "Techno Radar - Paradox Rift",
+      "details": {
+        "id": "sv4-180",
+        "name": "Techno Radar",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Item",
+          "Future"
+        ],
+        "rules": [
+          "You can use this card only if you discard another card from your hand.    Search your deck for up to 2 Future Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+          "You may play any number of Item cards during your turn."
+        ],
+        "set": {
+          "id": "sv4",
+          "name": "Paradox Rift",
+          "series": "Scarlet & Violet",
+          "printedTotal": 182,
+          "total": 266,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/11/03",
+          "updatedAt": "2023/11/03 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv4/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv4/logo.png"
+          }
+        },
+        "number": "180",
+        "artist": "inose yukie",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv4/180.png",
+          "large": "https://images.pokemontcg.io/sv4/180_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv4-180",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 0.01,
+              "mid": 0.25,
+              "high": 6.23,
+              "market": 0.18,
+              "directLow": 0.17
+            },
+            "normal": {
+              "low": 0.01,
+              "mid": 0.11,
+              "high": 30.11,
+              "market": 0.08,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv4-180",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.05,
+            "lowPrice": 0.02,
+            "trendPrice": 0.03,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.3,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.13,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.03,
+            "avg7": 0.03,
+            "avg30": 0.05,
+            "reverseHoloAvg1": 0.04,
+            "reverseHoloAvg7": 0.15,
+            "reverseHoloAvg30": 0.27
+          }
+        }
+      },
+      "copies": 4
+    },
+    {
+      "name": "Arven - Scarlet & Violet",
+      "details": {
+        "id": "sv1-166",
+        "name": "Arven",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Supporter"
+        ],
+        "rules": [
+          "Search your deck for an Item card and a Pokémon Tool card, reveal them, and put them into your hand. Then, shuffle your deck.",
+          "You may play only 1 Supporter card during your turn."
+        ],
+        "set": {
+          "id": "sv1",
+          "name": "Scarlet & Violet",
+          "series": "Scarlet & Violet",
+          "printedTotal": 198,
+          "total": 258,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/03/31",
+          "updatedAt": "2023/03/31 15:45:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv1/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv1/logo.png"
+          }
+        },
+        "number": "166",
+        "artist": "GIDORA",
+        "rarity": "Uncommon",
+        "flavorText": "Thanks to a behavior of theirs known as \"synchronizing,\" an entire flock of these Pokémon can attack simultaneously in perfect harmony.",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv1/166.png",
+          "large": "https://images.pokemontcg.io/sv1/166_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv1-166",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 1.25,
+              "mid": 2.6,
+              "high": 19.99,
+              "market": 2.29,
+              "directLow": null
+            },
+            "normal": {
+              "low": 0.25,
+              "mid": 2.15,
+              "high": 99,
+              "market": 2.23,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv1-166",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 1.94,
+            "lowPrice": 0.1,
+            "trendPrice": 1.88,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 2.23,
+            "reverseHoloLow": 1,
+            "reverseHoloTrend": 2.06,
+            "lowPriceExPlus": 0.1,
+            "avg1": 1.95,
+            "avg7": 1.88,
+            "avg30": 1.93,
+            "reverseHoloAvg1": 2.75,
+            "reverseHoloAvg7": 2.23,
+            "reverseHoloAvg30": 2.19
+          }
+        }
+      },
+      "copies": 2
+    },
+    {
+      "name": "Boss's Orders (Ghetsis) - Paldea Evolved",
+      "details": {
+        "id": "sv2-172",
+        "name": "Boss's Orders (Ghetsis)",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Supporter"
+        ],
+        "rules": [
+          "Switch in 1 of your opponent's Benched Pokémon to the Active Spot.",
+          "You may play only 1 Supporter card during your turn."
+        ],
+        "set": {
+          "id": "sv2",
+          "name": "Paldea Evolved",
+          "series": "Scarlet & Violet",
+          "printedTotal": 193,
+          "total": 279,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/06/09",
+          "updatedAt": "2023/06/09 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv2/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv2/logo.png"
+          }
+        },
+        "number": "172",
+        "artist": "NC Empire",
+        "rarity": "Rare",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv2/172.png",
+          "large": "https://images.pokemontcg.io/sv2/172_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv2-172",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 1,
+              "mid": 2.18,
+              "high": 9.95,
+              "market": 2.21,
+              "directLow": null
+            },
+            "holofoil": {
+              "low": 0.75,
+              "mid": 1.45,
+              "high": 31.26,
+              "market": 1.32,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv2-172",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.86,
+            "lowPrice": 0.02,
+            "trendPrice": 0.83,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.93,
+            "reverseHoloLow": 0.05,
+            "reverseHoloTrend": 0.78,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.96,
+            "avg7": 0.83,
+            "avg30": 0.86,
+            "reverseHoloAvg1": 1.02,
+            "reverseHoloAvg7": 0.95,
+            "reverseHoloAvg30": 0.93
+          }
+        }
+      },
+      "copies": 3
+    },
+    {
+      "name": "Professor Turo's Scenario - Paradox Rift",
+      "details": {
+        "id": "sv4-171",
+        "name": "Professor Turo's Scenario",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Supporter",
+          "Future"
+        ],
+        "rules": [
+          "Put 1 of your Pokémon in play into your hand. (Discard all cards attached to that Pokémon.)",
+          "You may play only 1 Supporter card during your turn."
+        ],
+        "set": {
+          "id": "sv4",
+          "name": "Paradox Rift",
+          "series": "Scarlet & Violet",
+          "printedTotal": 182,
+          "total": 266,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/11/03",
+          "updatedAt": "2023/11/03 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv4/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv4/logo.png"
+          }
+        },
+        "number": "171",
+        "artist": "hncl",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv4/171.png",
+          "large": "https://images.pokemontcg.io/sv4/171_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv4-171",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 0.01,
+              "mid": 0.75,
+              "high": 5.49,
+              "market": 0.48,
+              "directLow": 0.6
+            },
+            "normal": {
+              "low": 0.01,
+              "mid": 0.18,
+              "high": 5.15,
+              "market": 0.13,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv4-171",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.12,
+            "lowPrice": 0.02,
+            "trendPrice": 0.1,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.29,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.29,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.06,
+            "avg7": 0.08,
+            "avg30": 0.11,
+            "reverseHoloAvg1": 0.5,
+            "reverseHoloAvg7": 0.18,
+            "reverseHoloAvg30": 0.27
+          }
+        }
+      },
+      "copies": 1
+    },
+    {
+      "name": "Future Booster Energy Capsule - Paradox Rift",
+      "details": {
+        "id": "sv4-164",
+        "name": "Future Booster Energy Capsule",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Pokémon Tool",
+          "Future"
+        ],
+        "rules": [
+          "The Future Pokémon this card is attached to has no Retreat Cost, and the attacks it uses do 20 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+          "You may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+        ],
+        "set": {
+          "id": "sv4",
+          "name": "Paradox Rift",
+          "series": "Scarlet & Violet",
+          "printedTotal": 182,
+          "total": 266,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/11/03",
+          "updatedAt": "2023/11/03 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv4/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv4/logo.png"
+          }
+        },
+        "number": "164",
+        "artist": "5ban Graphics",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv4/164.png",
+          "large": "https://images.pokemontcg.io/sv4/164_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv4-164",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "normal": {
+              "low": 0.01,
+              "mid": 0.11,
+              "high": 5.1,
+              "market": 0.06,
+              "directLow": 0.06
+            },
+            "reverseHolofoil": {
+              "low": 0.05,
+              "mid": 0.24,
+              "high": 4.95,
+              "market": 0.19,
+              "directLow": 0.19
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv4-164",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.06,
+            "lowPrice": 0.02,
+            "trendPrice": 0.11,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.25,
+            "reverseHoloLow": 0.03,
+            "reverseHoloTrend": 0.24,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.17,
+            "avg7": 0.11,
+            "avg30": 0.07,
+            "reverseHoloAvg1": 0.15,
+            "reverseHoloAvg7": 0.28,
+            "reverseHoloAvg30": 0.23
+          }
+        }
+      },
+      "copies": 3
+    },
+    {
+      "name": "Picnic Basket - Scarlet & Violet",
+      "details": {
+        "id": "sv1-184",
+        "name": "Picnic Basket",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Item"
+        ],
+        "rules": [
+          "Heal 30 damage from each Pokémon (both yours and your opponent's).",
+          "You may play any number of Item cards during your turn."
+        ],
+        "set": {
+          "id": "sv1",
+          "name": "Scarlet & Violet",
+          "series": "Scarlet & Violet",
+          "printedTotal": 198,
+          "total": 258,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "releaseDate": "2023/03/31",
+          "updatedAt": "2023/03/31 15:45:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv1/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv1/logo.png"
+          }
+        },
+        "number": "184",
+        "artist": "OKACHEKE",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "G",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv1/184.png",
+          "large": "https://images.pokemontcg.io/sv1/184_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv1-184",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 0.05,
+              "mid": 0.21,
+              "high": 4.95,
+              "market": 0.21,
+              "directLow": null
+            },
+            "normal": {
+              "low": 0.01,
+              "mid": 0.1,
+              "high": 4.95,
+              "market": 0.07,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv1-184",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.08,
+            "lowPrice": 0.02,
+            "trendPrice": 0.11,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.26,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.33,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.16,
+            "avg7": 0.09,
+            "avg30": 0.08,
+            "reverseHoloAvg1": 0.79,
+            "reverseHoloAvg7": 0.32,
+            "reverseHoloAvg30": 0.26
+          }
+        }
+      },
+      "copies": 1
+    },
+    {
+      "name": "Heavy Baton - Temporal Forces",
+      "details": {
+        "id": "sv5-151",
+        "name": "Heavy Baton",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Pokémon Tool"
+        ],
+        "rules": [
+          "If the Pokémon this card is attached to has a Retreat Cost of exactly 4, is in the Active Spot, and is Knocked Out by damage from an attack from your opponent's Pokémon, move up to 3 Basic Energy cards from that Pokémon to your Benched Pokémon in any way you like.",
+          "You may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+        ],
+        "set": {
+          "id": "sv5",
+          "name": "Temporal Forces",
+          "series": "Scarlet & Violet",
+          "printedTotal": 162,
+          "total": 218,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "TEF",
+          "releaseDate": "2024/03/22",
+          "updatedAt": "2024/03/22 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv5/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv5/logo.png"
+          }
+        },
+        "number": "151",
+        "artist": "Ayaka Yoshida",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "H",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv5/151.png",
+          "large": "https://images.pokemontcg.io/sv5/151_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv5-151",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "reverseHolofoil": {
+              "low": 0.04,
+              "mid": 0.25,
+              "high": 4.95,
+              "market": 0.23,
+              "directLow": null
+            },
+            "normal": {
+              "low": 0.01,
+              "mid": 0.13,
+              "high": 5.24,
+              "market": 0.08,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv5-151",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.11,
+            "lowPrice": 0.02,
+            "trendPrice": 0.14,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.26,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.23,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.26,
+            "avg7": 0.24,
+            "avg30": 0.11,
+            "reverseHoloAvg1": 0.19,
+            "reverseHoloAvg7": 0.19,
+            "reverseHoloAvg30": 0.25
+          }
+        }
+      },
+      "copies": 2
+    },
+    {
+      "name": "Morty's Conviction - Temporal Forces",
+      "details": {
+        "id": "sv5-155",
+        "name": "Morty's Conviction",
+        "supertype": "Trainer",
+        "subtypes": [
+          "Supporter"
+        ],
+        "rules": [
+          "You can use this card only if you discard another card from your hand.  Draw a card for each of your opponent's Benched Pokémon.",
+          "You may play only 1 Supporter card during your turn."
+        ],
+        "set": {
+          "id": "sv5",
+          "name": "Temporal Forces",
+          "series": "Scarlet & Violet",
+          "printedTotal": 162,
+          "total": 218,
+          "legalities": {
+            "unlimited": "Legal",
+            "standard": "Legal",
+            "expanded": "Legal"
+          },
+          "ptcgoCode": "TEF",
+          "releaseDate": "2024/03/22",
+          "updatedAt": "2024/03/22 15:00:00",
+          "images": {
+            "symbol": "https://images.pokemontcg.io/sv5/symbol.png",
+            "logo": "https://images.pokemontcg.io/sv5/logo.png"
+          }
+        },
+        "number": "155",
+        "artist": "GIDORA",
+        "rarity": "Uncommon",
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "regulationMark": "H",
+        "images": {
+          "small": "https://images.pokemontcg.io/sv5/155.png",
+          "large": "https://images.pokemontcg.io/sv5/155_hires.png"
+        },
+        "tcgplayer": {
+          "url": "https://prices.pokemontcg.io/tcgplayer/sv5-155",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "normal": {
+              "low": 0.01,
+              "mid": 0.15,
+              "high": 4.95,
+              "market": 0.07,
+              "directLow": null
+            },
+            "reverseHolofoil": {
+              "low": 0.05,
+              "mid": 0.31,
+              "high": 5.95,
+              "market": 0.44,
+              "directLow": null
+            }
+          }
+        },
+        "cardmarket": {
+          "url": "https://prices.pokemontcg.io/cardmarket/sv5-155",
+          "updatedAt": "2025/06/16",
+          "prices": {
+            "averageSellPrice": 0.09,
+            "lowPrice": 0.02,
+            "trendPrice": 0.06,
+            "germanProLow": 0,
+            "suggestedPrice": 0,
+            "reverseHoloSell": 0.31,
+            "reverseHoloLow": 0.02,
+            "reverseHoloTrend": 0.22,
+            "lowPriceExPlus": 0.02,
+            "avg1": 0.04,
+            "avg7": 0.06,
+            "avg30": 0.09,
+            "reverseHoloAvg1": 0.29,
+            "reverseHoloAvg7": 0.28,
+            "reverseHoloAvg30": 0.31
+          }
+        }
+      },
+      "copies": 1
+    }
+  ],
+  "extra": []
+}
