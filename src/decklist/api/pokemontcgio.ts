@@ -1,4 +1,4 @@
-import { Card, ygoCard } from "../../types";
+import { Card, pokemonCard } from "../../types";
 
 // https://pokemontcg.io/
 
@@ -17,8 +17,12 @@ export const searchCard = async (name: String): Promise<Array<Card>> => {
 
     // format the result from searchCard into how we format the decks
     // see pokemonCard in types/index.ts
-    return raw.data.map((card: ygoCard) => {
-      return { name: card.name, details: card, copies: 1 };
+    return raw.data.map((card: pokemonCard) => {
+      return {
+        name: card.name + " - " + card.set.name,
+        details: card,
+        copies: 1,
+      };
     });
   } catch (error: any) {
     throw new Error(`Error fetching data: ${error.message}`);
