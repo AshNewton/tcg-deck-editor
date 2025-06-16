@@ -49,7 +49,7 @@ export const isPokemonCard = (card: any): card is mtgCard => {
 
 export const isEnergy = (card: Card): boolean => {
   return (
-    isPokemonCard(card) &&
+    isPokemonCard(card.details) &&
     (card.details as pokemonCard)?.supertype?.includes("Energy")
   );
 };

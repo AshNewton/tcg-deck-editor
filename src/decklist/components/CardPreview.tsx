@@ -16,6 +16,7 @@ import { YUGIOH_MAX_COPIES } from "../util/yugioh";
 import { MTG_MAX_COPIES } from "../util/mtg";
 
 import { Card } from "../../types";
+import { isEnergy } from "../util/pokemon";
 
 interface Props {
   card: Card;
@@ -96,7 +97,9 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
         }
         size="small"
         /* mtg basic lands can have any number of copies */
-        disabled={card.copies === maxCopies && !isBasicLand(card)}
+        disabled={
+          card.copies === maxCopies && !isBasicLand(card) && !isEnergy(card)
+        }
         aria-label="add copy"
       />
 
