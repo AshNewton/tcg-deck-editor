@@ -87,8 +87,6 @@ const SaveLoad = (props: Props) => {
       if (error.name !== "AbortError") {
         alert("Failed to load file: " + error.message);
       }
-
-      console.error("Error loading file:", error.name);
     }
   };
 
