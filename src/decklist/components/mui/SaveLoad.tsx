@@ -82,8 +82,13 @@ const SaveLoad = (props: Props) => {
         dispatch(setter(parsed[name]));
       });
     } catch (err) {
-      console.error("Error loading file:", err);
-      alert("Failed to load file: " + (err as Error).message);
+      const error = err as Error;
+
+      if (error.name !== "AbortError") {
+        alert("Failed to load file: " + error.message);
+      }
+
+      console.error("Error loading file:", error.name);
     }
   };
 
