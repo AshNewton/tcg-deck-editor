@@ -62,15 +62,7 @@ const CardDetails = (props: Props) => {
 
           {/* types */}
           {pCard.types?.length > 0 && (
-            <List subheader={<ListSubheader>Types</ListSubheader>}>
-              {pCard.types.map((type: string) => {
-                return (
-                  <ListItem sx={{ ml: 2 }}>
-                    <ListItemText>{type}</ListItemText>
-                  </ListItem>
-                );
-              })}
-            </List>
+            <Text text={`Types: ${pCard.types.join(" ")}`} mt={2} />
           )}
 
           {/* abilities */}
@@ -78,7 +70,7 @@ const CardDetails = (props: Props) => {
             <List>
               {pCard.abilities.map((ability: any) => {
                 return (
-                  <ListItem sx={{ display: "flex", flexDirection: "row" }}>
+                  <ListItem sx={{ px: 0 }}>
                     <ListItemText
                       primary={`${ability.type}: ${ability.name}`}
                       secondary={ability.text}
@@ -91,12 +83,10 @@ const CardDetails = (props: Props) => {
 
           {/* attacks */}
           {pCard.attacks?.length > 0 && (
-            <List subheader={<ListSubheader>Attacks</ListSubheader>}>
+            <List>
               {pCard.attacks.map((attack: any) => {
                 return (
-                  <ListItem
-                    sx={{ ml: 2, display: "flex", flexDirection: "row" }}
-                  >
+                  <ListItem sx={{ px: 0 }}>
                     <ListItemText
                       primary={`${attack.cost.join(" ")} ${attack.name} ${
                         attack.damage
@@ -114,7 +104,7 @@ const CardDetails = (props: Props) => {
             <List>
               {pCard.rules.map((rule: string) => {
                 return (
-                  <ListItem>
+                  <ListItem sx={{ px: 0 }}>
                     <ListItemText>{rule}</ListItemText>
                   </ListItem>
                 );
@@ -124,33 +114,33 @@ const CardDetails = (props: Props) => {
 
           {/* weaknesses */}
           {pCard.weaknesses?.length > 0 && (
-            <List subheader={<ListSubheader>Weaknesses</ListSubheader>}>
-              {pCard.weaknesses.map((weakness: any) => {
-                return (
-                  <ListItem sx={{ ml: 2 }}>
-                    <ListItemText>{`${weakness.type}: ${weakness.value}`}</ListItemText>
-                  </ListItem>
-                );
-              })}
-            </List>
+            <Text
+              text={`Weaknesses: ${pCard.weaknesses.reduce(
+                (acc: string, weakness: any) => {
+                  return acc + `  ${weakness.type}${weakness.value}`;
+                },
+                ""
+              )}`}
+              mt={2}
+            />
           )}
 
           {/* resistances */}
           {pCard.resistances?.length > 0 && (
-            <List subheader={<ListSubheader>Resistance</ListSubheader>}>
-              {pCard.resistances.map((resistance: any) => {
-                return (
-                  <ListItem sx={{ ml: 2 }}>
-                    <ListItemText>{`${resistance.type}: ${resistance.value}`}</ListItemText>
-                  </ListItem>
-                );
-              })}
-            </List>
+            <Text
+              text={`Resistances: ${pCard.resistances.reduce(
+                (acc: string, resistance: any) => {
+                  return acc + `  ${resistance.type}${resistance.value}`;
+                },
+                ""
+              )}`}
+              mt={2}
+            />
           )}
 
           {/* retreat cost */}
           {pCard.retreatCost && (
-            <Text text={`Retreat: ${pCard.retreatCost.join(" ")}`} />
+            <Text text={`Retreat: ${pCard.retreatCost.join(" ")}`} mt={2} />
           )}
         </Grid>
       </Grid>
