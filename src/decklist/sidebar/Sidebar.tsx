@@ -23,13 +23,14 @@ import {
 } from "../api/magicthegathering";
 
 import { isExtraDeckCard, isYgoCard } from "../util/yugioh";
+import { isMtgCard } from "../util/mtg";
+import { isPokemonCard } from "../util/pokemon";
 import { searchCard as searchPokemonCard } from "../api/pokemontcgio";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Action } from "@reduxjs/toolkit";
 import { Card, Deck } from "../../types";
-import { isMtgCard } from "../util/mtg";
 
 const Sidebar = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
@@ -99,7 +100,7 @@ const Sidebar = () => {
           { setter: setMainDeck, getter: maindeck, name: "main" },
           { setter: setExtraDeck, getter: extradeck, name: "extra" },
         ]}
-        validateCard={yugioh ? isYgoCard : isMtgCard}
+        validateCard={yugioh ? isYgoCard : mtg ? isMtgCard : isPokemonCard}
       />
 
       {maindeck.length === 0 && extradeck.length === 0 ? (
