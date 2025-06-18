@@ -30,7 +30,35 @@ export const POKEMON_TYPES = [
   "Fairy",
 ];
 
-export const MTG_CARD_TYPES = ["Energy", "Pokemon", "Trainer"];
+export const POKEMON_CARD_TYPES = ["Energy", "Pokemon", "Trainer"];
+
+export const POKEMON_CARD_SUB_TYPES = [
+  "BREAK",
+  "Baby",
+  "Basic",
+  "EX",
+  "GX",
+  "Goldenrod Game Corner",
+  "Item",
+  "LEGEND",
+  "Level-Up",
+  "MEGA",
+  "Pokémon Tool",
+  "Pokémon Tool F",
+  "Rapid Strike",
+  "Restored",
+  "Rocket's Secret Machine",
+  "Single Strike",
+  "Special",
+  "Stadium",
+  "Stage 1",
+  "Stage 2",
+  "Supporter",
+  "TAG TEAM",
+  "Technical Machine",
+  "V",
+  "VMAX",
+];
 
 export const POKEMON_HAND_START_SIZE = 7;
 
