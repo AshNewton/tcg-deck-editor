@@ -7,15 +7,33 @@ import ClearIcon from "@mui/icons-material/Clear";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import ListSubheader from "@mui/material/ListSubheader/ListSubheader";
+
+import { POKEMON_TYPES, POKEMON_TYPES_TO_SYMBOL } from "../../util/pokemon";
 
 import { Card, pokemonCard } from "../../../types";
-import { ListItem } from "@mui/material";
+import TextWithSymbols from "../mui/TextWithSymbols";
 
 type Props = {
   card: Card;
   clearSelection: () => void;
+};
+
+const energySymbols = POKEMON_TYPES.map((type: string) => {
+  return {
+    symbol: POKEMON_TYPES_TO_SYMBOL[type],
+    url: `/energy/${type}.png`,
+    alt: type,
+  };
+});
+
+const getEnergySymbols = (names: Array<string>) => {
+  return names
+    .map((name: string) => {
+      return POKEMON_TYPES_TO_SYMBOL[name];
+    })
+    .join("");
 };
 
 const CardDetails = (props: Props) => {
@@ -62,7 +80,10 @@ const CardDetails = (props: Props) => {
 
           {/* types */}
           {pCard.types?.length > 0 && (
-            <Text text={`Types: ${pCard.types.join(" ")}`} mt={2} />
+            <TextWithSymbols
+              text={`Types: ${getEnergySymbols(pCard.types)}`}
+              symbols={energySymbols}
+            />
           )}
 
           {/* abilities */}
@@ -87,12 +108,14 @@ const CardDetails = (props: Props) => {
               {pCard.attacks.map((attack: any) => {
                 return (
                   <ListItem sx={{ px: 0 }}>
-                    <ListItemText
-                      primary={`${attack.cost.join(" ")} ${attack.name} ${
-                        attack.damage
-                      }`}
-                      secondary={attack.text}
-                    />
+                    <ListItemText secondary={attack.text}>
+                      <TextWithSymbols
+                        text={`${getEnergySymbols(attack.cost)} ${
+                          attack.name
+                        } ${attack.damage}`}
+                        symbols={energySymbols}
+                      />
+                    </ListItemText>
                   </ListItem>
                 );
               })}
@@ -114,33 +137,46 @@ const CardDetails = (props: Props) => {
 
           {/* weaknesses */}
           {pCard.weaknesses?.length > 0 && (
-            <Text
+            <TextWithSymbols
               text={`Weaknesses: ${pCard.weaknesses.reduce(
                 (acc: string, weakness: any) => {
-                  return acc + `  ${weakness.type}${weakness.value}`;
+                  return (
+                    acc +
+                    `  ${POKEMON_TYPES_TO_SYMBOL[weakness.type]}${
+                      weakness.value
+                    }`
+                  );
                 },
                 ""
               )}`}
-              mt={2}
+              symbols={energySymbols}
             />
           )}
 
           {/* resistances */}
           {pCard.resistances?.length > 0 && (
-            <Text
+            <TextWithSymbols
               text={`Resistances: ${pCard.resistances.reduce(
                 (acc: string, resistance: any) => {
-                  return acc + `  ${resistance.type}${resistance.value}`;
+                  return (
+                    acc +
+                    `  ${POKEMON_TYPES_TO_SYMBOL[resistance.type]}${
+                      resistance.value
+                    }`
+                  );
                 },
                 ""
               )}`}
-              mt={2}
+              symbols={energySymbols}
             />
           )}
 
           {/* retreat cost */}
           {pCard.retreatCost && (
-            <Text text={`Retreat: ${pCard.retreatCost.join(" ")}`} mt={2} />
+            <TextWithSymbols
+              text={`Retreat: ${getEnergySymbols(pCard.retreatCost)}`}
+              symbols={energySymbols}
+            />
           )}
         </Grid>
       </Grid>

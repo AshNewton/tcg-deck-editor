@@ -2,7 +2,7 @@ import React from "react";
 
 import Image from "../mui/Image";
 import Text from "./../mui/Text";
-import TextWithSymbols from "./TextWithSymbols";
+import TextWithSymbols from "../mui/TextWithSymbols";
 
 import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
