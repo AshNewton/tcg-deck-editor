@@ -66,20 +66,6 @@ export const POKEMON_MAX_COPIES = 4;
 
 export const POKEMON_DECK_SIZE = 60;
 
-export const POKEMON_TYPES_TO_SYMBOL: Record<string, string> = {
-  Colorless: "{C}",
-  Grass: "{G}",
-  Fire: "{F}",
-  Water: "{W}",
-  Lightning: "{L}",
-  Fighting: "{H}",
-  Psychic: "{P}",
-  Darkness: "{D}",
-  Metal: "{M}",
-  Dragon: "{R}",
-  Fairy: "{A}",
-};
-
 export const isPokemonCard = (card: any): card is mtgCard => {
   return (
     typeof card === "object" &&

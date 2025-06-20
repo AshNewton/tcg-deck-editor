@@ -10,7 +10,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
-import { POKEMON_TYPES, POKEMON_TYPES_TO_SYMBOL } from "../../util/pokemon";
+import { POKEMON_TYPES } from "../../util/pokemon";
 
 import { Card, pokemonCard } from "../../../types";
 import TextWithSymbols from "../mui/TextWithSymbols";
@@ -144,12 +144,7 @@ const CardDetails = (props: Props) => {
             <TextWithSymbols
               text={`Weaknesses: ${pCard.weaknesses.reduce(
                 (acc: string, weakness: any) => {
-                  return (
-                    acc +
-                    `  ${POKEMON_TYPES_TO_SYMBOL[weakness.type]}${
-                      weakness.value
-                    }`
-                  );
+                  return acc + `  ${weakness.type}${weakness.value}`;
                 },
                 ""
               )}`}
@@ -162,12 +157,7 @@ const CardDetails = (props: Props) => {
             <TextWithSymbols
               text={`Resistances: ${pCard.resistances.reduce(
                 (acc: string, resistance: any) => {
-                  return (
-                    acc +
-                    `  ${POKEMON_TYPES_TO_SYMBOL[resistance.type]}${
-                      resistance.value
-                    }`
-                  );
+                  return acc + `  ${resistance.type}${resistance.value}`;
                 },
                 ""
               )}`}
