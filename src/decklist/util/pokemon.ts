@@ -30,7 +30,7 @@ export const POKEMON_TYPES = [
   "Fairy",
 ];
 
-export const POKEMON_CARD_TYPES = ["Energy", "Pokemon", "Trainer"];
+export const POKEMON_CARD_TYPES = ["Energy", "Pokémon", "Trainer"];
 
 export const POKEMON_CARD_SUB_TYPES = [
   "BREAK",
