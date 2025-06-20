@@ -15,7 +15,11 @@ import { GAME_ICONS, SUPPORTED_GAMES } from "../util/constants";
 
 import { Game, Menu as MenuType } from "../../types";
 
-const MENU_ITEMS: Array<MenuType> = ["Starting Hand", "Deck Search", "Mana"];
+const MENU_ITEMS: Array<MenuType> = [
+  "Starting Hand",
+  "Deck Search",
+  "Color Breakdown",
+];
 
 const Header = () => {
   const game = useAppSelector((state) => state.ui.game);
@@ -53,7 +57,7 @@ const Header = () => {
         </FormControl>
         {MENU_ITEMS.map(
           (item: MenuType) =>
-            (mtg || item !== "Mana") && (
+            (mtg || item !== "Color Breakdown") && (
               <Button
                 key={item}
                 color="primary"

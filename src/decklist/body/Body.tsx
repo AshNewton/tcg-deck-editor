@@ -15,7 +15,7 @@ const Body = () => {
       <CardDetails />
       {menu === "Starting Hand" && <StartingHand />}
       {menu === "Deck Search" && <DeckSearch />}
-      {menu === "Mana" && <Mana />}
+      {menu === "Color Breakdown" && <Mana />}
     </Box>
   );
 };

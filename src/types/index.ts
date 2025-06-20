@@ -241,7 +241,7 @@ export type PokemonResistance = {
 
 export type Game = "Yugioh" | "Magic the Gathering" | "Pokemon TCG";
 
-export type Menu = "Starting Hand" | "Deck Search" | "Mana";
+export type Menu = "Starting Hand" | "Deck Search" | "Color Breakdown";
 
 export interface Card {
   name: string;
