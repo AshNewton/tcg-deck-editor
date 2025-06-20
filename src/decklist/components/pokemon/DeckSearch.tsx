@@ -7,7 +7,12 @@ import TextField from "../form/TextField";
 
 import Grid from "@mui/material/Grid";
 
-import { Card, pokemonCard } from "../../../types";
+import {
+  Card,
+  PokemonAbility,
+  PokemonAttack,
+  pokemonCard,
+} from "../../../types";
 import {
   POKEMON_CARD_SUB_TYPES,
   POKEMON_CARD_TYPES,
@@ -38,7 +43,7 @@ export type SearchValues = {
 };
 
 const cardHasTypes = (
-  cardTypes: Array<string>,
+  cardTypes: Array<string> | undefined,
   selectedTypes: Array<string>
 ): boolean => {
   const lowerCardTypes = cardTypes?.map((type) => type.toLowerCase());
@@ -110,18 +115,18 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
 const substringOnCard = (s: string, card: pokemonCard): boolean => {
   const lower = s.toLowerCase();
 
-  return (
+  return Boolean(
     card.rules?.some((rule: string) => rule.toLowerCase().includes(lower)) ||
-    card.abilities?.some(
-      (a: any) =>
-        a.name.toLowerCase().includes(lower) ||
-        a.text.toLowerCase().includes(lower)
-    ) ||
-    card.attacks?.some(
-      (a: any) =>
-        a.name.toLowerCase().includes(lower) ||
-        a.text.toLowerCase().includes(lower)
-    )
+      card.abilities?.some(
+        (a: PokemonAbility) =>
+          a.name.toLowerCase().includes(lower) ||
+          a.text.toLowerCase().includes(lower)
+      ) ||
+      card.attacks?.some(
+        (a: PokemonAttack) =>
+          a.name.toLowerCase().includes(lower) ||
+          a.text.toLowerCase().includes(lower)
+      )
   );
 };
 

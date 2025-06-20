@@ -71,17 +71,17 @@ const CardDetails = (props: Props) => {
           {pCard.hp && <Text text={`HP: ${pCard.hp}`} />}
 
           {/* types */}
-          {pCard.types?.length > 0 && (
+          {Boolean(pCard.types?.length) && (
             <TextWithSymbols
-              text={`Types: ${pCard.types.join("")}`}
+              text={`Types: ${pCard.types?.join("")}`}
               symbols={energySymbols}
             />
           )}
 
           {/* abilities */}
-          {pCard.abilities?.length > 0 && (
+          {Boolean(pCard.abilities?.length) && (
             <List>
-              {pCard.abilities.map((ability: any) => {
+              {pCard.abilities?.map((ability: any) => {
                 return (
                   <ListItem sx={{ px: 0 }}>
                     <ListItemText
@@ -100,9 +100,9 @@ const CardDetails = (props: Props) => {
           )}
 
           {/* attacks */}
-          {pCard.attacks?.length > 0 && (
+          {Boolean(pCard.attacks?.length) && (
             <List>
-              {pCard.attacks.map((attack: any) => {
+              {pCard.attacks?.map((attack: any) => {
                 return (
                   <ListItem sx={{ px: 0 }}>
                     <ListItemText
@@ -127,9 +127,9 @@ const CardDetails = (props: Props) => {
           )}
 
           {/* rule boxes */}
-          {pCard.rules?.length > 0 && (
+          {Boolean(pCard.rules?.length) && (
             <List>
-              {pCard.rules.map((rule: string) => {
+              {pCard.rules?.map((rule: string) => {
                 return (
                   <ListItem sx={{ px: 0 }}>
                     <ListItemText>{rule}</ListItemText>
@@ -140,9 +140,9 @@ const CardDetails = (props: Props) => {
           )}
 
           {/* weaknesses */}
-          {pCard.weaknesses?.length > 0 && (
+          {Boolean(pCard.weaknesses?.length) && (
             <TextWithSymbols
-              text={`Weaknesses: ${pCard.weaknesses.reduce(
+              text={`Weaknesses: ${pCard.weaknesses?.reduce(
                 (acc: string, weakness: any) => {
                   return acc + `  ${weakness.type}${weakness.value}`;
                 },
@@ -153,9 +153,9 @@ const CardDetails = (props: Props) => {
           )}
 
           {/* resistances */}
-          {pCard.resistances?.length > 0 && (
+          {Boolean(pCard.resistances?.length) && (
             <TextWithSymbols
-              text={`Resistances: ${pCard.resistances.reduce(
+              text={`Resistances: ${pCard.resistances?.reduce(
                 (acc: string, resistance: any) => {
                   return acc + `  ${resistance.type}${resistance.value}`;
                 },

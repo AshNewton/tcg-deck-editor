@@ -66,7 +66,7 @@ export const POKEMON_MAX_COPIES = 4;
 
 export const POKEMON_DECK_SIZE = 60;
 
-export const isPokemonCard = (card: any): card is mtgCard => {
+export const isPokemonCard = (card: any): card is pokemonCard => {
   return (
     typeof card === "object" &&
     typeof card.name === "string" &&

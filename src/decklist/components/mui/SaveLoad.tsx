@@ -6,12 +6,12 @@ import UploadIcon from "@mui/icons-material/Upload";
 
 import { useAppDispatch } from "../../../hooks";
 
-import { Card, mtgCard, ygoCard } from "../../../types";
+import { Card, mtgCard, pokemonCard, ygoCard } from "../../../types";
 
 type Props = {
   saveload: Array<any>;
   justifyContent?: string;
-  validateCard: (card: ygoCard | mtgCard) => boolean;
+  validateCard: (card: ygoCard | mtgCard | pokemonCard) => boolean;
 };
 
 const SaveLoad = (props: Props) => {

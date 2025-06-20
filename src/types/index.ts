@@ -157,7 +157,87 @@ export type MtgSymbol = {
   alt: string;
 };
 
-export type pokemonCard = any;
+export type pokemonCard = {
+  id: string;
+  name: string;
+  supertype: string;
+  subtypes?: string[];
+  hp?: string;
+  types?: string[];
+  rules?: string[];
+  abilities?: PokemonAbility[];
+  attacks?: PokemonAttack[];
+  weaknesses?: PokemonWeakness[];
+  resistances?: PokemonResistance[];
+  retreatCost?: string[];
+  convertedRetreatCost?: number;
+  set: {
+    id: string;
+    name: string;
+    series: string;
+    printedTotal: number;
+    total: number;
+    legalities: PokemonLegalities;
+    ptcgoCode: string;
+    releaseDate: string;
+    updatedAt: string;
+    images: {
+      symbol: string;
+      logo: string;
+    };
+  };
+  number: string;
+  rarity?: string;
+  legalities: PokemonLegalities;
+  regulationMark?: string;
+  images: {
+    small: string;
+    large: string;
+  };
+  tcgplayer?: {
+    url: string;
+    updatedAt: string;
+    prices: {
+      holofoil: {
+        low: number;
+        mid: number;
+        high: number;
+        market: number;
+        directLow: number | null;
+      };
+    };
+  };
+};
+
+export type PokemonLegalities = {
+  unlimited?: string;
+  standard?: string;
+  expanded?: string;
+};
+
+export type PokemonAbility = {
+  name: string;
+  text: string;
+  type: string;
+};
+
+export type PokemonAttack = {
+  name: string;
+  cost: string[];
+  convertedEnergyCost: number;
+  damage: string;
+  text: string;
+};
+
+export type PokemonWeakness = {
+  type: string;
+  value: string;
+};
+
+export type PokemonResistance = {
+  type: string;
+  value: string;
+};
 
 export type Game = "Yugioh" | "Magic the Gathering" | "Pokemon TCG";
 
