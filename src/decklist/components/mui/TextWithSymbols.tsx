@@ -15,8 +15,7 @@ const TextWithSymbols = ({ text, symbols }: Props) => {
     symbols.map(({ symbol, url, alt }) => [symbol, { src: url, alt }])
   );
 
-  const escapeRegex = (s: string) =>
-    s.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+  const escapeRegex = (s: string) => s.replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&");
 
   const parseSymbols = (input?: string): Part[] => {
     if (!input) return [];
