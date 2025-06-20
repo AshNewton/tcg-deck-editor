@@ -62,11 +62,11 @@ const CardDetails = (props: Props) => {
         </IconButton>
       </Box>
 
-      <Grid container gap={1}>
-        <Grid item xs={12} sm={3} p={1}>
+      <Grid container gap={1} display="flex" alignItems="center">
+        <Grid item xs={12} sm={4} p={1}>
           <Image src={pCard.images.large} alt={card.name} m={0} />
         </Grid>
-        <Grid item xs={12} sm={8} mt={2} py={1}>
+        <Grid item xs={12} sm={7} mt={2} py={1}>
           {/* HP */}
           {pCard.hp && <Text text={`HP: ${pCard.hp}`} />}
 

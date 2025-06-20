@@ -74,7 +74,7 @@ const CardDetails = (props: Props) => {
         </IconButton>
       </Box>
 
-      <Grid container mt={2} gap={1}>
+      <Grid container mt={2} gap={1} display="flex" alignItems="center">
         <Grid item xs={12} sm={3}>
           <Image src={mtgCard.image_uris.normal} alt={card.name} />
         </Grid>

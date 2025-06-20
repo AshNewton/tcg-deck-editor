@@ -52,7 +52,7 @@ const CardDetails = (props: Props) => {
           <ClearIcon />
         </IconButton>
       </Box>
-      <Grid container gap={1}>
+      <Grid container gap={1} display="flex" alignItems="center">
         <Grid item xs={12} sm={3}>
           <Image src={ygoCard.card_images[0]?.image_url} alt={card.name} />
         </Grid>

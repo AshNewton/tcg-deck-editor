@@ -1,7 +1,7 @@
 import { setMainDeck } from "../../store/slices/uiSlice";
 
 import { AppDispatch } from "../../store";
-import { Card, Deck, mtgCard, pokemonCard } from "../../types";
+import { Card, Deck, pokemonCard } from "../../types";
 import { binomial } from "./deckAnalytics";
 
 export const POKEMON_NAME = "Pokemon TCG";
