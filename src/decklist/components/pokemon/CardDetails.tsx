@@ -22,19 +22,11 @@ type Props = {
 
 const energySymbols = POKEMON_TYPES.map((type: string) => {
   return {
-    symbol: POKEMON_TYPES_TO_SYMBOL[type],
+    symbol: type,
     url: `/energy/${type}.png`,
     alt: type,
   };
 });
-
-const getEnergySymbols = (names: Array<string>) => {
-  return names
-    .map((name: string) => {
-      return POKEMON_TYPES_TO_SYMBOL[name];
-    })
-    .join("");
-};
 
 const CardDetails = (props: Props) => {
   const { card, clearSelection } = props;
@@ -81,7 +73,7 @@ const CardDetails = (props: Props) => {
           {/* types */}
           {pCard.types?.length > 0 && (
             <TextWithSymbols
-              text={`Types: ${getEnergySymbols(pCard.types)}`}
+              text={`Types: ${pCard.types.join("")}`}
               symbols={energySymbols}
             />
           )}
@@ -94,7 +86,12 @@ const CardDetails = (props: Props) => {
                   <ListItem sx={{ px: 0 }}>
                     <ListItemText
                       primary={`${ability.type}: ${ability.name}`}
-                      secondary={ability.text}
+                      secondary={
+                        <TextWithSymbols
+                          text={ability.text}
+                          symbols={energySymbols}
+                        />
+                      }
                     />
                   </ListItem>
                 );
@@ -108,11 +105,18 @@ const CardDetails = (props: Props) => {
               {pCard.attacks.map((attack: any) => {
                 return (
                   <ListItem sx={{ px: 0 }}>
-                    <ListItemText secondary={attack.text}>
+                    <ListItemText
+                      secondary={
+                        <TextWithSymbols
+                          text={attack.text}
+                          symbols={energySymbols}
+                        />
+                      }
+                    >
                       <TextWithSymbols
-                        text={`${getEnergySymbols(attack.cost)} ${
-                          attack.name
-                        } ${attack.damage}`}
+                        text={`${attack.cost.join("")} ${attack.name} ${
+                          attack.damage
+                        }`}
                         symbols={energySymbols}
                       />
                     </ListItemText>
@@ -174,7 +178,7 @@ const CardDetails = (props: Props) => {
           {/* retreat cost */}
           {pCard.retreatCost && (
             <TextWithSymbols
-              text={`Retreat: ${getEnergySymbols(pCard.retreatCost)}`}
+              text={`Retreat: ${pCard.retreatCost.join("")}`}
               symbols={energySymbols}
             />
           )}

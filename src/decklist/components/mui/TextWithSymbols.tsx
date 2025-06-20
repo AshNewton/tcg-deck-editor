@@ -1,4 +1,5 @@
 import Typography from "@mui/material/Typography";
+
 import { MtgSymbol } from "../../../types";
 
 type Props = {
@@ -14,51 +15,43 @@ const TextWithSymbols = ({ text, symbols }: Props) => {
     symbols.map(({ symbol, url, alt }) => [symbol, { src: url, alt }])
   );
 
-  const parseSymbols = (input?: string) => {
+  const escapeRegex = (s: string) =>
+    s.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+
+  const parseSymbols = (input?: string): Part[] => {
     if (!input) return [];
 
-    return [...input].reduce<Part[]>((acc, char) => {
-      const last = acc[acc.length - 1];
+    // Match exact symbols, longest first to prevent partial matches
+    const sortedSymbols = [...SYMBOL_MAP.keys()].sort(
+      (a, b) => b.length - a.length
+    );
+    const pattern = sortedSymbols.map(escapeRegex).join("|");
+    const regex = new RegExp(`(${pattern})`, "g");
 
-      // Handle start of symbol
-      if (char === "{") {
-        acc.push(char);
-        return acc;
+    const parts: Part[] = [];
+    let lastIndex = 0;
+
+    input.replace(regex, (match, _, offset) => {
+      if (offset > lastIndex) {
+        parts.push(input.slice(lastIndex, offset)); // text before match
       }
 
-      // Handle end of symbol
-      if (char === "}" && typeof last === "string" && last.startsWith("{")) {
-        const maybeSymbol = last + char;
-        const match = SYMBOL_MAP.get(maybeSymbol);
-
-        acc.pop(); // remove partial symbol
-        if (match) {
-          acc.push({ symbol: maybeSymbol, ...match });
-        } else {
-          acc.push(maybeSymbol); // fallback: treat as plain text
-        }
-        return acc;
-      }
-
-      // If building symbol
-      if (
-        typeof last === "string" &&
-        last.startsWith("{") &&
-        !last.includes("}")
-      ) {
-        acc[acc.length - 1] += char;
-        return acc;
-      }
-
-      // Append to last text part or start new one
-      if (typeof last === "string") {
-        acc[acc.length - 1] += char;
+      const symbolData = SYMBOL_MAP.get(match);
+      if (symbolData) {
+        parts.push({ symbol: match, ...symbolData });
       } else {
-        acc.push(char);
+        parts.push(match); // fallback, should never happen
       }
 
-      return acc;
-    }, []);
+      lastIndex = offset + match.length;
+      return match;
+    });
+
+    if (lastIndex < input.length) {
+      parts.push(input.slice(lastIndex)); // remaining text
+    }
+
+    return parts;
   };
 
   return (
