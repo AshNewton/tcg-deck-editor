@@ -1,5 +1,5 @@
 import Decklist from "../components/Decklist";
-import SaveLoad from "../components/mui/SaveLoad";
+import SaveLoad, { saveFile } from "../components/mui/SaveLoad";
 import SearchBar from "../components/mui/Searchbar";
 import Text from "../components/mui/Text";
 
@@ -29,8 +29,10 @@ import { searchCard as searchPokemonCard } from "../api/pokemontcgio";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
+import { TXT_OPTS } from "../util/constants";
+
 import { Action } from "@reduxjs/toolkit";
-import { Card, Deck } from "../../types";
+import { Card, Deck, mtgCard } from "../../types";
 
 const Sidebar = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
@@ -82,6 +84,16 @@ const Sidebar = () => {
 
   const deckErrors = isInvalidHandlers[game](maindeck, extradeck);
 
+  const handleExportTabletopSim = () => {
+    const exportContent = maindeck.reduce((acc, card) => {
+      const mtgCard = card.details as mtgCard;
+
+      return acc + `${card.copies}x ${card.name} (${mtgCard.set}) \n`;
+    }, "");
+
+    saveFile(exportContent, TXT_OPTS);
+  };
+
   return (
     <MuiCard>
       {/* search for cards */}
@@ -101,6 +113,17 @@ const Sidebar = () => {
           { setter: setExtraDeck, getter: extradeck, name: "extra" },
         ]}
         validateCard={yugioh ? isYgoCard : mtg ? isMtgCard : isPokemonCard}
+        menuActions={
+          mtg
+            ? [
+                {
+                  label: "Export for Tabletop Simulator",
+                  onClick: handleExportTabletopSim,
+                  disabled: maindeck.length === 0,
+                },
+              ]
+            : []
+        }
       />
 
       {maindeck.length === 0 && extradeck.length === 0 ? (

@@ -13,3 +13,23 @@ export const GAME_ICONS: Record<string, string> = {
   "Pokemon TCG": pokemonIcon,
   Yugioh: yugiohIcon,
 };
+
+export const JSON_OPTS = {
+  types: [
+    {
+      description: "JSON Files",
+      accept: { "application/json": [".json"] },
+    },
+  ],
+  suggestedName: "data.json",
+};
+
+export const TXT_OPTS = {
+  suggestedName: "file.txt",
+  types: [
+    {
+      description: "Text Files",
+      accept: { "text/plain": [".txt"] },
+    },
+  ],
+};

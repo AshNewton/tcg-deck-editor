@@ -257,3 +257,11 @@ export type CardOpeningProbabilities = Array<{
 }>;
 
 export type BanType = "Forbidden" | "Semi-Limited" | "Limited";
+
+export type Opts = {
+  types: Array<{
+    description: string;
+    accept: Record<string, Array<string>>;
+  }>;
+  suggestedName: string;
+};
