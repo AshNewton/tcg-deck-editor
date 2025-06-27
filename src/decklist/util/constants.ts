@@ -33,3 +33,5 @@ export const TXT_OPTS = {
     },
   ],
 };
+
+export const NEW_LINE = "\n";

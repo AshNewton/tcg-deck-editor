@@ -50,6 +50,27 @@ export const saveFile = async (content: string, opts: Opts = JSON_OPTS) => {
   }
 };
 
+export const loadFile = async (storeFileContent: (a: string) => void) => {
+  try {
+    if (!window.showOpenFilePicker) {
+      console.error("File picker is not supported in this browser.");
+      return;
+    }
+
+    const [fileHandle] = await window.showOpenFilePicker();
+    const file = await fileHandle.getFile();
+    const text = await file.text();
+
+    storeFileContent(text);
+  } catch (err) {
+    const error = err as Error;
+
+    if (error.name !== "AbortError") {
+      alert("Failed to load file: " + error.message);
+    }
+  }
+};
+
 const SaveLoad = (props: Props) => {
   const {
     saveload,
@@ -82,37 +103,20 @@ const SaveLoad = (props: Props) => {
     saveFile(contents);
   };
 
-  const handleLoad = async () => {
-    try {
-      if (!window.showOpenFilePicker) {
-        console.error("File picker is not supported in this browser.");
-        return;
+  const handleLoad = async (text: string) => {
+    const parsed = JSON.parse(text);
+
+    saveload.forEach(({ name, setter }) => {
+      const allValid = parsed[name].every((card: Card) =>
+        validateCard(card.details)
+      );
+
+      if (!allValid) {
+        throw new Error(`Invalid card data for deck type`);
       }
 
-      const [fileHandle] = await window.showOpenFilePicker();
-      const file = await fileHandle.getFile();
-      const text = await file.text();
-
-      const parsed = JSON.parse(text);
-
-      saveload.forEach(({ name, setter }) => {
-        const allValid = parsed[name].every((card: Card) =>
-          validateCard(card.details)
-        );
-
-        if (!allValid) {
-          throw new Error(`Invalid card data for deck type`);
-        }
-
-        dispatch(setter(parsed[name]));
-      });
-    } catch (err) {
-      const error = err as Error;
-
-      if (error.name !== "AbortError") {
-        alert("Failed to load file: " + error.message);
-      }
-    }
+      dispatch(setter(parsed[name]));
+    });
   };
 
   return (
@@ -124,7 +128,13 @@ const SaveLoad = (props: Props) => {
       gap={2}
       mr={2}
     >
-      <Button startIcon={<UploadIcon />} text="Load" onClick={handleLoad} />
+      <Button
+        startIcon={<UploadIcon />}
+        text="Load"
+        onClick={() => {
+          loadFile(handleLoad);
+        }}
+      />
       <Button startIcon={<DownloadIcon />} text="Save" onClick={handleSave} />
 
       {menuActions && menuActions.length > 0 && (

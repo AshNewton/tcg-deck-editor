@@ -1,5 +1,5 @@
 import Decklist from "../components/Decklist";
-import SaveLoad, { saveFile } from "../components/mui/SaveLoad";
+import SaveLoad, { loadFile, saveFile } from "../components/mui/SaveLoad";
 import SearchBar from "../components/mui/Searchbar";
 import Text from "../components/mui/Text";
 
@@ -18,6 +18,7 @@ import {
   searchCard as searchYGOCard,
 } from "../api/ygoprodeck";
 import {
+  bulkSearchCard,
   bulkSearchCard as bulkSearchMtgCard,
   searchCard as searchMTGCard,
 } from "../api/magicthegathering";
@@ -29,10 +30,41 @@ import { searchCard as searchPokemonCard } from "../api/pokemontcgio";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
-import { TXT_OPTS } from "../util/constants";
+import { NEW_LINE, TXT_OPTS } from "../util/constants";
 
 import { Action } from "@reduxjs/toolkit";
 import { Card, Deck, mtgCard } from "../../types";
+
+type ParsedCardLine = {
+  copies: number;
+  name: string;
+};
+
+const parseCardLine = (line: string): ParsedCardLine | null => {
+  const parts = line.trim().split(" ");
+
+  // First part should be something like '1x'
+  const copiesPart = parts[0];
+  if (!copiesPart.endsWith("x")) return null;
+
+  const copies = parseInt(copiesPart.slice(0, -1), 10);
+  if (isNaN(copies)) return null;
+
+  // Find the index of the part that starts the set code (like '(clb)')
+  const setCodeIndex = parts.findIndex(
+    (part) => part.startsWith("(") && part.endsWith(")")
+  );
+  if (setCodeIndex === -1) return null;
+
+  // The name is everything between the copies part and the set code part
+  const nameParts = parts.slice(1, setCodeIndex);
+  const name = nameParts.join(" ");
+
+  return {
+    copies,
+    name,
+  };
+};
 
 const Sidebar = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
@@ -88,10 +120,42 @@ const Sidebar = () => {
     const exportContent = maindeck.reduce((acc, card) => {
       const mtgCard = card.details as mtgCard;
 
-      return acc + `${card.copies}x ${card.name} (${mtgCard.set}) \n`;
+      return acc + `${card.copies}x ${card.name} (${mtgCard.set}) ${NEW_LINE}`;
     }, "");
 
     saveFile(exportContent, TXT_OPTS);
+  };
+
+  const handleArchidektImport = () => {
+    loadFile(handleLoad);
+  };
+
+  const handleLoad = async (text: string) => {
+    // get names and copies out of file
+    const parsedCards = text.split(NEW_LINE).map((line: string) => {
+      return parseCardLine(line);
+    });
+
+    // bulk search scryfall and get all the cards into a deck
+    const singletonDeck = await bulkSearchCard(
+      parsedCards.map((card: ParsedCardLine | null) => {
+        return card ? card.name : "";
+      })
+    );
+
+    // put the right number of copies of each card into the deck,
+    // defaulting to 1 copy
+    const deck = singletonDeck.map((card: Card) => {
+      return {
+        ...card,
+        copies:
+          parsedCards.filter((c: ParsedCardLine | null) => {
+            return c?.name === card.name;
+          })[0]?.copies ?? 1,
+      };
+    });
+
+    dispatch(setMainDeck(deck));
   };
 
   return (
@@ -120,6 +184,10 @@ const Sidebar = () => {
                   label: "Export for Tabletop Simulator",
                   onClick: handleExportTabletopSim,
                   disabled: maindeck.length === 0,
+                },
+                {
+                  label: "Import from Archidekt",
+                  onClick: handleArchidektImport,
                 },
               ]
             : []
