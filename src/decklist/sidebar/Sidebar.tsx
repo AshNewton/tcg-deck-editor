@@ -67,6 +67,8 @@ const parseArchideckCardLine = (line: string): ParsedCardLine | null => {
 };
 
 const parseGolfishCardLine = (line: string): ParsedCardLine | null => {
+  if (!line) return null;
+
   const parts = line.trim().split(" ");
 
   // First part should a number
@@ -212,6 +214,10 @@ const Sidebar = () => {
                 {
                   label: "Import from Archidekt",
                   onClick: handleArchidektImport,
+                },
+                {
+                  label: "Import from Moxfield",
+                  onClick: handleGoldfishImport,
                 },
                 {
                   label: "Import from MTG Goldfish",
