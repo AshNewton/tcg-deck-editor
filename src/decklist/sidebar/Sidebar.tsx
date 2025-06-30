@@ -40,7 +40,7 @@ type ParsedCardLine = {
   name: string;
 };
 
-const parseCardLine = (line: string): ParsedCardLine | null => {
+const parseArchideckCardLine = (line: string): ParsedCardLine | null => {
   const parts = line.trim().split(" ");
 
   // First part should be something like '1x'
@@ -58,6 +58,24 @@ const parseCardLine = (line: string): ParsedCardLine | null => {
 
   // The name is everything between the copies part and the set code part
   const nameParts = parts.slice(1, setCodeIndex);
+  const name = nameParts.join(" ");
+
+  return {
+    copies,
+    name,
+  };
+};
+
+const parseGolfishCardLine = (line: string): ParsedCardLine | null => {
+  const parts = line.trim().split(" ");
+
+  // First part should a number
+  const copiesPart = parts[0];
+  const copies = parseInt(copiesPart, 10);
+  if (isNaN(copies)) return null;
+
+  // Find the rest should be name
+  const nameParts = parts.slice(1);
   const name = nameParts.join(" ");
 
   return {
@@ -127,36 +145,42 @@ const Sidebar = () => {
   };
 
   const handleArchidektImport = () => {
-    loadFile(handleLoad);
+    loadFile(handleLoad(parseArchideckCardLine));
   };
 
-  const handleLoad = async (text: string) => {
-    // get names and copies out of file
-    const parsedCards = text.split(NEW_LINE).map((line: string) => {
-      return parseCardLine(line);
-    });
-
-    // bulk search scryfall and get all the cards into a deck
-    const singletonDeck = await bulkSearchCard(
-      parsedCards.map((card: ParsedCardLine | null) => {
-        return card ? card.name : "";
-      })
-    );
-
-    // put the right number of copies of each card into the deck,
-    // defaulting to 1 copy
-    const deck = singletonDeck.map((card: Card) => {
-      return {
-        ...card,
-        copies:
-          parsedCards.filter((c: ParsedCardLine | null) => {
-            return c?.name === card.name;
-          })[0]?.copies ?? 1,
-      };
-    });
-
-    dispatch(setMainDeck(deck));
+  const handleGoldfishImport = () => {
+    loadFile(handleLoad(parseGolfishCardLine));
   };
+
+  const handleLoad =
+    (lineParser: (line: string) => ParsedCardLine | null) =>
+    async (text: string) => {
+      // get names and copies out of file
+      const parsedCards = text.split(NEW_LINE).map((line: string) => {
+        return lineParser(line);
+      });
+
+      // bulk search scryfall and get all the cards into a deck
+      const singletonDeck = await bulkSearchCard(
+        parsedCards.map((card: ParsedCardLine | null) => {
+          return card ? card.name : "";
+        })
+      );
+
+      // put the right number of copies of each card into the deck,
+      // defaulting to 1 copy
+      const deck = singletonDeck.map((card: Card) => {
+        return {
+          ...card,
+          copies:
+            parsedCards.filter((c: ParsedCardLine | null) => {
+              return c?.name === card.name;
+            })[0]?.copies ?? 1,
+        };
+      });
+
+      dispatch(setMainDeck(deck));
+    };
 
   return (
     <MuiCard>
@@ -188,6 +212,10 @@ const Sidebar = () => {
                 {
                   label: "Import from Archidekt",
                   onClick: handleArchidektImport,
+                },
+                {
+                  label: "Import from MTG Goldfish",
+                  onClick: handleGoldfishImport,
                 },
               ]
             : []
