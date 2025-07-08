@@ -1,5 +1,6 @@
 import React from "react";
 import { Field } from "react-final-form";
+
 import {
   Slider,
   SliderProps,
@@ -16,7 +17,7 @@ type MultiThumbSliderProps = {
   max?: number;
   step?: number;
   marks?: SliderProps["marks"];
-  defaultValue?: number[];
+  defaultValue?: Array<number>;
   disabled?: boolean;
   showInputs?: boolean;
 };
@@ -24,23 +25,28 @@ type MultiThumbSliderProps = {
 const clamp = (value: number, min: number, max: number) =>
   Math.max(min, Math.min(max, value));
 
-const MultiThumbSlider: React.FC<MultiThumbSliderProps> = ({
-  name,
-  label,
-  min = 0,
-  max = 100,
-  step = 1,
-  marks,
-  defaultValue = [20, 80],
-  disabled = false,
-  showInputs = false,
-}) => {
+const MultiThumbSlider = (props: MultiThumbSliderProps) => {
+  const {
+    name,
+    label,
+    min = 0,
+    max = 100,
+    step = 1,
+    marks,
+    defaultValue = [20, 80],
+    disabled = false,
+    showInputs = false,
+  } = props;
+
   return (
-    <Field<number[]> name={name} initialValue={defaultValue}>
+    <Field name={name} initialValue={defaultValue}>
       {({ input, meta }) => {
         const [lower, upper] = input.value || defaultValue;
 
-        const handleSliderChange = (_: Event, newValue: number | number[]) => {
+        const handleSliderChange = (
+          _: Event,
+          newValue: number | Array<number>
+        ) => {
           if (Array.isArray(newValue)) {
             input.onChange(newValue);
           }

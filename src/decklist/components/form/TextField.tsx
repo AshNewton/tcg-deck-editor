@@ -1,6 +1,10 @@
 import MuiTextField from "@mui/material/TextField";
 
-const TextField = ({ input, meta, label, ...rest }: any) => {
+type Props = any;
+
+const TextField = (props: Props) => {
+  const { input, meta, label, ...rest } = props;
+
   return (
     <MuiTextField
       {...input}

@@ -29,8 +29,8 @@ const ConditionalField = (props: Props) => {
 
       {/* Conditionally render this field if the checkbox is checked */}
       <Field name={checkboxName} subscription={{ value: true }}>
-        {({ input, meta }) => {
-          const showField = input.value; // this is the checkbox value
+        {({ input }) => {
+          const showField = input.value;
           return showField && <Box sx={{ pl: 4, py: 1 }}>{children}</Box>;
         }}
       </Field>
