@@ -7,6 +7,8 @@ import TextField from "../form/TextField";
 
 import Grid from "@mui/material/Grid";
 
+import { includesIgnoreCase, isBetween } from "../../util/util";
+
 import {
   MTG_CARD_TYPES,
   MTG_COLOR_CODES,
@@ -54,9 +56,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByName &&
     values.nameIncludes &&
-    !card.name
-      .toLocaleLowerCase()
-      .includes(values.nameIncludes.toLocaleLowerCase())
+    !includesIgnoreCase(card.name, values.nameIncludes)
   ) {
     return false;
   }
@@ -72,9 +72,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByManaCost &&
     values.mana &&
-    (!mtgCard.cmc ||
-      mtgCard.cmc < values.mana[0] ||
-      values.mana[1] < mtgCard.cmc)
+    (!mtgCard.cmc || !isBetween(mtgCard.cmc, values.mana))
   ) {
     return false;
   }
@@ -82,9 +80,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByPower &&
     values.power &&
-    (!mtgCard.power ||
-      Number(mtgCard.power) < values.power[0] ||
-      values.power[1] < Number(mtgCard.power))
+    (!mtgCard.power || !isBetween(mtgCard.power, values.power))
   ) {
     return false;
   }
@@ -92,9 +88,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByToughness &&
     values.toughness &&
-    (!mtgCard.toughness ||
-      Number(mtgCard.toughness) < values.toughness[0] ||
-      values.toughness[1] < Number(mtgCard.toughness))
+    (!mtgCard.toughness || !isBetween(mtgCard.toughness, values.toughness))
   ) {
     return false;
   }
@@ -104,9 +98,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
     if (
       values.filterByDesc &&
       values.descIncludes &&
-      !mtgCard.oracle_text
-        ?.toLocaleLowerCase()
-        .includes(values.descIncludes.toLocaleLowerCase())
+      !includesIgnoreCase(mtgCard.oracle_text, values.descIncludes)
     ) {
       return false;
     }
@@ -115,7 +107,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
       values.filterByCardType &&
       values.cardTypes &&
       !values.cardTypes.every((type: string) =>
-        mtgCard.type_line.toLocaleLowerCase().includes(type.toLocaleLowerCase())
+        includesIgnoreCase(mtgCard.type_line, type)
       )
     ) {
       return false;
@@ -124,9 +116,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
     if (
       values.filterByTribe &&
       values.tribeIncludes &&
-      !mtgCard.type_line
-        .toLocaleLowerCase()
-        .includes(values.tribeIncludes.toLocaleLowerCase())
+      !includesIgnoreCase(mtgCard.type_line, values.tribeIncludes)
     ) {
       return false;
     }
@@ -137,9 +127,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
       values.filterByDesc &&
       values.descIncludes &&
       !mtgCard.card_faces.some((face: any) =>
-        face.oracle_text
-          .toLocaleLowerCase()
-          .includes(values.descIncludes.toLocaleLowerCase())
+        includesIgnoreCase(face.oracle_text, values.descIncludes)
       )
     ) {
       return false;
@@ -150,7 +138,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
       values.cardTypes &&
       !mtgCard.card_faces.some((face: any) =>
         values.cardTypes.every((type) =>
-          face.type_line.toLocaleLowerCase().includes(type.toLocaleLowerCase())
+          includesIgnoreCase(face.type_line, type)
         )
       )
     ) {
@@ -161,9 +149,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
       values.filterByTribe &&
       values.tribeIncludes &&
       !mtgCard.card_faces.some((face: any) =>
-        face.type_line
-          .toLocaleLowerCase()
-          .includes(values.tribeIncludes.toLocaleLowerCase())
+        includesIgnoreCase(face.type_line, values.tribeIncludes)
       )
     ) {
       return false;

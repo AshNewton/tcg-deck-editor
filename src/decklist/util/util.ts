@@ -29,6 +29,18 @@ export const isPokemon = (game: Game): boolean => {
   return game === POKEMON_NAME;
 };
 
+export const includesIgnoreCase = (
+  a: string | undefined,
+  b: string
+): boolean => {
+  if (!a || !b) return false;
+  return a.toLocaleLowerCase().includes(b.toLocaleLowerCase());
+};
+
+export const isBetween = (a: any, values: Array<number>): boolean => {
+  return Number(a) >= values[0] && values[1] >= Number(a);
+};
+
 export const addToDeckHandlers: Record<Game, any> = {
   "Magic the Gathering": mtgAddToDeck,
   "Pokemon TCG": pokemonAddToDeck,
