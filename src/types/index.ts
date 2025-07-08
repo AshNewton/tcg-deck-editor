@@ -265,3 +265,8 @@ export type Opts = {
   }>;
   suggestedName: string;
 };
+
+export type NameValue = {
+  name: string;
+  value: number;
+};

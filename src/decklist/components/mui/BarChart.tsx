@@ -1,10 +1,13 @@
 import React from "react";
 import {
+  BarChart as ReBarChart,
+  Bar,
+  XAxis,
+  YAxis,
   Tooltip,
   ResponsiveContainer,
+  CartesianGrid,
   Cell,
-  Pie,
-  PieChart as RePieChart,
 } from "recharts";
 
 import Popover from "./Popover";
@@ -21,12 +24,13 @@ import { Deck, NameValue } from "../../../types";
 type Props = {
   title: string;
   data: Array<NameValue>;
-  colors: Record<string, string>;
+  xLabel: string;
+  yLabel?: string;
   filterBy: (o: any) => Deck;
 };
 
-const PieChart = (props: Props) => {
-  const { title, data, colors, filterBy } = props;
+const BarChart = (props: Props) => {
+  const { title, data, xLabel, yLabel = "Count", filterBy } = props;
 
   const [anchorPos, setAnchorPos] = React.useState<PopoverPosition | null>(
     null
@@ -51,25 +55,35 @@ const PieChart = (props: Props) => {
     <>
       <Text text={title} variant="h6" align="center" />
       <ResponsiveContainer height={300}>
-        <RePieChart>
-          <Pie
-            data={data}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            outerRadius={100}
-          >
+        <ReBarChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis
+            dataKey="name"
+            label={{
+              value: xLabel,
+              position: "insideBottom",
+              offset: -5,
+            }}
+          />
+          <YAxis
+            allowDecimals={false}
+            label={{
+              value: yLabel,
+              angle: -90,
+              position: "insideLeft",
+            }}
+          />
+          <Tooltip />
+          <Bar dataKey="value" fill="#8884d8" name="Card Count">
             {data.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
-                fill={colors[entry.name] || "#ccc"}
+                cursor="pointer"
                 onClick={(e: React.MouseEvent) => handleClick(entry.name, e)}
               />
             ))}
-          </Pie>
-          <Tooltip />
-        </RePieChart>
+          </Bar>
+        </ReBarChart>
       </ResponsiveContainer>
 
       {anchorPos && (
@@ -89,4 +103,4 @@ const PieChart = (props: Props) => {
   );
 };
 
-export default PieChart;
+export default BarChart;
