@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 
 import { getDeckSize } from "../../util/deckAnalytics";
 
-import { Card, Deck, mtgCard } from "../../../types";
+import { Deck, mtgCard } from "../../../types";
 
 type Props = {
   deck: Deck;
@@ -62,7 +62,7 @@ const Decklist = (props: Props) => {
     for (const { label, keyword } of CARD_TYPES) {
       if (typeLine.includes(keyword)) {
         groupedDecks[label].push(card);
-        break; // ✅ Only first match is used, preserving priority
+        break;
       }
     }
   });

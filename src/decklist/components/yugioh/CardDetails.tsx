@@ -1,3 +1,4 @@
+import ExternalLink from "../mui/ExternalLink";
 import Image from "../mui/Image";
 import Text from "./../mui/Text";
 
@@ -6,7 +7,6 @@ import Box from "@mui/material/Box";
 import ClearIcon from "@mui/icons-material/Clear";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
-import Link from "@mui/material/Link";
 
 import { getBannedSeverity, getCardLevelName } from "../../util/yugioh";
 
@@ -79,14 +79,11 @@ const CardDetails = (props: Props) => {
           <Text mt={1} text={`${ygoCard.desc}`} />
 
           {/* link to YGOPRO */}
-          <Link
+          <ExternalLink
             mt={1}
             href={ygoCard.ygoprodeck_url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            YGOPRODECK
-          </Link>
+            label="YGOPRODECK"
+          />
         </Grid>
       </Grid>
     </>

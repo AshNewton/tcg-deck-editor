@@ -1,5 +1,6 @@
 import React from "react";
 
+import ExternalLink from "../mui/ExternalLink";
 import Image from "../mui/Image";
 import Text from "./../mui/Text";
 import TextWithSymbols from "../mui/TextWithSymbols";
@@ -9,7 +10,6 @@ import CircularProgress from "@mui/material/CircularProgress";
 import ClearIcon from "@mui/icons-material/Clear";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
-import Link from "@mui/material/Link";
 
 import { getSymbolUris } from "../../api/magicthegathering";
 
@@ -137,14 +137,7 @@ const CardDetails = (props: Props) => {
           )}
 
           {/* link to Scryfall */}
-          <Link
-            mt={1}
-            href={mtgCard.scryfall_uri}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Scryfall
-          </Link>
+          <ExternalLink mt={1} href={mtgCard.scryfall_uri} label="Scryfall" />
         </Grid>
       </Grid>
     </>
