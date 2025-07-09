@@ -1,5 +1,3 @@
-import React from "react";
-
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 
@@ -38,6 +36,7 @@ const Text = (props: Props) => {
             textOverflow: "ellipsis",
             whiteSpace: "nowrap",
           }}
+          {...rest}
         >
           {text}
         </Typography>
