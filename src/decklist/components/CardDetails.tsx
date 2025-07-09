@@ -2,7 +2,7 @@ import MtgCardDetails from "./mtg/CardDetails";
 import PokemonCardDetails from "./pokemon/CardDetails";
 import YugiohCardDetails from "./yugioh/CardDetails";
 
-import MuiCard from "@mui/material/Card";
+import DisplayCard from "./mui/DisplayCard";
 
 import { setSelectedCard } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
@@ -25,17 +25,7 @@ const CardDetails = () => {
   }
 
   return (
-    <MuiCard
-      sx={{
-        width: "100%",
-        bgcolor: "background.paper",
-        borderRadius: 2,
-        mt: 2,
-        ml: 2,
-        mr: 2,
-        p: 2,
-      }}
-    >
+    <DisplayCard>
       {game === MTG_NAME && (
         <MtgCardDetails card={card} clearSelection={clearSelection} />
       )}
@@ -45,7 +35,7 @@ const CardDetails = () => {
       {game === YUGIOH_NAME && (
         <YugiohCardDetails card={card} clearSelection={clearSelection} />
       )}
-    </MuiCard>
+    </DisplayCard>
   );
 };
 

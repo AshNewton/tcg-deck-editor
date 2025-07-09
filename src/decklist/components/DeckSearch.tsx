@@ -2,6 +2,7 @@ import React from "react";
 import { Form } from "react-final-form";
 
 import Button from "./mui/Button";
+import DisplayCard from "./mui/DisplayCard";
 import MtgDeckSearch from "./mtg/DeckSearch";
 import PokemonDeckSearch from "./pokemon/DeckSearch";
 import YgoDeckSearch from "./yugioh/DeckSearch";
@@ -11,7 +12,6 @@ import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import MuiCard from "@mui/material/Card";
 
 import { useAppSelector } from "../../hooks";
 import { filterCard as mtgFilterCard } from "./mtg/DeckSearch";
@@ -74,17 +74,7 @@ const DeckSearch = () => {
   };
 
   return (
-    <MuiCard
-      sx={{
-        width: "100%",
-        bgcolor: "background.paper",
-        borderRadius: 2,
-        mt: 2,
-        ml: 2,
-        mr: 2,
-        p: 2,
-      }}
-    >
+    <DisplayCard>
       <Form
         onSubmit={onSubmit}
         render={({ form, handleSubmit }) => (
@@ -142,7 +132,7 @@ const DeckSearch = () => {
           </Grid>
         </>
       )}
-    </MuiCard>
+    </DisplayCard>
   );
 };
 

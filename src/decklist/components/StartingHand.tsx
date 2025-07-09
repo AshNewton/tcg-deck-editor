@@ -1,13 +1,13 @@
 import React from "react";
 
 import CollapsibleDropdown from "./mui/CollapsibleDropdown";
+import DisplayCard from "./mui/DisplayCard";
 import Image from "./mui/Image";
 import Text from "./mui/Text";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
-import MuiCard from "@mui/material/Card";
 import ReplayIcon from "@mui/icons-material/Replay";
 
 import { getCard, getCardHandSize, getCardImage, isMTG } from "../util/util";
@@ -79,15 +79,7 @@ const StartingHand = () => {
   };
 
   return (
-    <MuiCard
-      sx={{
-        width: "100%",
-        bgcolor: "background.paper",
-        borderRadius: 2,
-        m: 2,
-        p: 2,
-      }}
-    >
+    <DisplayCard>
       <CollapsibleDropdown
         title="Get a Sample Starting Hand"
         onOpen={generateOpeningHand}
@@ -142,7 +134,7 @@ const StartingHand = () => {
           )}
         </CollapsibleDropdown>
       )}
-    </MuiCard>
+    </DisplayCard>
   );
 };
 

@@ -8,6 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 
 import { isBasicLand } from "../util/mtg";
+import { isEnergy } from "../util/pokemon";
 import { isYugioh } from "../util/util";
 import { setSelectedCard } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
@@ -16,7 +17,6 @@ import { YUGIOH_MAX_COPIES } from "../util/yugioh";
 import { MTG_MAX_COPIES } from "../util/mtg";
 
 import { Card } from "../../types";
-import { isEnergy } from "../util/pokemon";
 
 interface Props {
   card: Card;
@@ -37,7 +37,7 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
   };
 
   const handleInnerClick = (
-    e: React.MouseEvent<HTMLButtonElement>,
+    e: React.MouseEvent,
     onClick: (name: string) => void
   ) => {
     e.stopPropagation();
@@ -51,9 +51,6 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
       onClick={toggleSelectedCard}
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") toggleSelectedCard();
-      }}
       sx={{
         mt: 1,
         ml: 2,
@@ -81,9 +78,7 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
 
       <Button
         text="-"
-        onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
-          handleInnerClick(e, onRemoveCopy)
-        }
+        onClick={(e: React.MouseEvent) => handleInnerClick(e, onRemoveCopy)}
         size="small"
         aria-label="remove copy"
       />
@@ -92,9 +87,7 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
 
       <Button
         text="+"
-        onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
-          handleInnerClick(e, onAddCopy)
-        }
+        onClick={(e: React.MouseEvent) => handleInnerClick(e, onAddCopy)}
         size="small"
         /* mtg basic lands can have any number of copies */
         disabled={
