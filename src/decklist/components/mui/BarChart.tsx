@@ -10,33 +10,37 @@ import {
   Cell,
 } from "recharts";
 
-import Popover from "./Popover";
 import Text from "./Text";
 
-import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import { PopoverPosition } from "@mui/material/Popover";
 
-import { Deck, NameValue } from "../../../types";
+import { NameValue } from "../../../types";
+import PopoverList from "./PopoverList";
 
 type Props = {
   title: string;
   data: Array<NameValue>;
   xLabel: string;
   yLabel?: string;
-  filterBy: (o: any) => Deck;
+  filterBy: (o: any) => Array<any>;
+  formatPopoverText: (item: any) => string;
 };
 
 const BarChart = (props: Props) => {
-  const { title, data, xLabel, yLabel = "Count", filterBy } = props;
+  const {
+    title,
+    data,
+    xLabel,
+    yLabel = "Count",
+    filterBy,
+    formatPopoverText,
+  } = props;
 
   const [anchorPos, setAnchorPos] = React.useState<PopoverPosition | null>(
     null
   );
 
-  const [filter, setFilter] = React.useState<Deck | null>(null);
+  const [filter, setFilter] = React.useState<Array<any> | null>(null);
 
   const handleClick = (value: string, e: React.MouseEvent) => {
     setFilter(filterBy(value));
@@ -74,7 +78,7 @@ const BarChart = (props: Props) => {
             }}
           />
           <Tooltip />
-          <Bar dataKey="value" fill="#8884d8" name="Card Count">
+          <Bar dataKey="value" fill="#8884d8" name="Count">
             {data.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
@@ -85,20 +89,12 @@ const BarChart = (props: Props) => {
           </Bar>
         </ReBarChart>
       </ResponsiveContainer>
-
-      {anchorPos && (
-        <Popover anchorPos={anchorPos} onClose={handleClose}>
-          <Box sx={{ maxHeight: 300, overflowY: "auto", p: 2, width: 250 }}>
-            <List dense>
-              {filter?.map((card, index) => (
-                <ListItem key={index}>
-                  <ListItemText primary={`${card.copies} ${card.name}`} />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-        </Popover>
-      )}
+      <PopoverList
+        list={filter}
+        handleClose={handleClose}
+        formatText={formatPopoverText}
+        anchorPos={anchorPos}
+      />
     </>
   );
 };

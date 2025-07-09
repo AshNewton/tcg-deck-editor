@@ -53,6 +53,8 @@ const getColorIdentityDistribution = (deck: Deck): Array<NameValue> => {
     }));
 };
 
+const formatPopoverText = (c: Card) => `${c.copies} ${c.name}`;
+
 const Mana = () => {
   const deck = useAppSelector((state) => state.ui.maindeck);
 
@@ -112,6 +114,7 @@ const Mana = () => {
               xLabel="Mana Cost"
               data={manaCostData}
               filterBy={handleManaCostClick}
+              formatPopoverText={formatPopoverText}
             />
           </Box>
         </Grid>
@@ -126,6 +129,7 @@ const Mana = () => {
               filterBy={(color) => {
                 return handleManaColorClick(color, false);
               }}
+              formatPopoverText={formatPopoverText}
             />
           </Box>
         </Grid>
@@ -138,6 +142,7 @@ const Mana = () => {
               filterBy={(color) => {
                 return handleManaColorClick(color, true);
               }}
+              formatPopoverText={formatPopoverText}
             />
           </Box>
         </Grid>

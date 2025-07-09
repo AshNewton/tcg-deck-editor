@@ -7,32 +7,29 @@ import {
   PieChart as RePieChart,
 } from "recharts";
 
-import Popover from "./Popover";
+import PopoverList from "./PopoverList";
 import Text from "./Text";
 
-import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import { PopoverPosition } from "@mui/material/Popover";
 
-import { Deck, NameValue } from "../../../types";
+import { NameValue } from "../../../types";
 
 type Props = {
   title: string;
   data: Array<NameValue>;
   colors: Record<string, string>;
-  filterBy: (o: any) => Deck;
+  filterBy: (o: any) => Array<any>;
+  formatPopoverText: (item: any) => string;
 };
 
 const PieChart = (props: Props) => {
-  const { title, data, colors, filterBy } = props;
+  const { title, data, colors, filterBy, formatPopoverText } = props;
 
   const [anchorPos, setAnchorPos] = React.useState<PopoverPosition | null>(
     null
   );
 
-  const [filter, setFilter] = React.useState<Deck | null>(null);
+  const [filter, setFilter] = React.useState<Array<any> | null>(null);
 
   const handleClick = (value: string, e: React.MouseEvent) => {
     setFilter(filterBy(value));
@@ -72,19 +69,12 @@ const PieChart = (props: Props) => {
         </RePieChart>
       </ResponsiveContainer>
 
-      {anchorPos && (
-        <Popover anchorPos={anchorPos} onClose={handleClose}>
-          <Box sx={{ maxHeight: 300, overflowY: "auto", p: 2, width: 250 }}>
-            <List dense>
-              {filter?.map((card, index) => (
-                <ListItem key={index}>
-                  <ListItemText primary={`${card.copies} ${card.name}`} />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-        </Popover>
-      )}
+      <PopoverList
+        list={filter}
+        anchorPos={anchorPos}
+        handleClose={handleClose}
+        formatText={formatPopoverText}
+      />
     </>
   );
 };
