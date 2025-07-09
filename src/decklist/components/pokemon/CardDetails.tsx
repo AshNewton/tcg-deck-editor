@@ -1,5 +1,6 @@
 import Image from "../mui/Image";
 import Text from "./../mui/Text";
+import TextWithSymbols from "../mui/TextWithSymbols";
 
 import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
@@ -13,7 +14,6 @@ import ListItemText from "@mui/material/ListItemText";
 import { POKEMON_TYPES } from "../../util/pokemon";
 
 import { Card, pokemonCard } from "../../../types";
-import TextWithSymbols from "../mui/TextWithSymbols";
 
 type Props = {
   card: Card;

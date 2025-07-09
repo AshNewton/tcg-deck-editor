@@ -7,6 +7,8 @@ import TextField from "../form/TextField";
 
 import Grid from "@mui/material/Grid";
 
+import { includesIgnoreCase, isBetween } from "../../util/util";
+
 import {
   Card,
   PokemonAbility,
@@ -60,9 +62,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByName &&
     values.nameIncludes &&
-    !card.name
-      .toLocaleLowerCase()
-      .includes(values.nameIncludes.toLocaleLowerCase())
+    !includesIgnoreCase(card.name, values.nameIncludes)
   ) {
     return false;
   }
@@ -91,13 +91,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
     return false;
   }
 
-  if (
-    values.filterByHP &&
-    values.hp &&
-    (!pokemonCard.hp ||
-      Number(pokemonCard.hp) < values.hp[0] ||
-      values.hp[1] < Number(pokemonCard.hp))
-  ) {
+  if (values.filterByHP && values.hp && !isBetween(pokemonCard.hp, values.hp)) {
     return false;
   }
 
@@ -113,19 +107,15 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
 };
 
 const substringOnCard = (s: string, card: pokemonCard): boolean => {
-  const lower = s.toLowerCase();
-
   return Boolean(
-    card.rules?.some((rule: string) => rule.toLowerCase().includes(lower)) ||
+    card.rules?.some((rule: string) => includesIgnoreCase(rule, s)) ||
       card.abilities?.some(
         (a: PokemonAbility) =>
-          a.name.toLowerCase().includes(lower) ||
-          a.text.toLowerCase().includes(lower)
+          includesIgnoreCase(a.name, s) || includesIgnoreCase(a.text, s)
       ) ||
       card.attacks?.some(
         (a: PokemonAttack) =>
-          a.name.toLowerCase().includes(lower) ||
-          a.text.toLowerCase().includes(lower)
+          includesIgnoreCase(a.name, s) || includesIgnoreCase(a.text, s)
       )
   );
 };
