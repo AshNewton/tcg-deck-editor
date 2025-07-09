@@ -1,5 +1,7 @@
 import React from "react";
 
+import Popover from "./Popover";
+
 import Box from "@mui/material/Box";
 import ClearIcon from "@mui/icons-material/Clear";
 import IconButton from "@mui/material/IconButton";
@@ -13,13 +15,13 @@ import TextField from "@mui/material/TextField";
 
 import { useDebounce } from "../../../hooks";
 
-import { Card } from "../../../types";
-import Popover from "@mui/material/Popover";
+import { Card, Deck } from "../../../types";
+import { PopoverPosition } from "@mui/material/Popover";
 
 type Props = {
-  onSearch: (arg0: string) => Promise<Array<Card>>;
+  onSearch: (s: string) => Promise<Deck>;
   renderOption?: (toRender: Card) => React.ReactNode;
-  onOptionSelect: (arg0: Card) => void;
+  onOptionSelect: (c: Card) => void;
   onBulkSearch?: (bulkText: string) => void;
 };
 
@@ -27,9 +29,9 @@ const SearchBar = (props: Props) => {
   const { onSearch, renderOption, onOptionSelect, onBulkSearch } = props;
 
   const [searchTerm, setSearchTerm] = React.useState<string>("");
-  const [results, setResults] = React.useState<Array<Card>>([]);
+  const [results, setResults] = React.useState<Deck>([]);
 
-  const [bulkAnchorEl, setBulkAnchorEl] = React.useState<null | HTMLElement>(
+  const [anchorPos, setAnchorPos] = React.useState<PopoverPosition | null>(
     null
   );
   const [bulkText, setBulkText] = React.useState<string>("");
@@ -67,12 +69,15 @@ const SearchBar = (props: Props) => {
     setResults([]);
   };
 
-  const handleBulkClick = (event: React.MouseEvent<HTMLElement>) => {
-    setBulkAnchorEl(event.currentTarget);
+  const handleBulkClick = (e: React.MouseEvent) => {
+    setAnchorPos({
+      top: e.clientY,
+      left: e.clientX,
+    });
   };
 
   const handleBulkClose = () => {
-    setBulkAnchorEl(null);
+    setAnchorPos(null);
     setBulkText("");
   };
 
@@ -137,38 +142,32 @@ const SearchBar = (props: Props) => {
         </Box>
       )}
 
-      <Popover
-        open={Boolean(bulkAnchorEl)}
-        anchorEl={bulkAnchorEl}
-        onClose={handleBulkClose}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
-        }}
-      >
-        <Box sx={{ p: 2, width: 300 }}>
-          <TextField
-            multiline
-            fullWidth
-            rows={6}
-            label="Bulk Add Cards"
-            value={bulkText}
-            onChange={(e) => setBulkText(e.target.value)}
-          />
-          <Box display="flex" justifyContent="flex-end" mt={1}>
-            <IconButton
-              onClick={() => {
-                props.onBulkSearch?.(bulkText);
-                handleBulkClose();
-              }}
-              size="small"
-              color="primary"
-            >
-              <SearchIcon />
-            </IconButton>
+      {anchorPos && (
+        <Popover anchorPos={anchorPos} onClose={handleBulkClose}>
+          <Box sx={{ p: 2, width: 300 }}>
+            <TextField
+              multiline
+              fullWidth
+              rows={6}
+              label="Bulk Add Cards"
+              value={bulkText}
+              onChange={(e) => setBulkText(e.target.value)}
+            />
+            <Box display="flex" justifyContent="flex-end" mt={1}>
+              <IconButton
+                onClick={() => {
+                  onBulkSearch?.(bulkText);
+                  handleBulkClose();
+                }}
+                size="small"
+                color="primary"
+              >
+                <SearchIcon />
+              </IconButton>
+            </Box>
           </Box>
-        </Box>
-      </Popover>
+        </Popover>
+      )}
     </Box>
   );
 };
