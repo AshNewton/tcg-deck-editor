@@ -7,6 +7,8 @@ import TextField from "../form/TextField";
 
 import Grid from "@mui/material/Grid";
 
+import { includesIgnoreCase, isBetween } from "../../util/util";
+
 import {
   YUGIOH_ATTRIBUTES,
   YUGIOH_CARD_TYPES,
@@ -53,9 +55,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByName &&
     values.nameIncludes &&
-    !card.name
-      .toLocaleLowerCase()
-      .includes(values.nameIncludes.toLocaleLowerCase())
+    !includesIgnoreCase(card.name, values.nameIncludes)
   ) {
     return false;
   }
@@ -63,9 +63,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByDesc &&
     values.descIncludes &&
-    !ygoCard.desc
-      .toLocaleLowerCase()
-      .includes(values.descIncludes.toLocaleLowerCase())
+    !includesIgnoreCase(ygoCard.desc, values.descIncludes)
   ) {
     return false;
   }
@@ -74,9 +72,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
     values.filterByCardType &&
     values.cardtypes &&
     !values.cardtypes.some((cardType) =>
-      ygoCard.humanReadableCardType
-        .toLocaleLowerCase()
-        .includes(cardType.toLocaleLowerCase())
+      includesIgnoreCase(ygoCard.humanReadableCardType, cardType)
     )
   ) {
     return false;
@@ -109,7 +105,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByATK &&
     values.atk &&
-    (!ygoCard.atk || ygoCard.atk < values.atk[0] || values.atk[1] < ygoCard.atk)
+    (!ygoCard.atk || !isBetween(ygoCard.atk, values.atk))
   ) {
     return false;
   }
@@ -117,7 +113,7 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
   if (
     values.filterByDEF &&
     values.def &&
-    (!ygoCard.def || ygoCard.def < values.def[0] || values.def[1] < ygoCard.def)
+    (!ygoCard.def || !isBetween(ygoCard.def, values.def))
   ) {
     return false;
   }
