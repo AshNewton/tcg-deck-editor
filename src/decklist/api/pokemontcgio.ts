@@ -1,10 +1,12 @@
-import { Card, pokemonCard } from "../../types";
+import { removeDuplicateCards } from "../util/util";
+
+import { Deck, pokemonCard } from "../../types";
 
 // https://pokemontcg.io/
 
 const searchCardsUrl = "https://api.pokemontcg.io/";
 
-export const searchCard = async (name: String): Promise<Array<Card>> => {
+export const searchCard = async (name: String): Promise<Deck> => {
   try {
     const response = name.includes(" ")
       ? await fetch(searchCardsUrl + 'v2/cards?q=name:"*' + name + '*"')
@@ -26,15 +28,7 @@ export const searchCard = async (name: String): Promise<Array<Card>> => {
     });
 
     // remove duplicates of name/set combination - these are just different rarities
-    const seen = new Set();
-    return cards.filter((card: Card) => {
-      const value = card.name;
-      if (seen.has(value)) {
-        return false; // Skip duplicate
-      }
-      seen.add(value);
-      return true; // Keep unique item
-    });
+    return removeDuplicateCards(cards);
   } catch (error: any) {
     throw new Error(`Error fetching data: ${error.message}`);
   }

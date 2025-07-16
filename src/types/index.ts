@@ -270,3 +270,8 @@ export type NameValue = {
   name: string;
   value: number;
 };
+
+export type BulkCardResponse = {
+  cards: Array<Card>;
+  notFound?: Array<string>;
+};

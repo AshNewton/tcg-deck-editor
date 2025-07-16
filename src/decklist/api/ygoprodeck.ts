@@ -1,4 +1,4 @@
-import { Card, ygoCard } from "../../types";
+import { BulkCardResponse, Card, ygoCard } from "../../types";
 
 // https://ygoprodeck.com/api-guide/
 
@@ -25,7 +25,7 @@ export const searchCard = async (name: String): Promise<Array<Card>> => {
 
 export const bulkSearchCard = async (
   cardNames: Array<string>
-): Promise<Array<Card>> => {
+): Promise<BulkCardResponse> => {
   try {
     const response = await fetch(
       searchCardsUrl + "name=" + cardNames.join("|")

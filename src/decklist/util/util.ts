@@ -85,3 +85,15 @@ export const getCardImage = (cardname: string, deck: Deck, game: Game) => {
     return (card.details as pokemonCard).images?.large;
   }
 };
+
+export const removeDuplicateCards = (cards: Deck): Deck => {
+  const seen = new Set();
+  return cards.filter((card: Card) => {
+    const value = card.name;
+    if (seen.has(value)) {
+      return false; // Skip duplicate
+    }
+    seen.add(value);
+    return true; // Keep unique item
+  });
+};

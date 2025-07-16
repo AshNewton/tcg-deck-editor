@@ -1,5 +1,8 @@
+import * as React from "react";
+
 import SaveLoad, { loadFile, saveFile } from "./mui/SaveLoad";
 import SearchBar from "./mui/Searchbar";
+import Text from "./mui/Text";
 
 import { addToDeckHandlers, isMTG, isYugioh } from "../util/util";
 import {
@@ -22,6 +25,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import { NEW_LINE, TXT_OPTS } from "../util/constants";
 
 import { Card, mtgCard } from "../../types";
+import { Alert, List, ListItem, ListItemText } from "@mui/material";
 
 type ParsedCardLine = { copies: number; name: string };
 type LineParser = (line: string) => ParsedCardLine | null;
@@ -49,7 +53,23 @@ const parseCardLineFactory = (format: SupportedBuilders): LineParser => {
   };
 };
 
+const combineCopiesByName = (cards: Array<ParsedCardLine | null>) => {
+  const map = new Map<string, number>();
+
+  cards.forEach((c: ParsedCardLine | null) => {
+    if (!c) return;
+    map.set(c.name, (map.get(c.name) || 0) + c.copies);
+  });
+
+  return Array.from(map.entries()).map(([name, copies]) => ({
+    name,
+    copies,
+  }));
+};
+
 const DeckbuildOptions = () => {
+  const [notFoundNames, setNotFoundNames] = React.useState<Array<string>>([]);
+
   const maindeck = useAppSelector((state) => state.ui.maindeck);
   const extradeck = useAppSelector((state) => state.ui.extradeck);
 
@@ -71,7 +91,7 @@ const DeckbuildOptions = () => {
   const bulkAddToDeck = async (bulkText: string) => {
     const lines = bulkText.split(/\r?\n/).filter((line) => Boolean(line));
 
-    const deck = yugioh
+    const bulkCardResponse = yugioh
       ? await bulkSearchYgoCard(lines)
       : await bulkSearchMtgCard(lines);
 
@@ -82,8 +102,12 @@ const DeckbuildOptions = () => {
       return;
     }
 
-    const newMaindeck = deck.filter((card: Card) => !isExtraDeckCard(card));
-    const newExtradeck = deck.filter((card: Card) => isExtraDeckCard(card));
+    const newMaindeck = bulkCardResponse.cards.filter(
+      (card: Card) => !isExtraDeckCard(card)
+    );
+    const newExtradeck = bulkCardResponse.cards.filter((card: Card) =>
+      isExtraDeckCard(card)
+    );
 
     handler(null, newMaindeck, newExtradeck, dispatch);
   };
@@ -102,6 +126,7 @@ const DeckbuildOptions = () => {
   };
 
   const handleDeckImport = (p: SupportedBuilders) => () => {
+    clearNotfound();
     loadFile(handleLoad(parseCardLineFactory(p)));
   };
 
@@ -113,20 +138,25 @@ const DeckbuildOptions = () => {
         return lineParser(line);
       });
 
+      // combine any duplicate name copies together
+      const noDuplicates = combineCopiesByName(parsedCards);
+
       // bulk search scryfall and get all the cards into a deck
-      const singletonDeck = await bulkSearchCard(
-        parsedCards.map((card: ParsedCardLine | null) => {
+      const bulkCardResponse = await bulkSearchCard(
+        noDuplicates.map((card: ParsedCardLine | null) => {
           return card ? card.name : "";
         })
       );
 
+      bulkCardResponse.notFound && setNotFoundNames(bulkCardResponse.notFound);
+
       // put the right number of copies of each card into the deck,
       // defaulting to 1 copy
-      const deck = singletonDeck.map((card: Card) => {
+      const deck = bulkCardResponse.cards.map((card: Card) => {
         return {
           ...card,
           copies:
-            parsedCards.find((c: ParsedCardLine | null) => {
+            noDuplicates.find((c: ParsedCardLine | null) => {
               return c?.name === card.name;
             })?.copies ?? 1,
         };
@@ -134,6 +164,10 @@ const DeckbuildOptions = () => {
 
       dispatch(setMainDeck(deck));
     };
+
+  const clearNotfound = () => {
+    setNotFoundNames([]);
+  };
 
   return (
     <>
@@ -178,6 +212,23 @@ const DeckbuildOptions = () => {
             : []
         }
       />
+
+      {notFoundNames.length > 0 && (
+        <Alert severity="warning" sx={{ mt: 2, mx: 2 }} onClose={clearNotfound}>
+          {
+            <>
+              <Text text="The following cards could not be found:" />
+              <List>
+                {notFoundNames.map((name: string) => (
+                  <ListItem>
+                    <ListItemText primary={name} />
+                  </ListItem>
+                ))}
+              </List>
+            </>
+          }
+        </Alert>
+      )}
     </>
   );
 };

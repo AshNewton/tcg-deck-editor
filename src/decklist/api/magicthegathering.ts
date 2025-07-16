@@ -1,4 +1,4 @@
-import { Card, mtgCard, MtgSymbol } from "../../types";
+import { BulkCardResponse, Card, mtgCard, MtgSymbol } from "../../types";
 
 // https://scryfall.com/docs/api/cards/search
 
@@ -47,7 +47,7 @@ const MAX_BATCH_SIZE = 75;
 
 export const bulkSearchCard = async (
   cardNames: Array<string>
-): Promise<Array<Card>> => {
+): Promise<BulkCardResponse> => {
   try {
     const filteredCards = cardNames.filter((card) => card.trim() !== "");
 
@@ -58,6 +58,7 @@ export const bulkSearchCard = async (
     }
 
     let results: Array<Card> = [];
+    let notFound: Array<string> = [];
 
     // Process each chunk sequentially
     for (const chunk of chunks) {
@@ -86,9 +87,15 @@ export const bulkSearchCard = async (
       }));
 
       results = results.concat(chunkCards);
+
+      notFound = notFound.concat(
+        raw.not_found.map((c: any) => {
+          return c.name;
+        })
+      );
     }
 
-    return results;
+    return { cards: results, notFound };
   } catch (error: any) {
     throw new Error(`Error fetching data: ${error.message}`);
   }
