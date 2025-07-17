@@ -9,12 +9,7 @@ type Props = {
 };
 
 const Text = (props: Props) => {
-  const {
-    text = "placeholder",
-    noWrap = false,
-    fontSize = 16,
-    ...rest
-  } = props;
+  const { text, noWrap = false, fontSize = 16, ...rest } = props;
 
   if (noWrap) {
     return (

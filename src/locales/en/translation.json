@@ -1,0 +1,248 @@
+{
+  "common": {
+    "bracketedNumber": "({{count}})",
+    "cardTypes": "Card Types",
+    "cardSubTypes": "Card Sub Types",
+    "clear": "Clear",
+    "colonSeparated": "{{first}}: {{second}}",
+    "count": "Count",
+    "deck": "Deck",
+    "load": "Load",
+    "plusSign": "+",
+    "max": "Max",
+    "min": "Min",
+    "minusSign": "-",
+    "save": "Save",
+    "search": "Search",
+    "slashSeparated": "{{first}} / {{second}}",
+    "types": "Types"
+  },
+  "decklist": { "cardCount": "(Cards: {{count}})" },
+  "helperText": {
+    "cardNotFound": "The following cards could not be found:",
+    "failedToLoadFile": "Failed to load file: {{details}}",
+    "noCards": "Add some Cards!"
+  },
+  "menu": {
+    "colorBreakdown": "Color Breakdown",
+    "deckSearch": "Deck Search",
+    "startingHand": "Starting Hand"
+  },
+  "mtg": {
+    "artifacts": "Artifacts",
+    "cardTypes": {
+      "artifact": "Artifact",
+      "basicLand": "Basic Land",
+      "battle": "Battle",
+      "creature": "Creature",
+      "enchantment": "Enchantment",
+      "equipment": "Equipment",
+      "instant": "Instant",
+      "land": "Land",
+      "legendary": "Legendary",
+      "sorcery": "Sorcery",
+      "planeswalker": "Planeswalker"
+    },
+    "colorList": {
+      "black": "Black",
+      "blue": "Blue",
+      "green": "Green",
+      "red": "Red",
+      "white": "White"
+    },
+    "colors": "Colors",
+    "creatures": "Creatures",
+    "enchantments": "Enchantments",
+    "errors": {
+      "tooManyCopies": "Decks cannot have more than 4 copies of a card",
+      "tooSmall": "Decks must be at least 60 cards"
+    },
+    "instants": "Instants",
+    "lands": "Lands",
+    "name": "Magic the Gathering",
+    "manaBreakdown": {
+      "manaColor": "Mana Color",
+      "manaColorProduction": "Mana Color Production",
+      "manaCost": "Mana Cost",
+      "manaCostDistribution": "Mana Cost Distribution"
+    },
+    "planeswalkers": "Planeswalkers",
+    "scryfall": "Scryfall",
+    "sorceries": "Sorceries",
+    "tribe": "Tribe"
+  },
+  "pokemon": {
+    "attack": "{{cost}} {{name}} {{damage}}",
+    "cardTypes": {
+      "energy": "Energy",
+      "pokemon": "Pokémon",
+      "trainer": "Trainer"
+    },
+    "errors": {
+      "wrongSize": "Decks must be 60 cards"
+    },
+    "hp": "HP",
+    "resistances": "Resistances: {{resistances}}",
+    "retreatCost": "Retreat: {{cost}}",
+    "subTypeList": {
+      "break": "BREAK",
+      "baby": "Baby",
+      "basic": "Basic",
+      "ex": "EX",
+      "gx": "GX",
+      "goldenRodGameCorner": "Goldenrod Game Corner",
+      "item": "Item",
+      "legend": "LEGEND",
+      "levelUp": "Level-Up",
+      "mega": "MEGA",
+      "tool": "Pokémon Tool",
+      "toolF": "Pokémon Tool F",
+      "rapidStrike": "Rapid Strike",
+      "restored": "Restored",
+      "reocketsSecretMachine": "Rocket's Secret Machine",
+      "singleStrike": "Single Strike",
+      "special": "Special",
+      "stadium": "Stadium",
+      "stage1": "Stage 1",
+      "stage2": "Stage 2",
+      "supporter": "Supporter",
+      "tagTeam": "TAG TEAM",
+      "tm": "Technical Machine",
+      "v": "V",
+      "vmax": "VMAX"
+    },
+    "typeList": {
+      "colorless": "Colorless",
+      "darkness": "Darkness",
+      "dragon": "Dragon",
+      "fairy": "Fairy",
+      "fighting": "Fighting",
+      "fire": "Fire",
+      "grass": "Grass",
+      "lightning": "Lightning",
+      "metal": "Metal",
+      "psychic": "Psychic",
+      "water": "Water"
+    },
+    "types": "Types: {{types}}",
+
+    "weaknesses": "Weaknesses: {{weaknesses}}"
+  },
+  "saveLoad": {
+    "exportTabletopSim": "Export for Tabletop Simulator",
+    "importArchidekt": "Import from Archidekt",
+    "importGoldfish": "Import from MTG Goldfish",
+    "importMoxfield": "Import from Moxfield"
+  },
+  "search": {
+    "atkRange": "ATK Range",
+    "bulkAdd": "Bulk Add Cards",
+    "bulkSearch": "Bulk Search",
+    "defRange": "DEF Range",
+    "filterByAtk": "Filter by ATK",
+    "filterByAttribute": "Filter by Attribute",
+    "filterByCardType": "Filter by Card Type",
+    "filterByColor": "Filter by Color",
+    "filterByDef": "Filter by DEF",
+    "filterByDesc": "Description Includes",
+    "filterByHP": "Filter by HP",
+    "filterByLevel": "Filter by Level/Rank/Link",
+    "filterByManaCost": "Filter by Mana Cost",
+    "filterByMonsterType": "Filter by Monster Type",
+    "filterByName": "Name Includes",
+    "filterByPower": "Filter by Power",
+    "filterByToughness": "Filter by Toughness",
+    "filterByTribe": "Filter by Tribe",
+    "filterByType": "Filter by Type",
+    "filterBySubType": "Filter by Sub Type",
+    "numberResults": "{{count}} results",
+    "manaCostRange": "Mana Cost Range",
+    "powerRange": "Power Range",
+    "toughnessRange": "Toughness Range"
+  },
+  "startingHand": {
+    "draw": "Draw Card",
+    "numberLands": "Number of Lands",
+    "probability": "Calculate Probability to Open Cards",
+    "probabilityLands": "${{count}} Land:   {{chance}}%",
+    "sampleHand": "Get a Sample Starting Hand"
+  },
+  "yugioh": {
+    "attributeList": {
+      "dark": "DARK",
+      "divine": "DIVINE",
+      "earth": "EARTH",
+      "fire": "FIRE",
+      "light": "LIGHT",
+      "water": "WATER",
+      "wind": "WIND"
+    },
+    "atkDef": "ATK: {{atk}} / DEF: {{def}}",
+    "cardTypeList": {
+      "effect": "Effect",
+      "fusion": "Fusion",
+      "link": "Link",
+      "normal": "Normal Monster",
+      "pendulum": "Pendulum",
+      "ritual": "Ritual",
+      "synchro": "Synchro",
+      "xyz": "XYZ"
+    },
+    "extraDeck": "Extra Deck",
+    "errors": {
+      "forbidden": "{{name}} is forbidden",
+      "limited": "{{name}} cannot have more than 1 copy in a deck",
+      "semiLimited": "{{name}} cannot have more than 2 copies in a deck",
+      "tooLarge": "Decks must be at most 60 cards",
+      "tooLargeExtra": "Extra decks must be at most 15 cards",
+      "tooSmall": "Decks must be at least 40 cards",
+      "tooManyCopies": "{{name}} cannot have more than 3 copies in a deck"
+    },
+    "levelRankLink": "Level/Rank/Link",
+    "mainDeck": "Main Deck",
+    "monsterAttributes": "Monster Attributes",
+    "monsterTypeList": {
+      "aqua": "Aqua",
+      "xyz": "Beast",
+      "beastWarrior": "Beast-Warrior",
+      "cyberse": "Cyberse",
+      "dinosaur": "Dinosaur",
+      "divineBeast": "Divine-Beast",
+      "dragon": "Dragon",
+      "fairy": "Fairy",
+      "fiend": "Fiend",
+      "fish": "Fish",
+      "illusion": "Illusion",
+      "insect": "Insect",
+      "machine": "Machine",
+      "plant": "Plant",
+      "psychic": "Psychic",
+      "pyro": "Pyro",
+      "reptile": "Reptile",
+      "rock": "Rock",
+      "seaSerpent": "Sea Serpent",
+      "spellcaster": "Spellcaster",
+      "thunder": "Thunder",
+      "warrior": "Warrior",
+      "wingedBeast": "Winged Beast",
+      "wyrm": "Wyrm",
+      "zombie": "Zombie"
+    },
+    "monsterTypes": "Monster Types",
+    "name": "Yugioh",
+    "spellTypeList": {
+      "continuous": "Continuous Spell",
+      "equip": "Equip Spell",
+      "field": "Field Spell",
+      "normal": "Normal Spell",
+      "quickPlay": "Quick-Play Spell",
+      "ritual": "Ritual Spell"
+    },
+    "trapTypeList": {
+      "continuous": "Continuous Trap",
+      "counter": "Counter Trap",
+      "normal": "Normal Trap"
+    },
+    "ygoprodeck": "YGOPRODECK"
+  }
+}

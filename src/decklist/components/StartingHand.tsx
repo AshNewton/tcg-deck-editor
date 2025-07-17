@@ -1,5 +1,7 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
+import Button from "./mui/Button";
 import CollapsibleDropdown from "./mui/CollapsibleDropdown";
 import DisplayCard from "./mui/DisplayCard";
 import Image from "./mui/Image";
@@ -21,7 +23,6 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Card, CardOpeningProbabilities } from "../../types";
 import { getLandProbabilities } from "../util/mtg";
-import Button from "./mui/Button";
 
 const StartingHand = () => {
   const [sampleStartingHand, setSampleStartingHand] = React.useState<
@@ -38,6 +39,8 @@ const StartingHand = () => {
   const game = useAppSelector((state) => state.ui.game);
 
   const dispatch = useAppDispatch();
+
+  const { t } = useTranslation();
 
   React.useEffect(() => {
     setSampleStartingHand([]);
@@ -81,14 +84,14 @@ const StartingHand = () => {
   return (
     <DisplayCard>
       <CollapsibleDropdown
-        title="Get a Sample Starting Hand"
+        title={t("startingHand.sampleHand")}
         onOpen={generateOpeningHand}
         onCollapse={() => {
           setSampleStartingHand([]);
         }}
       >
         <Box display="flex" flexDirection="row">
-          <Button onClick={drawCard} text="Draw Card" />
+          <Button onClick={drawCard} text={t("startingHand.draw")} />
           <IconButton onClick={generateOpeningHand}>
             <ReplayIcon />
           </IconButton>
@@ -109,7 +112,7 @@ const StartingHand = () => {
         )}
       </CollapsibleDropdown>
 
-      <CollapsibleDropdown title="Calculate Probability to Open Cards">
+      <CollapsibleDropdown title={t("startingHand.probability")}>
         {chanceToOpenCards && (
           <Grid container>
             {chanceToOpenCards.map((card, index) => (
@@ -122,12 +125,17 @@ const StartingHand = () => {
       </CollapsibleDropdown>
 
       {mtg && (
-        <CollapsibleDropdown title="Number of Lands">
+        <CollapsibleDropdown title={t("startingHand.numberLands")}>
           {chanceToOpenCards && (
             <Grid container>
               {chanceToOpenLands.map((chance: number, index: number) => (
                 <Grid item xs={12} key={index}>
-                  <Text text={`${index} Land:   ${chance}%`} />
+                  <Text
+                    text={t("startingHand.probabilityLands", {
+                      count: index,
+                      chance: chance,
+                    })}
+                  />
                 </Grid>
               ))}
             </Grid>

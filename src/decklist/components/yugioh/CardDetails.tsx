@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import ExternalLink from "../mui/ExternalLink";
 import Image from "../mui/Image";
 import Text from "./../mui/Text";
@@ -19,6 +21,8 @@ type Props = {
 
 const CardDetails = (props: Props) => {
   const { card, clearSelection } = props;
+
+  const { t } = useTranslation();
 
   const ygoCard = card?.details as ygoCard;
 
@@ -59,12 +63,23 @@ const CardDetails = (props: Props) => {
         <Grid item xs={12} sm={8} mt={2} px={2} py={1}>
           {/* level/rank/link rating */}
           {ygoCard.level && (
-            <Text text={`${cardLevelName}: ${ygoCard.level}`} />
+            <Text
+              text={t("common.colonSeparated", {
+                first: cardLevelName,
+                second: ygoCard.level,
+              })}
+            />
           )}
 
           {/* attribute */}
           {ygoCard.attribute && ygoCard.race && (
-            <Text mt={1} text={`${ygoCard.attribute} / ${ygoCard.race}`} />
+            <Text
+              mt={1}
+              text={t("common.slashSeparated", {
+                first: ygoCard.attribute,
+                second: ygoCard.race,
+              })}
+            />
           )}
 
           {/* type */}
@@ -72,7 +87,13 @@ const CardDetails = (props: Props) => {
 
           {/* ATK/DEF */}
           {ygoCard.atk != null && ygoCard.def != null && (
-            <Text mt={1} text={`ATK: ${ygoCard.atk} / DEF: ${ygoCard.def}`} />
+            <Text
+              mt={1}
+              text={t("yugioh.atkDef", {
+                atk: ygoCard.atk,
+                def: ygoCard.def,
+              })}
+            />
           )}
 
           {/* card text */}
@@ -82,7 +103,7 @@ const CardDetails = (props: Props) => {
           <ExternalLink
             mt={1}
             href={ygoCard.ygoprodeck_url}
-            label="YGOPRODECK"
+            label={t("yugioh.ygoprodeck")}
           />
         </Grid>
       </Grid>

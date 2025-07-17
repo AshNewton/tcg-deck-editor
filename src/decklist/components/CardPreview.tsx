@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import Button from "./mui/Button";
 import Text from "./mui/Text";
@@ -30,6 +31,8 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
   const game = useAppSelector((state) => state.ui.game);
 
   const dispatch = useAppDispatch();
+
+  const { t } = useTranslation();
 
   const toggleSelectedCard = () => {
     const isSameCard = selectedCard?.details?.name === card.details?.name;
@@ -77,7 +80,7 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
       </IconButton>
 
       <Button
-        text="-"
+        text={t("common.minusSign")}
         onClick={(e: React.MouseEvent) => handleInnerClick(e, onRemoveCopy)}
         size="small"
         aria-label="remove copy"
@@ -86,7 +89,7 @@ const CardPreview = ({ card, onDelete, onAddCopy, onRemoveCopy }: Props) => {
       <Text text={card.copies} />
 
       <Button
-        text="+"
+        text={t("common.plusSign")}
         onClick={(e: React.MouseEvent) => handleInnerClick(e, onAddCopy)}
         size="small"
         /* mtg basic lands can have any number of copies */

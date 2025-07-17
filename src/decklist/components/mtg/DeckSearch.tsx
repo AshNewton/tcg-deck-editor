@@ -1,4 +1,5 @@
 import { Field } from "react-final-form";
+import { useTranslation } from "react-i18next";
 
 import CheckboxGroup from "../form/CheckboxGroup";
 import ConditionalField from "../form/ConditionalField";
@@ -169,18 +170,20 @@ const cardHasAllColors = (
 };
 
 const DeckSearch = () => {
+  const { t } = useTranslation();
+
   return (
     <Grid container>
       {/* Check card name*/}
       <Grid item xs={12}>
         <ConditionalField
           checkboxName="filterByName"
-          checkboxLabel="Name Includes"
+          checkboxLabel={t("search.filterByName")}
         >
           <Field
             name="nameIncludes"
             component={TextField}
-            label="Name Includes"
+            label={t("search.filterByName")}
           />
         </ConditionalField>
       </Grid>
@@ -189,12 +192,12 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByDesc"
-          checkboxLabel="Desc Includes"
+          checkboxLabel={t("search.filterByDesc")}
         >
           <Field
             name="descIncludes"
             component={TextField}
-            label="Desc Includes"
+            label={t("search.filterByDesc")}
           />
         </ConditionalField>
       </Grid>
@@ -203,12 +206,12 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByColor"
-          checkboxLabel="Filter by Color"
+          checkboxLabel={t("search.filterByColor")}
         >
           <CheckboxGroup
             name="colors"
-            label="Colors"
-            options={MTG_COLORS}
+            label={t("mtg.colors")}
+            options={MTG_COLORS.map((c: string) => t(c))}
             columns={2}
           />
         </ConditionalField>
@@ -218,12 +221,12 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByCardType"
-          checkboxLabel="Filter by Card Type"
+          checkboxLabel={t("search.filterByCardType")}
         >
           <CheckboxGroup
             name="cardTypes"
-            label="Card Types"
-            options={MTG_CARD_TYPES.sort()}
+            label={t("common.cardTypes")}
+            options={MTG_CARD_TYPES.map((c: string) => t(c))}
             columns={4}
           />
         </ConditionalField>
@@ -233,9 +236,13 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByTribe"
-          checkboxLabel="Filter by Tribe"
+          checkboxLabel={t("search.filterByTribe")}
         >
-          <Field name="tribeIncludes" component={TextField} label="Tribe" />
+          <Field
+            name="tribeIncludes"
+            component={TextField}
+            label={t("mtg.tribe")}
+          />
         </ConditionalField>
       </Grid>
 
@@ -243,11 +250,11 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByManaCost"
-          checkboxLabel="Filter by Mana Cost"
+          checkboxLabel={t("search.filterByManaCost")}
         >
           <MultiThumbSlider
             name="mana"
-            label="Mana Cost Range"
+            label={t("search.manaCostRange")}
             min={MTG_MIN_MANA}
             max={MTG_MAX_MANA}
             step={MTG_STAT_STEP}
@@ -261,11 +268,11 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByPower"
-          checkboxLabel="Filter by Power"
+          checkboxLabel={t("search.filterByPower")}
         >
           <MultiThumbSlider
             name="power"
-            label="Power Range"
+            label={t("search.powerRange")}
             min={MTG_MIN_STAT}
             max={MTG_MAX_STAT}
             step={MTG_STAT_STEP}
@@ -278,12 +285,12 @@ const DeckSearch = () => {
       {/* Check monster Toughness */}
       <Grid item xs={12} mt={2}>
         <ConditionalField
-          checkboxName="filterByToughness"
-          checkboxLabel="Filter by Toughness"
+          checkboxName={t("search.manaCostRange")}
+          checkboxLabel={t("search.filterByToughness")}
         >
           <MultiThumbSlider
             name="toughness"
-            label="Toughness Range"
+            label={t("search.toughnessRange")}
             min={MTG_MIN_STAT}
             max={MTG_MAX_STAT}
             step={MTG_STAT_STEP}

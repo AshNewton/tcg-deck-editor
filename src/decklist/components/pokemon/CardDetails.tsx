@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import Image from "../mui/Image";
 import Text from "./../mui/Text";
 import TextWithSymbols from "../mui/TextWithSymbols";
@@ -11,7 +13,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
-import { POKEMON_TYPES } from "../../util/pokemon";
+import { POKEMON_TYPES, POKEMON_TYPES_LABELS } from "../../util/pokemon";
 
 import { Card, pokemonCard } from "../../../types";
 
@@ -22,14 +24,16 @@ type Props = {
 
 const energySymbols = POKEMON_TYPES.map((type: string) => {
   return {
-    symbol: type,
-    url: `/energy/${type}.png`,
-    alt: type,
+    symbol: POKEMON_TYPES_LABELS[type],
+    url: `/energy/${POKEMON_TYPES_LABELS[type]}.png`,
+    alt: POKEMON_TYPES_LABELS[type],
   };
 });
 
 const CardDetails = (props: Props) => {
   const { card, clearSelection } = props;
+
+  const { t } = useTranslation();
 
   const pCard = card?.details as pokemonCard;
 
@@ -73,7 +77,7 @@ const CardDetails = (props: Props) => {
           {/* types */}
           {Boolean(pCard.types?.length) && (
             <TextWithSymbols
-              text={`Types: ${pCard.types?.join("")}`}
+              text={t("pokemon.types", { types: pCard.types?.join("") })}
               symbols={energySymbols}
             />
           )}
@@ -85,7 +89,10 @@ const CardDetails = (props: Props) => {
                 return (
                   <ListItem sx={{ px: 0 }}>
                     <ListItemText
-                      primary={`${ability.type}: ${ability.name}`}
+                      primary={t("common.colonSeparated", {
+                        first: ability.type,
+                        second: ability.name,
+                      })}
                       secondary={
                         <TextWithSymbols
                           text={ability.text}
@@ -114,9 +121,11 @@ const CardDetails = (props: Props) => {
                       }
                     >
                       <TextWithSymbols
-                        text={`${attack.cost.join("")} ${attack.name} ${
-                          attack.damage
-                        }`}
+                        text={t("pokemon.attack", {
+                          cost: attack.cost.join(""),
+                          name: attack.name,
+                          damage: attack.damage,
+                        })}
                         symbols={energySymbols}
                       />
                     </ListItemText>
@@ -142,12 +151,14 @@ const CardDetails = (props: Props) => {
           {/* weaknesses */}
           {Boolean(pCard.weaknesses?.length) && (
             <TextWithSymbols
-              text={`Weaknesses: ${pCard.weaknesses?.reduce(
-                (acc: string, weakness: any) => {
-                  return acc + `  ${weakness.type}${weakness.value}`;
-                },
-                ""
-              )}`}
+              text={t("pokemon.weaknesses", {
+                weaknesses: pCard.weaknesses?.reduce(
+                  (acc: string, weakness: any) => {
+                    return acc + `  ${weakness.type}${weakness.value}`;
+                  },
+                  ""
+                ),
+              })}
               symbols={energySymbols}
             />
           )}
@@ -155,12 +166,14 @@ const CardDetails = (props: Props) => {
           {/* resistances */}
           {Boolean(pCard.resistances?.length) && (
             <TextWithSymbols
-              text={`Resistances: ${pCard.resistances?.reduce(
-                (acc: string, resistance: any) => {
-                  return acc + `  ${resistance.type}${resistance.value}`;
-                },
-                ""
-              )}`}
+              text={t("pokemon.resistances", {
+                resistances: pCard.resistances?.reduce(
+                  (acc: string, resistance: any) => {
+                    return acc + `  ${resistance.type}${resistance.value}`;
+                  },
+                  ""
+                ),
+              })}
               symbols={energySymbols}
             />
           )}
@@ -168,7 +181,9 @@ const CardDetails = (props: Props) => {
           {/* retreat cost */}
           {pCard.retreatCost && (
             <TextWithSymbols
-              text={`Retreat: ${pCard.retreatCost.join("")}`}
+              text={t("pokemon.retreatCost", {
+                cost: pCard.retreatCost.join(""),
+              })}
               symbols={energySymbols}
             />
           )}

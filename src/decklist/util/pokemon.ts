@@ -4,6 +4,8 @@ import { AppDispatch } from "../../store";
 import { Card, Deck, pokemonCard } from "../../types";
 import { binomial } from "./deckAnalytics";
 
+import { TFunction } from "i18next";
+
 export const POKEMON_NAME = "Pokemon TCG";
 
 export const POKEMON_MIN_STAT = 10;
@@ -17,47 +19,65 @@ export const POKEMON_MAX_ATTACK_COST = 5;
 export const POKEMON_STAT_STEP = 10;
 
 export const POKEMON_TYPES = [
-  "Colorless",
-  "Grass",
-  "Fire",
-  "Water",
-  "Lightning",
-  "Fighting",
-  "Psychic",
-  "Darkness",
-  "Metal",
-  "Dragon",
-  "Fairy",
+  "pokemon.typeList.colorless",
+  "pokemon.typeList.grass",
+  "pokemon.typeList.fire",
+  "pokemon.typeList.water",
+  "pokemon.typeList.lightning",
+  "pokemon.typeList.fighting",
+  "pokemon.typeList.psychic",
+  "pokemon.typeList.darkness",
+  "pokemon.typeList.metal",
+  "pokemon.typeList.dragon",
+  "pokemon.typeList.fairy",
 ];
 
-export const POKEMON_CARD_TYPES = ["Energy", "Pokémon", "Trainer"];
+export const POKEMON_TYPES_LABELS: Record<string, string> = {
+  "pokemon.typeList.colorless": "Colorless",
+  "pokemon.typeList.grass": "Grass",
+  "pokemon.typeList.fire": "Fire",
+  "pokemon.typeList.water": "Water",
+  "pokemon.typeList.lightning": "Lightning",
+  "pokemon.typeList.fighting": "Fighting",
+  "pokemon.typeList.psychic": "Psychic",
+  "pokemon.typeList.darkness": "Darkness",
+  "pokemon.typeList.metal": "Metal",
+  "pokemon.typeList.dragon": "Dragon",
+  "pokemon.typeList.fairy": "Fairy",
+};
+
+export const POKEMON_CARD_TYPES = [
+  "pokemon.cardTypes.energy",
+  "pokemon.cardTypes.pokemon",
+  "pokemon.cardTypes.trainer",
+];
 
 export const POKEMON_CARD_SUB_TYPES = [
-  "BREAK",
-  "Baby",
-  "Basic",
-  "EX",
-  "GX",
-  "Goldenrod Game Corner",
-  "Item",
-  "LEGEND",
-  "Level-Up",
-  "MEGA",
-  "Pokémon Tool",
-  "Pokémon Tool F",
-  "Rapid Strike",
-  "Restored",
-  "Rocket's Secret Machine",
-  "Single Strike",
-  "Special",
-  "Stadium",
-  "Stage 1",
-  "Stage 2",
-  "Supporter",
-  "TAG TEAM",
-  "Technical Machine",
-  "V",
-  "VMAX",
+  "pokemon.subTypeList.break",
+  "pokemon.subTypeList.baby",
+  "pokemon.subTypeList.basic",
+  "pokemon.subTypeList.ex",
+  "pokemon.subTypeList.gx",
+  "pokemon.subTypeList.goldenRodGameCorner",
+  "pokemon.subTypeList.item",
+  "pokemon.subTypeList.legend",
+  "pokemon.subTypeList.levelUp",
+  "pokemon.subTypeList.mega",
+  "pokemon.subTypeList.tool",
+  "pokemon.subTypeList.toolF",
+  "pokemon.subTypeList.rapidStrike",
+  "pokemon.subTypeList.restored",
+  "pokemon.subTypeList.reocketsSecretMachine",
+  "pokemon.subTypeList.singleStrike",
+  "pokemon.subTypeList.special",
+  "pokemon.subTypeList.stadium",
+  "pokemon.subTypeList.stage1",
+  "pokemon.subTypeList.stage2",
+  "pokemon.subTypeList.supporter",
+  "pokemon.subTypeList.tagTeam",
+  "pokemon.subTypeList.tm",
+  "pokemon.subTypeList.v",
+  "pokemon.subTypeList.vmax",
 ];
 
 export const POKEMON_HAND_START_SIZE = 7;
@@ -82,7 +102,7 @@ export const isEnergy = (card: Card): boolean => {
   );
 };
 
-export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
+export const isInvalid = (t: TFunction, maindeck: Deck, _extradeck: Deck) => {
   const errors: any = {};
 
   const totalCards = maindeck.reduce((acc, card) => {
@@ -91,7 +111,7 @@ export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
   }, 0);
 
   if (totalCards !== POKEMON_DECK_SIZE) {
-    errors.wrongSize = "Decks must be 60 cards";
+    errors.wrongSize = t("plkoemon.errors.wrongSize");
   }
 
   if (
@@ -99,7 +119,7 @@ export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
       return card.copies > POKEMON_MAX_COPIES && !isEnergy(card);
     })
   ) {
-    errors.tooManyCopies = `Decks cannot have more than 4 copies of a card`;
+    errors.tooManyCopies = t("mtg.errors.tooManyCopies");
   }
 
   return errors;

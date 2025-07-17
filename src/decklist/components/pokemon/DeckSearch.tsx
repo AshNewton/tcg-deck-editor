@@ -1,4 +1,5 @@
 import { Field } from "react-final-form";
+import { useTranslation } from "react-i18next";
 
 import CheckboxGroup from "../form/CheckboxGroup";
 import ConditionalField from "../form/ConditionalField";
@@ -121,18 +122,20 @@ const substringOnCard = (s: string, card: pokemonCard): boolean => {
 };
 
 const DeckSearch = () => {
+  const { t } = useTranslation();
+
   return (
     <Grid container>
       {/* Check card name*/}
       <Grid item xs={12}>
         <ConditionalField
           checkboxName="filterByName"
-          checkboxLabel="Name Includes"
+          checkboxLabel={t("search.filterByName")}
         >
           <Field
             name="nameIncludes"
             component={TextField}
-            label="Name Includes"
+            label={t("search.filterByName")}
           />
         </ConditionalField>
       </Grid>
@@ -141,12 +144,12 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByDesc"
-          checkboxLabel="Desc Includes"
+          checkboxLabel={t("search.filterByDesc")}
         >
           <Field
             name="descIncludes"
             component={TextField}
-            label="Desc Includes"
+            label={t("search.filterByDesc")}
           />
         </ConditionalField>
       </Grid>
@@ -155,12 +158,12 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByType"
-          checkboxLabel="Filter by Type"
+          checkboxLabel={t("search.filterByType")}
         >
           <CheckboxGroup
             name="types"
-            label="Types"
-            options={POKEMON_TYPES.sort()}
+            label={t("common.types")}
+            options={POKEMON_TYPES.map((c: string) => t(c))}
             columns={3}
           />
         </ConditionalField>
@@ -170,12 +173,12 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByCardType"
-          checkboxLabel="Filter by Card Type"
+          checkboxLabel={t("search.filterByCardType")}
         >
           <CheckboxGroup
             name="cardTypes"
-            label="Card Types"
-            options={POKEMON_CARD_TYPES.sort()}
+            label={t("common.cardTypes")}
+            options={POKEMON_CARD_TYPES.map((c: string) => t(c))}
             columns={4}
           />
         </ConditionalField>
@@ -185,12 +188,12 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterBySubType"
-          checkboxLabel="Filter by Card Sub Type"
+          checkboxLabel={t("search.filterBySubType")}
         >
           <CheckboxGroup
             name="cardSubTypes"
-            label="Card Sub Types"
-            options={POKEMON_CARD_SUB_TYPES.sort()}
+            label={t("common.cardSubTypes")}
+            options={POKEMON_CARD_SUB_TYPES.map((c: string) => t(c))}
             columns={4}
           />
         </ConditionalField>
@@ -200,11 +203,11 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByHP"
-          checkboxLabel="Filter by HP"
+          checkboxLabel={t("search.filterByHP")}
         >
           <MultiThumbSlider
             name="hp"
-            label="HP"
+            label={t("pokemon.hp")}
             min={POKEMON_MIN_STAT}
             max={POKEMON_MAX_STAT}
             step={POKEMON_STAT_STEP}

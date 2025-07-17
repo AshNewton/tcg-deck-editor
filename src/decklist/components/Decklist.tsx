@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import CardPreview from "./CardPreview";
 import MtgDecklist from "./mtg/Decklist";
 import Text from "./mui/Text";
@@ -21,6 +23,8 @@ const Decklist = (props: Props) => {
   const { deckname, deck, onDeckUpdate } = props;
 
   const game = useAppSelector((state) => state.ui.game);
+
+  const { t } = useTranslation();
 
   const removeFromDeck = (cardname: string) => {
     const updatedDeck = deck
@@ -60,7 +64,7 @@ const Decklist = (props: Props) => {
         py={1}
       >
         <Text text={deckname} fontSize={28} />
-        <Text text={`(Cards: ${getDeckSize(deck)})`} />
+        <Text text={t("decklist.cardCount", { count: getDeckSize(deck) })} />
       </Box>
 
       {game === MTG_NAME ? (

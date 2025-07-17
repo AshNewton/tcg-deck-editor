@@ -1,5 +1,3 @@
-import React from "react";
-
 import MuiButton from "@mui/material/Button";
 
 type Props = {
@@ -8,7 +6,7 @@ type Props = {
 };
 
 const Button = (props: Props) => {
-  const { text = "placeholder", ...rest } = props;
+  const { text, ...rest } = props;
 
   return (
     <MuiButton variant="contained" {...rest}>

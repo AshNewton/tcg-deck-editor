@@ -4,6 +4,8 @@ import { AppDispatch } from "../../store";
 import { Card, Deck, mtgCard } from "../../types";
 import { binomial } from "./deckAnalytics";
 
+import { TFunction } from "i18next";
+
 export const MTG_NAME = "Magic the Gathering";
 
 export const MTG_MIN_STAT = 0;
@@ -16,7 +18,13 @@ export const MTG_MAX_MANA = 16;
 
 export const MTG_STAT_STEP = 1;
 
-export const MTG_COLORS = ["Red", "Blue", "Black", "Green", "White"];
+export const MTG_COLORS = [
+  "mtg.colorList.red",
+  "mtg.colorList.blue",
+  "mtg.colorList.green",
+  "mtg.colorList.white",
+  "mtg.colorList.black",
+];
 
 export const MTG_COLOR_CODES: Record<
   "White" | "Blue" | "Black" | "Red" | "Green",
@@ -32,17 +40,17 @@ export const MTG_COLOR_CODES: Record<
 export const MTG_COLORLESS_CODE = "C";
 
 export const MTG_CARD_TYPES = [
-  "Legendary",
-  "Instant",
-  "Sorcery",
-  "Equipment",
-  "Battle",
-  "Artifact",
-  "Creature",
-  "Planeswalker",
-  "Land",
-  "Basic Land",
-  "Enchantment",
+  "mtg.cardTypes.artifact",
+  "mtg.cardTypes.basicLand",
+  "mtg.cardTypes.battle",
+  "mtg.cardTypes.creature",
+  "mtg.cardTypes.enchantment",
+  "mtg.cardTypes.equipment",
+  "mtg.cardTypes.instant",
+  "mtg.cardTypes.land",
+  "mtg.cardTypes.legendary",
+  "mtg.cardTypes.sorcery",
+  "mtg.cardTypes.planeswalker",
 ];
 
 export const MTG_HAND_START_SIZE = 7;
@@ -74,7 +82,7 @@ export const isMtgCard = (card: any): card is mtgCard => {
   );
 };
 
-export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
+export const isInvalid = (t: TFunction, maindeck: Deck, _extradeck: Deck) => {
   const errors: any = {};
 
   const totalCards = maindeck.reduce((acc, card) => {
@@ -83,7 +91,7 @@ export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
   }, 0);
 
   if (totalCards < 60) {
-    errors.tooSmall = "Decks must be at least 60 cards";
+    errors.tooSmall = t("mtg.errors.tooSmall");
   }
 
   if (
@@ -91,7 +99,7 @@ export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
       return card.copies > MTG_MAX_COPIES && !isBasicLand(card);
     })
   ) {
-    errors.tooManyCopies = `Decks cannot have more than 4 copies of a card`;
+    errors.tooManyCopies = t("mtg.errors.tooManyCopies");
   }
 
   return errors;

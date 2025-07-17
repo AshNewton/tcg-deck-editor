@@ -1,5 +1,6 @@
 import React from "react";
 import { Field } from "react-final-form";
+import { useTranslation } from "react-i18next";
 
 import {
   Slider,
@@ -37,6 +38,8 @@ const MultiThumbSlider = (props: MultiThumbSliderProps) => {
     disabled = false,
     showInputs = false,
   } = props;
+
+  const { t } = useTranslation();
 
   return (
     <Field name={name} initialValue={defaultValue}>
@@ -84,7 +87,7 @@ const MultiThumbSlider = (props: MultiThumbSliderProps) => {
               <Grid container spacing={2} mt={1}>
                 <Grid item xs={6}>
                   <TextField
-                    label="Min"
+                    label={t("common.min")}
                     type="number"
                     size="small"
                     fullWidth
@@ -100,7 +103,7 @@ const MultiThumbSlider = (props: MultiThumbSliderProps) => {
                 </Grid>
                 <Grid item xs={6}>
                   <TextField
-                    label="Max"
+                    label={t("common.max")}
                     type="number"
                     size="small"
                     fullWidth

@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import CardPreview from "../CardPreview";
 import Text from "../mui/Text";
 
@@ -22,6 +24,8 @@ type SubtitleProps = {
 const Subtitle = (props: SubtitleProps) => {
   const { deckname, deck } = props;
 
+  const { t } = useTranslation();
+
   return (
     <Box
       mt={2}
@@ -33,25 +37,28 @@ const Subtitle = (props: SubtitleProps) => {
       py={1}
     >
       <Text text={deckname} fontSize={18} />
-      <Text text={`(${getDeckSize(deck)})`} />
+      <Text text={t("common.bracketedNumber", { count: getDeckSize(deck) })} />
     </Box>
   );
 };
 
-const CARD_TYPES = [
-  { label: "Creatures", keyword: "Creature" },
-  { label: "Instants", keyword: "Instant" },
-  { label: "Sorceries", keyword: "Sorcery" },
-  { label: "Enchantments", keyword: "Enchantment" },
-  { label: "Artifacts", keyword: "Artifact" },
-  { label: "Planeswalkers", keyword: "Planeswalker" },
-  { label: "Lands", keyword: "Land" },
-];
-
 const Decklist = (props: Props) => {
   const { deck, onDelete, onAddCopy, onRemoveCopy } = props;
 
+  const { t } = useTranslation();
+
+  const CARD_TYPES = [
+    { label: t("mtg.creatures"), keyword: "Creature" },
+    { label: t("mtg.instants"), keyword: "Instant" },
+    { label: t("mtg.sorceries"), keyword: "Sorcery" },
+    { label: t("mtg.enchantments"), keyword: "Enchantment" },
+    { label: t("mtg.artifacts"), keyword: "Artifact" },
+    { label: t("mtg.planeswalkers"), keyword: "Planeswalker" },
+    { label: t("mtg.lands"), keyword: "Land" },
+  ];
+
   const groupedDecks: Record<string, Deck> = {};
+
   CARD_TYPES.forEach(({ label }) => {
     groupedDecks[label] = [];
   });

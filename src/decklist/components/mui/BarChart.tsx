@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   Cell,
 } from "recharts";
+import { useTranslation } from "react-i18next";
 
 import Text from "./Text";
 
@@ -27,20 +28,15 @@ type Props = {
 };
 
 const BarChart = (props: Props) => {
-  const {
-    title,
-    data,
-    xLabel,
-    yLabel = "Count",
-    filterBy,
-    formatPopoverText,
-  } = props;
+  const { title, data, xLabel, yLabel, filterBy, formatPopoverText } = props;
 
   const [anchorPos, setAnchorPos] = React.useState<PopoverPosition | null>(
     null
   );
 
   const [filter, setFilter] = React.useState<Array<any> | null>(null);
+
+  const { t } = useTranslation();
 
   const handleClick = (value: string, e: React.MouseEvent) => {
     setFilter(filterBy(value));
@@ -54,6 +50,8 @@ const BarChart = (props: Props) => {
     setFilter(null);
     setAnchorPos(null);
   };
+
+  const translatedYLabel = yLabel ?? t("common.count");
 
   return (
     <>
@@ -72,13 +70,13 @@ const BarChart = (props: Props) => {
           <YAxis
             allowDecimals={false}
             label={{
-              value: yLabel,
+              value: translatedYLabel,
               angle: -90,
               position: "insideLeft",
             }}
           />
           <Tooltip />
-          <Bar dataKey="value" fill="#8884d8" name="Count">
+          <Bar dataKey="value" fill="#8884d8" name={translatedYLabel}>
             {data.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}

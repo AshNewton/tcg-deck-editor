@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import DeckbuildOptions from "../components/DeckbuildOptions";
 import Decklist from "../components/Decklist";
 import Text from "../components/mui/Text";
@@ -22,6 +24,8 @@ const Sidebar = () => {
 
   const dispatch = useAppDispatch();
 
+  const { t } = useTranslation();
+
   const handleDeckUpdate = (actionCreator: (deck: Deck) => Action) => {
     return (deck: Deck) => {
       dispatch(actionCreator(deck));
@@ -30,7 +34,7 @@ const Sidebar = () => {
 
   const yugioh = isYugioh(game);
 
-  const deckErrors = isInvalidHandlers[game](maindeck, extradeck);
+  const deckErrors = isInvalidHandlers[game](t, maindeck, extradeck);
 
   return (
     <MuiCard>
@@ -38,7 +42,7 @@ const Sidebar = () => {
 
       {maindeck.length === 0 && extradeck.length === 0 ? (
         <Box display="flex" justifyContent="center" p={2}>
-          <Text text={"Add Some Cards!"} fontSize={18} />
+          <Text text={t("helperText.noCards")} fontSize={18} />
         </Box>
       ) : (
         <>
@@ -57,14 +61,14 @@ const Sidebar = () => {
 
           {/* display decklist and change copies */}
           <Decklist
-            deckname={yugioh ? "Main Deck" : "Deck"}
+            deckname={yugioh ? t("yugioh.mainDeck") : t("common.deck")}
             deck={maindeck}
             onDeckUpdate={handleDeckUpdate(setMainDeck)}
           />
 
           {yugioh && (
             <Decklist
-              deckname="Extra Deck"
+              deckname={t("yugioh.extraDeck")}
               deck={extradeck}
               onDeckUpdate={handleDeckUpdate(setExtraDeck)}
             />

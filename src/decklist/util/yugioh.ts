@@ -4,6 +4,8 @@ import { AlertProps } from "@mui/material";
 import { AppDispatch } from "../../store";
 import { BanType, Card, Deck, ygoCard } from "../../types";
 
+import { TFunction } from "i18next";
+
 export const YUGIOH_NAME = "Yugioh";
 
 export const YUGIOH_MIN_STAT = 0;
@@ -17,39 +19,39 @@ export const YUGIOH_HAND_START_SIZE = 5;
 export const YUGIOH_MAX_COPIES = 3;
 
 export const YUGIOH_ATTRIBUTES = [
-  "DARK",
-  "LIGHT",
-  "EARTH",
-  "FIRE",
-  "WATER",
-  "WIND",
-  "DIVINE",
+  "yugioh.attributeList.dark",
+  "yugioh.attributeList.light",
+  "yugioh.attributeList.earth",
+  "yugioh.attributeList.fire",
+  "yugioh.attributeList.water",
+  "yugioh.attributeList.wind",
+  "yugioh.attributeList.divine",
 ];
 
 export const YUGIOH_CARD_TYPES = [
-  "Normal Monster",
-  "Effect",
-  "Fusion",
-  "Synchro",
-  "XYZ",
-  "Ritual",
-  "Pendulum",
-  "Link",
+  "yugioh.cardTypeList.effect",
+  "yugioh.cardTypeList.fusion",
+  "yugioh.cardTypeList.link",
+  "yugioh.cardTypeList.normal",
+  "yugioh.cardTypeList.pendulum",
+  "yugioh.cardTypeList.ritual",
+  "yugioh.cardTypeList.synchro",
+  "yugioh.cardTypeList.xyz",
 ];
 
 export const YUGIOH_SPELL_TYPES = [
-  "Normal Spell",
-  "Equip Spell",
-  "Field Spell",
-  "Continuous Spell",
-  "Quick-Play Spell",
-  "Ritual Spell",
+  "yugioh.spellTypeList.continuous",
+  "yugioh.spellTypeList.equip",
+  "yugioh.spellTypeList.field",
+  "yugioh.spellTypeList.normal",
+  "yugioh.spellTypeList.quickPlay",
+  "yugioh.spellTypeList.ritual",
 ];
 
 export const YUGIOH_TRAP_TYPES = [
-  "Normal Trap",
-  "Continuous Trap",
-  "Counter Trap",
+  "yugioh.trapTypeList.continuous",
+  "yugioh.trapTypeList.counter",
+  "yugioh.trapTypeList.normal",
 ];
 
 export const YUGIOH_MONSTER_LEVELS = [
@@ -69,40 +71,31 @@ export const YUGIOH_MONSTER_LEVELS = [
 ];
 
 export const YUGIOH_MONSTER_TYPES = [
-  "Aqua",
-  "Beast",
-  "Beast-Warrior",
-  "Cyberse",
-  "Dinosaur",
-  "Divine-Beast",
-  "Dragon",
-  "Fairy",
-  "Fiend",
-  "Fish",
-  "Illusion",
-  "Insect",
-  "Machine",
-  "Plant",
-  "Psychic",
-  "Pyro",
-  "Reptile",
-  "Rock",
-  "Sea Serpent",
-  "Spellcaster",
-  "Thunder",
-  "Warrior",
-  "Winged Beast",
-  "Wyrm",
-  "Zombie",
-];
-
-export const YUGIOH_MONSTER_ABILITIES = [
-  "Tuner",
-  "Flip",
-  "Union",
-  "Spirit",
-  "Gemini",
-  "Toon",
+  "yugioh.monsterTypeList.aqua",
+  "yugioh.monsterTypeList.xyz",
+  "yugioh.monsterTypeList.beastWarrior",
+  "yugioh.monsterTypeList.cyberse",
+  "yugioh.monsterTypeList.dinosaur",
+  "yugioh.monsterTypeList.divineBeast",
+  "yugioh.monsterTypeList.dragon",
+  "yugioh.monsterTypeList.fairy",
+  "yugioh.monsterTypeList.fiend",
+  "yugioh.monsterTypeList.fish",
+  "yugioh.monsterTypeList.illusion",
+  "yugioh.monsterTypeList.insect",
+  "yugioh.monsterTypeList.machine",
+  "yugioh.monsterTypeList.plant",
+  "yugioh.monsterTypeList.psychic",
+  "yugioh.monsterTypeList.pyro",
+  "yugioh.monsterTypeList.reptile",
+  "yugioh.monsterTypeList.rock",
+  "yugioh.monsterTypeList.seaSerpent",
+  "yugioh.monsterTypeList.spellcaster",
+  "yugioh.monsterTypeList.thunder",
+  "yugioh.monsterTypeList.warrior",
+  "yugioh.monsterTypeList.wingedBeast",
+  "yugioh.monsterTypeList.wyrm",
+  "yugioh.monsterTypeList.zombie",
 ];
 
 export const isYgoCard = (card: any): card is ygoCard => {
@@ -146,7 +139,7 @@ export const isExtraDeckCard = (card: Card): boolean => {
   return extraTypes.includes((card?.details as ygoCard)?.type);
 };
 
-export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
+export const isInvalid = (t: TFunction, maindeck: Deck, _extradeck: Deck) => {
   const errors: any = {};
 
   const totalCards = maindeck.reduce((acc, card) => {
@@ -155,11 +148,11 @@ export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
   }, 0);
 
   if (totalCards < 40) {
-    errors.tooSmall = "Decks must be at least 40 cards";
+    errors.tooSmall = t("yugioh.errors.tooSmall");
   }
 
   if (totalCards > 60) {
-    errors.tooLarge = "Decks must be at most 60 cards";
+    errors.tooLarge = t("yugioh.errors.tooLarge");
   }
 
   const totalExtraCards = _extradeck.reduce((acc, card) => {
@@ -168,7 +161,7 @@ export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
   }, 0);
 
   if (totalExtraCards > 15) {
-    errors.tooLargeExtra = "Extra decks must be at most 15 cards";
+    errors.tooLargeExtra = t("yugioh.errors.tooLargeExtra");
   }
 
   [...maindeck, ..._extradeck].forEach((card: Card) => {
@@ -176,21 +169,25 @@ export const isInvalid = (maindeck: Deck, _extradeck: Deck) => {
 
     switch (cardLegality) {
       case "Forbidden":
-        errors.forbidden = `${card.name} is forbidden`;
+        errors.forbidden = t("yugioh.errors.forbidden", { name: card.name });
         break;
       case "Limited":
         if (card.copies > 1) {
-          errors.limited = `${card.name} cannot have more than 1 copy in a deck`;
+          errors.limited = t("yugioh.errors.limited", { name: card.name });
         }
         break;
       case "Semi-Limited":
         if (card.copies > 2) {
-          errors.semiLimited = `${card.name} cannot have more than 2 copies in a deck`;
+          errors.semiLimited = t("yugioh.errors.semiLimited", {
+            name: card.name,
+          });
         }
         break;
       default:
         if (card.copies > YUGIOH_MAX_COPIES) {
-          errors.semiLimited = `${card.name} cannot have more than 3 copies in a deck`;
+          errors.tooManyCopies = t("yugioh.errors.tooManyCopies", {
+            name: card.name,
+          });
         }
         break;
     }

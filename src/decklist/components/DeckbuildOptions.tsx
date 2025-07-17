@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 
 import SaveLoad, { loadFile, saveFile } from "./mui/SaveLoad";
 import SearchBar from "./mui/Searchbar";
@@ -77,6 +78,8 @@ const DeckbuildOptions = () => {
 
   const dispatch = useAppDispatch();
 
+  const { t } = useTranslation();
+
   const addToDeck = (newCard: Card) => {
     const handler = addToDeckHandlers[game];
 
@@ -127,7 +130,7 @@ const DeckbuildOptions = () => {
 
   const handleDeckImport = (p: SupportedBuilders) => () => {
     clearNotfound();
-    loadFile(handleLoad(parseCardLineFactory(p)));
+    loadFile(t, handleLoad(parseCardLineFactory(p)));
   };
 
   const handleLoad =
@@ -192,20 +195,20 @@ const DeckbuildOptions = () => {
           mtg
             ? [
                 {
-                  label: "Export for Tabletop Simulator",
+                  label: t("saveLoad.exportTabletopSim"),
                   onClick: handleExportTabletopSim,
                   disabled: maindeck.length === 0,
                 },
                 {
-                  label: "Import from Archidekt",
+                  label: t("saveLoad.importArchidekt"),
                   onClick: handleDeckImport("archidekt"),
                 },
                 {
-                  label: "Import from Moxfield",
+                  label: t("saveLoad.importMoxfield"),
                   onClick: handleDeckImport("goldfish"),
                 },
                 {
-                  label: "Import from MTG Goldfish",
+                  label: t("saveLoad.importGoldfish"),
                   onClick: handleDeckImport("goldfish"),
                 },
               ]
@@ -217,7 +220,7 @@ const DeckbuildOptions = () => {
         <Alert severity="warning" sx={{ mt: 2, mx: 2 }} onClose={clearNotfound}>
           {
             <>
-              <Text text="The following cards could not be found:" />
+              <Text text={t("helperText.cardNotFound")} />
               <List>
                 {notFoundNames.map((name: string) => (
                   <ListItem>

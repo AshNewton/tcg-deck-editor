@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import ExternalLink from "../mui/ExternalLink";
 import Image from "../mui/Image";
@@ -25,6 +26,8 @@ const CardDetails = (props: Props) => {
 
   const [symbols, setSymbols] = React.useState<Array<MtgSymbol>>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
+
+  const { t } = useTranslation();
 
   const fetchData = async () => {
     try {
@@ -69,7 +72,7 @@ const CardDetails = (props: Props) => {
           {card.copies > 1 && <Text text={`x${card.copies}`} fontSize={20} />}
         </Box>
 
-        <IconButton onClick={clearSelection} aria-label="clear selected card">
+        <IconButton onClick={clearSelection} aria-label={t("common.clear")}>
           <ClearIcon />
         </IconButton>
       </Box>
@@ -99,7 +102,13 @@ const CardDetails = (props: Props) => {
           {!mtgCard.card_faces &&
             mtgCard.power != null &&
             mtgCard.toughness != null && (
-              <Text mt={1} text={`${mtgCard.power} / ${mtgCard.toughness}`} />
+              <Text
+                mt={1}
+                text={t("common.slashSeparated", {
+                  first: mtgCard.power,
+                  second: mtgCard.toughness,
+                })}
+              />
             )}
 
           {/* card text */}
@@ -123,7 +132,13 @@ const CardDetails = (props: Props) => {
 
                     {/* power/toughness */}
                     {face.power != null && face.toughness != null && (
-                      <Text mt={1} text={`${face.power} / ${face.toughness}`} />
+                      <Text
+                        mt={1}
+                        text={t("mtg.powerToughness", {
+                          power: face.power,
+                          toughness: face.toughness,
+                        })}
+                      />
                     )}
 
                     <TextWithSymbols
@@ -137,7 +152,11 @@ const CardDetails = (props: Props) => {
           )}
 
           {/* link to Scryfall */}
-          <ExternalLink mt={1} href={mtgCard.scryfall_uri} label="Scryfall" />
+          <ExternalLink
+            mt={1}
+            href={mtgCard.scryfall_uri}
+            label={t("mtg.scryfall")}
+          />
         </Grid>
       </Grid>
     </>

@@ -50,7 +50,9 @@ const parseSymbols = (
   return parts;
 };
 
-const TextWithSymbols = ({ text, symbols }: Props) => {
+const TextWithSymbols = (props: Props) => {
+  const { text, symbols } = props;
+
   // Create a map to look up both URL and alt by symbol
   const SYMBOL_MAP = new Map<string, { src: string; alt: string }>(
     symbols.map(({ symbol, url, alt }) => [symbol, { src: url, alt }])

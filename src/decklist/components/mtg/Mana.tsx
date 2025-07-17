@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import BarChart from "../mui/BarChart";
 import PieChart from "../mui/PieChart";
 
@@ -58,6 +60,8 @@ const formatPopoverText = (c: Card) => `${c.copies} ${c.name}`;
 const Mana = () => {
   const deck = useAppSelector((state) => state.ui.maindeck);
 
+  const { t } = useTranslation();
+
   const handleManaCostClick = (manaCost: string) => {
     return deck.filter(
       (card) => (card.details as mtgCard).cmc === Number(manaCost)
@@ -110,8 +114,8 @@ const Mana = () => {
         <Grid item xs={12} display="flex" flexDirection="row">
           <Box width="50%">
             <BarChart
-              title="Mana Cost Distribution"
-              xLabel="Mana Cost"
+              title={t("mtg.manaBreakdown.manaCostDistribution")}
+              xLabel={t("mtg.manaBreakdown.manaCost")}
               data={manaCostData}
               filterBy={handleManaCostClick}
               formatPopoverText={formatPopoverText}
@@ -123,7 +127,7 @@ const Mana = () => {
         <Grid item xs={12} sm={6} display="flex" flexDirection="row">
           <Box width="50%" mt={4}>
             <PieChart
-              title="Mana Color"
+              title={t("mtg.manaBreakdown.manaColor")}
               data={manaColorDist}
               colors={MTG_COLORS_HEX}
               filterBy={(color) => {
@@ -136,7 +140,7 @@ const Mana = () => {
         <Grid item xs={12} sm={6} display="flex" flexDirection="row">
           <Box width="50%" mt={4}>
             <PieChart
-              title="Mana Color Production"
+              title={t("mtg.manaBreakdown.manaColorProduction")}
               data={manaColorProductionDist}
               colors={MTG_COLORS_HEX}
               filterBy={(color) => {

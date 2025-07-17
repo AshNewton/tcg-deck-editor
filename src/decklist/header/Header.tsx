@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import Button from "../components/mui/Button";
 import Image from "../components/mui/Image";
 
@@ -13,13 +15,9 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { GAME_ICONS, SUPPORTED_GAMES } from "../util/constants";
 
-import { Game, Menu as MenuType } from "../../types";
+import { Game, Menu } from "../../types";
 
-const MENU_ITEMS: Array<MenuType> = [
-  "Starting Hand",
-  "Deck Search",
-  "Color Breakdown",
-];
+type NameType = { name: string; type: Menu };
 
 const Header = () => {
   const game = useAppSelector((state) => state.ui.game);
@@ -31,6 +29,14 @@ const Header = () => {
   };
 
   const mtg = isMTG(game);
+
+  const { t } = useTranslation();
+
+  const MENU_ITEMS: Array<NameType> = [
+    { name: t("menu.startingHand"), type: "Starting Hand" },
+    { name: t("menu.deckSearch"), type: "Deck Search" },
+    { name: t("menu.colorBreakdown"), type: "Color Breakdown" },
+  ];
 
   return (
     <AppBar position="static" color="default">
@@ -56,14 +62,14 @@ const Header = () => {
           </Select>
         </FormControl>
         {MENU_ITEMS.map(
-          (item: MenuType) =>
-            (mtg || item !== "Color Breakdown") && (
+          (item: NameType) =>
+            (mtg || item.type !== "Color Breakdown") && (
               <Button
-                key={item}
+                key={item.name}
                 color="primary"
                 variant="text"
-                onClick={() => dispatch(setMenu(item))}
-                text={item}
+                onClick={() => dispatch(setMenu(item.type))}
+                text={item.name}
               />
             )
         )}

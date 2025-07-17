@@ -1,5 +1,6 @@
 import React from "react";
 import { Form } from "react-final-form";
+import { useTranslation } from "react-i18next";
 
 import Button from "./mui/Button";
 import DisplayCard from "./mui/DisplayCard";
@@ -39,6 +40,8 @@ const DeckSearch = () => {
   const extradeck = useAppSelector((state) => state.ui.extradeck);
 
   const game = useAppSelector((state) => state.ui.game);
+
+  const { t } = useTranslation();
 
   const onSubmit = (
     values: YgoSearchValues | MtgSearchValues | PokemonSearchValues
@@ -84,7 +87,7 @@ const DeckSearch = () => {
             {game === POKEMON_NAME && <PokemonDeckSearch />}
 
             <Button
-              text="Clear"
+              text={t("common.clear")}
               onClick={() => {
                 form.reset();
                 setMainSearchResult(null);
@@ -92,22 +95,23 @@ const DeckSearch = () => {
               }}
               sx={{ m: 2 }}
             />
-            <Button text="Search" type="submit" sx={{ m: 2 }} />
+            <Button text={t("common.search")} type="submit" sx={{ m: 2 }} />
           </form>
         )}
       />
       {(mainSearchResult || extraSearchResult) && (
         <>
           <Text
-            text={`${
-              (mainSearchResult ? mainSearchResult.length : 0) +
-              (extraSearchResult ? extraSearchResult.length : 0)
-            } results`}
+            text={t("search.numberResults", {
+              count:
+                (mainSearchResult ? mainSearchResult.length : 0) +
+                (extraSearchResult ? extraSearchResult.length : 0),
+            })}
           />
           <Grid container mt={2}>
             {Boolean(mainSearchResult?.length) && (
               <Grid item xs={6}>
-                {game === YUGIOH_NAME && <Text text="Main Deck" />}
+                {game === YUGIOH_NAME && <Text text={t("yugioh.mainDeck")} />}
                 <List>
                   {mainSearchResult?.map((card, index) => (
                     <ListItem key={index}>
@@ -119,7 +123,7 @@ const DeckSearch = () => {
             )}
             {Boolean(extraSearchResult?.length) && (
               <Grid item xs={6}>
-                <Text text="Extra Deck" />
+                <Text text={t("yugioh.extraDeck")} />
                 <List>
                   {extraSearchResult?.map((card, index) => (
                     <ListItem key={index}>

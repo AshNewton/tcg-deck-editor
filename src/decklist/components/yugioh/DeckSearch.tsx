@@ -1,4 +1,5 @@
 import { Field } from "react-final-form";
+import { useTranslation } from "react-i18next";
 
 import CheckboxGroup from "../form/CheckboxGroup";
 import ConditionalField from "../form/ConditionalField";
@@ -122,18 +123,20 @@ export const filterCard = (card: Card, values: SearchValues): boolean => {
 };
 
 const DeckSearch = () => {
+  const { t } = useTranslation();
+
   return (
     <Grid container>
       {/* Check card name*/}
       <Grid item xs={12}>
         <ConditionalField
           checkboxName="filterByName"
-          checkboxLabel="Name Includes"
+          checkboxLabel={t("search.filterByName")}
         >
           <Field
             name="nameIncludes"
             component={TextField}
-            label="Name Includes"
+            label={t("search.filterByName")}
           />
         </ConditionalField>
       </Grid>
@@ -142,12 +145,12 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByDesc"
-          checkboxLabel="Desc Includes"
+          checkboxLabel={t("search.filterByDesc")}
         >
           <Field
             name="descIncludes"
             component={TextField}
-            label="Desc Includes"
+            label={t("search.filterByDesc")}
           />
         </ConditionalField>
       </Grid>
@@ -156,16 +159,16 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByCardType"
-          checkboxLabel="Filter by Card Type"
+          checkboxLabel={t("search.filterByCardType")}
         >
           <CheckboxGroup
             name="cardtypes"
-            label="Card Types"
+            label={t("common.cardTypes")}
             options={[
               ...YUGIOH_CARD_TYPES,
               ...YUGIOH_SPELL_TYPES,
               ...YUGIOH_TRAP_TYPES,
-            ]}
+            ].map((c: string) => t(c))}
             columns={4}
           />
         </ConditionalField>
@@ -175,12 +178,12 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByAttribute"
-          checkboxLabel="Filter by Attribute"
+          checkboxLabel={t("search.filterByAttribute")}
         >
           <CheckboxGroup
             name="attributes"
-            label="Monster Attributes"
-            options={YUGIOH_ATTRIBUTES}
+            label={t("yugioh.monsterAttributes")}
+            options={YUGIOH_ATTRIBUTES.map((c: string) => t(c))}
             columns={2}
           />
         </ConditionalField>
@@ -190,12 +193,12 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByMonsterType"
-          checkboxLabel="Filter by Monster Type"
+          checkboxLabel={t("search.filterByMonsterType")}
         >
           <CheckboxGroup
             name="monsterType"
-            label="Monster Types"
-            options={YUGIOH_MONSTER_TYPES}
+            label={t("yugioh.monsterTypes")}
+            options={YUGIOH_MONSTER_TYPES.map((c: string) => t(c))}
             columns={4}
           />
         </ConditionalField>
@@ -205,11 +208,11 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByLevel"
-          checkboxLabel="Filter by Level/Rank/Link"
+          checkboxLabel={t("search.filterByLevel")}
         >
           <CheckboxGroup
             name="levels"
-            label="Level/Rank/Link"
+            label={t("yugioh.levelRankLink")}
             options={YUGIOH_MONSTER_LEVELS}
             columns={4}
           />
@@ -220,11 +223,11 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByATK"
-          checkboxLabel="Filter by ATK"
+          checkboxLabel={t("search.filterByAtk")}
         >
           <MultiThumbSlider
             name="atk"
-            label="ATK Range"
+            label={t("search.atkRange")}
             min={YUGIOH_MIN_STAT}
             max={YUGIOH_MAX_STAT}
             step={YUGIOH_STAT_STEP}
@@ -238,11 +241,11 @@ const DeckSearch = () => {
       <Grid item xs={12} mt={2}>
         <ConditionalField
           checkboxName="filterByDEF"
-          checkboxLabel="Filter by DEF"
+          checkboxLabel={t("search.filterByDef")}
         >
           <MultiThumbSlider
             name="def"
-            label="DEF Range"
+            label={t("search.defRange")}
             min={YUGIOH_MIN_STAT}
             max={YUGIOH_MAX_STAT}
             step={YUGIOH_STAT_STEP}

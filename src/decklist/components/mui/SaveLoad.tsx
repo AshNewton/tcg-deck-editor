@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 
 import Button from "./Button";
 
@@ -15,6 +16,7 @@ import { useAppDispatch } from "../../../hooks";
 import { JSON_OPTS } from "../../util/constants";
 
 import { Card, mtgCard, Opts, pokemonCard, ygoCard } from "../../../types";
+import { TFunction } from "i18next";
 
 type MenuAction = {
   label: string;
@@ -50,7 +52,10 @@ export const saveFile = async (content: string, opts: Opts = JSON_OPTS) => {
   }
 };
 
-export const loadFile = async (storeFileContent: (a: string) => void) => {
+export const loadFile = async (
+  t: TFunction,
+  storeFileContent: (a: string) => void
+) => {
   try {
     if (!window.showOpenFilePicker) {
       console.error("File picker is not supported in this browser.");
@@ -66,7 +71,7 @@ export const loadFile = async (storeFileContent: (a: string) => void) => {
     const error = err as Error;
 
     if (error.name !== "AbortError") {
-      alert("Failed to load file: " + error.message);
+      alert(t("helperText.failedToLoadFile", { details: error.message }));
     }
   }
 };
@@ -86,6 +91,8 @@ const SaveLoad = (props: Props) => {
   };
 
   const dispatch = useAppDispatch();
+
+  const { t } = useTranslation();
 
   const handleMenuClose = () => {
     setAnchorEl(null);
@@ -130,12 +137,16 @@ const SaveLoad = (props: Props) => {
     >
       <Button
         startIcon={<UploadIcon />}
-        text="Load"
+        text={t("common.load")}
         onClick={() => {
-          loadFile(handleLoad);
+          loadFile(t, handleLoad);
         }}
       />
-      <Button startIcon={<DownloadIcon />} text="Save" onClick={handleSave} />
+      <Button
+        startIcon={<DownloadIcon />}
+        text={t("common.save")}
+        onClick={handleSave}
+      />
 
       {menuActions && menuActions.length > 0 && (
         <>

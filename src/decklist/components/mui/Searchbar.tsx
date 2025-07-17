@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import Popover from "./Popover";
 
@@ -37,6 +38,8 @@ const SearchBar = (props: Props) => {
   const [bulkText, setBulkText] = React.useState<string>("");
 
   const debouncedSearchTerm = useDebounce(searchTerm, 700);
+
+  const { t } = useTranslation();
 
   React.useEffect(() => {
     const fetchResults = async () => {
@@ -84,7 +87,7 @@ const SearchBar = (props: Props) => {
   return (
     <Box sx={{ p: 2 }}>
       <TextField
-        label="Search"
+        label={t("common.search")}
         variant="outlined"
         fullWidth
         value={searchTerm}
@@ -109,7 +112,7 @@ const SearchBar = (props: Props) => {
                   <IconButton
                     onClick={handleBulkClick}
                     size="small"
-                    title="Bulk Search"
+                    title={t("search.bulkSearch")}
                   >
                     <LibraryAddIcon fontSize="small" />
                   </IconButton>
@@ -149,7 +152,7 @@ const SearchBar = (props: Props) => {
               multiline
               fullWidth
               rows={6}
-              label="Bulk Add Cards"
+              label={t("search.bulkAdd")}
               value={bulkText}
               onChange={(e) => setBulkText(e.target.value)}
             />
