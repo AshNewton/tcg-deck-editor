@@ -111,7 +111,7 @@ export const isInvalid = (t: TFunction, maindeck: Deck, _extradeck: Deck) => {
   }, 0);
 
   if (totalCards !== POKEMON_DECK_SIZE) {
-    errors.wrongSize = t("plkoemon.errors.wrongSize");
+    errors.wrongSize = t("pokemon.errors.wrongSize");
   }
 
   if (
