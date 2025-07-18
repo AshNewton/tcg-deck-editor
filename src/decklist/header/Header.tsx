@@ -43,13 +43,18 @@ const Header = () => {
       <Toolbar sx={{ gap: 2 }}>
         <FormControl>
           <Select
+            id="header-game-select"
             value={game}
             onChange={handleChange}
             variant="standard"
             disableUnderline
           >
             {SUPPORTED_GAMES.map((option) => (
-              <MenuItem key={option} value={option}>
+              <MenuItem
+                key={option}
+                value={option}
+                id={`header-game-select-${option}`}
+              >
                 <Image
                   src={GAME_ICONS[option]}
                   alt={option}

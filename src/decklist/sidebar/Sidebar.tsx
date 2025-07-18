@@ -49,9 +49,9 @@ const Sidebar = () => {
           {/* deck validity errors */}
           {deckErrors && (
             <>
-              {Object.values(deckErrors).map((v: any) => {
+              {Object.values(deckErrors).map((v: any, index: number) => {
                 return (
-                  <Alert severity="warning" sx={{ m: 2 }}>
+                  <Alert severity="warning" sx={{ m: 2 }} key={index}>
                     {v}
                   </Alert>
                 );
