@@ -55,7 +55,7 @@ describe("Starting Hand", () => {
       return selectorFn({
         ui: {
           game: "Magic the Gathering",
-          maindeck: mtgDeckJson.main as Deck,
+          maindeck: mtgDeckJson.main,
           extradeck: [],
         },
       });
@@ -73,7 +73,7 @@ describe("Starting Hand", () => {
       return selectorFn({
         ui: {
           game: "Magic the Gathering",
-          maindeck: mtgDeckJson.main as Deck,
+          maindeck: mtgDeckJson.main,
           extradeck: [],
         },
       });
@@ -92,7 +92,7 @@ describe("Starting Hand", () => {
       return selectorFn({
         ui: {
           game: "Magic the Gathering",
-          maindeck: mtgDeckJson.main as Deck,
+          maindeck: mtgDeckJson.main,
           extradeck: [],
         },
       });
@@ -107,7 +107,7 @@ describe("Starting Hand", () => {
       return selectorFn({
         ui: {
           game: "Magic the Gathering",
-          maindeck: mtgDeckJson.main as Deck,
+          maindeck: mtgDeckJson.main,
           extradeck: [],
         },
       });
@@ -122,7 +122,7 @@ describe("Starting Hand", () => {
       return selectorFn({
         ui: {
           game: "Pokemon",
-          maindeck: pokemonDeckJson.main as Deck,
+          maindeck: pokemonDeckJson.main,
           extradeck: [],
         },
       });

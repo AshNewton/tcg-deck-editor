@@ -54,7 +54,7 @@ describe("Deck Search", () => {
       return selectorFn({
         ui: {
           game: "Magic the Gathering",
-          maindeck: mtgDeckJson.main as Deck,
+          maindeck: mtgDeckJson.main,
           extradeck: [],
         },
       });
@@ -71,7 +71,7 @@ describe("Deck Search", () => {
       return selectorFn({
         ui: {
           game: "Magic the Gathering",
-          maindeck: mtgDeckJson.main as Deck,
+          maindeck: mtgDeckJson.main,
           extradeck: [],
         },
       });
@@ -91,8 +91,8 @@ describe("Deck Search", () => {
       return selectorFn({
         ui: {
           game: "Yugioh",
-          maindeck: yugiohDeckJson.main as Deck,
-          extradeck: yugiohDeckJson.extra as Deck,
+          maindeck: yugiohDeckJson.main,
+          extradeck: yugiohDeckJson.extra,
         },
       });
     });
