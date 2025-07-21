@@ -1,10 +1,8 @@
-import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 import StartingHand from "../../decklist/components/StartingHand";
 
 import * as reduxHooks from "../../hooks";
-import { setGame, setMenu } from "../../store/slices/uiSlice";
 
 import { MTG_HAND_START_SIZE } from "../../decklist/util/mtg";
 
