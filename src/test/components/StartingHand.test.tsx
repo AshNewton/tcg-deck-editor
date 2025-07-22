@@ -6,8 +6,6 @@ import * as reduxHooks from "../../hooks";
 
 import { MTG_HAND_START_SIZE } from "../../decklist/util/mtg";
 
-import { Deck } from "../../types";
-
 import mtgDeckJson from "../../../testdata/otters.json";
 import pokemonDeckJson from "../../../testdata/future - iron hands.json";
 

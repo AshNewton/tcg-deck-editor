@@ -4,8 +4,6 @@ import DeckSearch from "../../decklist/components/DeckSearch";
 
 import { useAppSelector, useAppDispatch } from "../../hooks";
 
-import { Deck } from "../../types";
-
 import mtgDeckJson from "../../../testdata/otters.json";
 import yugiohDeckJson from "../../../testdata/branded.json";
 
