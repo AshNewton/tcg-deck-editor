@@ -6,6 +6,8 @@ import { useAppDispatch } from "../../hooks";
 
 jest.mock("../../hooks", () => ({
   useAppDispatch: jest.fn(),
+  useAppSelector: jest.fn(),
+  useDebounce: jest.fn(),
 }));
 
 jest.mock("react-i18next", () => ({
