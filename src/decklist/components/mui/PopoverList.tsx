@@ -13,7 +13,7 @@ type Props = {
   formatText: (item: any) => string;
 };
 
-const BarChart = (props: Props) => {
+const PopoverList = (props: Props) => {
   const { list, formatText, anchorPos, handleClose } = props;
 
   if (!anchorPos) return <></>;
@@ -33,4 +33,4 @@ const BarChart = (props: Props) => {
   );
 };
 
-export default BarChart;
+export default PopoverList;
