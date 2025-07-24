@@ -4,7 +4,7 @@ import PopoverList from "../../../decklist/components/mui/PopoverList";
 
 import { PopoverPosition } from "@mui/material/Popover";
 
-describe("BarChart", () => {
+describe("PopoverList", () => {
   const anchorPos: PopoverPosition = { top: 100, left: 200 };
 
   const list = [

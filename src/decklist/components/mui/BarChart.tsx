@@ -11,12 +11,12 @@ import {
 } from "recharts";
 import { useTranslation } from "react-i18next";
 
+import PopoverList from "./PopoverList";
 import Text from "./Text";
 
 import { PopoverPosition } from "@mui/material/Popover";
 
 import { NameValue } from "../../../types";
-import PopoverList from "./PopoverList";
 
 type Props = {
   title: string;
