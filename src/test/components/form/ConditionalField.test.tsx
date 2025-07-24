@@ -3,26 +3,34 @@ import { Form } from "react-final-form";
 
 import ConditionalField from "../../../decklist/components/form/ConditionalField";
 
+const renderWithForm = (initialValues = {}) => {
+  const handleSubmit = jest.fn();
+
+  render(
+    <Form
+      onSubmit={handleSubmit}
+      initialValues={initialValues}
+      render={({ handleSubmit }) => (
+        <form onSubmit={handleSubmit}>
+          <ConditionalField
+            checkboxName="showExtra"
+            checkboxLabel="Show extra options"
+          >
+            <div data-testid="conditional-content">Extra Content</div>
+          </ConditionalField>
+          <button type="submit">Submit</button>
+        </form>
+      )}
+    />
+  );
+
+  return handleSubmit;
+};
+
 describe("ConditionalField", () => {
-  const renderWithForm = (initialValues = {}) => {
-    render(
-      <Form
-        onSubmit={jest.fn()}
-        initialValues={initialValues}
-        render={({ handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
-            <ConditionalField
-              checkboxName="showExtra"
-              checkboxLabel="Show extra options"
-            >
-              <div data-testid="conditional-content">Extra Content</div>
-            </ConditionalField>
-            <button type="submit">Submit</button>
-          </form>
-        )}
-      />
-    );
-  };
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
   it("renders the checkbox with correct label", () => {
     renderWithForm();
@@ -51,5 +59,18 @@ describe("ConditionalField", () => {
     fireEvent.click(checkbox);
 
     expect(screen.queryByTestId("conditional-content")).not.toBeInTheDocument();
+  });
+
+  it("checkbox updates form state", () => {
+    const handleSubmit = renderWithForm();
+
+    fireEvent.click(screen.getByLabelText("Show extra options"));
+    fireEvent.click(screen.getByText("Submit"));
+
+    expect(handleSubmit).toHaveBeenCalledWith(
+      { showExtra: true },
+      expect.anything(),
+      expect.anything()
+    );
   });
 });

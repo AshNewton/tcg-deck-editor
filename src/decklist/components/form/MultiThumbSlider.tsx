@@ -2,14 +2,11 @@ import React from "react";
 import { Field } from "react-final-form";
 import { useTranslation } from "react-i18next";
 
-import {
-  Slider,
-  SliderProps,
-  Typography,
-  Box,
-  TextField,
-  Grid,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Slider, { SliderProps } from "@mui/material/Slider";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 
 type MultiThumbSliderProps = {
   name: string;

@@ -3,31 +3,35 @@ import { Form } from "react-final-form";
 
 import CheckboxGroup from "../../../decklist/components/form/CheckboxGroup";
 
+const options = ["Option A", "Option B", "Option C"];
+
+const renderWithForm = (initialValues = {}) => {
+  const handleSubmit = jest.fn();
+
+  render(
+    <Form
+      onSubmit={handleSubmit}
+      initialValues={initialValues}
+      render={({ handleSubmit }) => (
+        <form onSubmit={handleSubmit}>
+          <CheckboxGroup
+            name="testField"
+            label="Choose Options"
+            options={options}
+            columns={2}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      )}
+    />
+  );
+  return handleSubmit;
+};
+
 describe("CheckboxGroup", () => {
-  const options = ["Option A", "Option B", "Option C"];
-
-  const renderWithForm = (initialValues = {}) => {
-    const handleSubmit = jest.fn();
-
-    render(
-      <Form
-        onSubmit={handleSubmit}
-        initialValues={initialValues}
-        render={({ handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
-            <CheckboxGroup
-              name="testField"
-              label="Choose Options"
-              options={options}
-              columns={2}
-            />
-            <button type="submit">Submit</button>
-          </form>
-        )}
-      />
-    );
-    return handleSubmit;
-  };
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
   it("renders label and checkboxes", () => {
     renderWithForm();

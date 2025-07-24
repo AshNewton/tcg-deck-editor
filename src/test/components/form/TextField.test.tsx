@@ -4,9 +4,11 @@ import { Form, Field } from "react-final-form";
 import TextField from "../../../decklist/components/form/TextField";
 
 const renderWithForm = (validate?: (val: string) => string | undefined) => {
+  const handleSubmit = jest.fn();
+
   render(
     <Form
-      onSubmit={jest.fn()}
+      onSubmit={handleSubmit}
       initialValues={{ name: "" }}
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
@@ -21,9 +23,15 @@ const renderWithForm = (validate?: (val: string) => string | undefined) => {
       )}
     />
   );
+
+  return handleSubmit;
 };
 
 describe("TextField component", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("renders with label", () => {
     renderWithForm();
     expect(screen.getByLabelText("Name")).toBeInTheDocument();
@@ -45,5 +53,20 @@ describe("TextField component", () => {
     fireEvent.submit(screen.getByText("Submit"));
 
     expect(await screen.findByText("Required")).toBeInTheDocument();
+  });
+
+  it("updates form state", () => {
+    const handleSubmit = renderWithForm();
+
+    const input = screen.getByLabelText("Name") as HTMLInputElement;
+    fireEvent.change(input, { target: { value: "Taco" } });
+
+    fireEvent.click(screen.getByText("Submit"));
+
+    expect(handleSubmit).toHaveBeenCalledWith(
+      { name: "Taco" },
+      expect.anything(),
+      expect.anything()
+    );
   });
 });
