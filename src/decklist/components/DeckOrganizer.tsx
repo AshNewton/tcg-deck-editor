@@ -2,15 +2,16 @@ import React from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
+import Button from "./mui/Button";
 import CardGroup from "./CardGroup";
+import DisplayCard from "./mui/DisplayCard";
+
+import Grid from "@mui/material/Grid";
 
 import { isYugioh } from "../util/util";
-
 import { useAppSelector } from "../../hooks";
+
 import { Card, Deck } from "../../types";
-import Button from "./mui/Button";
-import { Box, Grid } from "@mui/material";
-import DisplayCard from "./mui/DisplayCard";
 
 type Group = {
   id: string;
@@ -35,8 +36,6 @@ const DeckOrganizer = () => {
   }));
 
   const [groups, setGroups] = React.useState<Array<Group>>(initialGroups);
-
-  console.log(groups);
 
   const moveCard = (card: Card, toGroupId: string) => {
     setGroups((prevGroups) =>
@@ -79,9 +78,9 @@ const DeckOrganizer = () => {
     <DndProvider backend={HTML5Backend}>
       <DisplayCard>
         <Button onClick={handleAddGroup} text="Add Group" />
-        <Grid container gap={1}>
+        <Grid container>
           {groups?.map((group) => (
-            <Grid item xs={3} p={1}>
+            <Grid item xs={12} md={4} p={1}>
               <CardGroup
                 key={group.id}
                 id={group.id}

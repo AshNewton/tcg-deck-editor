@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   handleAddToDeck as mtgAddToDeck,
   isInvalid as mtgIsInvalid,
@@ -96,4 +98,16 @@ export const removeDuplicateCards = (cards: Deck): Deck => {
     seen.add(value);
     return true; // Keep unique item
   });
+};
+
+export const useWindowWidth = () => {
+  const [width, setWidth] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    const handler = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+
+  return width;
 };
