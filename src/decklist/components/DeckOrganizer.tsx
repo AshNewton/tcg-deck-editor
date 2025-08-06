@@ -38,21 +38,33 @@ const DeckOrganizer = () => {
   const [groups, setGroups] = React.useState<Array<Group>>(initialGroups);
 
   const moveCard = (card: Card, toGroupId: string) => {
-    setGroups((prevGroups) =>
-      prevGroups.map((group) => {
-        const isTarget = group.id === toGroupId;
-        const hasCard = group.cards.some((c) => c.name === card.name);
+    setGroups((prevGroups) => {
+      // Check if the card is already in the target group
+      const targetGroup = prevGroups.find((g) => g.id === toGroupId);
+      const cardAlreadyInTarget = targetGroup?.cards.some(
+        (c) => c.name === card.name
+      );
 
-        return {
-          ...group,
-          cards: isTarget
-            ? [...group.cards, card]
-            : hasCard
-            ? group.cards.filter((c) => c.name !== card.name)
-            : group.cards,
-        };
-      })
-    );
+      // If card is already in the target group, do nothing
+      if (cardAlreadyInTarget) return prevGroups;
+
+      // Otherwise, remove from all groups and add to the target group
+      return prevGroups.map((group) => {
+        if (group.cards.some((c) => c.name === card.name)) {
+          return {
+            ...group,
+            cards: group.cards.filter((c) => c.name !== card.name),
+          };
+        } else if (group.id === toGroupId) {
+          return {
+            ...group,
+            cards: [...group.cards, card],
+          };
+        } else {
+          return group;
+        }
+      });
+    });
   };
 
   const handleAddGroup = () => {
