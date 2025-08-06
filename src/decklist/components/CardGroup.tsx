@@ -2,6 +2,7 @@ import React from "react";
 import { useDrop } from "react-dnd";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTranslation } from "react-i18next";
 
 import CardDetailsImage, { ItemTypes } from "./CardDetailsImage";
 import DisplayCard from "./mui/DisplayCard";
@@ -9,11 +10,14 @@ import DisplayCard from "./mui/DisplayCard";
 import Box from "@mui/material/Box";
 import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
 import { Card, Deck } from "../../types";
 import { useWindowWidth } from "../util/util";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 type Props = {
   id: string;
@@ -21,18 +25,32 @@ type Props = {
   cards: Deck;
   onDrop: (card: Card, toGroupId: string) => void;
   onRename: (id: string, newName: string) => void;
+  onRemove: (id: string) => void;
 };
 
 const CardGroup = (props: Props) => {
-  const { id, name, cards, onDrop, onRename } = props;
+  const { id, name, cards, onDrop, onRename, onRemove } = props;
 
   const [editing, setEditing] = React.useState(false);
   const [tempName, setTempName] = React.useState(name);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
 
   const width = useWindowWidth();
+
+  const { t } = useTranslation();
+
+  const menuOpen = Boolean(anchorEl);
+
+  const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleRenameSubmit = () => {
     if (tempName.trim() !== "") {
@@ -88,12 +106,26 @@ const CardGroup = (props: Props) => {
                   setEditing(true);
                   setTempName(name);
                 }}
-                aria-label="Rename group"
+                aria-label={t("common.rename")}
               >
                 <EditIcon fontSize="small" />
               </IconButton>
             </>
           )}
+          <IconButton onClick={handleMenuClick}>
+            <MoreVertIcon />
+          </IconButton>
+          <Menu anchorEl={anchorEl} open={menuOpen} onClose={handleMenuClose}>
+            <MenuItem
+              onClick={() => {
+                handleMenuClose();
+                onRemove(id);
+              }}
+              disabled={!!cards.length}
+            >
+              {t("common.delete")}
+            </MenuItem>
+          </Menu>
         </Box>
 
         <Box

@@ -78,6 +78,10 @@ const DeckOrganizer = () => {
     ]);
   };
 
+  const handleRemoveGroup = (id: string) => {
+    setGroups(groups.filter((g: Group) => g.id !== id));
+  };
+
   const renameGroup = (id: string, newName: string) => {
     setGroups((prev) =>
       prev.map((group) =>
@@ -100,6 +104,7 @@ const DeckOrganizer = () => {
                 cards={group.cards}
                 onDrop={moveCard}
                 onRename={renameGroup}
+                onRemove={handleRemoveGroup}
               />
             </Grid>
           ))}
