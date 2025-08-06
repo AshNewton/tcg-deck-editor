@@ -15,8 +15,13 @@ const Image = (props: Props) => {
       src={src}
       alt={alt}
       title={alt}
-      maxWidth="100%"
-      m={2}
+      sx={{
+        width: "100%",
+        maxWidth: "100%",
+        height: "auto",
+        display: "block",
+        ...rest.sx,
+      }}
       {...rest}
     />
   );

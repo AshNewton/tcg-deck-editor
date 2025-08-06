@@ -33,6 +33,7 @@ const Header = () => {
   const { t } = useTranslation();
 
   const MENU_ITEMS: Array<NameType> = [
+    { name: t("menu.deckOrganizer"), type: "Deck Organizer" },
     { name: t("menu.startingHand"), type: "Starting Hand" },
     { name: t("menu.deckSearch"), type: "Deck Search" },
     { name: t("menu.colorBreakdown"), type: "Color Breakdown" },
@@ -58,9 +59,9 @@ const Header = () => {
                 <Image
                   src={GAME_ICONS[option]}
                   alt={option}
-                  height={48}
                   m={0}
                   margin="auto"
+                  sx={{ height: 48 }}
                 />
               </MenuItem>
             ))}

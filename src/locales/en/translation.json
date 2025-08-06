@@ -25,6 +25,7 @@
   },
   "menu": {
     "colorBreakdown": "Color Breakdown",
+    "deckOrganizer": "Deck Organize",
     "deckSearch": "Deck Search",
     "startingHand": "Starting Hand"
   },

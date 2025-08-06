@@ -104,7 +104,7 @@ const StartingHand = () => {
                 key={index}
                 src={getCardImage(cardname, maindeck, game) ?? ""}
                 alt={cardname}
-                maxWidth={100 / handSize + "%"}
+                sx={{ maxWidth: 100 / handSize + "%" }}
                 onClick={() => toggleSelectedCard(getCard(cardname, maindeck))}
               />
             ))}
