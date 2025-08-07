@@ -6,7 +6,8 @@ import Button from "./mui/Button";
 import CardGroup from "./CardGroup";
 import DisplayCard from "./mui/DisplayCard";
 
-import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Masonry from "@mui/lab/Masonry";
 
 import { isExtraDeckCard } from "../util/yugioh";
 import { isYugioh } from "../util/util";
@@ -126,10 +127,11 @@ const DeckOrganizer = () => {
     <DndProvider backend={HTML5Backend}>
       <DisplayCard>
         <Button onClick={handleAddGroup} text="Add Group" />
-        <Grid container>
-          {groups.map((group) => (
-            <Grid item xs={12} md={2} p={1} key={group.name}>
+        <Box sx={{ width: "100%" }}>
+          <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 5 }} spacing={2}>
+            {groups.map((group) => (
               <CardGroup
+                key={group.name}
                 id={group.name}
                 name={group.name}
                 cards={group.cards}
@@ -137,9 +139,9 @@ const DeckOrganizer = () => {
                 onRename={renameGroup}
                 onRemove={handleRemoveGroup}
               />
-            </Grid>
-          ))}
-        </Grid>
+            ))}
+          </Masonry>
+        </Box>
       </DisplayCard>
     </DndProvider>
   );

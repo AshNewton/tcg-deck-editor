@@ -80,7 +80,7 @@ const CardGroup = (props: Props) => {
   // Adjust container height to fit overlapped cards
   const containerHeight =
     cardOverlap * cards.length +
-    width * (cards.length > 0 ? (isSmall ? 0.9 : 0.14) : 0);
+    width * (cards.length > 0 ? (isSmall ? 0.9 : 0.17) : 0);
 
   return drop(
     <div>
