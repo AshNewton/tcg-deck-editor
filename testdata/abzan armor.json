@@ -136,7 +136,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138025?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Commander"
     },
     {
       "name": "Fecund Greenshell",
@@ -275,7 +276,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/129587?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Draw"
     },
     {
       "name": "Sidar Kondo of Jamuraa",
@@ -411,7 +413,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138547?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Evasion"
     },
     {
       "name": "Shadrix Silverquill",
@@ -566,7 +569,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138545?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Walls"
     },
     {
       "name": "Indulging Patrician",
@@ -700,7 +704,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138525?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lifegain"
     },
     {
       "name": "Ikra Shidiqi, the Usurper",
@@ -837,7 +842,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138143?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lifegain"
     },
     {
       "name": "Nyx-Fleece Ram",
@@ -969,7 +975,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138189?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lifegain"
     },
     {
       "name": "Wakestone Gargoyle",
@@ -1102,7 +1109,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138211?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Commander-Like Effects"
     },
     {
       "name": "Welcoming Vampire",
@@ -1233,7 +1241,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138217?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Draw"
     },
     {
       "name": "Zetalpa, Primal Dawn",
@@ -1372,7 +1381,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138221?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Walls"
     },
     {
       "name": "Rhox Faithmender",
@@ -1504,7 +1514,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138193?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lifegain"
     },
     {
       "name": "Indomitable Ancients",
@@ -1634,7 +1645,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138179?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Walls"
     },
     {
       "name": "Baldin, Century Herdmaster",
@@ -1765,7 +1777,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138157?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Buffs"
     },
     {
       "name": "Wall of Omens",
@@ -1896,7 +1909,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138213?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Draw"
     },
     {
       "name": "Wall of Limbs",
@@ -2026,7 +2040,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138337?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lifegain"
     },
     {
       "name": "Blight Pile",
@@ -2157,7 +2172,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138285?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Drain"
     },
     {
       "name": "Carven Caryatid",
@@ -2288,7 +2304,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138437?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Draw"
     },
     {
       "name": "Wall of Blossoms",
@@ -2419,7 +2436,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138491?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Draw"
     },
     {
       "name": "Tree of Redemption",
@@ -2551,7 +2569,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138137?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Walls"
     },
     {
       "name": "Axebane Guardian",
@@ -2689,7 +2708,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138433?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Arbor Adherent",
@@ -2825,7 +2845,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138101?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Overgrown Battlement",
@@ -2959,7 +2980,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138465?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Jaddi Offshoot",
@@ -3091,7 +3113,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138457?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lifegain"
     },
     {
       "name": "Arasta of the Endless Web",
@@ -3245,7 +3268,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138425?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Token"
     },
     {
       "name": "Sylvan Caryatid",
@@ -3385,7 +3409,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138481?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Rampart Architect",
@@ -3531,7 +3556,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138111?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Token"
     },
     {
       "name": "Canopy Gargantuan",
@@ -3663,7 +3689,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138107?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Walls"
     },
     {
       "name": "Towering Titan",
@@ -3792,7 +3819,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138489?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Walls"
     },
     {
       "name": "Wall of Roots",
@@ -3925,7 +3953,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138493?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Seedborn Muse",
@@ -4055,7 +4084,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138473?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Arboreal Grazer",
@@ -4186,7 +4216,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138427?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Bedrock Tortoise",
@@ -4324,7 +4355,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/118176?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Commander-Like Effects"
     },
     {
       "name": "Weathered Sentinels",
@@ -4453,7 +4485,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138613?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Walls"
     },
     {
       "name": "Wall of Tanglecord",
@@ -4585,7 +4618,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/38119?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Walls"
     },
     {
       "name": "Crashing Drawbridge",
@@ -4712,7 +4746,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138573?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Walls"
     },
     {
       "name": "Walking Bulwark",
@@ -4838,7 +4873,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138609?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Walls"
     },
     {
       "name": "Find // Finality",
@@ -4989,7 +5025,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/121037?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Expel the Interlopers",
@@ -5115,7 +5152,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138167?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Fell the Mighty",
@@ -5243,7 +5281,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/122270?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Dusk // Dawn",
@@ -5392,7 +5431,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/122258?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Reunion of the House",
@@ -5524,7 +5564,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138047?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Recursion"
     },
     {
       "name": "Slaughter the Strong",
@@ -5651,7 +5692,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138199?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Tip the Scales",
@@ -5783,7 +5825,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138075?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Will of the Abzan",
@@ -5910,7 +5953,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138079?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Feed the Swarm",
@@ -6037,7 +6081,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138297?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Pick Your Poison",
@@ -6172,7 +6217,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/121816?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Despark",
@@ -6301,7 +6347,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138505?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Anguished Unmaking",
@@ -6431,7 +6478,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138495?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Swords to Plowshares",
@@ -6557,7 +6605,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138205?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Infernal Grasp",
@@ -6684,7 +6733,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138301?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Tower Defense",
@@ -6811,7 +6861,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138487?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Buffs"
     },
     {
       "name": "Stoneskin",
@@ -6946,7 +6997,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/100088?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Buffs"
     },
     {
       "name": "Behind the Scenes",
@@ -7077,7 +7129,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138281?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Evasion"
     },
     {
       "name": "Jaws of Defeat",
@@ -7212,7 +7265,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138071?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Drain"
     },
     {
       "name": "Fertile Ground",
@@ -7346,7 +7400,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Fertile+Ground&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Assault Formation",
@@ -7476,7 +7531,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138429?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Commander-Like Effects"
     },
     {
       "name": "Seal of Primordium",
@@ -7609,7 +7665,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/86831?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Removal"
     },
     {
       "name": "Arcane Signet",
@@ -7735,7 +7792,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138119?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Selesnya Signet",
@@ -7865,7 +7923,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138589?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Orzhov Signet",
@@ -7995,7 +8054,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138587?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Sol Ring",
@@ -8117,7 +8177,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138121?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Ramp"
     },
     {
       "name": "Swiftfoot Boots",
@@ -8241,7 +8302,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138597?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Evasion"
     },
     {
       "name": "Command Tower",
@@ -8367,7 +8429,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138123?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Sandsteppe Citadel",
@@ -8503,7 +8566,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/139501?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Path of Ancestry",
@@ -8633,7 +8697,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138705?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Canopy Vista",
@@ -8764,7 +8829,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138627?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Blossoming Sands",
@@ -8897,7 +8963,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/139471?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Sunpetal Grove",
@@ -9028,7 +9095,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138739?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Fortified Village",
@@ -9158,7 +9226,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138673?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Sungrass Prairie",
@@ -9288,7 +9357,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138735?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Temple of Plenty",
@@ -9420,7 +9490,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138751?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Radiant Grove",
@@ -9550,7 +9621,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138711?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Forlorn Flats",
@@ -9683,7 +9755,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/124427?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Scoured Barrens",
@@ -9816,7 +9889,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/139503?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Isolated Chapel",
@@ -9947,7 +10021,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138687?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Temple of Silence",
@@ -10079,7 +10154,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138753?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Overgrown Farmland",
@@ -10209,7 +10285,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138703?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Woodland Cemetery",
@@ -10340,7 +10417,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138765?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Twilight Mire",
@@ -10472,7 +10550,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138759?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Temple of Malady",
@@ -10604,7 +10683,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138747?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Jungle Hollow",
@@ -10737,7 +10817,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/139485?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Bojuka Bog",
@@ -10863,7 +10944,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138623?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Rogue's Passage",
@@ -11000,7 +11082,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/133554?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Deceptive Landscape",
@@ -11130,7 +11213,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138653?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Windbrisk Heights",
@@ -11260,7 +11344,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138763?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Shire Terrace",
@@ -11389,7 +11474,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/112432?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Access Tunnel",
@@ -11515,7 +11601,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138615?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Exotic Orchard",
@@ -11646,7 +11733,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138661?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Evolving Wilds",
@@ -11772,7 +11860,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/139479?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Lands"
     },
     {
       "name": "Plains",
@@ -11899,7 +11988,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138925?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Lands"
     },
     {
       "name": "Swamp",
@@ -12026,7 +12116,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138933?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Lands"
     },
     {
       "name": "Forest",
@@ -12153,7 +12244,8 @@
           "cardhoarder": "https://www.cardhoarder.com/cards/138941?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
         }
       },
-      "copies": 5
+      "copies": 5,
+      "category": "Lands"
     }
   ],
   "extra": []

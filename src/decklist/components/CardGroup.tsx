@@ -75,12 +75,12 @@ const CardGroup = (props: Props) => {
   }));
 
   // Set overlap distance depending on screen size
-  const cardOverlap = width * (isSmall ? 0.1 : 0.025);
+  const cardOverlap = width * (isSmall ? 0.1 : 0.018);
 
   // Adjust container height to fit overlapped cards
   const containerHeight =
     cardOverlap * cards.length +
-    width * (cards.length > 0 ? (isSmall ? 0.9 : 0.25) : 0);
+    width * (cards.length > 0 ? (isSmall ? 0.9 : 0.14) : 0);
 
   return drop(
     <div>
