@@ -249,6 +249,7 @@ export type Menu =
 
 export interface Card {
   name: string;
+  category?: string;
   details: ygoCard | mtgCard | pokemonCard;
   copies: number;
 }

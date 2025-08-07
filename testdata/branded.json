@@ -5,10 +5,7 @@
       "details": {
         "id": 68468459,
         "name": "Fallen of Albaz",
-        "typeline": [
-          "Dragon",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -100,13 +97,11 @@
     },
     {
       "name": "Aluber the Jester of Despia",
+      "category": "Starter",
       "details": {
         "id": 62962630,
         "name": "Aluber the Jester of Despia",
-        "typeline": [
-          "Fairy",
-          "Effect"
-        ],
+        "typeline": ["Fairy", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -314,11 +309,7 @@
       "details": {
         "id": 45883110,
         "name": "Guiding Quem, the Virtuous",
-        "typeline": [
-          "Spellcaster",
-          "Tuner",
-          "Effect"
-        ],
+        "typeline": ["Spellcaster", "Tuner", "Effect"],
         "type": "Tuner Monster",
         "humanReadableCardType": "Tuner Effect Monster",
         "frameType": "effect",
@@ -427,10 +418,7 @@
       "details": {
         "id": 60242223,
         "name": "Bystial Saronir",
-        "typeline": [
-          "Dragon",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -759,10 +747,7 @@
       "details": {
         "id": 19096726,
         "name": "Tri-Brigade Mercourier",
-        "typeline": [
-          "Winged Beast",
-          "Effect"
-        ],
+        "typeline": ["Winged Beast", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -863,10 +848,7 @@
       "details": {
         "id": 36577931,
         "name": "Despian Tragedy",
-        "typeline": [
-          "Fairy",
-          "Effect"
-        ],
+        "typeline": ["Fairy", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -926,10 +908,7 @@
       "details": {
         "id": 45484331,
         "name": "Springans Kitt",
-        "typeline": [
-          "Beast",
-          "Effect"
-        ],
+        "typeline": ["Beast", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -982,10 +961,7 @@
       "details": {
         "id": 33854624,
         "name": "Bystial Magnamhut",
-        "typeline": [
-          "Dragon",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -1158,10 +1134,7 @@
       "details": {
         "id": 72656408,
         "name": "Bystial Baldrake",
-        "typeline": [
-          "Dragon",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -1976,10 +1949,7 @@
       "details": {
         "id": 95679145,
         "name": "Dogmatika Maximus",
-        "typeline": [
-          "Spellcaster",
-          "Effect"
-        ],
+        "typeline": ["Spellcaster", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -2032,10 +2002,7 @@
       "details": {
         "id": 68304193,
         "name": "Kashtira Unicorn",
-        "typeline": [
-          "Psychic",
-          "Effect"
-        ],
+        "typeline": ["Psychic", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -2187,10 +2154,7 @@
       "details": {
         "id": 27204311,
         "name": "Nibiru, the Primal Being",
-        "typeline": [
-          "Rock",
-          "Effect"
-        ],
+        "typeline": ["Rock", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -2298,10 +2262,7 @@
       "details": {
         "id": 94145021,
         "name": "Droll & Lock Bird",
-        "typeline": [
-          "Spellcaster",
-          "Effect"
-        ],
+        "typeline": ["Spellcaster", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -2730,11 +2691,7 @@
       "details": {
         "id": 95515789,
         "name": "Blazing Cartesia, the Virtuous",
-        "typeline": [
-          "Spellcaster",
-          "Tuner",
-          "Effect"
-        ],
+        "typeline": ["Spellcaster", "Tuner", "Effect"],
         "type": "Tuner Monster",
         "humanReadableCardType": "Tuner Effect Monster",
         "frameType": "effect",
@@ -2855,10 +2812,7 @@
       "details": {
         "id": 25451383,
         "name": "Albion the Shrouded Dragon",
-        "typeline": [
-          "Dragon",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Effect"],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -3022,11 +2976,7 @@
       "details": {
         "id": 44146295,
         "name": "Mirrorjade the Iceblade Dragon",
-        "typeline": [
-          "Wyrm",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Wyrm", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3086,11 +3036,7 @@
       "details": {
         "id": 87746184,
         "name": "Albion the Branded Dragon",
-        "typeline": [
-          "Dragon",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3150,11 +3096,7 @@
       "details": {
         "id": 24915933,
         "name": "Granguignol the Dusk Dragon",
-        "typeline": [
-          "Spellcaster",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Spellcaster", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3220,11 +3162,7 @@
       "details": {
         "id": 70534340,
         "name": "Lubellion the Searing Dragon",
-        "typeline": [
-          "Dragon",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3284,11 +3222,7 @@
       "details": {
         "id": 51409648,
         "name": "Rindbrumm the Striking Dragon",
-        "typeline": [
-          "Winged Beast",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Winged Beast", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3383,11 +3317,7 @@
       "details": {
         "id": 41373230,
         "name": "Titaniklad the Ash Dragon",
-        "typeline": [
-          "Dragon",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3446,11 +3376,7 @@
       "details": {
         "id": 3410461,
         "name": "Alba-Lenatus the Abyss Dragon",
-        "typeline": [
-          "Dragon",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3509,11 +3435,7 @@
       "details": {
         "id": 11765832,
         "name": "Garura, Wings of Resonant Life",
-        "typeline": [
-          "Winged Beast",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Winged Beast", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3614,11 +3536,7 @@
       "details": {
         "id": 72272462,
         "name": "Despian Quaeritis",
-        "typeline": [
-          "Fiend",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Fiend", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3671,11 +3589,7 @@
       "details": {
         "id": 19652159,
         "name": "Light and Darkness Dragonlord",
-        "typeline": [
-          "Dragon",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3728,11 +3642,7 @@
       "details": {
         "id": 69946549,
         "name": "Predaplant Dragostapelia",
-        "typeline": [
-          "Plant",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Plant", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3820,11 +3730,7 @@
       "details": {
         "id": 92892239,
         "name": "Borreload Furious Dragon",
-        "typeline": [
-          "Dragon",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Dragon", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3870,11 +3776,7 @@
       "details": {
         "id": 6855503,
         "name": "Masquerade the Blazing Dragon",
-        "typeline": [
-          "Fiend",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Fiend", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3976,11 +3878,7 @@
       "details": {
         "id": 11321089,
         "name": "Guardian Chimera",
-        "typeline": [
-          "Beast",
-          "Fusion",
-          "Effect"
-        ],
+        "typeline": ["Beast", "Fusion", "Effect"],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",

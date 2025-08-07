@@ -11,12 +11,39 @@ import Grid from "@mui/material/Grid";
 import { isYugioh } from "../util/util";
 import { useAppSelector } from "../../hooks";
 
-import { Card, Deck } from "../../types";
+import { Card, Deck, Game } from "../../types";
 
 type Group = {
   id: string;
   name: string;
   cards: Deck;
+};
+
+const getInitialGroups = (
+  maindeck: Deck,
+  extradeck: Deck,
+  game: Game
+): Array<Group> => {
+  const allCards = isYugioh(game) ? [...maindeck, ...extradeck] : [...maindeck];
+
+  const groupsMap = new Map<string, Array<Card>>();
+
+  allCards.forEach((card) => {
+    const groupName =
+      card.category?.trim() ||
+      (isYugioh(game) && extradeck.includes(card) ? "Extra Deck" : "Deck");
+
+    if (!groupsMap.has(groupName)) {
+      groupsMap.set(groupName, []);
+    }
+    groupsMap.get(groupName)!.push(card);
+  });
+
+  return Array.from(groupsMap.entries()).map(([name, cards]) => ({
+    id: crypto.randomUUID(),
+    name,
+    cards,
+  }));
 };
 
 const DeckOrganizer = () => {
@@ -25,17 +52,9 @@ const DeckOrganizer = () => {
 
   const game = useAppSelector((state) => state.ui.game);
 
-  const initialGroups: Group[] = Object.entries(
-    isYugioh(game)
-      ? { "Main Deck": maindeck, "Extra Deck": extradeck }
-      : { Deck: maindeck }
-  ).map(([key, cards]) => ({
-    id: crypto.randomUUID(), // or something simpler
-    name: key,
-    cards,
-  }));
-
-  const [groups, setGroups] = React.useState<Array<Group>>(initialGroups);
+  const [groups, setGroups] = React.useState<Array<Group>>(
+    getInitialGroups(maindeck, extradeck, game)
+  );
 
   const moveCard = (card: Card, toGroupId: string) => {
     setGroups((prevGroups) => {
