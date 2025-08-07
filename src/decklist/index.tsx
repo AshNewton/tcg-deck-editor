@@ -58,7 +58,7 @@ const Decklist = () => {
       >
         <Grid
           item
-          md={4}
+          md={3}
           sx={{
             overflowY: "auto",
             maxHeight: "100%",
@@ -69,7 +69,7 @@ const Decklist = () => {
         </Grid>
         <Grid
           item
-          md={8}
+          md={9}
           sx={{
             overflowY: "auto",
             maxHeight: "100%",

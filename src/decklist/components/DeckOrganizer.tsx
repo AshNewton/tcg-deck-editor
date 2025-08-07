@@ -96,7 +96,7 @@ const DeckOrganizer = () => {
         <Button onClick={handleAddGroup} text="Add Group" />
         <Grid container>
           {groups?.map((group) => (
-            <Grid item xs={12} md={4} p={1}>
+            <Grid item xs={12} md={3} p={1}>
               <CardGroup
                 key={group.id}
                 id={group.id}
