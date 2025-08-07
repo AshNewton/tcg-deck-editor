@@ -28,6 +28,12 @@ jest.mock("../../decklist/components/mtg/Mana", () => () => {
     "data-testid": "Mana",
   });
 });
+jest.mock("../../decklist/components/DeckOrganizer", () => () => {
+  const React = require("react");
+  return React.createElement("div", {
+    "data-testid": "DeckOrganizer",
+  });
+});
 
 describe("Body", () => {
   const useAppSelectorMock = reduxHooks.useAppSelector as jest.Mock;
@@ -62,5 +68,15 @@ describe("Body", () => {
     });
     render(React.createElement(Body));
     expect(screen.getByTestId("Mana")).toBeInTheDocument();
+
+    useAppSelectorMock.mockImplementation((selectorFn) => {
+      return selectorFn({
+        ui: {
+          menu: "Deck Organizer",
+        },
+      });
+    });
+    render(React.createElement(Body));
+    expect(screen.getByTestId("DeckOrganizer")).toBeInTheDocument();
   });
 });
