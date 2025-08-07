@@ -167,7 +167,7 @@
     "draw": "Draw Card",
     "numberLands": "Number of Lands",
     "probability": "Calculate Probability to Open Cards",
-    "probabilityLands": "${{count}} Land:   {{chance}}%",
+    "probabilityLands": "{{count}} Land:   {{chance}}%",
     "sampleHand": "Get a Sample Starting Hand"
   },
   "yugioh": {
