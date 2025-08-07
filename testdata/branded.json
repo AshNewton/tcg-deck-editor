@@ -5,7 +5,10 @@
       "details": {
         "id": 68468459,
         "name": "Fallen of Albaz",
-        "typeline": ["Dragon", "Effect"],
+        "typeline": [
+          "Dragon",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -93,7 +96,8 @@
           }
         ]
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Engine Pieces"
     },
     {
       "name": "Aluber the Jester of Despia",
@@ -101,7 +105,10 @@
       "details": {
         "id": 62962630,
         "name": "Aluber the Jester of Despia",
-        "typeline": ["Fairy", "Effect"],
+        "typeline": [
+          "Fairy",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -302,14 +309,19 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Staples"
     },
     {
       "name": "Guiding Quem, the Virtuous",
       "details": {
         "id": 45883110,
         "name": "Guiding Quem, the Virtuous",
-        "typeline": ["Spellcaster", "Tuner", "Effect"],
+        "typeline": [
+          "Spellcaster",
+          "Tuner",
+          "Effect"
+        ],
         "type": "Tuner Monster",
         "humanReadableCardType": "Tuner Effect Monster",
         "frameType": "effect",
@@ -411,14 +423,18 @@
           }
         ]
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Engine Pieces"
     },
     {
       "name": "Bystial Saronir",
       "details": {
         "id": 60242223,
         "name": "Bystial Saronir",
-        "typeline": ["Dragon", "Effect"],
+        "typeline": [
+          "Dragon",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -464,7 +480,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Engine Pieces"
     },
     {
       "name": "Called by the Grave",
@@ -571,7 +588,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Staples"
     },
     {
       "name": "Fusion Duplication",
@@ -619,7 +637,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Fusion Spells"
     },
     {
       "name": "Branded Fusion",
@@ -685,7 +704,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Fusion Spells"
     },
     {
       "name": "Branded in Red",
@@ -740,14 +760,18 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Fusion Spells"
     },
     {
       "name": "Tri-Brigade Mercourier",
       "details": {
         "id": 19096726,
         "name": "Tri-Brigade Mercourier",
-        "typeline": ["Winged Beast", "Effect"],
+        "typeline": [
+          "Winged Beast",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -793,7 +817,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Extenders"
     },
     {
       "name": "Branded Retribution",
@@ -841,14 +866,18 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Extenders"
     },
     {
       "name": "Despian Tragedy",
       "details": {
         "id": 36577931,
         "name": "Despian Tragedy",
-        "typeline": ["Fairy", "Effect"],
+        "typeline": [
+          "Fairy",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -901,14 +930,18 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Engine Pieces"
     },
     {
       "name": "Springans Kitt",
       "details": {
         "id": 45484331,
         "name": "Springans Kitt",
-        "typeline": ["Beast", "Effect"],
+        "typeline": [
+          "Beast",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -954,14 +987,18 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Extenders"
     },
     {
       "name": "Bystial Magnamhut",
       "details": {
         "id": 33854624,
         "name": "Bystial Magnamhut",
-        "typeline": ["Dragon", "Effect"],
+        "typeline": [
+          "Dragon",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -1011,7 +1048,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Extenders"
     },
     {
       "name": "Branded Lost",
@@ -1066,7 +1104,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "End Pieces"
     },
     {
       "name": "Nadir Servant",
@@ -1127,14 +1166,18 @@
           }
         ]
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Starter"
     },
     {
       "name": "Bystial Baldrake",
       "details": {
         "id": 72656408,
         "name": "Bystial Baldrake",
-        "typeline": ["Dragon", "Effect"],
+        "typeline": [
+          "Dragon",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -1183,7 +1226,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Extenders"
     },
     {
       "name": "That Grass Looks Greener",
@@ -1276,7 +1320,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Starter"
     },
     {
       "name": "Gold Sarcophagus",
@@ -1467,7 +1512,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Starter"
     },
     {
       "name": "Branded Regained",
@@ -1515,7 +1561,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "End Pieces"
     },
     {
       "name": "Branded in White",
@@ -1570,7 +1617,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Fusion Spells"
     },
     {
       "name": "Harpie's Feather Duster",
@@ -1713,7 +1761,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Staples"
     },
     {
       "name": "Book of Eclipse",
@@ -1852,7 +1901,8 @@
           }
         ]
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Staples"
     },
     {
       "name": "Forbidden Droplet",
@@ -1942,14 +1992,18 @@
           }
         ]
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Staples"
     },
     {
       "name": "Dogmatika Maximus",
       "details": {
         "id": 95679145,
         "name": "Dogmatika Maximus",
-        "typeline": ["Spellcaster", "Effect"],
+        "typeline": [
+          "Spellcaster",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -1995,14 +2049,18 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Engine Pieces"
     },
     {
       "name": "Kashtira Unicorn",
       "details": {
         "id": 68304193,
         "name": "Kashtira Unicorn",
-        "typeline": ["Psychic", "Effect"],
+        "typeline": [
+          "Psychic",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -2051,7 +2109,8 @@
           }
         ]
       },
-      "copies": 2
+      "copies": 2,
+      "category": "Staples"
     },
     {
       "name": "Branded Sword",
@@ -2099,7 +2158,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Engine Pieces"
     },
     {
       "name": "Brightest, Blazing, Branded King",
@@ -2147,14 +2207,18 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "End Pieces"
     },
     {
       "name": "Nibiru, the Primal Being",
       "details": {
         "id": 27204311,
         "name": "Nibiru, the Primal Being",
-        "typeline": ["Rock", "Effect"],
+        "typeline": [
+          "Rock",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -2255,14 +2319,18 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Hand Traps"
     },
     {
       "name": "Droll & Lock Bird",
       "details": {
         "id": 94145021,
         "name": "Droll & Lock Bird",
-        "typeline": ["Spellcaster", "Effect"],
+        "typeline": [
+          "Spellcaster",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -2397,7 +2465,8 @@
           }
         ]
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Hand Traps"
     },
     {
       "name": "Super Polymerization",
@@ -2587,7 +2656,8 @@
           }
         ]
       },
-      "copies": 2
+      "copies": 2,
+      "category": "Board Breakers"
     },
     {
       "name": "Branded Opening",
@@ -2684,14 +2754,19 @@
           }
         ]
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Extenders"
     },
     {
       "name": "Blazing Cartesia, the Virtuous",
       "details": {
         "id": 95515789,
         "name": "Blazing Cartesia, the Virtuous",
-        "typeline": ["Spellcaster", "Tuner", "Effect"],
+        "typeline": [
+          "Spellcaster",
+          "Tuner",
+          "Effect"
+        ],
         "type": "Tuner Monster",
         "humanReadableCardType": "Tuner Effect Monster",
         "frameType": "effect",
@@ -2757,7 +2832,8 @@
           }
         ]
       },
-      "copies": 2
+      "copies": 2,
+      "category": "Engine Pieces"
     },
     {
       "name": "Branded in High Spirits",
@@ -2805,14 +2881,18 @@
           }
         ]
       },
-      "copies": 2
+      "copies": 2,
+      "category": "Engine Pieces"
     },
     {
       "name": "Albion the Shrouded Dragon",
       "details": {
         "id": 25451383,
         "name": "Albion the Shrouded Dragon",
-        "typeline": ["Dragon", "Effect"],
+        "typeline": [
+          "Dragon",
+          "Effect"
+        ],
         "type": "Effect Monster",
         "humanReadableCardType": "Effect Monster",
         "frameType": "effect",
@@ -2864,7 +2944,8 @@
           }
         ]
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Engine Pieces"
     },
     {
       "name": "Fusion Deployment",
@@ -2967,16 +3048,72 @@
           }
         ]
       },
-      "copies": 3
+      "copies": 3,
+      "category": "Starter"
     }
   ],
   "extra": [
+    {
+      "name": "Borreload Furious Dragon",
+      "details": {
+        "id": 92892239,
+        "name": "Borreload Furious Dragon",
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
+        "type": "Fusion Monster",
+        "humanReadableCardType": "Fusion Effect Monster",
+        "frameType": "fusion",
+        "desc": "2 DARK Dragon monsters\r\n(Quick Effect): You can target 1 monster you control and 1 card your opponent controls; destroy them. You can banish this card from your GY, then target 1 DARK Link Monster in your GY; Special Summon it, but it cannot activate its effects this turn. You can only use each effect of \"Borreload Furious Dragon\" once per turn.",
+        "race": "Dragon",
+        "atk": 3000,
+        "def": 2500,
+        "level": 8,
+        "attribute": "DARK",
+        "archetype": "Borrel",
+        "ygoprodeck_url": "https://ygoprodeck.com/card/borreload-furious-dragon-10321",
+        "card_sets": [
+          {
+            "set_name": "Structure Deck: Rokket Revolt",
+            "set_code": "SDRR-EN042",
+            "set_rarity": "Ultra Rare",
+            "set_rarity_code": "(UR)",
+            "set_price": "2.49"
+          }
+        ],
+        "card_images": [
+          {
+            "id": 92892239,
+            "image_url": "https://images.ygoprodeck.com/images/cards/92892239.jpg",
+            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/92892239.jpg",
+            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/92892239.jpg"
+          }
+        ],
+        "card_prices": [
+          {
+            "cardmarket_price": "1.00",
+            "tcgplayer_price": "2.98",
+            "ebay_price": "3.45",
+            "amazon_price": "0.50",
+            "coolstuffinc_price": "0.99"
+          }
+        ]
+      },
+      "copies": 1,
+      "category": "End Pieces"
+    },
     {
       "name": "Mirrorjade the Iceblade Dragon",
       "details": {
         "id": 44146295,
         "name": "Mirrorjade the Iceblade Dragon",
-        "typeline": ["Wyrm", "Fusion", "Effect"],
+        "typeline": [
+          "Wyrm",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3029,14 +3166,19 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "End Pieces"
     },
     {
       "name": "Albion the Branded Dragon",
       "details": {
         "id": 87746184,
         "name": "Albion the Branded Dragon",
-        "typeline": ["Dragon", "Fusion", "Effect"],
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3089,14 +3231,19 @@
           }
         ]
       },
-      "copies": 2
+      "copies": 2,
+      "category": "Engine Pieces"
     },
     {
       "name": "Granguignol the Dusk Dragon",
       "details": {
         "id": 24915933,
         "name": "Granguignol the Dusk Dragon",
-        "typeline": ["Spellcaster", "Fusion", "Effect"],
+        "typeline": [
+          "Spellcaster",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3155,14 +3302,19 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Engine Pieces"
     },
     {
       "name": "Lubellion the Searing Dragon",
       "details": {
         "id": 70534340,
         "name": "Lubellion the Searing Dragon",
-        "typeline": ["Dragon", "Fusion", "Effect"],
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3215,14 +3367,19 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Engine Pieces"
     },
     {
       "name": "Rindbrumm the Striking Dragon",
       "details": {
         "id": 51409648,
         "name": "Rindbrumm the Striking Dragon",
-        "typeline": ["Winged Beast", "Fusion", "Effect"],
+        "typeline": [
+          "Winged Beast",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3310,73 +3467,19 @@
           }
         ]
       },
-      "copies": 1
-    },
-    {
-      "name": "Titaniklad the Ash Dragon",
-      "details": {
-        "id": 41373230,
-        "name": "Titaniklad the Ash Dragon",
-        "typeline": ["Dragon", "Fusion", "Effect"],
-        "type": "Fusion Monster",
-        "humanReadableCardType": "Fusion Effect Monster",
-        "frameType": "fusion",
-        "desc": "\"Fallen of Albaz\" + 1 monster with 2500 or more ATK\r\nGains ATK equal to the combined original Levels of the monsters used for its Fusion Summon x 100. After this card is Fusion Summoned, for the rest of this turn, it is unaffected by the activated effects of any other monsters Special Summoned from the Extra Deck. During the End Phase, if this card is in the GY because it was sent there this turn: You can add to your hand, or Special Summon, 1 \"Fallen of Albaz\" or \"Dogmatika\" monster from your Deck. You can only use this effect of \"Titaniklad the Ash Dragon\" once per turn.",
-        "race": "Dragon",
-        "atk": 2500,
-        "def": 2500,
-        "level": 8,
-        "attribute": "DARK",
-        "ygoprodeck_url": "https://ygoprodeck.com/card/titaniklad-the-ash-dragon-11102",
-        "card_sets": [
-          {
-            "set_name": "2021 Tin of Ancient Battles",
-            "set_code": "MP21-EN125",
-            "set_rarity": "Ultra Rare",
-            "set_rarity_code": "(UR)",
-            "set_price": "0"
-          },
-          {
-            "set_name": "Rise of the Duelist",
-            "set_code": "ROTD-EN038",
-            "set_rarity": "Secret Rare",
-            "set_rarity_code": "(ScR)",
-            "set_price": "0"
-          },
-          {
-            "set_name": "Structure Deck: Albaz Strike",
-            "set_code": "SDAZ-EN043",
-            "set_rarity": "Common",
-            "set_rarity_code": "(C)",
-            "set_price": "0.92"
-          }
-        ],
-        "card_images": [
-          {
-            "id": 41373230,
-            "image_url": "https://images.ygoprodeck.com/images/cards/41373230.jpg",
-            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/41373230.jpg",
-            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/41373230.jpg"
-          }
-        ],
-        "card_prices": [
-          {
-            "cardmarket_price": "0.14",
-            "tcgplayer_price": "0.15",
-            "ebay_price": "1.49",
-            "amazon_price": "0.27",
-            "coolstuffinc_price": "0.39"
-          }
-        ]
-      },
-      "copies": 1
+      "copies": 1,
+      "category": "End Pieces"
     },
     {
       "name": "Alba-Lenatus the Abyss Dragon",
       "details": {
         "id": 3410461,
         "name": "Alba-Lenatus the Abyss Dragon",
-        "typeline": ["Dragon", "Fusion", "Effect"],
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3428,14 +3531,19 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "End Pieces"
     },
     {
       "name": "Garura, Wings of Resonant Life",
       "details": {
         "id": 11765832,
         "name": "Garura, Wings of Resonant Life",
-        "typeline": ["Winged Beast", "Fusion", "Effect"],
+        "typeline": [
+          "Winged Beast",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3529,14 +3637,19 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Board Breakers"
     },
     {
       "name": "Despian Quaeritis",
       "details": {
         "id": 72272462,
         "name": "Despian Quaeritis",
-        "typeline": ["Fiend", "Fusion", "Effect"],
+        "typeline": [
+          "Fiend",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3582,14 +3695,19 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "End Pieces"
     },
     {
       "name": "Light and Darkness Dragonlord",
       "details": {
         "id": 19652159,
         "name": "Light and Darkness Dragonlord",
-        "typeline": ["Dragon", "Fusion", "Effect"],
+        "typeline": [
+          "Dragon",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3635,14 +3753,19 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "End Pieces"
     },
     {
       "name": "Predaplant Dragostapelia",
       "details": {
         "id": 69946549,
         "name": "Predaplant Dragostapelia",
-        "typeline": ["Plant", "Fusion", "Effect"],
+        "typeline": [
+          "Plant",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3723,60 +3846,19 @@
           }
         ]
       },
-      "copies": 1
-    },
-    {
-      "name": "Borreload Furious Dragon",
-      "details": {
-        "id": 92892239,
-        "name": "Borreload Furious Dragon",
-        "typeline": ["Dragon", "Fusion", "Effect"],
-        "type": "Fusion Monster",
-        "humanReadableCardType": "Fusion Effect Monster",
-        "frameType": "fusion",
-        "desc": "2 DARK Dragon monsters\r\n(Quick Effect): You can target 1 monster you control and 1 card your opponent controls; destroy them. You can banish this card from your GY, then target 1 DARK Link Monster in your GY; Special Summon it, but it cannot activate its effects this turn. You can only use each effect of \"Borreload Furious Dragon\" once per turn.",
-        "race": "Dragon",
-        "atk": 3000,
-        "def": 2500,
-        "level": 8,
-        "attribute": "DARK",
-        "archetype": "Borrel",
-        "ygoprodeck_url": "https://ygoprodeck.com/card/borreload-furious-dragon-10321",
-        "card_sets": [
-          {
-            "set_name": "Structure Deck: Rokket Revolt",
-            "set_code": "SDRR-EN042",
-            "set_rarity": "Ultra Rare",
-            "set_rarity_code": "(UR)",
-            "set_price": "2.49"
-          }
-        ],
-        "card_images": [
-          {
-            "id": 92892239,
-            "image_url": "https://images.ygoprodeck.com/images/cards/92892239.jpg",
-            "image_url_small": "https://images.ygoprodeck.com/images/cards_small/92892239.jpg",
-            "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/92892239.jpg"
-          }
-        ],
-        "card_prices": [
-          {
-            "cardmarket_price": "1.00",
-            "tcgplayer_price": "2.98",
-            "ebay_price": "3.45",
-            "amazon_price": "0.50",
-            "coolstuffinc_price": "0.99"
-          }
-        ]
-      },
-      "copies": 1
+      "copies": 1,
+      "category": "Board Breakers"
     },
     {
       "name": "Masquerade the Blazing Dragon",
       "details": {
         "id": 6855503,
         "name": "Masquerade the Blazing Dragon",
-        "typeline": ["Fiend", "Fusion", "Effect"],
+        "typeline": [
+          "Fiend",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3871,14 +3953,19 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "End Pieces"
     },
     {
       "name": "Guardian Chimera",
       "details": {
         "id": 11321089,
         "name": "Guardian Chimera",
-        "typeline": ["Beast", "Fusion", "Effect"],
+        "typeline": [
+          "Beast",
+          "Fusion",
+          "Effect"
+        ],
         "type": "Fusion Monster",
         "humanReadableCardType": "Fusion Effect Monster",
         "frameType": "fusion",
@@ -3980,7 +4067,8 @@
           }
         ]
       },
-      "copies": 1
+      "copies": 1,
+      "category": "Board Breakers"
     }
   ]
 }

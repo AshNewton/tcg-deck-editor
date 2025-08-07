@@ -8,105 +8,118 @@ import DisplayCard from "./mui/DisplayCard";
 
 import Grid from "@mui/material/Grid";
 
+import { isExtraDeckCard } from "../util/yugioh";
 import { isYugioh } from "../util/util";
-import { useAppSelector } from "../../hooks";
+import { setExtraDeck, setMainDeck } from "../../store/slices/uiSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Card, Deck, Game } from "../../types";
 
-type Group = {
-  id: string;
-  name: string;
-  cards: Deck;
-};
-
-const getInitialGroups = (
-  maindeck: Deck,
-  extradeck: Deck,
-  game: Game
-): Array<Group> => {
+const groupCardsByCategory = (maindeck: Deck, extradeck: Deck, game: Game) => {
   const allCards = isYugioh(game) ? [...maindeck, ...extradeck] : [...maindeck];
+  const groups = new Map<string, Card[]>();
 
-  const groupsMap = new Map<string, Array<Card>>();
+  for (const card of allCards) {
+    const category = card.category?.trim() ?? "Deck";
 
-  allCards.forEach((card) => {
-    const groupName =
-      card.category?.trim() ||
-      (isYugioh(game) && extradeck.includes(card) ? "Extra Deck" : "Deck");
+    if (!groups.has(category)) groups.set(category, []);
+    groups.get(category)!.push(card);
+  }
 
-    if (!groupsMap.has(groupName)) {
-      groupsMap.set(groupName, []);
-    }
-    groupsMap.get(groupName)!.push(card);
-  });
-
-  return Array.from(groupsMap.entries()).map(([name, cards]) => ({
-    id: crypto.randomUUID(),
-    name,
-    cards,
-  }));
+  return groups;
 };
 
 const DeckOrganizer = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
   const extradeck = useAppSelector((state) => state.ui.extradeck);
-
   const game = useAppSelector((state) => state.ui.game);
+  const dispatch = useAppDispatch();
 
-  const [groups, setGroups] = React.useState<Array<Group>>(
-    getInitialGroups(maindeck, extradeck, game)
-  );
+  const [emptyGroups, setEmptyGroups] = React.useState<Array<string>>([]);
+
+  const cardGroups = groupCardsByCategory(maindeck, extradeck, game);
+
+  const allGroupNames = Array.from(
+    new Set([...Array.from(cardGroups.keys()), ...emptyGroups])
+  ).sort((a, b) => a.localeCompare(b));
+
+  const groups = allGroupNames.map((name) => ({
+    id: name,
+    name,
+    cards: cardGroups.get(name) ?? [],
+  }));
 
   const moveCard = (card: Card, toGroupId: string) => {
-    setGroups((prevGroups) => {
-      // Check if the card is already in the target group
-      const targetGroup = prevGroups.find((g) => g.id === toGroupId);
-      const cardAlreadyInTarget = targetGroup?.cards.some(
-        (c) => c.name === card.name
-      );
+    const updatedCard = { ...card, category: toGroupId };
 
-      // If card is already in the target group, do nothing
-      if (cardAlreadyInTarget) return prevGroups;
+    dispatch((dispatch, getState) => {
+      const state = getState();
+      const currentMain = state.ui.maindeck;
+      const currentExtra = state.ui.extradeck;
 
-      // Otherwise, remove from all groups and add to the target group
-      return prevGroups.map((group) => {
-        if (group.cards.some((c) => c.name === card.name)) {
-          return {
-            ...group,
-            cards: group.cards.filter((c) => c.name !== card.name),
-          };
-        } else if (group.id === toGroupId) {
-          return {
-            ...group,
-            cards: [...group.cards, card],
-          };
-        } else {
-          return group;
-        }
-      });
+      if (isExtraDeckCard(card)) {
+        dispatch(
+          setExtraDeck(
+            currentExtra.map((c) =>
+              c.name === updatedCard.name ? updatedCard : c
+            )
+          )
+        );
+      } else {
+        dispatch(
+          setMainDeck(
+            currentMain.map((c) =>
+              c.name === updatedCard.name ? updatedCard : c
+            )
+          )
+        );
+      }
     });
   };
 
-  const handleAddGroup = () => {
-    setGroups((prev) => [
-      ...prev,
-      {
-        id: crypto.randomUUID(),
-        name: `Group ${prev.length + 1}`,
-        cards: [],
-      },
-    ]);
-  };
+  const renameGroup = (oldName: string, newName: string) => {
+    const updateCategory = (deck: Deck) =>
+      deck.map((card) =>
+        !card.category || card.category === oldName
+          ? { ...card, category: newName }
+          : card
+      );
 
-  const handleRemoveGroup = (id: string) => {
-    setGroups(groups.filter((g: Group) => g.id !== id));
-  };
+    dispatch(setMainDeck(updateCategory(maindeck)));
+    if (isYugioh(game)) {
+      dispatch(setExtraDeck(updateCategory(extradeck)));
+    }
 
-  const renameGroup = (id: string, newName: string) => {
-    setGroups((prev) =>
-      prev.map((group) =>
-        group.id === id ? { ...group, name: newName } : group
-      )
+    setEmptyGroups(
+      (prev) =>
+        prev
+          .map((name) => (name === oldName ? newName : name))
+          .filter((name) => !allGroupNames.includes(name)) // filter duplicates
     );
+  };
+
+  const handleAddGroup = () => {
+    let i = 1;
+    let name = `Group ${i}`;
+    while (allGroupNames.includes(name)) {
+      i++;
+      name = `Group ${i}`;
+    }
+    setEmptyGroups((prev) => [...prev, name]);
+  };
+
+  const handleRemoveGroup = (name: string) => {
+    const clearCategory = (deck: Deck) =>
+      deck.map((card) =>
+        card.category === name ? { ...card, category: "" } : card
+      );
+
+    dispatch(setMainDeck(clearCategory(maindeck)));
+    if (isYugioh(game)) {
+      dispatch(setExtraDeck(clearCategory(extradeck)));
+    }
+
+    setEmptyGroups((prev) => prev.filter((n) => n !== name));
   };
 
   return (
@@ -114,11 +127,10 @@ const DeckOrganizer = () => {
       <DisplayCard>
         <Button onClick={handleAddGroup} text="Add Group" />
         <Grid container>
-          {groups?.map((group) => (
-            <Grid item xs={12} md={3} p={1}>
+          {groups.map((group) => (
+            <Grid item xs={12} md={3} p={1} key={group.name}>
               <CardGroup
-                key={group.id}
-                id={group.id}
+                id={group.name}
                 name={group.name}
                 cards={group.cards}
                 onDrop={moveCard}
