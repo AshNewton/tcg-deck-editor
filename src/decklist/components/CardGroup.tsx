@@ -6,18 +6,19 @@ import { useTranslation } from "react-i18next";
 
 import CardDetailsImage, { ItemTypes } from "./CardDetailsImage";
 import DisplayCard from "./mui/DisplayCard";
+import Text from "./mui/Text";
 
 import Box from "@mui/material/Box";
 import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
 
 import { Card, Deck } from "../../types";
 import { useWindowWidth } from "../util/util";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { getDeckSize } from "../util/deckAnalytics";
 
 type Props = {
   id: string;
@@ -84,7 +85,7 @@ const CardGroup = (props: Props) => {
   return drop(
     <div>
       <DisplayCard>
-        <Box display="flex" flexDirection="row" alignItems="flex-start">
+        <Box display="flex" flexDirection="row" alignItems="center">
           {editing ? (
             <TextField
               value={tempName}
@@ -93,13 +94,14 @@ const CardGroup = (props: Props) => {
               onKeyDown={handleKeyDown}
               size="small"
               autoFocus
-              sx={{ mr: 1 }}
             />
           ) : (
             <>
-              <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                {name}
-              </Typography>
+              <Text text={name} mr={1} fontSize={24} />
+              <Text
+                text={t("decklist.cardCount", { count: getDeckSize(cards) })}
+                sx={{ flexGrow: 1 }}
+              />
               <IconButton
                 size="small"
                 onClick={() => {
