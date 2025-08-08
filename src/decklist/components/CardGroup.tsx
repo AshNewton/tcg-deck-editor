@@ -97,11 +97,8 @@ const CardGroup = (props: Props) => {
             />
           ) : (
             <>
-              <Text text={name} mr={1} fontSize={24} />
-              <Text
-                text={t("decklist.cardCount", { count: getDeckSize(cards) })}
-                sx={{ flexGrow: 1 }}
-              />
+              <Text text={name} mr={1} noWrap />
+              <Text text={`(${getDeckSize(cards)})`} />
               <IconButton
                 size="small"
                 onClick={() => {
