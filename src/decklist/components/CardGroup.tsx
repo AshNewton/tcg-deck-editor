@@ -133,18 +133,22 @@ const CardGroup = (props: Props) => {
             height: `${containerHeight}px`,
           }}
         >
-          {cards.map((card, index) => (
-            <Box
-              key={card.name}
-              sx={{
-                position: "absolute",
-                top: `${index * cardOverlap}px`,
-                zIndex: index,
-              }}
-            >
-              <CardDetailsImage card={card} />
-            </Box>
-          ))}
+          {cards
+            .sort((a: Card, b: Card) => {
+              return a.name.localeCompare(b.name);
+            })
+            .map((card, index) => (
+              <Box
+                key={card.name}
+                sx={{
+                  position: "absolute",
+                  top: `${index * cardOverlap}px`,
+                  zIndex: index,
+                }}
+              >
+                <CardDetailsImage card={card} />
+              </Box>
+            ))}
         </Box>
       </DisplayCard>
     </div>
