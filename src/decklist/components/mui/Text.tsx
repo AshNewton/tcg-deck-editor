@@ -30,6 +30,7 @@ const Text = (props: Props) => {
             overflow: "hidden",
             textOverflow: "ellipsis",
             whiteSpace: "nowrap",
+            ...rest.sx,
           }}
           {...rest}
         >
@@ -40,7 +41,7 @@ const Text = (props: Props) => {
   }
 
   return (
-    <Typography fontSize={fontSize} {...rest}>
+    <Typography fontSize={fontSize} {...rest} sx={{ ...rest.sx }}>
       {text}
     </Typography>
   );

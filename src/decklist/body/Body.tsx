@@ -7,6 +7,7 @@ import StartingHand from "../components/StartingHand";
 import Box from "@mui/material/Box";
 
 import { useAppSelector } from "../../hooks";
+import PlaySimulator from "../components/PlaySimulator";
 
 const Body = () => {
   const menu = useAppSelector((state) => state.ui.menu);
@@ -18,6 +19,7 @@ const Body = () => {
       {menu === "Starting Hand" && <StartingHand />}
       {menu === "Deck Search" && <DeckSearch />}
       {menu === "Color Breakdown" && <Mana />}
+      {menu === "Play Simulator" && <PlaySimulator />}
     </Box>
   );
 };

@@ -37,6 +37,7 @@ const Header = () => {
     { name: t("menu.startingHand"), type: "Starting Hand" },
     { name: t("menu.deckSearch"), type: "Deck Search" },
     { name: t("menu.colorBreakdown"), type: "Color Breakdown" },
+    { name: t("menu.playSimulator"), type: "Play Simulator" },
   ];
 
   return (

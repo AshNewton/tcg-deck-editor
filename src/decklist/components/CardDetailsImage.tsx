@@ -1,22 +1,26 @@
+import React from "react";
 import { useDrag } from "react-dnd";
+import { getEmptyImage } from "react-dnd-html5-backend";
 
 import Image from "./mui/Image";
 
 import Box from "@mui/material/Box";
 
-import { Card } from "../../types";
 import { getCardImage } from "../util/util";
-import { useAppDispatch, useAppSelector } from "../../hooks";
 import { setSelectedCard } from "../../store/slices/uiSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 
-export const ItemTypes = { CARD: "CARD" };
+import { Card } from "../../types";
+import { DnDItemTypes } from "../util/constants";
 
 type Props = {
+  id: string;
   card: Card;
+  [key: string]: any;
 };
 
 const CardDetailsImage = (props: Props) => {
-  const { card } = props;
+  const { card, id, ...rest } = props;
 
   const game = useAppSelector((state) => state.ui.game);
   const selectedCard = useAppSelector((state) => state.ui.selectedCard);
@@ -28,20 +32,25 @@ const CardDetailsImage = (props: Props) => {
     dispatch(setSelectedCard(isSameCard ? null : card));
   };
 
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: ItemTypes.CARD,
-    item: { id: card.name, card },
+  const [{ isDragging }, drag, preview] = useDrag(() => ({
+    type: DnDItemTypes.CARD,
+    item: { id: id, card },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),
   }));
 
+  React.useEffect(() => {
+    preview(getEmptyImage(), { captureDraggingState: true });
+  }, [preview]);
+
   return drag(
     <div>
       <Box
         sx={{
-          opacity: isDragging ? 0.5 : 1,
+          opacity: isDragging ? 0.0 : 1,
           cursor: "grab",
+          ...rest.sx,
         }}
       >
         <Image

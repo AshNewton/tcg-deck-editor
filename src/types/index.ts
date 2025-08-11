@@ -245,7 +245,8 @@ export type Menu =
   | "Starting Hand"
   | "Deck Search"
   | "Color Breakdown"
-  | "Deck Organizer";
+  | "Deck Organizer"
+  | "Play Simulator";
 
 export interface Card {
   name: string;

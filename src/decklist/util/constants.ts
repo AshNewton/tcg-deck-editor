@@ -8,6 +8,8 @@ import yugiohIcon from "../../icons/ygo.png";
 
 export const SUPPORTED_GAMES = [YUGIOH_NAME, MTG_NAME, POKEMON_NAME];
 
+export const DnDItemTypes = { CARD: "CARD" };
+
 export const GAME_ICONS: Record<string, string> = {
   "Magic the Gathering": mtgIcon,
   "Pokemon TCG": pokemonIcon,

@@ -4,6 +4,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 
 import Button from "./mui/Button";
 import CardGroup from "./CardGroup";
+import CustomDragLayer from "./dnd/CustomDragLayer";
 import DisplayCard from "./mui/DisplayCard";
 
 import Box from "@mui/material/Box";
@@ -143,6 +144,7 @@ const DeckOrganizer = () => {
           </Masonry>
         </Box>
       </DisplayCard>
+      <CustomDragLayer />
     </DndProvider>
   );
 };

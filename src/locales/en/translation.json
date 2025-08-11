@@ -29,6 +29,7 @@
     "colorBreakdown": "Color Breakdown",
     "deckOrganizer": "Deck Organize",
     "deckSearch": "Deck Search",
+    "playSimulator": "Play Simulator",
     "startingHand": "Starting Hand"
   },
   "mtg": {
@@ -73,6 +74,13 @@
     "scryfall": "Scryfall",
     "sorceries": "Sorceries",
     "tribe": "Tribe"
+  },
+  "playtest": {
+    "discard": "Discard",
+    "drawCard": "Draw Card",
+    "exile": "Exile",
+    "playArea": "Play Area",
+    "shuffle": "Shuffle"
   },
   "pokemon": {
     "attack": "{{cost}} {{name}} {{damage}}",

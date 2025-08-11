@@ -4,21 +4,24 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTranslation } from "react-i18next";
 
-import CardDetailsImage, { ItemTypes } from "./CardDetailsImage";
+import CardDetailsImage from "./CardDetailsImage";
 import DisplayCard from "./mui/DisplayCard";
+
 import Text from "./mui/Text";
 
 import Box from "@mui/material/Box";
 import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import TextField from "@mui/material/TextField";
 
-import { Card, Deck } from "../../types";
-import { useWindowWidth } from "../util/util";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import { getDeckSize } from "../util/deckAnalytics";
+import { useWindowWidth } from "../util/util";
+
+import { Card, Deck } from "../../types";
+import { DnDItemTypes } from "../util/constants";
 
 type Props = {
   id: string;
@@ -70,7 +73,7 @@ const CardGroup = (props: Props) => {
   };
 
   const [, drop] = useDrop(() => ({
-    accept: ItemTypes.CARD,
+    accept: DnDItemTypes.CARD,
     drop: (item: { card: Card }) => onDrop(item.card, id),
   }));
 
@@ -146,7 +149,7 @@ const CardGroup = (props: Props) => {
                   zIndex: index,
                 }}
               >
-                <CardDetailsImage card={card} />
+                <CardDetailsImage card={card} id={card.name} />
               </Box>
             ))}
         </Box>
