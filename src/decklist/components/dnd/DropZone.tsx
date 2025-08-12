@@ -21,7 +21,7 @@ type DropZoneProps = {
   width?: number;
   height?: number;
   isVisibleAfterDrop?: boolean;
-  children: any;
+  children?: any;
   [key: string]: any;
 };
 

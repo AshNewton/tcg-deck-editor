@@ -80,6 +80,11 @@
     "drawCard": "Draw Card",
     "exile": "Exile",
     "playArea": "Play Area",
+    "returnToBottomDeck": "Return to Bottom of the Deck",
+    "returnToDeck": "Return to Deck and Shuffle",
+    "returnToExtra": "Return to Extra Deck",
+    "returnToTopDeck": "Return to Top of the Deck",
+
     "shuffle": "Shuffle"
   },
   "pokemon": {

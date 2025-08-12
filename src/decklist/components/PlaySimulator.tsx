@@ -43,6 +43,8 @@ const PlayTable = () => {
 
   const { t } = useTranslation();
 
+  console.log("deck:", deck);
+
   const drawCard = () => {
     if (deck.length === 0) return;
     const card = deck[0];
@@ -61,6 +63,42 @@ const PlayTable = () => {
   const shuffle = () => {
     if (deck.length === 0) return;
     setDeck(shuffleDeck(deck));
+  };
+
+  const moveToExtra = (cardId: string) => {
+    setTableCards((prevTableCards) => {
+      const card = prevTableCards.find((c) => c.id === cardId);
+      if (!card) return prevTableCards;
+      setExtra((prevExtra) => [card.card, ...prevExtra]);
+      return prevTableCards.filter((c) => c.id !== cardId);
+    });
+  };
+
+  const moveToDeck = (cardId: string) => {
+    setTableCards((prevTableCards) => {
+      const card = prevTableCards.find((c) => c.id === cardId);
+      if (!card) return prevTableCards;
+      setDeck((prevDeck) => shuffleDeck([card.card, ...prevDeck]));
+      return prevTableCards.filter((c) => c.id !== cardId);
+    });
+  };
+
+  const moveToTopDeck = (cardId: string) => {
+    setTableCards((prevTableCards) => {
+      const card = prevTableCards.find((c) => c.id === cardId);
+      if (!card) return prevTableCards;
+      setDeck((prevDeck) => [card.card, ...prevDeck]);
+      return prevTableCards.filter((c) => c.id !== cardId);
+    });
+  };
+
+  const moveToBottomDeck = (cardId: string) => {
+    setTableCards((prevTableCards) => {
+      const card = prevTableCards.find((c) => c.id === cardId);
+      if (!card) return prevTableCards;
+      setDeck((prevDeck) => [...prevDeck, card.card]);
+      return prevTableCards.filter((c) => c.id !== cardId);
+    });
   };
 
   const moveToDiscard = (cardId: string) => {
@@ -98,45 +136,73 @@ const PlayTable = () => {
         </Box>
       )}
 
-      {/* Table area */}
-      <DisplayCard
-        sx={{
-          m: 2,
-          position: "relative",
-          height: "1000%",
-          border: "2px solid #444",
-          overflow: "hidden",
-        }}
-      >
-        <DropZone
-          label={t("playtest.playArea")}
-          onDropCard={moveCard}
-          isVisibleAfterDrop
+      <Box sx={{ display: "flex", flexDirection: "column", flex: 1, mx: 2 }}>
+        {/* Table area */}
+        <DisplayCard
           sx={{
-            flex: 1,
-            height: "100%",
-            width: "100%",
+            m: 2,
             position: "relative",
+            height: "1000%",
+            border: "2px solid #444",
             overflow: "hidden",
-            minHeight: "600px",
           }}
         >
-          {tableCards.map((card) => (
-            <CardDetailsImage
-              key={card.id}
-              id={card.id}
-              card={card.card}
-              sx={{
-                width: 140,
-                cursor: "grab",
-                top: card.y,
-                left: card.x - 70,
-                position: "absolute",
-              }}
-            />
-          ))}
-        </DropZone>
-      </DisplayCard>
+          <DropZone
+            label={t("playtest.playArea")}
+            onDropCard={moveCard}
+            isVisibleAfterDrop
+            sx={{
+              flex: 1,
+              height: "100%",
+              width: "100%",
+              position: "relative",
+              overflow: "hidden",
+              minHeight: "600px",
+            }}
+          >
+            {tableCards.map((card) => (
+              <CardDetailsImage
+                key={card.id}
+                id={card.id}
+                card={card.card}
+                sx={{
+                  width: 140,
+                  cursor: "grab",
+                  top: card.y,
+                  left: card.x - 70,
+                  position: "absolute",
+                }}
+              />
+            ))}
+          </DropZone>
+        </DisplayCard>
+
+        {/* Bar under play area */}
+        <Box sx={{ display: "flex", flexDirection: "row", gap: 2, m: 2 }}>
+          {isYugioh(game) && (
+            <DropZone
+              label={t("playtest.returnToExtra")}
+              onDropCard={moveToExtra}
+              sx={{ height: 100 }}
+            ></DropZone>
+          )}
+          <DropZone
+            label={t("playtest.returnToDeck")}
+            onDropCard={moveToDeck}
+            sx={{ height: 100 }}
+          ></DropZone>
+          <DropZone
+            label={t("playtest.returnToTopDeck")}
+            onDropCard={moveToTopDeck}
+            sx={{ height: 100 }}
+          ></DropZone>
+          <DropZone
+            label={t("playtest.returnToBottomDeck")}
+            onDropCard={moveToBottomDeck}
+            sx={{ height: 100 }}
+          ></DropZone>
+        </Box>
+      </Box>
 
       {/* Right sidebar */}
       <Box sx={{ display: "flex", flexDirection: "column", mt: 2 }}>
