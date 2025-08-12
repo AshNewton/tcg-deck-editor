@@ -1,6 +1,7 @@
 import React from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
 
 import Button from "./mui/Button";
@@ -11,14 +12,15 @@ import DropZone from "./dnd/DropZone";
 import Text from "./mui/Text";
 
 import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import ReplayIcon from "@mui/icons-material/Replay";
 
 import { isYugioh } from "../util/util";
 import { shuffleDeck } from "../util/deckAnalytics";
 import { useAppSelector } from "../../hooks";
 
-import { Deck } from "../../types";
 import { CardOnBoard } from "./dnd/DropZone";
-import { useTranslation } from "react-i18next";
+import { Deck } from "../../types";
 
 const PlayTable = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
@@ -49,7 +51,29 @@ const PlayTable = () => {
 
   const { t } = useTranslation();
 
-  console.log("deck:", deck);
+  const reset = () => {
+    setDeck(
+      shuffleDeck(
+        maindeck.flatMap((card) =>
+          Array.from({ length: card.copies }, (_) => ({
+            ...card,
+          }))
+        )
+      )
+    );
+    setExtra(
+      shuffleDeck(
+        extradeck.flatMap((card) =>
+          Array.from({ length: card.copies }, (_) => ({
+            ...card,
+          }))
+        )
+      )
+    );
+    setTableCards([]);
+    setDiscardPile([]);
+    setExilePile([]);
+  };
 
   const drawCard = () => {
     if (deck.length === 0) return;
@@ -135,14 +159,65 @@ const PlayTable = () => {
     <Box sx={{ maxWidth: "100%", display: "flex", gap: 2, ml: 2 }}>
       {/* Left sidebar */}
       {isYugioh(game) && (
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+            gap: 2,
+            mt: 2,
+          }}
+        >
+          <DropZone
+            label={t("playtest.returnToExtra")}
+            onDropCard={moveToExtra}
+            sx={{ height: 100 }}
+          ></DropZone>
           <DropZone label={t("yugioh.extraDeck")} onDropCard={moveToDiscard}>
             {t("decklist.cardCount", { count: extra.length })}
           </DropZone>
         </Box>
       )}
 
-      <Box sx={{ display: "flex", flexDirection: "column", flex: 1, mx: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          flex: 1,
+          mx: 2,
+        }}
+      >
+        {/* Bar above play area */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            gap: 2,
+            m: 2,
+            alignItems: "center",
+            justifyContent: "flex-end",
+          }}
+        >
+          <IconButton size="large" onClick={reset}>
+            <ReplayIcon />
+          </IconButton>
+          <DropZone
+            label={t("playtest.returnToDeck")}
+            onDropCard={moveToDeck}
+            sx={{ height: 100 }}
+          ></DropZone>
+          <DropZone
+            label={t("playtest.returnToTopDeck")}
+            onDropCard={moveToTopDeck}
+            sx={{ height: 100 }}
+          ></DropZone>
+          <DropZone
+            label={t("playtest.returnToBottomDeck")}
+            onDropCard={moveToBottomDeck}
+            sx={{ height: 100 }}
+          ></DropZone>
+        </Box>
+
         {/* Table area */}
         <DisplayCard
           sx={{
@@ -182,36 +257,17 @@ const PlayTable = () => {
             ))}
           </DropZone>
         </DisplayCard>
-
-        {/* Bar under play area */}
-        <Box sx={{ display: "flex", flexDirection: "row", gap: 2, m: 2 }}>
-          {isYugioh(game) && (
-            <DropZone
-              label={t("playtest.returnToExtra")}
-              onDropCard={moveToExtra}
-              sx={{ height: 100 }}
-            ></DropZone>
-          )}
-          <DropZone
-            label={t("playtest.returnToDeck")}
-            onDropCard={moveToDeck}
-            sx={{ height: 100 }}
-          ></DropZone>
-          <DropZone
-            label={t("playtest.returnToTopDeck")}
-            onDropCard={moveToTopDeck}
-            sx={{ height: 100 }}
-          ></DropZone>
-          <DropZone
-            label={t("playtest.returnToBottomDeck")}
-            onDropCard={moveToBottomDeck}
-            sx={{ height: 100 }}
-          ></DropZone>
-        </Box>
       </Box>
 
       {/* Right sidebar */}
-      <Box sx={{ display: "flex", flexDirection: "column", mt: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          mt: 2,
+          justifyContent: "flex-end",
+        }}
+      >
         <Button
           text={t("playtest.drawCard")}
           onClick={drawCard}

@@ -14,6 +14,7 @@
     "min": "Min",
     "minusSign": "-",
     "rename": "Rename",
+    "reset": "Reset",
     "save": "Save",
     "search": "Search",
     "slashSeparated": "{{first}} / {{second}}",
