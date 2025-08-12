@@ -21,7 +21,7 @@ import { shuffleDeck } from "../util/deckAnalytics";
 import { useAppSelector } from "../../hooks";
 
 import { CardOnBoard } from "./dnd/DropZone";
-import { Deck } from "../../types";
+import { Card, Deck } from "../../types";
 import { PopoverPosition } from "@mui/material";
 
 type PopoverContent = null | "Extra" | "Discard" | "Exile";
@@ -118,6 +118,51 @@ const PlayTable = () => {
     setTableCards((prev) =>
       prev.map((c) => (c.id === cardId ? { ...c, x, y } : c))
     );
+  };
+
+  const moveCardFromPileToTable = (
+    setPile: React.Dispatch<React.SetStateAction<Array<any>>>,
+    matchFn: (c: any) => boolean,
+    wrapCard?: boolean
+  ) => {
+    setPile((prevPile) => {
+      const cardIndex = prevPile.findIndex(matchFn);
+      if (cardIndex === -1) return prevPile;
+
+      const card = prevPile[cardIndex];
+      const newPile = [...prevPile];
+      newPile.splice(cardIndex, 1);
+
+      setTableCards((prevTable) => [
+        ...prevTable,
+        wrapCard
+          ? {
+              card, // for extra deck cards
+              id: uuidv4(),
+              x: Math.random() * 100 + 50,
+              y: Math.random() * 100,
+            }
+          : {
+              ...card, // for discard/exile cards
+              x: Math.random() * 100 + 50,
+              y: Math.random() * 100,
+            },
+      ]);
+
+      return newPile;
+    });
+  };
+
+  const moveOutOfPile = (item: any) => {
+    if (openPopover === "Extra") {
+      moveCardFromPileToTable(setExtra, (c) => c.name === item.name, true);
+    } else if (openPopover === "Discard") {
+      moveCardFromPileToTable(setDiscardPile, (c) => c.id === item.id);
+    } else if (openPopover === "Exile") {
+      moveCardFromPileToTable(setExilePile, (c) => c.id === item.id);
+    }
+
+    handleClose();
   };
 
   const showPopover = (type: PopoverContent) => (e: React.MouseEvent) => {
@@ -280,10 +325,11 @@ const PlayTable = () => {
             ? exilePile
             : []
         }
-        handleClose={handleClose}
         formatText={
           openPopover === "Extra" ? (c) => c.name : (c) => c.card.name
         }
+        onItemClick={moveOutOfPile}
+        handleClose={handleClose}
         anchorPos={anchorPos}
       />
     </Box>

@@ -11,10 +11,11 @@ type Props = {
   anchorPos: PopoverPosition | null;
   handleClose: () => void;
   formatText: (item: any) => string;
+  onItemClick?: (item: any) => void;
 };
 
 const PopoverList = (props: Props) => {
-  const { list, formatText, anchorPos, handleClose } = props;
+  const { list, formatText, onItemClick, anchorPos, handleClose } = props;
 
   if (!anchorPos) return <></>;
 
@@ -23,7 +24,10 @@ const PopoverList = (props: Props) => {
       <Box sx={{ maxHeight: 300, overflowY: "auto", p: 2, width: 250 }}>
         <List dense>
           {list?.map((item, index) => (
-            <ListItem key={index}>
+            <ListItem
+              key={index}
+              onClick={() => onItemClick && onItemClick(item)}
+            >
               <ListItemText primary={formatText(item)} />
             </ListItem>
           ))}
