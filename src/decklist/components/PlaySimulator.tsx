@@ -26,27 +26,24 @@ import { PopoverPosition } from "@mui/material";
 
 type PopoverContent = null | "Extra" | "Discard" | "Exile";
 
+const createDuplicatesAndShuffle = (source: Deck): Deck =>
+  shuffleDeck(
+    source.flatMap((card) =>
+      Array.from({ length: card.copies }, () => ({ ...card }))
+    )
+  );
+
 const PlayTable = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
   const extradeck = useAppSelector((state) => state.ui.extradeck);
   const game = useAppSelector((state) => state.ui.game);
 
   const [deck, setDeck] = React.useState<Deck>(
-    shuffleDeck(
-      maindeck.flatMap((card) =>
-        Array.from({ length: card.copies }, (_) => ({
-          ...card,
-        }))
-      )
-    )
+    createDuplicatesAndShuffle(maindeck)
   );
 
   const [extra, setExtra] = React.useState(
-    extradeck.flatMap((card) =>
-      Array.from({ length: card.copies }, (_) => ({
-        ...card,
-      }))
-    )
+    createDuplicatesAndShuffle(extradeck)
   );
 
   const [tableCards, setTableCards] = React.useState<Array<CardOnBoard>>([]);
@@ -61,24 +58,8 @@ const PlayTable = () => {
   const { t } = useTranslation();
 
   const reset = () => {
-    setDeck(
-      shuffleDeck(
-        maindeck.flatMap((card) =>
-          Array.from({ length: card.copies }, (_) => ({
-            ...card,
-          }))
-        )
-      )
-    );
-    setExtra(
-      shuffleDeck(
-        extradeck.flatMap((card) =>
-          Array.from({ length: card.copies }, (_) => ({
-            ...card,
-          }))
-        )
-      )
-    );
+    setDeck(createDuplicatesAndShuffle(maindeck));
+    setExtra(createDuplicatesAndShuffle(extradeck));
     setTableCards([]);
     setDiscardPile([]);
     setExilePile([]);
@@ -104,59 +85,34 @@ const PlayTable = () => {
     setDeck(shuffleDeck(deck));
   };
 
-  const moveToExtra = (cardId: string) => {
-    setTableCards((prevTableCards) => {
-      const card = prevTableCards.find((c) => c.id === cardId);
-      if (!card) return prevTableCards;
-      setExtra((prevExtra) => [card.card, ...prevExtra]);
-      return prevTableCards.filter((c) => c.id !== cardId);
+  const moveCardToZone = (cardId: string, addToZone: (card: any) => void) => {
+    setTableCards((prev) => {
+      const cardObj = prev.find((c) => c.id === cardId);
+      if (!cardObj) return prev;
+      addToZone(cardObj);
+      return prev.filter((c) => c.id !== cardId);
     });
   };
 
-  const moveToDeck = (cardId: string) => {
-    setTableCards((prevTableCards) => {
-      const card = prevTableCards.find((c) => c.id === cardId);
-      if (!card) return prevTableCards;
-      setDeck((prevDeck) => shuffleDeck([card.card, ...prevDeck]));
-      return prevTableCards.filter((c) => c.id !== cardId);
-    });
-  };
+  const moveToExtra = (cardId: string) =>
+    moveCardToZone(cardId, (c) => setExtra((prev) => [c.card, ...prev]));
 
-  const moveToTopDeck = (cardId: string) => {
-    setTableCards((prevTableCards) => {
-      const card = prevTableCards.find((c) => c.id === cardId);
-      if (!card) return prevTableCards;
-      setDeck((prevDeck) => [card.card, ...prevDeck]);
-      return prevTableCards.filter((c) => c.id !== cardId);
-    });
-  };
+  const moveToDeck = (cardId: string) =>
+    moveCardToZone(cardId, (c) =>
+      setDeck((prev) => shuffleDeck([c.card, ...prev]))
+    );
 
-  const moveToBottomDeck = (cardId: string) => {
-    setTableCards((prevTableCards) => {
-      const card = prevTableCards.find((c) => c.id === cardId);
-      if (!card) return prevTableCards;
-      setDeck((prevDeck) => [...prevDeck, card.card]);
-      return prevTableCards.filter((c) => c.id !== cardId);
-    });
-  };
+  const moveToTopDeck = (cardId: string) =>
+    moveCardToZone(cardId, (c) => setDeck((prev) => [c.card, ...prev]));
 
-  const moveToDiscard = (cardId: string) => {
-    setTableCards((prevTableCards) => {
-      const card = prevTableCards.find((c) => c.id === cardId);
-      if (!card) return prevTableCards;
-      setDiscardPile((prevDisc) => [card, ...prevDisc]);
-      return prevTableCards.filter((c) => c.id !== cardId);
-    });
-  };
+  const moveToBottomDeck = (cardId: string) =>
+    moveCardToZone(cardId, (c) => setDeck((prev) => [...prev, c.card]));
 
-  const moveToExile = (cardId: string) => {
-    setTableCards((prevTableCards) => {
-      const card = prevTableCards.find((c) => c.id === cardId);
-      if (!card) return prevTableCards;
-      setExilePile((prevExile) => [card, ...prevExile]);
-      return prevTableCards.filter((c) => c.id !== cardId);
-    });
-  };
+  const moveToDiscard = (cardId: string) =>
+    moveCardToZone(cardId, (c) => setDiscardPile((prev) => [c, ...prev]));
+
+  const moveToExile = (cardId: string) =>
+    moveCardToZone(cardId, (c) => setExilePile((prev) => [c, ...prev]));
 
   const moveCard = (cardId: string, x: number, y: number) => {
     setTableCards((prev) =>
@@ -164,28 +120,9 @@ const PlayTable = () => {
     );
   };
 
-  const showExtraCards = (e: React.MouseEvent) => {
-    setOpenPopover("Extra");
-    setAnchorPos({
-      top: e.clientY,
-      left: e.clientX,
-    });
-  };
-
-  const showDiscardCards = (e: React.MouseEvent) => {
-    setOpenPopover("Discard");
-    setAnchorPos({
-      top: e.clientY,
-      left: e.clientX,
-    });
-  };
-
-  const showExileCards = (e: React.MouseEvent) => {
-    setOpenPopover("Exile");
-    setAnchorPos({
-      top: e.clientY,
-      left: e.clientX,
-    });
+  const showPopover = (type: PopoverContent) => (e: React.MouseEvent) => {
+    setOpenPopover(type);
+    setAnchorPos({ top: e.clientY, left: e.clientX });
   };
 
   const handleClose = () => {
@@ -207,14 +144,9 @@ const PlayTable = () => {
           }}
         >
           <DropZone
-            label={t("playtest.returnToExtra")}
-            onDropCard={moveToExtra}
-            sx={{ height: 100 }}
-          ></DropZone>
-          <DropZone
             label={t("yugioh.extraDeck")}
-            onDropCard={moveToDiscard}
-            onclick={showExtraCards}
+            onDropCard={moveToExtra}
+            onclick={showPopover("Extra")}
           >
             {t("decklist.cardCount", { count: extra.length })}
           </DropZone>
@@ -271,7 +203,6 @@ const PlayTable = () => {
           }}
         >
           <DropZone
-            //label={t("playtest.playArea")}
             onDropCard={moveCard}
             isVisibleAfterDrop
             sx={{
@@ -323,7 +254,7 @@ const PlayTable = () => {
         <DropZone
           label={t("playtest.discard")}
           onDropCard={moveToDiscard}
-          onclick={showDiscardCards}
+          onclick={showPopover("Discard")}
           sx={{ mt: 2 }}
         >
           {t("decklist.cardCount", { count: discardPile.length })}
@@ -331,7 +262,7 @@ const PlayTable = () => {
         <DropZone
           label={t("playtest.exile")}
           onDropCard={moveToExile}
-          onclick={showExileCards}
+          onclick={showPopover("Exile")}
           sx={{ mt: 2 }}
         >
           {t("decklist.cardCount", { count: exilePile.length })}
