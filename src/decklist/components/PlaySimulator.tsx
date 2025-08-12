@@ -35,7 +35,13 @@ const PlayTable = () => {
     )
   );
 
-  const [extra, setExtra] = React.useState(extradeck);
+  const [extra, setExtra] = React.useState(
+    extradeck.flatMap((card) =>
+      Array.from({ length: card.copies }, (_) => ({
+        ...card,
+      }))
+    )
+  );
 
   const [tableCards, setTableCards] = React.useState<Array<CardOnBoard>>([]);
   const [discardPile, setDiscardPile] = React.useState<Array<CardOnBoard>>([]);
