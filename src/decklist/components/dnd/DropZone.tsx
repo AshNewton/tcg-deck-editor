@@ -3,7 +3,9 @@ import { useDrop } from "react-dnd";
 
 import Text from "../mui/Text";
 
-import Paper from "@mui/material/Paper";
+import CardActionArea from "@mui/material/CardActionArea";
+import CardContent from "@mui/material/CardContent";
+import MuiCard from "@mui/material/Card";
 
 import { Card } from "../../../types";
 import { DnDItemTypes } from "../../util/constants";
@@ -16,8 +18,9 @@ export type CardOnBoard = {
 };
 
 type DropZoneProps = {
-  label: string;
+  label?: string;
   onDropCard?: (cardId: string, x: number, y: number) => void;
+  onclick?: (e: React.MouseEvent) => void;
   width?: number;
   height?: number;
   isVisibleAfterDrop?: boolean;
@@ -29,6 +32,7 @@ const DropZone = (props: DropZoneProps) => {
   const {
     label,
     onDropCard,
+    onclick,
     width = 140,
     height = 200,
     isVisibleAfterDrop = false,
@@ -59,7 +63,7 @@ const DropZone = (props: DropZoneProps) => {
   drop(ref);
 
   return (
-    <Paper
+    <MuiCard
       ref={ref}
       sx={{
         width,
@@ -68,12 +72,39 @@ const DropZone = (props: DropZoneProps) => {
         border: "2px dashed gray",
         textAlign: "center",
         position: "relative",
+        display: "flex",
+        alignItems: "center",
         ...rest.sx,
       }}
     >
-      <Text text={label} />
-      {children}
-    </Paper>
+      {onclick ? (
+        <CardActionArea
+          sx={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <CardContent
+            onClick={onclick}
+            sx={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {label && <Text text={label} />}
+            {children}
+          </CardContent>
+        </CardActionArea>
+      ) : (
+        <>
+          {label && <Text text={label} />} {children}
+        </>
+      )}
+    </MuiCard>
   );
 };
 

@@ -9,6 +9,7 @@ import CardDetailsImage from "./CardDetailsImage";
 import CustomDragLayer from "./dnd/CustomDragLayer";
 import DisplayCard from "./mui/DisplayCard";
 import DropZone from "./dnd/DropZone";
+import PopoverList from "./mui/PopoverList";
 import Text from "./mui/Text";
 
 import Box from "@mui/material/Box";
@@ -21,6 +22,9 @@ import { useAppSelector } from "../../hooks";
 
 import { CardOnBoard } from "./dnd/DropZone";
 import { Deck } from "../../types";
+import { PopoverPosition } from "@mui/material";
+
+type PopoverContent = null | "Extra" | "Discard" | "Exile";
 
 const PlayTable = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
@@ -48,6 +52,11 @@ const PlayTable = () => {
   const [tableCards, setTableCards] = React.useState<Array<CardOnBoard>>([]);
   const [discardPile, setDiscardPile] = React.useState<Array<CardOnBoard>>([]);
   const [exilePile, setExilePile] = React.useState<Array<CardOnBoard>>([]);
+
+  const [openPopover, setOpenPopover] = React.useState<PopoverContent>(null);
+  const [anchorPos, setAnchorPos] = React.useState<PopoverPosition | null>(
+    null
+  );
 
   const { t } = useTranslation();
 
@@ -155,6 +164,35 @@ const PlayTable = () => {
     );
   };
 
+  const showExtraCards = (e: React.MouseEvent) => {
+    setOpenPopover("Extra");
+    setAnchorPos({
+      top: e.clientY,
+      left: e.clientX,
+    });
+  };
+
+  const showDiscardCards = (e: React.MouseEvent) => {
+    setOpenPopover("Discard");
+    setAnchorPos({
+      top: e.clientY,
+      left: e.clientX,
+    });
+  };
+
+  const showExileCards = (e: React.MouseEvent) => {
+    setOpenPopover("Exile");
+    setAnchorPos({
+      top: e.clientY,
+      left: e.clientX,
+    });
+  };
+
+  const handleClose = () => {
+    setOpenPopover(null);
+    setAnchorPos(null);
+  };
+
   return (
     <Box sx={{ maxWidth: "100%", display: "flex", gap: 2, ml: 2 }}>
       {/* Left sidebar */}
@@ -173,7 +211,11 @@ const PlayTable = () => {
             onDropCard={moveToExtra}
             sx={{ height: 100 }}
           ></DropZone>
-          <DropZone label={t("yugioh.extraDeck")} onDropCard={moveToDiscard}>
+          <DropZone
+            label={t("yugioh.extraDeck")}
+            onDropCard={moveToDiscard}
+            onclick={showExtraCards}
+          >
             {t("decklist.cardCount", { count: extra.length })}
           </DropZone>
         </Box>
@@ -229,7 +271,7 @@ const PlayTable = () => {
           }}
         >
           <DropZone
-            label={t("playtest.playArea")}
+            //label={t("playtest.playArea")}
             onDropCard={moveCard}
             isVisibleAfterDrop
             sx={{
@@ -281,6 +323,7 @@ const PlayTable = () => {
         <DropZone
           label={t("playtest.discard")}
           onDropCard={moveToDiscard}
+          onclick={showDiscardCards}
           sx={{ mt: 2 }}
         >
           {t("decklist.cardCount", { count: discardPile.length })}
@@ -288,11 +331,30 @@ const PlayTable = () => {
         <DropZone
           label={t("playtest.exile")}
           onDropCard={moveToExile}
+          onclick={showExileCards}
           sx={{ mt: 2 }}
         >
           {t("decklist.cardCount", { count: exilePile.length })}
         </DropZone>
       </Box>
+
+      {/* Popover for cards from deck */}
+      <PopoverList
+        list={
+          openPopover === "Extra"
+            ? extra
+            : openPopover === "Discard"
+            ? discardPile
+            : openPopover === "Exile"
+            ? exilePile
+            : []
+        }
+        handleClose={handleClose}
+        formatText={
+          openPopover === "Extra" ? (c) => c.name : (c) => c.card.name
+        }
+        anchorPos={anchorPos}
+      />
     </Box>
   );
 };
