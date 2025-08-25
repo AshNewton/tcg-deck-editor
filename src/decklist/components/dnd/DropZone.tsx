@@ -11,6 +11,7 @@ import { Card } from "../../../types";
 import { DnDItemTypes } from "../../util/constants";
 
 export type CardOnBoard = {
+  rotation: number;
   id: string;
   card: Card;
   x: number;

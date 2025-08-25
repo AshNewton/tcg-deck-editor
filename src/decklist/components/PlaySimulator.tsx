@@ -14,6 +14,8 @@ import Text from "./mui/Text";
 
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import ReplayIcon from "@mui/icons-material/Replay";
 
 import { isYugioh } from "../util/util";
@@ -21,10 +23,16 @@ import { shuffleDeck } from "../util/deckAnalytics";
 import { useAppSelector } from "../../hooks";
 
 import { CardOnBoard } from "./dnd/DropZone";
-import { Card, Deck } from "../../types";
+import { Deck } from "../../types";
 import { PopoverPosition } from "@mui/material";
 
 type PopoverContent = null | "Extra" | "Discard" | "Exile";
+
+type RightClickContent = {
+  mouseX: number;
+  mouseY: number;
+  cardId: string | null;
+};
 
 const createDuplicatesAndShuffle = (source: Deck): Deck =>
   shuffleDeck(
@@ -38,22 +46,28 @@ const PlayTable = () => {
   const extradeck = useAppSelector((state) => state.ui.extradeck);
   const game = useAppSelector((state) => state.ui.game);
 
+  // the deck(s) we're playing the game with
   const [deck, setDeck] = React.useState<Deck>(
     createDuplicatesAndShuffle(maindeck)
   );
-
   const [extra, setExtra] = React.useState(
     createDuplicatesAndShuffle(extradeck)
   );
 
+  // areas cards can be when not in the deck
   const [tableCards, setTableCards] = React.useState<Array<CardOnBoard>>([]);
   const [discardPile, setDiscardPile] = React.useState<Array<CardOnBoard>>([]);
   const [exilePile, setExilePile] = React.useState<Array<CardOnBoard>>([]);
 
+  // for menu to take cards out of a pile and onto the table
   const [openPopover, setOpenPopover] = React.useState<PopoverContent>(null);
   const [anchorPos, setAnchorPos] = React.useState<PopoverPosition | null>(
     null
   );
+
+  // for right-click menu
+  const [contextMenu, setContextMenu] =
+    React.useState<RightClickContent | null>(null);
 
   const { t } = useTranslation();
 
@@ -76,6 +90,7 @@ const PlayTable = () => {
         card,
         x: Math.random() * 100 + 50,
         y: Math.random() * 100,
+        rotation: 0,
       },
     ]);
   };
@@ -175,6 +190,29 @@ const PlayTable = () => {
     setAnchorPos(null);
   };
 
+  const handleContextMenu = (event: React.MouseEvent, cardId: string) => {
+    event.preventDefault(); // stop default browser menu
+    setContextMenu(
+      contextMenu === null
+        ? { mouseX: event.clientX - 2, mouseY: event.clientY - 4, cardId }
+        : null
+    );
+  };
+
+  const handleCloseContextMenu = () => {
+    setContextMenu(null);
+  };
+
+  const rotateCard = (cardId: string, amount: number = 90) => {
+    setTableCards((prev) =>
+      prev.map((c) =>
+        c.id === cardId
+          ? { ...c, rotation: ((c.rotation ?? 0) + amount) % 360 }
+          : c
+      )
+    );
+  };
+
   return (
     <Box sx={{ maxWidth: "100%", display: "flex", gap: 2, ml: 2 }}>
       {/* Left sidebar */}
@@ -217,9 +255,6 @@ const PlayTable = () => {
             justifyContent: "flex-end",
           }}
         >
-          <IconButton size="large" onClick={reset}>
-            <ReplayIcon />
-          </IconButton>
           <DropZone
             label={t("playtest.returnToDeck")}
             onDropCard={moveToDeck}
@@ -235,6 +270,9 @@ const PlayTable = () => {
             onDropCard={moveToBottomDeck}
             sx={{ height: 100 }}
           ></DropZone>
+          <IconButton size="large" onClick={reset}>
+            <ReplayIcon />
+          </IconButton>
         </Box>
 
         {/* Table area */}
@@ -242,7 +280,6 @@ const PlayTable = () => {
           sx={{
             m: 2,
             position: "relative",
-            height: "1000%",
             border: "2px solid #444",
             overflow: "hidden",
           }}
@@ -256,7 +293,7 @@ const PlayTable = () => {
               width: "100%",
               position: "relative",
               overflow: "hidden",
-              minHeight: "600px",
+              minHeight: "700px",
             }}
           >
             {tableCards.map((card) => (
@@ -270,7 +307,13 @@ const PlayTable = () => {
                   top: card.y,
                   left: card.x - 70,
                   position: "absolute",
+                  transform: `rotate(${card.rotation ?? 0}deg)`,
+                  transformOrigin: "center center",
+                  transition: "transform 0.2s ease",
                 }}
+                onContextMenu={(e: React.MouseEvent) =>
+                  handleContextMenu(e, card.id)
+                }
               />
             ))}
           </DropZone>
@@ -332,6 +375,35 @@ const PlayTable = () => {
         handleClose={handleClose}
         anchorPos={anchorPos}
       />
+
+      {/* Right-click menu */}
+      <Menu
+        open={contextMenu !== null}
+        onClose={handleCloseContextMenu}
+        anchorReference="anchorPosition"
+        anchorPosition={
+          contextMenu !== null
+            ? { top: contextMenu.mouseY, left: contextMenu.mouseX }
+            : undefined
+        }
+      >
+        <MenuItem
+          onClick={() => {
+            if (contextMenu?.cardId) rotateCard(contextMenu.cardId, 90);
+            handleCloseContextMenu();
+          }}
+        >
+          Rotate 90° Right
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            if (contextMenu?.cardId) rotateCard(contextMenu.cardId, -90);
+            handleCloseContextMenu();
+          }}
+        >
+          Rotate 90° Left
+        </MenuItem>
+      </Menu>
     </Box>
   );
 };

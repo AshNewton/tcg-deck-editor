@@ -52,6 +52,7 @@ const CardDetailsImage = (props: Props) => {
           cursor: "grab",
           ...rest.sx,
         }}
+        {...rest}
       >
         <Image
           src={getCardImage(card.name, [card], game) || ""}
