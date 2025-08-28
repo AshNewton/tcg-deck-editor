@@ -7,7 +7,11 @@ import Grid from "@mui/material/Grid";
 
 import { useMediaQuery, useTheme } from "@mui/material";
 
+import { useAppSelector } from "../hooks";
+
 const Decklist = () => {
+  const menu = useAppSelector((state) => state.ui.menu);
+
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -29,7 +33,7 @@ const Decklist = () => {
             flexDirection: "column",
           }}
         >
-          <Sidebar />
+          {menu !== "Play Simulator" && <Sidebar />}
           <Box pr={4}>
             <Body />
           </Box>
@@ -56,29 +60,41 @@ const Decklist = () => {
           overflow: "hidden",
         }}
       >
-        <Grid
-          item
-          md={3}
-          sx={{
-            overflowY: "auto",
-            maxHeight: "100%",
-            minHeight: 0,
-          }}
-        >
-          <Sidebar />
-        </Grid>
-        <Grid
-          item
-          md={9}
-          sx={{
-            overflowY: "auto",
-            maxHeight: "100%",
-            minHeight: 0,
-            pr: 4,
-          }}
-        >
-          <Body />
-        </Grid>
+        {menu !== "Play Simulator" ?
+          <>
+            <Grid
+              item
+              md={3}
+              sx={{
+                overflowY: "auto",
+                maxHeight: "100%",
+                minHeight: 0,
+              }}
+            >
+              <Sidebar />
+            </Grid>
+            <Grid
+              item
+              md={9}
+              sx={{
+                overflowY: "auto",
+                maxHeight: "100%",
+                minHeight: 0,
+                pr: 4,
+              }}
+            >
+              <Body />
+            </Grid>
+          </> :
+          <Box 
+            display='flex'
+            justifyContent='center'
+            width='100%'
+            >
+            <Body />
+          </Box>
+        }
+
       </Grid>
     </Box>
   );

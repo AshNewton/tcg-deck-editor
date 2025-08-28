@@ -296,6 +296,7 @@ const PlayTable = () => {
               position: "relative",
               overflow: "hidden",
               minHeight: "700px",
+              minWidth: "1240px",
             }}
           >
             {tableCards.map((card) => (
