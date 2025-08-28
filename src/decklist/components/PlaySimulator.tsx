@@ -26,7 +26,7 @@ import { CardOnBoard } from "./dnd/DropZone";
 import { Deck } from "../../types";
 import { PopoverPosition } from "@mui/material";
 
-type PopoverContent = null | "Extra" | "Discard" | "Exile";
+type PopoverContent = null | "Deck" | "Extra" | "Discard" | "Exile";
 
 type RightClickContent = {
   mouseX: number;
@@ -152,16 +152,16 @@ const PlayTable = () => {
         ...prevTable,
         wrapCard
           ? {
-              card, // for extra deck cards
-              id: uuidv4(),
-              x: Math.random() * 100 + 50,
-              y: Math.random() * 100,
-            }
+            card, // for cards from a deck
+            id: uuidv4(),
+            x: Math.random() * 100 + 50,
+            y: Math.random() * 100,
+          }
           : {
-              ...card, // for discard/exile cards
-              x: Math.random() * 100 + 50,
-              y: Math.random() * 100,
-            },
+            ...card, // for discard/exile cards
+            x: Math.random() * 100 + 50,
+            y: Math.random() * 100,
+          },
       ]);
 
       return newPile;
@@ -169,7 +169,9 @@ const PlayTable = () => {
   };
 
   const moveOutOfPile = (item: any) => {
-    if (openPopover === "Extra") {
+    if (openPopover === "Deck") {
+      moveCardFromPileToTable(setDeck, (c) => c.name === item.name, true);
+    } else if (openPopover === "Extra") {
       moveCardFromPileToTable(setExtra, (c) => c.name === item.name, true);
     } else if (openPopover === "Discard") {
       moveCardFromPileToTable(setDiscardPile, (c) => c.id === item.id);
@@ -336,8 +338,14 @@ const PlayTable = () => {
         />
         <Button text={t("playtest.shuffle")} onClick={shuffle} sx={{ mt: 2 }} />
 
-        <Text text={t("common.deck")} mt={2} />
-        <Text text={t("decklist.cardCount", { count: deck.length })} />
+        <DropZone
+          label={t("common.deck")}
+          onDropCard={moveToTopDeck}
+          onclick={showPopover("Deck")}
+          sx={{ mt: 2 }}
+        >
+          {t("decklist.cardCount", { count: deck.length })}
+        </DropZone>
 
         <DropZone
           label={t("playtest.discard")}
@@ -360,16 +368,18 @@ const PlayTable = () => {
       {/* Popover for cards from deck */}
       <PopoverList
         list={
-          openPopover === "Extra"
-            ? extra
-            : openPopover === "Discard"
-            ? discardPile
-            : openPopover === "Exile"
-            ? exilePile
-            : []
+          openPopover === "Deck"
+            ? deck
+            : openPopover === "Extra"
+              ? extra
+              : openPopover === "Discard"
+                ? discardPile
+                : openPopover === "Exile"
+                  ? exilePile
+                  : []
         }
         formatText={
-          openPopover === "Extra" ? (c) => c.name : (c) => c.card.name
+          openPopover === "Deck" || openPopover === "Extra" ? (c) => c.name : (c) => c.card.name
         }
         onItemClick={moveOutOfPile}
         handleClose={handleClose}
