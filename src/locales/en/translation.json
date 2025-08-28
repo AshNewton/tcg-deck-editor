@@ -85,7 +85,8 @@
     "returnToDeck": "Return to Deck and Shuffle",
     "returnToExtra": "Return to Extra Deck",
     "returnToTopDeck": "Return to Top of the Deck",
-
+    "rotateLeft": "Rotate 90° Left",
+    "rotateRight": "Rotate 90° Right",
     "shuffle": "Shuffle"
   },
   "pokemon": {

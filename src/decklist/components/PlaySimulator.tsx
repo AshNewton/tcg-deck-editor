@@ -24,7 +24,7 @@ import { useAppSelector } from "../../hooks";
 
 import { CardOnBoard } from "./dnd/DropZone";
 import { Deck } from "../../types";
-import { PopoverPosition } from "@mui/material";
+import { Divider, PopoverPosition } from "@mui/material";
 
 type PopoverContent = null | "Deck" | "Extra" | "Discard" | "Exile";
 
@@ -216,7 +216,7 @@ const PlayTable = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: "100%", display: "flex", gap: 2, ml: 2 }}>
+    <Box sx={{ maxWidth: "100%", display: "flex", gap: 2, ml: 2, alignItems: "center" }}>
       {/* Left sidebar */}
       {isYugioh(game) && (
         <Box
@@ -246,37 +246,6 @@ const PlayTable = () => {
           mx: 2,
         }}
       >
-        {/* Bar above play area */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            gap: 2,
-            m: 2,
-            alignItems: "center",
-            justifyContent: "flex-end",
-          }}
-        >
-          <DropZone
-            label={t("playtest.returnToDeck")}
-            onDropCard={moveToDeck}
-            sx={{ height: 100 }}
-          ></DropZone>
-          <DropZone
-            label={t("playtest.returnToTopDeck")}
-            onDropCard={moveToTopDeck}
-            sx={{ height: 100 }}
-          ></DropZone>
-          <DropZone
-            label={t("playtest.returnToBottomDeck")}
-            onDropCard={moveToBottomDeck}
-            sx={{ height: 100 }}
-          ></DropZone>
-          <IconButton size="large" onClick={reset}>
-            <ReplayIcon />
-          </IconButton>
-        </Box>
-
         {/* Table area */}
         <DisplayCard
           sx={{
@@ -332,6 +301,9 @@ const PlayTable = () => {
           justifyContent: "flex-end",
         }}
       >
+        <IconButton size="large" onClick={reset}>
+          <ReplayIcon />
+        </IconButton>
         <Button
           text={t("playtest.drawCard")}
           onClick={drawCard}
@@ -404,7 +376,7 @@ const PlayTable = () => {
             handleCloseContextMenu();
           }}
         >
-          Rotate 90° Right
+          {t("playtest.rotateRight")}
         </MenuItem>
         <MenuItem
           onClick={() => {
@@ -412,7 +384,26 @@ const PlayTable = () => {
             handleCloseContextMenu();
           }}
         >
-          Rotate 90° Left
+          {t("playtest.rotateLeft")}
+        </MenuItem>
+        <Divider />
+        <MenuItem onClick={() => {
+          if (contextMenu?.cardId) moveToDeck(contextMenu.cardId);
+          handleCloseContextMenu();
+        }}>
+          {t("playtest.returnToDeck")}
+        </MenuItem>
+        <MenuItem onClick={() => {
+          if (contextMenu?.cardId) moveToTopDeck(contextMenu.cardId);
+          handleCloseContextMenu();
+        }}>
+          {t("playtest.returnToTopDeck")}
+        </MenuItem>
+        <MenuItem onClick={() => {
+          if (contextMenu?.cardId) moveToBottomDeck(contextMenu.cardId);
+          handleCloseContextMenu();
+        }}>
+          {t("playtest.returnToBottomDeck")}
         </MenuItem>
       </Menu>
     </Box>
