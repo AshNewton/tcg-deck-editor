@@ -9,6 +9,7 @@ import MuiCard from "@mui/material/Card";
 
 import { Card } from "../../../types";
 import { DnDItemTypes } from "../../util/constants";
+import { DraggableZone } from "../CardDetailsImage";
 
 export type CardOnBoard = {
   rotation: number;
@@ -20,7 +21,7 @@ export type CardOnBoard = {
 
 type DropZoneProps = {
   label?: string;
-  onDropCard?: (cardId: string, x: number, y: number) => void;
+  onDropCard?: (cardId: string, x: number, y: number, sourceZone: DraggableZone) => void;
   onclick?: (e: React.MouseEvent) => void;
   width?: number;
   height?: number;
@@ -45,7 +46,7 @@ const DropZone = (props: DropZoneProps) => {
 
   const [, drop] = useDrop(() => ({
     accept: DnDItemTypes.CARD,
-    drop: (item: CardOnBoard, monitor) => {
+    drop: (item: CardOnBoard & { sourceZone: DraggableZone }, monitor) => {
       if (!onDropCard || !ref.current) return;
       const clientOffset = monitor.getClientOffset();
       if (!clientOffset) return;
@@ -54,9 +55,9 @@ const DropZone = (props: DropZoneProps) => {
         const rect = ref.current.getBoundingClientRect();
         const x = clientOffset.x - rect.left;
         const y = clientOffset.y - rect.top;
-        onDropCard(item.id, x, y);
+        onDropCard(item.id, x, y, item.sourceZone);
       } else {
-        onDropCard(item.id, 0, 0);
+        onDropCard(item.id, 0, 0, item.sourceZone);
       }
     },
   }));

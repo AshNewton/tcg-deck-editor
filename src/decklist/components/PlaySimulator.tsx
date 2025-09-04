@@ -5,12 +5,11 @@ import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
 
 import Button from "./mui/Button";
-import CardDetailsImage from "./CardDetailsImage";
+import CardDetailsImage, { DraggableZone } from "./CardDetailsImage";
 import CustomDragLayer from "./dnd/CustomDragLayer";
 import DisplayCard from "./mui/DisplayCard";
 import DropZone from "./dnd/DropZone";
 import PopoverList from "./mui/PopoverList";
-import Text from "./mui/Text";
 
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
@@ -55,6 +54,7 @@ const PlayTable = () => {
   );
 
   // areas cards can be when not in the deck
+  const [hand, setHand] = React.useState<Array<CardOnBoard>>([]);
   const [tableCards, setTableCards] = React.useState<Array<CardOnBoard>>([]);
   const [discardPile, setDiscardPile] = React.useState<Array<CardOnBoard>>([]);
   const [exilePile, setExilePile] = React.useState<Array<CardOnBoard>>([]);
@@ -79,17 +79,17 @@ const PlayTable = () => {
     setExilePile([]);
   };
 
-  const drawCard = () => {
+  const drawCardToHand = () => {
     if (deck.length === 0) return;
     const card = deck[0];
     setDeck(deck.slice(1));
-    setTableCards((prev) => [
+    setHand((prev) => [
       ...prev,
       {
         id: uuidv4(),
         card,
-        x: Math.random() * 100 + 50,
-        y: Math.random() * 100,
+        x: Math.random() * 200 + 50,
+        y: 0,
         rotation: 0,
       },
     ]);
@@ -129,11 +129,22 @@ const PlayTable = () => {
   const moveToExile = (cardId: string) =>
     moveCardToZone(cardId, (c) => setExilePile((prev) => [c, ...prev]));
 
-  const moveCard = (cardId: string, x: number, y: number) => {
-    setTableCards((prev) =>
-      prev.map((c) => (c.id === cardId ? { ...c, x, y } : c))
-    );
+  const moveCardFromHandToPile = (cardId: string, targetPile: "discard" | "exile" | "deck") => {
+    setHand(prev => {
+      const index = prev.findIndex(c => c.id === cardId);
+      if (index === -1) return prev;
+      const cardObj = prev[index];
+      const newHand = [...prev];
+      newHand.splice(index, 1);
+
+      if (targetPile === "discard") setDiscardPile(prev => [cardObj, ...prev]);
+      else if (targetPile === "deck") setDeck(prev => [cardObj.card, ...prev]);
+      else setExilePile(prev => [cardObj, ...prev]);
+
+      return newHand;
+    });
   };
+
 
   const moveCardFromPileToTable = (
     setPile: React.Dispatch<React.SetStateAction<Array<any>>>,
@@ -166,6 +177,39 @@ const PlayTable = () => {
 
       return newPile;
     });
+  };
+
+  const moveCardBetweenZones = (
+    cardId: string,
+    source: DraggableZone,
+    target: DraggableZone,
+    newX: number,
+    newY: number
+  ) => {
+    let cardObj: CardOnBoard | undefined;
+
+    // Remove from source
+    const removeFrom = (setter: typeof setTableCards | typeof setHand) => {
+      setter((prev) => {
+        const index = prev.findIndex((c) => c.id === cardId);
+        if (index === -1) return prev;
+        cardObj = prev[index];
+        const newArr = [...prev];
+        newArr.splice(index, 1);
+        return newArr;
+      });
+    };
+
+    if (source === "table") removeFrom(setTableCards);
+    else removeFrom(setHand);
+
+    if (!cardObj) return;
+
+    const updatedCard = { ...cardObj, x: newX, y: newY };
+
+    // Add to target
+    if (target === "table") setTableCards((prev) => [...prev, updatedCard]);
+    else setHand((prev) => [...prev, updatedCard]);
   };
 
   const moveOutOfPile = (item: any) => {
@@ -256,7 +300,7 @@ const PlayTable = () => {
           }}
         >
           <DropZone
-            onDropCard={moveCard}
+            onDropCard={(cardId: string, x: number, y: number, from: DraggableZone) => moveCardBetweenZones(cardId, from, "table", x, y)}
             isVisibleAfterDrop
             sx={{
               flex: 1,
@@ -286,6 +330,48 @@ const PlayTable = () => {
                 onContextMenu={(e: React.MouseEvent) =>
                   handleContextMenu(e, card.id)
                 }
+                draggableZone="table"
+              />
+            ))}
+          </DropZone>
+        </DisplayCard>
+
+        {/* Hand */}
+        <DisplayCard
+          sx={{
+            m: 2,
+            position: "relative",
+            border: "2px solid #888",
+            overflow: "hidden",
+          }}
+        >
+          <DropZone
+            onDropCard={(cardId: string, x: number, y: number, from: DraggableZone) => moveCardBetweenZones(cardId, from, "hand", x, y)}
+            isVisibleAfterDrop
+            sx={{
+              minHeight: 180,
+              width: '100%',
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            {hand.map((card) => (
+              <CardDetailsImage
+                key={card.id}
+                id={card.id}
+                card={card.card}
+                sx={{
+                  width: 140,
+                  cursor: "grab",
+                  position: "absolute",
+
+                  top: card.y,
+                  left: card.x,
+                }}
+                onContextMenu={(e: React.MouseEvent) =>
+                  handleContextMenu(e, card.id)
+                }
+                draggableZone="hand"
               />
             ))}
           </DropZone>
@@ -306,14 +392,17 @@ const PlayTable = () => {
         </IconButton>
         <Button
           text={t("playtest.drawCard")}
-          onClick={drawCard}
+          onClick={drawCardToHand}
           sx={{ mt: 2 }}
         />
         <Button text={t("playtest.shuffle")} onClick={shuffle} sx={{ mt: 2 }} />
 
         <DropZone
           label={t("common.deck")}
-          onDropCard={moveToTopDeck}
+          onDropCard={(cardId, _x, _y, from) => {
+            if (from === "hand") moveCardFromHandToPile(cardId, "deck");
+            else moveToTopDeck(cardId);
+          }}
           onclick={showPopover("Deck")}
           sx={{ mt: 2 }}
         >
@@ -322,7 +411,10 @@ const PlayTable = () => {
 
         <DropZone
           label={t("playtest.discard")}
-          onDropCard={moveToDiscard}
+          onDropCard={(cardId, _x, _y, from) => {
+            if (from === "hand") moveCardFromHandToPile(cardId, "discard");
+            else moveToDiscard(cardId);
+          }}
           onclick={showPopover("Discard")}
           sx={{ mt: 2 }}
         >
@@ -330,7 +422,10 @@ const PlayTable = () => {
         </DropZone>
         <DropZone
           label={t("playtest.exile")}
-          onDropCard={moveToExile}
+          onDropCard={(cardId, _x, _y, from) => {
+            if (from === "hand") moveCardFromHandToPile(cardId, "exile");
+            else moveToExile(cardId);
+          }}
           onclick={showPopover("Exile")}
           sx={{ mt: 2 }}
         >

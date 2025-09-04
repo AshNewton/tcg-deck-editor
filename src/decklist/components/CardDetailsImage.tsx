@@ -13,14 +13,17 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import { Card } from "../../types";
 import { DnDItemTypes } from "../util/constants";
 
+export type DraggableZone = "hand" | "table";
+
 type Props = {
   id: string;
   card: Card;
+  draggableZone?: DraggableZone
   [key: string]: any;
 };
 
 const CardDetailsImage = (props: Props) => {
-  const { card, id, ...rest } = props;
+  const { card, id, draggableZone, ...rest } = props;
 
   const game = useAppSelector((state) => state.ui.game);
   const selectedCard = useAppSelector((state) => state.ui.selectedCard);
@@ -34,7 +37,7 @@ const CardDetailsImage = (props: Props) => {
 
   const [{ isDragging }, drag, preview] = useDrag(() => ({
     type: DnDItemTypes.CARD,
-    item: { id: id, card },
+    item: { id: id, card, sourceZone: draggableZone },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),
