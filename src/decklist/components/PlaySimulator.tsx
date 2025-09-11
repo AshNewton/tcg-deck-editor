@@ -31,7 +31,9 @@ type RightClickContent = {
   mouseX: number;
   mouseY: number;
   cardId: string | null;
+  zone: "hand" | "table";
 };
+
 
 const createDuplicatesAndShuffle = (source: Deck): Deck =>
   shuffleDeck(
@@ -236,14 +238,15 @@ const PlayTable = () => {
     setAnchorPos(null);
   };
 
-  const handleContextMenu = (event: React.MouseEvent, cardId: string) => {
-    event.preventDefault(); // stop default browser menu
+  const handleContextMenu = (event: React.MouseEvent, cardId: string, zone: "hand" | "table") => {
+    event.preventDefault();
     setContextMenu(
       contextMenu === null
-        ? { mouseX: event.clientX - 2, mouseY: event.clientY - 4, cardId }
+        ? { mouseX: event.clientX - 2, mouseY: event.clientY - 4, cardId, zone }
         : null
     );
   };
+
 
   const handleCloseContextMenu = () => {
     setContextMenu(null);
@@ -328,7 +331,7 @@ const PlayTable = () => {
                   transition: "transform 0.2s ease",
                 }}
                 onContextMenu={(e: React.MouseEvent) =>
-                  handleContextMenu(e, card.id)
+                  handleContextMenu(e, card.id, "table")
                 }
                 draggableZone="table"
               />
@@ -369,7 +372,7 @@ const PlayTable = () => {
                   left: card.x,
                 }}
                 onContextMenu={(e: React.MouseEvent) =>
-                  handleContextMenu(e, card.id)
+                  handleContextMenu(e, card.id, "hand")
                 }
                 draggableZone="hand"
               />
@@ -465,23 +468,27 @@ const PlayTable = () => {
             : undefined
         }
       >
-        <MenuItem
-          onClick={() => {
-            if (contextMenu?.cardId) rotateCard(contextMenu.cardId, 90);
-            handleCloseContextMenu();
-          }}
-        >
-          {t("playtest.rotateRight")}
-        </MenuItem>
-        <MenuItem
-          onClick={() => {
-            if (contextMenu?.cardId) rotateCard(contextMenu.cardId, -90);
-            handleCloseContextMenu();
-          }}
-        >
-          {t("playtest.rotateLeft")}
-        </MenuItem>
-        <Divider />
+        {contextMenu?.zone === "table" && [
+          <MenuItem
+            key="rotateRight"
+            onClick={() => {
+              if (contextMenu?.cardId) rotateCard(contextMenu.cardId, 90);
+              handleCloseContextMenu();
+            }}
+          >
+            {t("playtest.rotateRight")}
+          </MenuItem>,
+          <MenuItem
+            key="rotateLeft"
+            onClick={() => {
+              if (contextMenu?.cardId) rotateCard(contextMenu.cardId, -90);
+              handleCloseContextMenu();
+            }}
+          >
+            {t("playtest.rotateLeft")}
+          </MenuItem>,
+          <Divider key="divider" />,
+        ]}
         <MenuItem onClick={() => {
           if (contextMenu?.cardId) moveToDeck(contextMenu.cardId);
           handleCloseContextMenu();
@@ -501,6 +508,7 @@ const PlayTable = () => {
           {t("playtest.returnToBottomDeck")}
         </MenuItem>
       </Menu>
+
     </Box>
   );
 };
