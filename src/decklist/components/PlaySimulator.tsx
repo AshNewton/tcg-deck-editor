@@ -44,6 +44,20 @@ const createDuplicatesAndShuffle = (source: Deck): Deck =>
     )
   );
 
+const getRandomHandCoords = (): { x: number, y: number } => {
+  return {
+    x: Math.random() * 200 + 50,
+    y: 0
+  }
+}
+
+const getRandomTableCoords = (): { x: number, y: number } => {
+  return {
+    x: Math.random() * 100 + 50,
+    y: Math.random() * 100
+  }
+}
+
 const PlayTable = () => {
   const maindeck = useAppSelector((state) => state.ui.maindeck);
   const extradeck = useAppSelector((state) => state.ui.extradeck);
@@ -92,8 +106,7 @@ const PlayTable = () => {
       {
         id: uuidv4(),
         card,
-        x: Math.random() * 200 + 50,
-        y: 0,
+        ...getRandomHandCoords(),
         rotation: 0,
       },
     ]);
@@ -150,13 +163,11 @@ const PlayTable = () => {
           ? {
             card, // for cards from a deck
             id: uuidv4(),
-            x: Math.random() * 100 + 50,
-            y: Math.random() * 100,
+            ...getRandomTableCoords()
           }
           : {
             ...card, // for discard/exile cards
-            x: Math.random() * 100 + 50,
-            y: Math.random() * 100,
+            ...getRandomTableCoords()
           },
       ]);
 
