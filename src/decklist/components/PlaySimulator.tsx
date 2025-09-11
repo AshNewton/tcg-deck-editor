@@ -131,7 +131,10 @@ const PlayTable = () => {
   const moveToExile = (cardId: string) =>
     moveCardToZone(cardId, (c) => setExilePile((prev) => [c, ...prev]));
 
-  const moveCardFromHandToPile = (cardId: string, targetPile: "discard" | "exile" | "deck") => {
+  const moveCardFromHandToPile = (
+    cardId: string,
+    targetPile: "discard" | "exile" | "deck" | "topDeck" | "bottomDeck" | "shuffledDeck"
+  ) => {
     setHand(prev => {
       const index = prev.findIndex(c => c.id === cardId);
       if (index === -1) return prev;
@@ -139,13 +142,25 @@ const PlayTable = () => {
       const newHand = [...prev];
       newHand.splice(index, 1);
 
-      if (targetPile === "discard") setDiscardPile(prev => [cardObj, ...prev]);
-      else if (targetPile === "deck") setDeck(prev => [cardObj.card, ...prev]);
-      else setExilePile(prev => [cardObj, ...prev]);
+      if (targetPile === "discard") {
+        setDiscardPile(prev => [cardObj, ...prev]);
+      } else if (targetPile === "exile") {
+        setExilePile(prev => [cardObj, ...prev]);
+      } else if (targetPile === "deck") {
+        // note the return AND SHUFFLE
+        setDeck(prev => shuffleDeck([cardObj.card, ...prev]));
+      } else if (targetPile === "topDeck") {
+        setDeck(prev => [cardObj.card, ...prev]);
+      } else if (targetPile === "bottomDeck") {
+        setDeck(prev => [...prev, cardObj.card]);
+      } else if (targetPile === "shuffledDeck") {
+        setDeck(prev => shuffleDeck([cardObj.card, ...prev]));
+      }
 
       return newHand;
     });
   };
+
 
 
   const moveCardFromPileToTable = (
@@ -403,7 +418,7 @@ const PlayTable = () => {
         <DropZone
           label={t("common.deck")}
           onDropCard={(cardId, _x, _y, from) => {
-            if (from === "hand") moveCardFromHandToPile(cardId, "deck");
+            if (from === "hand") moveCardFromHandToPile(cardId, "topDeck");
             else moveToTopDeck(cardId);
           }}
           onclick={showPopover("Deck")}
@@ -468,6 +483,7 @@ const PlayTable = () => {
             : undefined
         }
       >
+        {/* Rotate options only for table cards */}
         {contextMenu?.zone === "table" && [
           <MenuItem
             key="rotateRight"
@@ -489,26 +505,50 @@ const PlayTable = () => {
           </MenuItem>,
           <Divider key="divider" />,
         ]}
-        <MenuItem onClick={() => {
-          if (contextMenu?.cardId) moveToDeck(contextMenu.cardId);
-          handleCloseContextMenu();
-        }}>
+
+        {/* Return options — use different functions depending on zone */}
+        <MenuItem
+          onClick={() => {
+            if (!contextMenu?.cardId) return;
+            if (contextMenu.zone === "hand") {
+              moveCardFromHandToPile(contextMenu.cardId, "deck");
+            } else {
+              moveToDeck(contextMenu.cardId);
+            }
+            handleCloseContextMenu();
+          }}
+        >
           {t("playtest.returnToDeck")}
         </MenuItem>
-        <MenuItem onClick={() => {
-          if (contextMenu?.cardId) moveToTopDeck(contextMenu.cardId);
-          handleCloseContextMenu();
-        }}>
+
+        <MenuItem
+          onClick={() => {
+            if (!contextMenu?.cardId) return;
+            if (contextMenu.zone === "hand") {
+              moveCardFromHandToPile(contextMenu.cardId, "topDeck");
+            } else {
+              moveToTopDeck(contextMenu.cardId);
+            }
+            handleCloseContextMenu();
+          }}
+        >
           {t("playtest.returnToTopDeck")}
         </MenuItem>
-        <MenuItem onClick={() => {
-          if (contextMenu?.cardId) moveToBottomDeck(contextMenu.cardId);
-          handleCloseContextMenu();
-        }}>
+
+        <MenuItem
+          onClick={() => {
+            if (!contextMenu?.cardId) return;
+            if (contextMenu.zone === "hand") {
+              moveCardFromHandToPile(contextMenu.cardId, "bottomDeck");
+            } else {
+              moveToBottomDeck(contextMenu.cardId);
+            }
+            handleCloseContextMenu();
+          }}
+        >
           {t("playtest.returnToBottomDeck")}
         </MenuItem>
       </Menu>
-
     </Box>
   );
 };
