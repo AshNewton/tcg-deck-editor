@@ -218,7 +218,6 @@ const PlayTable = () => {
     } else if (openPopover === "Exile") {
       moveCardFromPileToTable(setExilePile, (c) => c.id === item.id);
     }
-
     handleClose();
   };
 
@@ -261,6 +260,11 @@ const PlayTable = () => {
     { label: t("playtest.returnToDeck"), pile: "shuffledDeck" },
     { label: t("playtest.returnToTopDeck"), pile: "topDeck" },
     { label: t("playtest.returnToBottomDeck"), pile: "bottomDeck" },
+  ];
+
+  const rotateActions = [
+    { label: t("playtest.rotateRight"), amount: 90 },
+    { label: t("playtest.rotateLeft"), amount: -90 },
   ];
 
   return (
@@ -469,27 +473,18 @@ const PlayTable = () => {
         }
       >
         {/* Rotate options only for table cards */}
-        {contextMenu?.zone === "table" && [
+        {contextMenu?.zone === "table" && rotateActions.map(a => (
           <MenuItem
-            key="rotateRight"
+            key={a.label}
             onClick={() => {
-              if (contextMenu?.cardId) rotateCard(contextMenu.cardId, 90);
+              if (contextMenu?.cardId) rotateCard(contextMenu.cardId, a.amount);
               handleCloseContextMenu();
             }}
           >
-            {t("playtest.rotateRight")}
-          </MenuItem>,
-          <MenuItem
-            key="rotateLeft"
-            onClick={() => {
-              if (contextMenu?.cardId) rotateCard(contextMenu.cardId, -90);
-              handleCloseContextMenu();
-            }}
-          >
-            {t("playtest.rotateLeft")}
-          </MenuItem>,
-          <Divider key="divider" />,
-        ]}
+            {a.label}
+          </MenuItem>
+        ))}
+        {contextMenu?.zone === "table" && <Divider />}
 
         {/* Return options */}
         {returnActions.map(action => (
