@@ -246,6 +246,12 @@ const PlayTable = () => {
     );
   };
 
+  const returnActions: { label: string; pile: Pile }[] = [
+    { label: t("playtest.returnToDeck"), pile: "shuffledDeck" },
+    { label: t("playtest.returnToTopDeck"), pile: "topDeck" },
+    { label: t("playtest.returnToBottomDeck"), pile: "bottomDeck" },
+  ];
+
   return (
     <Box sx={{ maxWidth: "100%", display: "flex", gap: 2, ml: 2, alignItems: "center" }}>
       {/* Left sidebar */}
@@ -474,36 +480,20 @@ const PlayTable = () => {
           <Divider key="divider" />,
         ]}
 
-        {/* Return options — use different functions depending on zone */}
-        <MenuItem
-          onClick={() => {
-            if (!contextMenu?.cardId) return;
-            moveCardToPile(contextMenu.cardId, contextMenu.zone, "deck");
-            handleCloseContextMenu();
-          }}
-        >
-          {t("playtest.returnToDeck")}
-        </MenuItem>
-
-        <MenuItem
-          onClick={() => {
-            if (!contextMenu?.cardId) return;
-            moveCardToPile(contextMenu.cardId, contextMenu.zone, "topDeck");
-            handleCloseContextMenu();
-          }}
-        >
-          {t("playtest.returnToTopDeck")}
-        </MenuItem>
-
-        <MenuItem
-          onClick={() => {
-            if (!contextMenu?.cardId) return;
-            moveCardToPile(contextMenu.cardId, contextMenu.zone, "bottomDeck");
-            handleCloseContextMenu();
-          }}
-        >
-          {t("playtest.returnToBottomDeck")}
-        </MenuItem>
+        {/* Return options */}
+        {returnActions.map(action => (
+          <MenuItem
+            key={action.pile}
+            onClick={() => {
+              if (contextMenu?.cardId) {
+                moveCardToPile(contextMenu.cardId, contextMenu.zone, action.pile);
+              }
+              handleCloseContextMenu();
+            }}
+          >
+            {action.label}
+          </MenuItem>
+        ))}
       </Menu>
     </Box>
   );
