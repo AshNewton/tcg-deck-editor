@@ -264,6 +264,8 @@ const PlayTable = () => {
 
 
   const handleCloseContextMenu = () => {
+    // blur the right-click menu before it unmounts to hide warning
+    document.activeElement instanceof HTMLElement && document.activeElement.blur();
     setContextMenu(null);
   };
 
