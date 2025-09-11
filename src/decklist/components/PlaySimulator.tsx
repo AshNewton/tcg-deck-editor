@@ -27,6 +27,8 @@ import { Divider, PopoverPosition } from "@mui/material";
 
 type PopoverContent = null | "Deck" | "Extra" | "Discard" | "Exile";
 
+type Pile = "deck" | "topDeck" | "bottomDeck" | "shuffledDeck" | "discard" | "exile" | "extra";
+
 type RightClickContent = {
   mouseX: number;
   mouseY: number;
@@ -102,66 +104,32 @@ const PlayTable = () => {
     setDeck(shuffleDeck(deck));
   };
 
-  const moveCardToZone = (cardId: string, addToZone: (card: any) => void) => {
-    setTableCards((prev) => {
-      const cardObj = prev.find((c) => c.id === cardId);
-      if (!cardObj) return prev;
-      addToZone(cardObj);
-      return prev.filter((c) => c.id !== cardId);
-    });
+
+  const addToPile = (card: CardOnBoard, target: Pile) => {
+    if (target === "discard") setDiscardPile(prev => [card, ...prev]);
+    else if (target === "exile") setExilePile(prev => [card, ...prev]);
+    else if (target === "extra") setExtra(prev => [card.card, ...prev]);
+    else if (target === "deck") setDeck(prev => shuffleDeck([card.card, ...prev]));
+    else if (target === "topDeck") setDeck(prev => [card.card, ...prev]);
+    else if (target === "bottomDeck") setDeck(prev => [...prev, card.card]);
+    else if (target === "shuffledDeck") setDeck(prev => shuffleDeck([card.card, ...prev]));
   };
 
-  const moveToExtra = (cardId: string) =>
-    moveCardToZone(cardId, (c) => setExtra((prev) => [c.card, ...prev]));
+  const moveCardToPile = (cardId: string, from: "table" | "hand", target: Pile) => {
+    const removeFrom = from === "table" ? setTableCards : setHand;
+    let cardObj: CardOnBoard | undefined;
 
-  const moveToDeck = (cardId: string) =>
-    moveCardToZone(cardId, (c) =>
-      setDeck((prev) => shuffleDeck([c.card, ...prev]))
-    );
-
-  const moveToTopDeck = (cardId: string) =>
-    moveCardToZone(cardId, (c) => setDeck((prev) => [c.card, ...prev]));
-
-  const moveToBottomDeck = (cardId: string) =>
-    moveCardToZone(cardId, (c) => setDeck((prev) => [...prev, c.card]));
-
-  const moveToDiscard = (cardId: string) =>
-    moveCardToZone(cardId, (c) => setDiscardPile((prev) => [c, ...prev]));
-
-  const moveToExile = (cardId: string) =>
-    moveCardToZone(cardId, (c) => setExilePile((prev) => [c, ...prev]));
-
-  const moveCardFromHandToPile = (
-    cardId: string,
-    targetPile: "discard" | "exile" | "deck" | "topDeck" | "bottomDeck" | "shuffledDeck"
-  ) => {
-    setHand(prev => {
-      const index = prev.findIndex(c => c.id === cardId);
-      if (index === -1) return prev;
-      const cardObj = prev[index];
-      const newHand = [...prev];
-      newHand.splice(index, 1);
-
-      if (targetPile === "discard") {
-        setDiscardPile(prev => [cardObj, ...prev]);
-      } else if (targetPile === "exile") {
-        setExilePile(prev => [cardObj, ...prev]);
-      } else if (targetPile === "deck") {
-        // note the return AND SHUFFLE
-        setDeck(prev => shuffleDeck([cardObj.card, ...prev]));
-      } else if (targetPile === "topDeck") {
-        setDeck(prev => [cardObj.card, ...prev]);
-      } else if (targetPile === "bottomDeck") {
-        setDeck(prev => [...prev, cardObj.card]);
-      } else if (targetPile === "shuffledDeck") {
-        setDeck(prev => shuffleDeck([cardObj.card, ...prev]));
-      }
-
-      return newHand;
+    removeFrom(prev => {
+      const idx = prev.findIndex(c => c.id === cardId);
+      if (idx === -1) return prev;
+      cardObj = prev[idx];
+      const copy = [...prev];
+      copy.splice(idx, 1);
+      return copy;
     });
+
+    if (cardObj) addToPile(cardObj, target);
   };
-
-
 
   const moveCardFromPileToTable = (
     setPile: React.Dispatch<React.SetStateAction<Array<any>>>,
@@ -262,7 +230,6 @@ const PlayTable = () => {
     );
   };
 
-
   const handleCloseContextMenu = () => {
     // blur the right-click menu before it unmounts to hide warning
     document.activeElement instanceof HTMLElement && document.activeElement.blur();
@@ -294,7 +261,9 @@ const PlayTable = () => {
         >
           <DropZone
             label={t("yugioh.extraDeck")}
-            onDropCard={moveToExtra}
+            onDropCard={(cardId, _x, _y, from) => {
+              moveCardToPile(cardId, from, "extra");
+            }}
             onclick={showPopover("Extra")}
           >
             {t("decklist.cardCount", { count: extra.length })}
@@ -420,8 +389,7 @@ const PlayTable = () => {
         <DropZone
           label={t("common.deck")}
           onDropCard={(cardId, _x, _y, from) => {
-            if (from === "hand") moveCardFromHandToPile(cardId, "topDeck");
-            else moveToTopDeck(cardId);
+            moveCardToPile(cardId, from, "topDeck");
           }}
           onclick={showPopover("Deck")}
           sx={{ mt: 2 }}
@@ -432,8 +400,7 @@ const PlayTable = () => {
         <DropZone
           label={t("playtest.discard")}
           onDropCard={(cardId, _x, _y, from) => {
-            if (from === "hand") moveCardFromHandToPile(cardId, "discard");
-            else moveToDiscard(cardId);
+            moveCardToPile(cardId, from, "discard");
           }}
           onclick={showPopover("Discard")}
           sx={{ mt: 2 }}
@@ -443,8 +410,7 @@ const PlayTable = () => {
         <DropZone
           label={t("playtest.exile")}
           onDropCard={(cardId, _x, _y, from) => {
-            if (from === "hand") moveCardFromHandToPile(cardId, "exile");
-            else moveToExile(cardId);
+            moveCardToPile(cardId, from, "exile");
           }}
           onclick={showPopover("Exile")}
           sx={{ mt: 2 }}
@@ -512,11 +478,7 @@ const PlayTable = () => {
         <MenuItem
           onClick={() => {
             if (!contextMenu?.cardId) return;
-            if (contextMenu.zone === "hand") {
-              moveCardFromHandToPile(contextMenu.cardId, "deck");
-            } else {
-              moveToDeck(contextMenu.cardId);
-            }
+            moveCardToPile(contextMenu.cardId, contextMenu.zone, "deck");
             handleCloseContextMenu();
           }}
         >
@@ -526,11 +488,7 @@ const PlayTable = () => {
         <MenuItem
           onClick={() => {
             if (!contextMenu?.cardId) return;
-            if (contextMenu.zone === "hand") {
-              moveCardFromHandToPile(contextMenu.cardId, "topDeck");
-            } else {
-              moveToTopDeck(contextMenu.cardId);
-            }
+            moveCardToPile(contextMenu.cardId, contextMenu.zone, "topDeck");
             handleCloseContextMenu();
           }}
         >
@@ -540,11 +498,7 @@ const PlayTable = () => {
         <MenuItem
           onClick={() => {
             if (!contextMenu?.cardId) return;
-            if (contextMenu.zone === "hand") {
-              moveCardFromHandToPile(contextMenu.cardId, "bottomDeck");
-            } else {
-              moveToBottomDeck(contextMenu.cardId);
-            }
+            moveCardToPile(contextMenu.cardId, contextMenu.zone, "bottomDeck");
             handleCloseContextMenu();
           }}
         >
