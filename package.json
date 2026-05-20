@@ -1,6 +1,4 @@
 {
-  "name": "my-react-app",
-  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -32,7 +30,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "node node_modules/electron/cli.js .",
+    "dev": "concurrently \"npm start\" \"npm run electron\"",
+    "electron-build": "npm run build && electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +56,25 @@
   "devDependencies": {
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
-    "typescript": "^5.8.3"
+    "concurrently": "^8.2.2",
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3",
+    "electron-is-dev": "^3.0.1",
+    "typescript": "^5.8.3",
+    "wait-on": "^7.2.0"
+  },
+  "main": "./electron.js",
+  "version": "0.1.0",
+  "build": {
+    "appId": "com.tcg-deck-editor.app",
+    "productName": "TCG Deck Editor",
+    "files": [
+      "build/**/*",
+      "public/electron.js",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "public"
+    }
   }
 }
