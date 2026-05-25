@@ -1,6 +1,10 @@
 console.log("Electron main process started");
 
 const { app, BrowserWindow } = require('electron');
+
+const { initDb } = require("./initDb.js");
+const { registerIpc } = require("./ipc.js");
+
 const path = require('path');
 
 const isDev = process.defaultApp || !app.isPackaged;
@@ -8,6 +12,9 @@ const isDev = process.defaultApp || !app.isPackaged;
 let mainWindow;
 
 function createWindow() {
+    initDb();
+    registerIpc();
+
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
