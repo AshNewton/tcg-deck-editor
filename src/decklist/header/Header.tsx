@@ -16,6 +16,8 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import { GAME_ICONS, SUPPORTED_GAMES } from "../util/constants";
 
 import { Game, Menu } from "../../types";
+import TextField from "../components/form/TextField";
+import { Field, Form } from "react-final-form";
 
 type NameType = { name: string; type: Menu };
 
@@ -79,7 +81,27 @@ const Header = () => {
                 text={item.name}
               />
             )
-        )}
+              )}
+
+              <Form
+                  onSubmit={async (values) => {
+
+                      await window.db.addCard(values.newcard);
+
+                      const updated = await window.db.getCards();
+                      console.log(updated);
+                  }}
+                  render={({ form, handleSubmit }) => (
+                      <form onSubmit={handleSubmit}>
+                          <Field
+                              name="newcard"
+                              label="newcard"
+                              component={TextField}
+                          />
+                          <Button text={'Add Card'} type="submit" sx={{ m: 2 }} />
+                      </form>
+                  )}
+              />
       </Toolbar>
     </AppBar>
   );

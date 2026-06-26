@@ -17,7 +17,11 @@
 .env.development.local
 .env.test.local
 .env.production.local
+*.slnx
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+ProjectSettings.json
+.vs/tcg-deck-editor/CopilotIndices
