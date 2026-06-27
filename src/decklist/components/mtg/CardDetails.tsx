@@ -1,4 +1,6 @@
 import React from "react";
+
+import { useSnackbar } from "../../../context/SnackbarContext";
 import { useTranslation } from "react-i18next";
 
 import Button from "../mui/Button";
@@ -29,6 +31,8 @@ const CardDetails = (props: Props) => {
   const [loading, setLoading] = React.useState<boolean>(true);
 
   const { t } = useTranslation();
+
+  const { showMessage } = useSnackbar();
 
   const fetchData = async () => {
     try {
@@ -168,6 +172,8 @@ const CardDetails = (props: Props) => {
 
                   const updated = await window.db.getCards();
                   console.log(updated);
+                  
+                  showMessage(t("database.cardAdded"), "success");
               }}/>
           </Box>
 
