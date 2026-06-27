@@ -1,6 +1,6 @@
-import { MTG_NAME } from "./mtg";
-import { POKEMON_NAME } from "./pokemon";
-import { YUGIOH_NAME } from "./yugioh";
+import { MTG_NAME } from "./mtg/constants";
+import { POKEMON_NAME } from "./pokemon/constants";
+import { YUGIOH_NAME } from "./yugioh/constants";
 
 import mtgIcon from "../../icons/mtg.png";
 import pokemonIcon from "../../icons/pokemon.png";

@@ -3,19 +3,19 @@ import React from "react";
 import {
   handleAddToDeck as mtgAddToDeck,
   isInvalid as mtgIsInvalid,
-} from "./mtg";
+} from "./mtg/util";
 import {
   handleAddToDeck as pokemonAddToDeck,
   isInvalid as pokemonIsInvalid,
-} from "./pokemon";
+} from "./pokemon/util";
 import {
   handleAddToDeck as ygoAddToDeck,
   isInvalid as ygoIsInvalid,
-} from "./yugioh";
+} from "./yugioh/util";
 
-import { MTG_HAND_START_SIZE, MTG_NAME } from "./mtg";
-import { POKEMON_HAND_START_SIZE, POKEMON_NAME } from "./pokemon";
-import { YUGIOH_HAND_START_SIZE, YUGIOH_NAME } from "./yugioh";
+import { MTG_HAND_START_SIZE, MTG_NAME } from "./mtg/constants";
+import { POKEMON_HAND_START_SIZE, POKEMON_NAME } from "./pokemon/constants";
+import { YUGIOH_HAND_START_SIZE, YUGIOH_NAME } from "./yugioh/constants";
 
 import { Card, Deck, Game, mtgCard, pokemonCard, ygoCard } from "../../types";
 

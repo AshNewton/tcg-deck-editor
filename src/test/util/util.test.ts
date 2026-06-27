@@ -10,15 +10,15 @@ import {
   removeDuplicateCards,
 } from "../../decklist/util/util";
 
-import { MTG_NAME, MTG_HAND_START_SIZE } from "../../decklist/util/mtg";
+import { MTG_NAME, MTG_HAND_START_SIZE } from "../../decklist/util/mtg/constants";
 import {
   POKEMON_NAME,
   POKEMON_HAND_START_SIZE,
-} from "../../decklist/util/pokemon";
+} from "../../decklist/util/pokemon/constants";
 import {
   YUGIOH_NAME,
   YUGIOH_HAND_START_SIZE,
-} from "../../decklist/util/yugioh";
+} from "../../decklist/util/yugioh/constants";
 
 import mtgDeckJson from "../../../testdata/otters.json";
 import pokemonDeckJson from "../../../testdata/future - iron hands.json";

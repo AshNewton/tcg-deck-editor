@@ -19,7 +19,7 @@ import {
   MTG_MIN_MANA,
   MTG_MIN_STAT,
   MTG_STAT_STEP,
-} from "../../util/mtg";
+} from "../../util/mtg/constants";
 
 import { Card, mtgCard } from "../../../types";
 

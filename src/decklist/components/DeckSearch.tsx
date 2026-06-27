@@ -19,9 +19,9 @@ import { filterCard as mtgFilterCard } from "./mtg/DeckSearch";
 import { filterCard as pokemonFilterCard } from "./pokemon/DeckSearch";
 import { filterCard as ygoFilterCard } from "./yugioh/DeckSearch";
 
-import { MTG_NAME } from "../util/mtg";
-import { POKEMON_NAME } from "../util/pokemon";
-import { YUGIOH_NAME } from "../util/yugioh";
+import { MTG_NAME } from "../util/mtg/constants";
+import { POKEMON_NAME } from "../util/pokemon/constants";
+import { YUGIOH_NAME } from "../util/yugioh/constants";
 
 import { Deck } from "../../types";
 import { SearchValues as MtgSearchValues } from "./mtg/DeckSearch";

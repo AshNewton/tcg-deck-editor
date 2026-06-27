@@ -20,7 +20,7 @@ import {
   YUGIOH_SPELL_TYPES,
   YUGIOH_STAT_STEP,
   YUGIOH_TRAP_TYPES,
-} from "../../util/yugioh";
+} from "../../util/yugioh/constants";
 
 import { Card, ygoCard } from "../../../types";
 

@@ -2,7 +2,7 @@ import {
   getEnergyProbabilities,
   handleAddToDeck,
   isInvalid,
-} from "../../decklist/util/pokemon";
+} from "../../decklist/util/pokemon/util";
 import { setMainDeck } from "../../store/slices/uiSlice";
 
 import { Card, Deck } from "../../types";

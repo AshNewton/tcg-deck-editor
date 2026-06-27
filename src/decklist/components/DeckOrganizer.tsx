@@ -10,7 +10,7 @@ import DisplayCard from "./mui/DisplayCard";
 import Box from "@mui/material/Box";
 import Masonry from "@mui/lab/Masonry";
 
-import { isExtraDeckCard } from "../util/yugioh";
+import { isExtraDeckCard } from "../util/yugioh/util";
 import { isYugioh } from "../util/util";
 import { setExtraDeck, setMainDeck } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";

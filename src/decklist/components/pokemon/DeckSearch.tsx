@@ -23,7 +23,7 @@ import {
   POKEMON_MIN_STAT,
   POKEMON_STAT_STEP,
   POKEMON_TYPES,
-} from "../../util/pokemon";
+} from "../../util/pokemon/constants";
 
 export type SearchValues = {
   filterByName: boolean;

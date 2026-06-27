@@ -22,7 +22,7 @@ import { setSelectedCard } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { Card, CardOpeningProbabilities } from "../../types";
-import { getLandProbabilities } from "../util/mtg";
+import { getLandProbabilities } from "../util/mtg/util";
 
 const StartingHand = () => {
   const [sampleStartingHand, setSampleStartingHand] = React.useState<

@@ -13,7 +13,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
-import { POKEMON_TYPES, POKEMON_TYPES_LABELS } from "../../util/pokemon";
+import { POKEMON_TYPES, POKEMON_TYPES_LABELS } from "../../util/pokemon/constants";
 
 import { Card, pokemonCard } from "../../../types";
 

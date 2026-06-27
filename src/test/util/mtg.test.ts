@@ -2,7 +2,7 @@ import {
   isInvalid,
   handleAddToDeck,
   getLandProbabilities,
-} from "../../decklist/util/mtg";
+} from "../../decklist/util/mtg/util";
 import { setMainDeck } from "../../store/slices/uiSlice";
 
 import { Card, Deck, mtgCard } from "../../types";

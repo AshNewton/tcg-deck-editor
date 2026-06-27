@@ -7,9 +7,9 @@ import DisplayCard from "./mui/DisplayCard";
 import { setSelectedCard } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
-import { MTG_NAME } from "../util/mtg";
-import { YUGIOH_NAME } from "../util/yugioh";
-import { POKEMON_NAME } from "../util/pokemon";
+import { MTG_NAME } from "../util/mtg/constants";
+import { YUGIOH_NAME } from "../util/yugioh/constants";
+import { POKEMON_NAME } from "../util/pokemon/constants";
 
 const CardDetails = () => {
   const card = useAppSelector((state) => state.ui.selectedCard);

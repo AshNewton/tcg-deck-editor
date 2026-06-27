@@ -10,7 +10,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 
-import { getBannedSeverity, getCardLevelName } from "../../util/yugioh";
+import { getBannedSeverity, getCardLevelName } from "../../util/yugioh/util";
 
 import { Card, ygoCard } from "../../../types";
 

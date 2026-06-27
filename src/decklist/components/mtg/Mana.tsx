@@ -11,7 +11,7 @@ import { useAppSelector } from "../../../hooks";
 
 import { Card, Deck, mtgCard, NameValue } from "../../../types";
 
-import { MTG_COLORLESS_CODE, MTG_COLORS_HEX } from "../../util/mtg";
+import { MTG_COLORLESS_CODE, MTG_COLORS_HEX } from "../../util/mtg/constants";
 
 const getManaCostDistribution = (deck: Deck): Record<number, number> => {
   return deck.reduce((acc, card) => {

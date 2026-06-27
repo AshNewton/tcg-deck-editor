@@ -5,7 +5,7 @@ import {
   getCardLevelName,
   isExtraDeckCard,
   isInvalid,
-} from "../../decklist/util/yugioh";
+} from "../../decklist/util/yugioh/util";
 import { setExtraDeck, setMainDeck } from "../../store/slices/uiSlice";
 
 import { Card, Deck, ygoCard } from "../../types";

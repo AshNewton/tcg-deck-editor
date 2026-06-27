@@ -16,9 +16,9 @@ import {
   searchCard as searchMTGCard,
 } from "../api/magicthegathering";
 
-import { isExtraDeckCard, isYgoCard } from "../util/yugioh";
-import { isMtgCard } from "../util/mtg";
-import { isPokemonCard } from "../util/pokemon";
+import { isExtraDeckCard, isYgoCard } from "../util/yugioh/util";
+import { isMtgCard } from "../util/mtg/util";
+import { isPokemonCard } from "../util/pokemon/util";
 import { searchCard as searchPokemonCard } from "../api/pokemontcgio";
 import { setMainDeck, setExtraDeck } from "../../store/slices/uiSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";

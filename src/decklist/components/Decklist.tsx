@@ -9,7 +9,7 @@ import Box from "@mui/material/Box";
 import { getDeckSize } from "../util/deckAnalytics";
 import { useAppSelector } from "../../hooks";
 
-import { MTG_NAME } from "../util/mtg";
+import { MTG_NAME } from "../util/mtg/constants";
 
 import { Deck } from "../../types";
 
