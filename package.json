@@ -68,7 +68,7 @@
     "typescript": "^5.8.3",
     "wait-on": "^7.2.0"
   },
-  "main": "./electron.js",
+  "main": "./electron/electron.js",
   "version": "0.1.0",
   "build": {
     "appId": "com.tcg-deck-editor.app",
