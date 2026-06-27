@@ -12,6 +12,15 @@ function registerIpc() {
         });
     });
 
+    ipcMain.handle("getCardByName", (_event, name) => {
+        return new Promise((resolve, reject) => {
+            db.all("SELECT * FROM cards WHERE name = ?", [name], (err, rows) => {
+                if (err) reject(err);
+                else resolve(rows);
+            });
+        });
+    });
+
     ipcMain.handle("cardsAdd", (_event, name) => {
         return new Promise((resolve, reject) => {
             const id = uuidv4();
@@ -24,6 +33,15 @@ function registerIpc() {
                     else resolve({ id, name });
                 }
             );
+        });
+    });
+
+    ipcMain.handle("cardsDelete", (_event, id) => {
+        return new Promise((resolve, reject) => {
+            db.run("DELETE FROM cards WHERE id = ?", [id], function (err) {
+                if (err) reject(err);
+                else resolve();
+            });
         });
     });
 }

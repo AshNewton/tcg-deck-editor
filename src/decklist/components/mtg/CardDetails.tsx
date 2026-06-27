@@ -27,6 +27,7 @@ type Props = {
 const CardDetails = (props: Props) => {
   const { card, clearSelection } = props;
 
+  const [cardDbId, setCardDbId] = React.useState<string | null>(null);
   const [symbols, setSymbols] = React.useState<Array<MtgSymbol>>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
 
@@ -36,8 +37,12 @@ const CardDetails = (props: Props) => {
 
   const fetchData = async () => {
     try {
-      const result = await getSymbolUris();
-      setSymbols(result);
+      const cardDetails = await window.db.getCardByName(card.name);
+      setCardDbId(cardDetails[0]?.id || null);
+
+      const symbols = await getSymbolUris();
+      setSymbols(symbols);
+      
       setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -46,7 +51,7 @@ const CardDetails = (props: Props) => {
 
   React.useEffect(() => {
     fetchData();
-  }, []);
+  }, [card.name]);
 
   if (loading) {
     return (
@@ -157,26 +162,39 @@ const CardDetails = (props: Props) => {
           )}
                   
           <Box display="flex" flexDirection="row" alignItems="center" gap={2} mt={2}>
-            {/* link to Scryfall */}
-            <ExternalLink
-              mt={1}
-              href={mtgCard.scryfall_uri}
-              label={t("mtg.scryfall")}
-            />
-
             {/* add to db */}
-            <Button 
-              text={t("database.addCard")}
-              onClick={async () => {
-                  await window.db.addCard(mtgCard.name);
+            {cardDbId === null && (
+              <Button 
+                text={t("database.addCard")}
+                onClick={async () => {
+                    await window.db.addCard(mtgCard.name);
+                    showMessage(t("database.cardAdded"), "success");
 
-                  const updated = await window.db.getCards();
-                  console.log(updated);
-                  
-                  showMessage(t("database.cardAdded"), "success");
-              }}/>
+                    fetchData();
+                }}/>
+            )}
+
+            {/* delete from db */}
+            {cardDbId !== null && (
+              <Button 
+                text={t("database.deleteCard")}
+                onClick={async () => {
+                  console.log(`Deleting card with id: ${cardDbId}`);
+
+                    await window.db.deleteCard(cardDbId);
+                    showMessage(t("database.cardDeleted"), "success");
+
+                    fetchData();
+                }}/>
+            )}
           </Box>
 
+          {/* link to Scryfall */}
+          <ExternalLink
+            mt={2}
+            href={mtgCard.scryfall_uri}
+            label={t("mtg.scryfall")}
+          />
           
         </Grid>
       </Grid>

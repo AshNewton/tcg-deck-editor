@@ -21,9 +21,11 @@
     "types": "Types"
   },
   "database": {
-    "addCard": "Add Card",
+    "addCard": "Add Card to Database",
     "cardAdded": "Card Added",
-    "cardExists": "Card already exists in database"
+    "cardExists": "Card already exists in database",
+    "deleteCard": "Delete Card from Database",
+    "cardDeleted": "Card Deleted"
   },
   "decklist": { "cardCount": "(Cards: {{count}})" },
   "helperText": {
