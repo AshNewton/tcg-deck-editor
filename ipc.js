@@ -1,5 +1,6 @@
 const { ipcMain } = require("electron");
 const { db } = require("./db.js");
+const { v4: uuidv4 } = require("uuid");
 
 function registerIpc() {
     ipcMain.handle("cardsGetAll", () => {
@@ -13,12 +14,14 @@ function registerIpc() {
 
     ipcMain.handle("cardsAdd", (_event, name) => {
         return new Promise((resolve, reject) => {
+            const id = uuidv4();
+
             db.run(
-                "INSERT INTO cards (name) VALUES (?)",
-                [name],
+                "INSERT INTO cards (id, name) VALUES (?, ?)",
+                [id, name],
                 function (err) {
                     if (err) reject(err);
-                    else resolve({ id: this.lastID });
+                    else resolve({ id, name });
                 }
             );
         });

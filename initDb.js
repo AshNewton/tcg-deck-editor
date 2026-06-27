@@ -4,7 +4,7 @@ function initDb() {
     db.serialize(() => {
         db.run(`
       CREATE TABLE IF NOT EXISTS cards (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id TEXT PRIMARY KEY,
         name TEXT NOT NULL
       )
     `);
