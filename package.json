@@ -8,7 +8,6 @@
     "@mui/lab": "^5.0.0-alpha.146",
     "@mui/material": "^5.15.15",
     "@reduxjs/toolkit": "^2.7.0",
-    "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "final-form": "^4.20.10",
@@ -57,6 +56,9 @@
   },
   "devDependencies": {
     "@electron/rebuild": "^4.0.4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.0.1",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "concurrently": "^8.2.2",
