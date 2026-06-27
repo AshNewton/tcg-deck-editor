@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import Button from "../mui/Button";
 import ExternalLink from "../mui/ExternalLink";
 import Image from "../mui/Image";
 import Text from "./../mui/Text";
@@ -150,13 +151,27 @@ const CardDetails = (props: Props) => {
               })}
             </Grid>
           )}
+                  
+          <Box display="flex" flexDirection="row" alignItems="center" gap={2} mt={2}>
+            {/* link to Scryfall */}
+            <ExternalLink
+              mt={1}
+              href={mtgCard.scryfall_uri}
+              label={t("mtg.scryfall")}
+            />
 
-          {/* link to Scryfall */}
-          <ExternalLink
-            mt={1}
-            href={mtgCard.scryfall_uri}
-            label={t("mtg.scryfall")}
-          />
+            {/* add to db */}
+            <Button 
+              text={t("database.addCard")}
+              onClick={async () => {
+                  await window.db.addCard(mtgCard.name);
+
+                  const updated = await window.db.getCards();
+                  console.log(updated);
+              }}/>
+          </Box>
+
+          
         </Grid>
       </Grid>
     </>

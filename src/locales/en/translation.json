@@ -20,6 +20,11 @@
     "slashSeparated": "{{first}} / {{second}}",
     "types": "Types"
   },
+  "database": {
+    "addCard": "Add Card",
+    "cardAdded": "Card Added",
+    "cardExists": "Card already exists in database"
+  },
   "decklist": { "cardCount": "(Cards: {{count}})" },
   "helperText": {
     "cardNotFound": "The following cards could not be found:",
