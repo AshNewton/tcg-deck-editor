@@ -1,9 +1,7 @@
 import React from "react";
 
-import { useSnackbar } from "../../../context/SnackbarContext";
 import { useTranslation } from "react-i18next";
 
-import Button from "../mui/Button";
 import ExternalLink from "../mui/ExternalLink";
 import Image from "../mui/Image";
 import Text from "./../mui/Text";
@@ -17,8 +15,7 @@ import IconButton from "@mui/material/IconButton";
 
 import { getSymbolUris } from "../../api/magicthegathering";
 
-import { Card, CardDbEntry, mtgCard, MtgSymbol } from "../../../types";
-import { MTG_NAME } from "../../util/mtg/constants";
+import { Card, mtgCard, MtgSymbol } from "../../../types";
 
 type Props = {
   card: Card;
@@ -28,19 +25,13 @@ type Props = {
 const CardDetails = (props: Props) => {
   const { card, clearSelection } = props;
 
-  const [cardDb, setCardDb] = React.useState<CardDbEntry | null>(null);
   const [symbols, setSymbols] = React.useState<Array<MtgSymbol>>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
 
   const { t } = useTranslation();
 
-  const { showMessage } = useSnackbar();
-
   const fetchData = async () => {
     try {
-      const cardDetails = await window.db.getCardByName(card.name);
-      setCardDb(cardDetails[0] || null);
-
       const symbols = await getSymbolUris();
       setSymbols(symbols);
       
@@ -52,7 +43,7 @@ const CardDetails = (props: Props) => {
 
   React.useEffect(() => {
     fetchData();
-  }, [card.name]);
+  }, []);
 
   if (loading) {
     return (
@@ -168,59 +159,6 @@ const CardDetails = (props: Props) => {
             href={mtgCard.scryfall_uri}
             label={t("mtg.scryfall")}
           />
-
-             
-          <Text
-            mt={2}
-            text={t("database.yourCollection")}
-          />   
-          <Box display="flex" flexDirection="row" alignItems="center" gap={2} mt={1}>
-            {/* add to db */}
-            {cardDb === null && (
-              <Button 
-                text={t("database.addCard")}
-                onClick={async () => {
-                    await window.db.addCard(mtgCard.name, MTG_NAME, 1);
-                    showMessage(t("database.cardAdded"), "success");
-
-                    fetchData();
-                }}/>
-            )}
-
-            {/* delete from db or change number copies */}
-            {cardDb !== null && (
-                <>
-                  <Button 
-                    text={t("database.deleteCard")}
-                    onClick={async () => {
-                        await window.db.deleteCard(cardDb.id);
-                        showMessage(t("database.cardDeleted"), "success");
-
-                        fetchData();
-                     }}
-                    />
-
-                    <Button 
-                      text={t("database.removeCopy")}
-                      disabled={cardDb?.copies <= 1}
-                      onClick={async () => {
-                          await window.db.removeCopy(cardDb.id, 1);
-                          fetchData();
-                      }}
-                    />
-
-                    <Text text={`${cardDb?.copies}`} fontSize={20} />
-
-                    <Button 
-                    text={t("database.addCopy")}
-                    onClick={async () => {
-                        await window.db.addCopy(cardDb.id, 1);
-                        fetchData();
-                      }}
-                    />
-                </>
-            )}
-          </Box>
         </Grid>
       </Grid>
     </>
