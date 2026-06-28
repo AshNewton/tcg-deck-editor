@@ -22,10 +22,13 @@
   },
   "database": {
     "addCard": "Add Card to Database",
+    "addCopy": "+1",
     "cardAdded": "Card Added",
+    "cardDeleted": "Card Deleted",
     "cardExists": "Card already exists in database",
     "deleteCard": "Delete Card from Database",
-    "cardDeleted": "Card Deleted"
+    "removeCopy": "-1",
+    "yourCollection": "Your Collection"
   },
   "decklist": { "cardCount": "(Cards: {{count}})" },
   "helperText": {

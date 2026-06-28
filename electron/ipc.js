@@ -21,13 +21,13 @@ function registerIpc() {
         });
     });
 
-    ipcMain.handle("cardsAdd", (_event, name) => {
+    ipcMain.handle("cardsAdd", (_event, name, game, copies) => {
         return new Promise((resolve, reject) => {
             const id = uuidv4();
 
             db.run(
-                "INSERT INTO cards (id, name) VALUES (?, ?)",
-                [id, name],
+                "INSERT INTO cards (id, name, game, copies) VALUES (?, ?, ?, ?)",
+                [id, name, game, copies],
                 function (err) {
                     if (err) reject(err);
                     else resolve({ id, name });
@@ -42,6 +42,39 @@ function registerIpc() {
                 if (err) reject(err);
                 else resolve();
             });
+        });
+    });
+
+    ipcMain.handle("cardsIncreaseCopies", (_event, id, amount = 1) => {
+        return new Promise((resolve, reject) => {
+            db.run(
+                "UPDATE cards SET copies = copies + ? WHERE id = ?",
+                [amount, id],
+                function (err) {
+                    if (err) reject(err);
+                    else resolve({ id, updated: this.changes });
+                }
+            );
+        });
+    });
+
+    ipcMain.handle("cardsDecreaseCopies", (_event, id, amount = 1) => {
+        return new Promise((resolve, reject) => {
+            db.run(
+                `
+                UPDATE cards
+                SET copies = CASE 
+                    WHEN copies - ? < 0 THEN 0
+                    ELSE copies - ?
+                END
+                WHERE id = ?
+                `,
+                [amount, amount, id],
+                function (err) {
+                    if (err) reject(err);
+                    else resolve({ id, updated: this.changes });
+                }
+            );
         });
     });
 }

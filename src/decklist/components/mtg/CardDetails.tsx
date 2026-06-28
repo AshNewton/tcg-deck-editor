@@ -17,7 +17,8 @@ import IconButton from "@mui/material/IconButton";
 
 import { getSymbolUris } from "../../api/magicthegathering";
 
-import { Card, mtgCard, MtgSymbol } from "../../../types";
+import { Card, CardDbEntry, mtgCard, MtgSymbol } from "../../../types";
+import { MTG_NAME } from "../../util/mtg/constants";
 
 type Props = {
   card: Card;
@@ -27,7 +28,7 @@ type Props = {
 const CardDetails = (props: Props) => {
   const { card, clearSelection } = props;
 
-  const [cardDbId, setCardDbId] = React.useState<string | null>(null);
+  const [cardDb, setCardDb] = React.useState<CardDbEntry | null>(null);
   const [symbols, setSymbols] = React.useState<Array<MtgSymbol>>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
 
@@ -38,7 +39,7 @@ const CardDetails = (props: Props) => {
   const fetchData = async () => {
     try {
       const cardDetails = await window.db.getCardByName(card.name);
-      setCardDbId(cardDetails[0]?.id || null);
+      setCardDb(cardDetails[0] || null);
 
       const symbols = await getSymbolUris();
       setSymbols(symbols);
@@ -160,34 +161,6 @@ const CardDetails = (props: Props) => {
               })}
             </Grid>
           )}
-                  
-          <Box display="flex" flexDirection="row" alignItems="center" gap={2} mt={2}>
-            {/* add to db */}
-            {cardDbId === null && (
-              <Button 
-                text={t("database.addCard")}
-                onClick={async () => {
-                    await window.db.addCard(mtgCard.name);
-                    showMessage(t("database.cardAdded"), "success");
-
-                    fetchData();
-                }}/>
-            )}
-
-            {/* delete from db */}
-            {cardDbId !== null && (
-              <Button 
-                text={t("database.deleteCard")}
-                onClick={async () => {
-                  console.log(`Deleting card with id: ${cardDbId}`);
-
-                    await window.db.deleteCard(cardDbId);
-                    showMessage(t("database.cardDeleted"), "success");
-
-                    fetchData();
-                }}/>
-            )}
-          </Box>
 
           {/* link to Scryfall */}
           <ExternalLink
@@ -195,7 +168,59 @@ const CardDetails = (props: Props) => {
             href={mtgCard.scryfall_uri}
             label={t("mtg.scryfall")}
           />
-          
+
+             
+          <Text
+            mt={2}
+            text={t("database.yourCollection")}
+          />   
+          <Box display="flex" flexDirection="row" alignItems="center" gap={2} mt={1}>
+            {/* add to db */}
+            {cardDb === null && (
+              <Button 
+                text={t("database.addCard")}
+                onClick={async () => {
+                    await window.db.addCard(mtgCard.name, MTG_NAME, 1);
+                    showMessage(t("database.cardAdded"), "success");
+
+                    fetchData();
+                }}/>
+            )}
+
+            {/* delete from db or change number copies */}
+            {cardDb !== null && (
+                <>
+                  <Button 
+                    text={t("database.deleteCard")}
+                    onClick={async () => {
+                        await window.db.deleteCard(cardDb.id);
+                        showMessage(t("database.cardDeleted"), "success");
+
+                        fetchData();
+                     }}
+                    />
+
+                    <Button 
+                      text={t("database.removeCopy")}
+                      disabled={cardDb?.copies <= 1}
+                      onClick={async () => {
+                          await window.db.removeCopy(cardDb.id, 1);
+                          fetchData();
+                      }}
+                    />
+
+                    <Text text={`${cardDb?.copies}`} fontSize={20} />
+
+                    <Button 
+                    text={t("database.addCopy")}
+                    onClick={async () => {
+                        await window.db.addCopy(cardDb.id, 1);
+                        fetchData();
+                      }}
+                    />
+                </>
+            )}
+          </Box>
         </Grid>
       </Grid>
     </>

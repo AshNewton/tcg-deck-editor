@@ -255,6 +255,13 @@ export interface Card {
   copies: number;
 }
 
+export type CardDbEntry = {
+  id: string;
+  name: string;
+  game: Game;
+  copies: number;
+};
+
 export type Deck = Array<Card>;
 
 export type CardOpeningProbabilities = Array<{

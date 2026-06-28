@@ -9,8 +9,10 @@ declare global {
       db: {
           getCards: () => Promise<any[]>;
           getCardByName: (name: string) => Promise<any[]>;
-          addCard: (name: string) => Promise<{ id: number }>;
+          addCard: (name: string, game: string, copies: number) => Promise<{ id: number }>;
           deleteCard: (id: string) => Promise<void>;
+          addCopy: (id: string, amount: number) => Promise<void>;
+          removeCopy: (id: string, amount: number) => Promise<void>;
       };
   }
 }
